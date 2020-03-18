@@ -2,7 +2,14 @@
 
 ## A CSS Design System for Rapid, Responsive UI Prototyping (WIP)
 
-[View Demo](https://semantic-styles.netlify.com/)
+### Featuring:
+
+- Responsive typography and spacing
+- Calculated, adjustable vertical rhythm
+- Responsive light / dark theme with @user-prefers media query (toggle your OS light / dark mode to see)
+- Classes that match semantic HTML elements
+
+### [View Demo](https://semantic-styles.netlify.com/)
 
 ---
 
@@ -25,17 +32,17 @@ npm install semantic styles
 ```jsx
 // Example Gatsby <Layout/>
 
-import React from "react";
+import React from 'react'
 
-import "semantic-styles";
+import 'semantic-styles'
 
 export default ({ children }) => {
   return (
     <>
       <main>{children}</main>
     </>
-  );
-};
+  )
+}
 ```
 
 ### 3: Compose components with system classes, system CSS variables, and HTML
@@ -43,9 +50,9 @@ export default ({ children }) => {
 ```js
 // Example Gatsby <Layout/>
 
-import React from "react";
+import React from 'react'
 
-import "semantic-styles";
+import 'semantic-styles'
 
 export default ({ children }) => {
   return (
@@ -57,14 +64,14 @@ export default ({ children }) => {
       <footer
         className="footer"
         style={{
-          background: `var(--accent-1)`
+          background: `var(--accent-1)`,
         }}
       >
         <h4 style={{ color: `var(--accent-2)` }}>Colorful Footer</h4>
       </footer>
     </>
-  );
-};
+  )
+}
 ```
 
 ---
