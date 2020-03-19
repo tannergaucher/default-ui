@@ -30,6 +30,8 @@ npm install semantic-styles
 
 ### 2: Import system classes and variables as global CSS
 
+### React + Gatsby example
+
 ```jsx
 // Example Gatsby <Layout/>
 
@@ -43,6 +45,34 @@ export default ({ children }) => {
     </>
   )
 }
+```
+
+### HTML + CSS + Parcel example
+
+```html
+<!-- index.html -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./index.js"></script>
+    <title>Semantic Styles</title>
+  </head>
+  <body>
+    HTML & CSS + Parcel Example
+    </div>
+  </body>
+</html>
+```
+
+```js
+// index.js
+import 'semantic-styles'
+```
+
+```
+<!-- Builds semantic styles index.css into dist folder  -->
+parcel index.html
 ```
 
 ### 3: Compose components with system classes, system CSS variables, and HTML
