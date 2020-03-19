@@ -1,6 +1,6 @@
 # Semantic Styles
 
-## A Responsive UI Design System for Rapid Prototyping
+## A Responsive Design System for Rapid UI Prototyping
 
 ### Featuring:
 
@@ -33,7 +33,7 @@ npm install semantic-styles
 ### React + Gatsby example
 
 ```jsx
-// Example Gatsby <Layout/>
+// Gatsby <Layout/>
 
 import React from 'react'
 import 'semantic-styles'
@@ -51,6 +51,7 @@ export default ({ children }) => {
 
 ```html
 <!-- index.html -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,18 +68,21 @@ export default ({ children }) => {
 
 ```js
 // index.js
+
 import 'semantic-styles'
 ```
 
 ```
-<!-- Builds semantic styles index.css into dist folder  -->
+<!-- Builds semantic styles into dist folder  -->
+
 parcel index.html
 ```
 
 ### 3: Compose components with system classes, system CSS variables, and HTML
 
 ```js
-// Example Gatsby <Layout/>
+// Gatsby <Layout/>
+
 import React from 'react'
 import 'semantic-styles'
 
