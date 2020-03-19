@@ -2,7 +2,7 @@
 
 ## A Responsive Design System for Rapid UI Prototyping
 
-### Featuring:
+### Features:
 
 - Responsive typography and spacing
 - Calculated, adjustable vertical rhythm
