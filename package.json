@@ -1,6 +1,6 @@
 {
   "name": "semantic-styles",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "\"A Responsive UI Design System for Rapid Prototyping\"",
   "main": "index.css",
   "scripts": {
