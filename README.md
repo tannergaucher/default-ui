@@ -115,6 +115,36 @@ export default ({ children }) => {
 
 ---
 
+## How to Customize
+
+Embrace the cascade. Create a new CSS file and override system classes and variables with your own custom styles.
+
+```js
+// global system styles
+import 'semantic-styles'
+
+// local system overrides
+import '../styles/customized-classes.css'
+import '../styles/customized-variables.css'
+```
+
+```css
+/* customized-classes.css */
+.title {
+  color: fuchsia;
+}
+```
+
+```css
+/* customized-variables.css */
+:root {
+  --accent-1: lime;
+  --responsive-unit: 2rem;
+}
+```
+
+---
+
 ## Classes
 
 ### Element Classes
