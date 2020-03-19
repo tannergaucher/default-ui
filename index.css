@@ -1,5 +1,7 @@
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css?family=Fira+Code:400,700&display=swap");
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400,700&display=swap');
+
+/* VARIABLES */
 
 :root {
   /* COLORS */
@@ -19,16 +21,9 @@
   --elevation-3: 0 16px 32px var(--shadow-color);
   --opacity: opacity(0.35);
   --transition: all 0.2s ease 0s;
-  /* LAYOUT  */
-  --container: 850px;
-  --max-width: 2000px;
-  /* VALUES */
-  --responsive-unit: 0.5vw;
-  --baseline: calc(1.2rem + var(--responsive-unit));
-  /* TYPOGRAPHY */
-  --sans: "Inter", sans-serif;
-  --serif: "";
-  --mono: "Fira Code", monospace;
+  /* TYPOGRAPHY  */
+  --sans: 'Inter', sans-serif;
+  --mono: 'Fira Code', monospace;
   --heading-line-height: 1.3;
   --paragraph-line-height: 1.7;
   --heading-letter-spacing: 0rem;
@@ -36,10 +31,18 @@
   --caps-letter-spacing: 0.17rem;
   --text-base-size: calc(1rem + var(--responsive-unit));
   --text-scale-ratio: 1.17;
-
-  /* VARIABLES BELOW THIS HAVE DERIVED / CALCULATED VALUES: ADJUSTING THEM CAN BREAK THE SYSTEM. TREAD LIGHTLY  */
-
-  /* Type Scale */
+  /* VALUES  */
+  --container: 850px;
+  --max-width: 2000px;
+  --responsive-unit: 0.5vw;
+  --baseline: calc(1.2rem + var(--responsive-unit));
+  /* THE REST OF THE ROOT VARIABLES ARE CALCULATED / DERIVED. CHANGING THEM "BREAKS" THE SYSTEM */
+  /* CALCULATED SPACING */
+  --space-sm: calc(var(--baseline) / 2);
+  --space-md: var(--baseline);
+  --space-lg: calc(var(--baseline) * 2);
+  --space-xl: calc(var(--baseline) * 4);
+  /* CALCULATED TYPE SCALE */
   --text-xs: calc(
     1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
       var(--responsive-unit)
@@ -63,13 +66,7 @@
       var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
-  /* Calculated Spacing */
-  --space-sm: calc(var(--baseline) / 2);
-  --space-md: var(--baseline);
-  --space-lg: calc(var(--baseline) * 2);
-  --space-xl: calc(var(--baseline) * 4);
-  /* Derived Component Colors */
-
+  /* DERIVED COMPONENTS */
   --href-color: var(--accent-1);
   --href-hover-color: var(--accent-2);
   --btn-bg: var(--bg-1);
@@ -84,7 +81,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Customizable values */
+    /* These values change on detecting dark user OS  */
     --bg-1: rgb(0, 0, 0);
     --bg-2: #1a1a1b;
     --accent-1: hotpink;
@@ -104,7 +101,7 @@
   }
 }
 
-/* Elements */
+/* HTML ELEMENTS / TYPOGRAPHY */
 
 body {
   margin: 0;
@@ -138,12 +135,13 @@ h4 {
   margin: var(--space-xl) 0;
 }
 
-h1 {
-  font-weight: 900;
+.title {
+  text-transform: uppercase;
+  letter-spacing: var(--caps-letter-spacing);
 }
 
-h1 .site-title {
-  font-size: var(--text-xxxl);
+h1 {
+  font-weight: 900;
 }
 
 h1,
@@ -259,8 +257,8 @@ code {
   color: var(--text-color);
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   font-family: var(--mono);
   font-size: var(--text-sm);
   margin-top: var(--space-md);
@@ -285,7 +283,9 @@ hr {
   border-radius: var(--radius);
 }
 
-/* Elements */
+/* SYSTEM CLASSES */
+
+/* COMPONENT CLASSES */
 
 .btn {
   cursor: pointer;
@@ -297,9 +297,7 @@ hr {
   font-family: var(--sans);
   border: var(--thickness) solid var(--btn-border);
   border-radius: var(--radius);
-  transition: var(--transition);
   font-weight: bolder;
-  font-family: var(--sans);
   margin-bottom: var(--space-md);
   box-shadow: var(--elevation-1);
   text-transform: uppercase;
@@ -313,6 +311,7 @@ hr {
 
 .btn:hover,
 .btn:focus {
+  transition: var(--transition);
   border: var(--thickness) solid var(--href-hover-color);
   color: var(--btn-hover-color);
   box-shadow: inset var(--elevation-1);
@@ -369,6 +368,33 @@ hr {
   color: var(--grey);
 }
 
+.nav-link {
+  text-decoration: none;
+  margin-right: var(--space-md);
+  color: var(--href-color);
+  transition: var(--transition);
+  font-weight: 700;
+}
+
+.nav-link:last-child {
+  margin-right: 0;
+}
+
+.nav-link:focus {
+  color: var(--href-hover-color);
+}
+
+.nav-link:hover {
+  color: var(--href-hover-color);
+}
+
+.nav-link[data-is-active='true'] {
+  color: var(--href-hover-color);
+  text-decoration: underline;
+}
+
+/* ELEMENT CLASSES */
+
 .fieldset {
   border: none;
   margin: 0;
@@ -422,42 +448,6 @@ hr {
   flex-wrap: wrap;
 }
 
-.navlink {
-  margin-top: var(--space-md);
-  margin-right: var(--space-sm);
-  margin-bottom: var(--space-md);
-  margin-left: 0;
-  font-weight: 700;
-  font-size: var(--text-md);
-}
-
-/* TODO: REMOVE */
-
-.nav-link {
-  text-decoration: none;
-  margin-right: var(--space-md);
-  color: var(--href-color);
-  transition: var(--transition);
-  font-weight: 700;
-}
-
-.nav-link:last-child {
-  margin-right: 0;
-}
-
-.nav-link:focus {
-  color: var(--href-hover-color);
-}
-
-.nav-link:hover {
-  color: var(--href-hover-color);
-}
-
-.nav-link[data-is-active="true"] {
-  color: var(--href-hover-color);
-  text-decoration: underline;
-}
-
 .textarea {
   font-family: var(--sans);
   border-radius: var(--radius);
@@ -472,7 +462,7 @@ hr {
   letter-spacing: var(--paragraph-letter-spacing);
 }
 
-/* Layout Classes  */
+/* LAYOUT CLASSES  */
 
 .padding {
   padding: 0 var(--space-sm);
@@ -524,14 +514,14 @@ hr {
 
 .content-aside-grid {
   display: grid;
-  grid-template-areas: "content aside";
+  grid-template-areas: 'content aside';
   grid-template-columns: 5fr 2fr;
   grid-column-gap: var(--space-md);
 }
 
 .aside-content-grid {
   display: grid;
-  grid-template-areas: "aside content";
+  grid-template-areas: 'aside content';
   grid-template-columns: 2fr 5fr;
   grid-column-gap: var(--space-md);
 }
@@ -553,16 +543,16 @@ hr {
 @media (max-width: 600px) {
   .content-aside-grid {
     grid-template-areas:
-      "content"
-      "aside";
+      'content'
+      'aside';
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
 
   .aside-content-grid {
     grid-template-areas:
-      "aside"
-      "content";
+      'aside'
+      'content';
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
   }
@@ -598,22 +588,6 @@ hr {
     padding: 0 var(--space-sm);
   }
 }
-
-/* Typography */
-
-.site-title {
-  margin: 0;
-  padding: var(--space-md) 0;
-  padding-right: var(--space-md);
-}
-
-.title {
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: var(--caps-letter-spacing);
-}
-
-/* LOCAL */
 
 .scroll-margin-top {
   scroll-margin-top: var(--space-md);

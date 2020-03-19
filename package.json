@@ -1,7 +1,7 @@
 {
   "name": "semantic-styles",
-  "version": "0.0.1",
-  "description": "\"A CSS Design System for Rapid, Responsive UI Prototyping\"",
+  "version": "0.0.2",
+  "description": "\"A Responsive UI Design System for Rapid Prototyping\"",
   "main": "index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

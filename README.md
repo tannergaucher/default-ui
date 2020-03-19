@@ -1,13 +1,14 @@
 # Semantic Styles
 
-## A CSS Design System for Rapid, Responsive UI Prototyping (WIP)
+## A Responsive UI Design System for Rapid Prototyping
 
 ### Featuring:
 
 - Responsive typography and spacing
 - Calculated, adjustable vertical rhythm
-- Responsive light / dark theme with @user-prefers media query (toggle your OS light / dark mode to see)
+- Responsive light / dark theme (toggle your OS light / dark mode to see)
 - Classes that match semantic HTML elements
+- Framework agnostic
 
 ### [View Demo](https://semantic-styles.netlify.com/)
 
@@ -18,22 +19,21 @@
 ### How to use:
 
 1. Install
-2. Import system styles and root variables in the top level of your app
-3. Compose components with system classes and variables + HTML
+2. Import system classes and variables at the top level of your app
+3. Make components from system classes and variables + HTML
 
 ### 1: Install
 
 ```
-npm install semantic styles
+npm install semantic-styles
 ```
 
-### 2: Import the design system as global CSS
+### 2: Import system classes and variables as global CSS
 
 ```jsx
 // Example Gatsby <Layout/>
 
 import React from 'react'
-
 import 'semantic-styles'
 
 export default ({ children }) => {
@@ -49,9 +49,7 @@ export default ({ children }) => {
 
 ```js
 // Example Gatsby <Layout/>
-
 import React from 'react'
-
 import 'semantic-styles'
 
 export default ({ children }) => {
@@ -67,7 +65,14 @@ export default ({ children }) => {
           background: `var(--accent-1)`,
         }}
       >
-        <h4 style={{ color: `var(--accent-2)` }}>Colorful Footer</h4>
+        <h4
+          style={{
+            padding: `var(--space-xl)`,
+            fontFamily: `var(--serif)`,
+          }}
+        >
+          Colorful Footer
+        </h4>
       </footer>
     </>
   )
@@ -78,7 +83,7 @@ export default ({ children }) => {
 
 ## Classes
 
-### Elements
+### Element Classes
 
 - `.aside`
 - `.btn`
@@ -97,7 +102,7 @@ export default ({ children }) => {
 
 ---
 
-### Components
+### Component CLasses
 
 - `.card`
 - `.card-text`
@@ -106,7 +111,7 @@ export default ({ children }) => {
 
 ---
 
-### Layout
+### Layout Classes
 
 - `.center`
 - `.container`
@@ -123,9 +128,8 @@ export default ({ children }) => {
 
 ---
 
-### Typography
+### Typography Classes
 
-- `.site-title`
 - `.text--xs`
 - `.text--sm`
 - `.text--md`
@@ -138,7 +142,7 @@ export default ({ children }) => {
 
 ## Variables
 
-### Colors
+### Color Variables
 
 - `--text-color`
 - `--bg-1`
@@ -150,7 +154,7 @@ export default ({ children }) => {
 
 ---
 
-### Components
+### Component Variables
 
 - `--radius`
 - `--thickness`
@@ -162,14 +166,14 @@ export default ({ children }) => {
 
 ---
 
-### Layout
+### Layout Variables
 
 - `--container`
 - `--max-width`
 
 ---
 
-### Typography
+### Typography Variables
 
 - `--sans`
 - `--serif`
@@ -187,14 +191,14 @@ export default ({ children }) => {
 
 ---
 
-### Scale
+### Scale Variables
 
 - `--responsive-unit`
 - `--baseline`
 
 ---
 
-### Spacing
+### Spacing Variables
 
 - `--space-sm`
 - `--space-md`
