@@ -138,6 +138,7 @@ h4 {
 .title {
   text-transform: uppercase;
   letter-spacing: var(--caps-letter-spacing);
+  font-weight: 900;
 }
 
 h1 {
