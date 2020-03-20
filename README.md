@@ -56,12 +56,12 @@ export default ({ children }) => {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./index.js"></script>
     <title>Semantic Styles</title>
   </head>
   <body>
     HTML & CSS + Parcel Example
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
 ```
