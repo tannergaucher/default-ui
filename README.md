@@ -1,6 +1,6 @@
 # Semantic Styles
 
-## A Responsive Design System for Rapid UI Prototyping
+## Responsive, Themed, UI Design System.
 
 ### Features:
 
