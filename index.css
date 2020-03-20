@@ -1,7 +1,7 @@
 @import url('https://rsms.me/inter/inter.css');
-@import url('https://fonts.googleapis.com/css?family=Fira+Code:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400&display=swap');
 
-/* VARIABLES */
+/* CUSTOMIZABLE VARIABLES */
 
 :root {
   /* COLORS */
@@ -36,7 +36,9 @@
   --max-width: 2000px;
   --responsive-unit: 0.5vw;
   --baseline: calc(1.2rem + var(--responsive-unit));
-  /* THE REST OF THE ROOT VARIABLES ARE CALCULATED / DERIVED. CHANGING THEM "BREAKS" THE SYSTEM */
+
+  /* STATIC VARIABLES */
+
   /* CALCULATED SPACING */
   --space-sm: calc(var(--baseline) / 2);
   --space-md: var(--baseline);
@@ -79,9 +81,10 @@
   --input-border: var(--accent-1);
 }
 
+/* CUSTOMIZABLE DARK MODE VARIABLES */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    /* These values change on detecting dark user OS  */
     --bg-1: rgb(0, 0, 0);
     --bg-2: #1a1a1b;
     --accent-1: hotpink;
@@ -101,7 +104,7 @@
   }
 }
 
-/* HTML ELEMENTS / TYPOGRAPHY */
+/* HTML ELEMENTS AND TYPOGRAPHY */
 
 body {
   margin: 0;
@@ -275,8 +278,6 @@ hr {
   border-radius: var(--radius);
 }
 
-/* SYSTEM CLASSES */
-
 /* COMPONENT CLASSES */
 
 .btn {
@@ -387,6 +388,16 @@ hr {
 
 /* ELEMENT CLASSES */
 
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: var(--space-md);
+  height: 100vh;
+  margin-top: var(--space-xl);
+}
+
 .fieldset {
   border: none;
   margin: 0;
@@ -460,16 +471,16 @@ hr {
   padding: 0 var(--space-sm);
 }
 
+.center {
+  margin: 0 auto;
+}
+
 .container {
   max-width: var(--container);
 }
 
 .none {
   text-decoration: none;
-}
-
-.center {
-  margin: 0 auto;
 }
 
 .content-grid {
@@ -521,16 +532,6 @@ hr {
 
 .content {
   grid-area: content;
-}
-
-.aside {
-  grid-area: aside;
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: var(--space-md);
-  height: 100vh;
-  margin-top: var(--space-xl);
 }
 
 @media (max-width: 600px) {
