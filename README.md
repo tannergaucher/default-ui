@@ -20,7 +20,8 @@
 
 1. Install
 2. Import system classes and variables at the top level of your app
-3. Make components from system classes and variables + HTML
+3. Compose components from system classes and variables + HTML
+4. Customize by overriding system classes and variables with local styles
 
 ### 1: Install
 
@@ -115,31 +116,30 @@ export default ({ children }) => {
 
 ---
 
-## How to Customize
+## 4: How to customize
 
-Embrace the cascade. Create a new CSS file and override system classes and variables with your own custom styles.
+Embrace the cascade.
 
 ```js
 // global system styles
 import 'semantic-styles'
 
-// local system overrides
-import '../styles/customized-classes.css'
-import '../styles/customized-variables.css'
+// local overrides
+import '../styles/local-semantic-styles.css'
 ```
 
 ```css
-/* customized-classes.css */
-.title {
-  color: fuchsia;
-}
-```
+/* local-semantic-styles.css */
 
-```css
-/* customized-variables.css */
+/* Customized system variables */
 :root {
   --accent-1: lime;
   --responsive-unit: 2rem;
+}
+
+/* Customized typography class */
+.title {
+  font-family: var(--mono);
 }
 ```
 
@@ -166,7 +166,7 @@ import '../styles/customized-variables.css'
 
 ---
 
-### Component CLasses
+### Component Classes
 
 - `.card`
 - `.card-text`
