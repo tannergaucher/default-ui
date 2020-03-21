@@ -116,7 +116,7 @@ export default ({ children }) => {
 
 ---
 
-## 4: How to customize
+### 4: How to customize
 
 Embrace the cascade.
 
