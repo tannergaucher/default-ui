@@ -475,7 +475,15 @@ hr {
 }
 
 .container {
-  max-width: var(--container);
+  margin-left: var(--space-xl);
+  margin-right: var(--space-xl);
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .none {
