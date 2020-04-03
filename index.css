@@ -35,8 +35,7 @@
   --container: 850px;
   --max-width: 2000px;
   --responsive-unit: 0.5vw;
-  --baseline: calc(1.2rem + var(--responsive-unit));
-
+  --baseline: calc(0.8rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
@@ -46,25 +45,29 @@
   --space-xl: calc(var(--baseline) * 4);
   /* CALCULATED TYPE SCALE */
   --text-xs: calc(
-    1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
+    var(--baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
       var(--responsive-unit)
   );
-  --text-sm: calc(1rem / var(--text-scale-ratio) + var(--responsive-unit));
-  --text-md: calc(1rem * var(--text-scale-ratio) + var(--responsive-unit));
+  --text-sm: calc(
+    var(--baseline) / var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-md: calc(
+    var(--baseline) * var(--text-scale-ratio) + var(--responsive-unit)
+  );
   --text-lg: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) +
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
       var(--responsive-unit)
   );
   --text-xl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxxl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
