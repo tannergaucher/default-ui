@@ -1,6 +1,6 @@
 {
   "name": "semantic-styles",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "main": "index.css",
   "scripts": {
@@ -16,5 +16,6 @@
     "Dark theme",
     "UI",
     "System"
-  ]
+  ],
+  "dependencies": {}
 }
