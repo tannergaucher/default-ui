@@ -155,25 +155,29 @@ h1 {
 h1,
 .text--xxl {
   font-size: var(--text-xxl);
-  margin: var(--space-lg) 0;
+  margin-block-start: var(--space-lg);
+  margin-block-end: var(--space-lg);
 }
 
 h2,
 .text--xl {
   font-size: var(--text-xl);
-  margin: var(--space-md) 0;
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 h3,
 .text--lg {
   font-size: var(--text-lg);
-  margin: var(--space-md) 0;
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 h4,
 .text--md {
   font-size: var(--text-md);
-  margin: var(--space-md) 0;
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 .text--sm,
