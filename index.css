@@ -29,13 +29,13 @@
   --heading-letter-spacing: 0rem;
   --paragraph-letter-spacing: 0rem;
   --caps-letter-spacing: 0.17rem;
-  --text-scale-ratio: 1.17;
+  --text-scale-ratio: 1.3;
   /* VALUES  */
   --container: 850px;
   --max-width: 2000px;
   --responsive-unit: 0.5vw;
   --space-baseline: calc(1rem + var(--responsive-unit));
-  --text-baseline: calc(0.6rem + var(--responsive-unit));
+  --text-baseline: calc(14px);
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
