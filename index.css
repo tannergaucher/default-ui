@@ -29,7 +29,7 @@
   --heading-letter-spacing: 0rem;
   --paragraph-letter-spacing: 0rem;
   --caps-letter-spacing: 0.17rem;
-  --text-base-size: calc(1rem + var(--responsive-unit));
+  --font-size: calc(var(--baseline) + var(--responsive-unit));
   --text-scale-ratio: 1.17;
   /* VALUES  */
   --container: 850px;
@@ -112,7 +112,7 @@
 body {
   margin: 0;
   font-family: var(--sans);
-  font-size: var(--text-base-size);
+  font-size: var(--font-size);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background: var(--bg-1);
@@ -288,16 +288,13 @@ hr {
   background: var(--bg-1);
   color: var(--btn-color);
   padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-size);
-  font-weight: bolder;
-  font-family: var(--sans);
-  border: var(--thickness) solid var(--btn-border);
-  border-radius: var(--radius);
-  font-weight: bolder;
-  margin-bottom: var(--space-md);
-  box-shadow: var(--elevation-1);
+  font: 900 var(--font-size) var(--sans);
   text-transform: uppercase;
   letter-spacing: var(--heading-letter-spacing);
+  border: var(--thickness) solid var(--btn-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--elevation-1);
   margin-right: var(--space-md);
 }
 
@@ -436,7 +433,6 @@ hr {
   margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
-  font-size: var(--font-size);
   letter-spacing: var(--paragraph-letter-spacing);
   box-shadow: var(--elevation-1);
 }
@@ -462,7 +458,6 @@ hr {
   margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
-  font-size: var(--font-size);
   resize: vertical;
   box-shadow: var(--elevation-1);
   letter-spacing: var(--paragraph-letter-spacing);
