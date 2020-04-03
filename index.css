@@ -29,14 +29,13 @@
   --heading-letter-spacing: 0rem;
   --paragraph-letter-spacing: 0rem;
   --caps-letter-spacing: 0.17rem;
-  --text-base-size: calc(1rem + var(--responsive-unit));
+  --font-size: calc(var(--baseline) + var(--responsive-unit));
   --text-scale-ratio: 1.17;
   /* VALUES  */
   --container: 850px;
   --max-width: 2000px;
-  --responsive-unit: 0.5vw;
-  --baseline: calc(1.2rem + var(--responsive-unit));
-
+  --responsive-unit: 0.6vw;
+  --baseline: calc(0.6rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
@@ -46,25 +45,29 @@
   --space-xl: calc(var(--baseline) * 4);
   /* CALCULATED TYPE SCALE */
   --text-xs: calc(
-    1rem / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
+    var(--baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
       var(--responsive-unit)
   );
-  --text-sm: calc(1rem / var(--text-scale-ratio) + var(--responsive-unit));
-  --text-md: calc(1rem * var(--text-scale-ratio) + var(--responsive-unit));
+  --text-sm: calc(
+    var(--baseline) / var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-md: calc(
+    var(--baseline) * var(--text-scale-ratio) + var(--responsive-unit)
+  );
   --text-lg: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) +
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
       var(--responsive-unit)
   );
   --text-xl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxxl: calc(
-    1rem * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
@@ -109,7 +112,7 @@
 body {
   margin: 0;
   font-family: var(--sans);
-  font-size: var(--text-base-size);
+  font-size: var(--font-size);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   background: var(--bg-1);
@@ -184,11 +187,12 @@ small {
 }
 
 p {
-  margin-bottom: var(--space-md);
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
   font-weight: 500;
   font-size: var(--text-md);
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 ul {
@@ -285,16 +289,13 @@ hr {
   background: var(--bg-1);
   color: var(--btn-color);
   padding: var(--space-sm) var(--space-md);
-  font-size: var(--text-size);
-  font-weight: bolder;
-  font-family: var(--sans);
-  border: var(--thickness) solid var(--btn-border);
-  border-radius: var(--radius);
-  font-weight: bolder;
-  margin-bottom: var(--space-md);
-  box-shadow: var(--elevation-1);
+  font: 900 var(--font-size) var(--sans);
   text-transform: uppercase;
   letter-spacing: var(--heading-letter-spacing);
+  border: var(--thickness) solid var(--btn-border);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--elevation-1);
   margin-right: var(--space-md);
 }
 
@@ -343,7 +344,6 @@ hr {
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .card:hover {
@@ -433,7 +433,6 @@ hr {
   margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
-  font-size: var(--font-size);
   letter-spacing: var(--paragraph-letter-spacing);
   box-shadow: var(--elevation-1);
 }
@@ -459,7 +458,6 @@ hr {
   margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
-  font-size: var(--font-size);
   resize: vertical;
   box-shadow: var(--elevation-1);
   letter-spacing: var(--paragraph-letter-spacing);
@@ -472,11 +470,19 @@ hr {
 }
 
 .center {
-  margin: 0 auto;
+  margin: auto;
 }
 
 .container {
-  max-width: var(--container);
+  margin-left: var(--space-xl);
+  margin-right: var(--space-xl);
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .none {
@@ -568,7 +574,7 @@ hr {
 
 .page {
   margin-top: var(--space-lg);
-  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 @media (max-width: 830px) {
