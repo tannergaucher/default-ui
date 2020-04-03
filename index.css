@@ -33,9 +33,9 @@
   /* VALUES  */
   --container: 850px;
   --max-width: 2000px;
-  --responsive-unit: 0.6vw;
+  --responsive-unit: 0.5vw;
   --space-baseline: calc(1rem + var(--responsive-unit));
-  --text-baseline: calc(0.5rem + var(--responsive-unit));
+  --text-baseline: calc(0.6rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
@@ -290,7 +290,7 @@ hr {
   background: var(--bg-1);
   color: var(--btn-color);
   padding: var(--space-sm) var(--space-md);
-  font: 900 var(--font-size) var(--sans);
+  font: 700 var(--text-md) var(--sans);
   text-transform: uppercase;
   letter-spacing: var(--heading-letter-spacing);
   border: var(--thickness) solid var(--btn-border);
