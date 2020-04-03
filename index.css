@@ -29,45 +29,46 @@
   --heading-letter-spacing: 0rem;
   --paragraph-letter-spacing: 0rem;
   --caps-letter-spacing: 0.17rem;
-  --font-size: calc(var(--baseline) + var(--responsive-unit));
   --text-scale-ratio: 1.17;
   /* VALUES  */
   --container: 850px;
   --max-width: 2000px;
   --responsive-unit: 0.6vw;
-  --baseline: calc(0.6rem + var(--responsive-unit));
+  --space-baseline: calc(1rem + var(--responsive-unit));
+  --text-baseline: calc(0.5rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
-  --space-sm: calc(var(--baseline) / 2);
-  --space-md: var(--baseline);
-  --space-lg: calc(var(--baseline) * 2);
-  --space-xl: calc(var(--baseline) * 4);
+  --space-sm: calc(var(--space-baseline) / 2);
+  --space-md: var(--space-baseline);
+  --space-lg: calc(var(--space-baseline) * 2);
+  --space-xl: calc(var(--space-baseline) * 4);
   /* CALCULATED TYPE SCALE */
+  --font-size: calc(var(--baseline) + var(--responsive-unit));
   --text-xs: calc(
-    var(--baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
+    var(--text-baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
       var(--responsive-unit)
   );
   --text-sm: calc(
-    var(--baseline) / var(--text-scale-ratio) + var(--responsive-unit)
+    var(--text-baseline) / var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-md: calc(
-    var(--baseline) * var(--text-scale-ratio) + var(--responsive-unit)
+    var(--text-baseline) * var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-lg: calc(
-    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
       var(--responsive-unit)
   );
   --text-xl: calc(
-    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxl: calc(
-    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
   );
   --text-xxxl: calc(
-    var(--baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) * var(--text-scale-ratio) *
       var(--text-scale-ratio) + var(--responsive-unit)
   );
