@@ -566,7 +566,7 @@ hr {
 
 .page {
   margin-top: var(--space-lg);
-  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 @media (max-width: 830px) {
