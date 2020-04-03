@@ -34,8 +34,8 @@
   /* VALUES  */
   --container: 850px;
   --max-width: 2000px;
-  --responsive-unit: 0.5vw;
-  --baseline: calc(0.8rem + var(--responsive-unit));
+  --responsive-unit: 0.6vw;
+  --baseline: calc(0.6rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
   /* CALCULATED SPACING */
@@ -187,11 +187,12 @@ small {
 }
 
 p {
-  margin-bottom: var(--space-md);
   line-height: var(--paragraph-line-height);
   letter-spacing: var(--paragraph-letter-spacing);
   font-weight: 500;
   font-size: var(--text-md);
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-md);
 }
 
 ul {
