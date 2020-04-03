@@ -470,7 +470,7 @@ hr {
 }
 
 .center {
-  margin: 0 auto;
+  margin: inherit auto;
 }
 
 .container {
