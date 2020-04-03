@@ -226,7 +226,8 @@ li > a {
 }
 
 br {
-  margin: var(--space-xl) 0;
+  margin-block-start: var(--space-lg);
+  margin-block-end: var(--space-lg);
 }
 
 input,
@@ -281,8 +282,8 @@ pre {
 hr {
   border-color: var(--href-color);
   border-top: var(--thickness) solid var(--href-color);
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  margin-block-start: var(--space-lg);
+  margin-block-end: var(--space-lg);
   box-shadow: var(--elevation-2);
   border-radius: var(--radius);
 }
