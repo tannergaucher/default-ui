@@ -444,7 +444,8 @@ hr {
 }
 
 .input:focus {
-  background-color: var(--bg-2);
+  border-color: var(--accent-2);
+  background-color: var(--bg-1);
 }
 
 .main {
@@ -467,6 +468,11 @@ hr {
   resize: vertical;
   box-shadow: var(--elevation-1);
   letter-spacing: var(--paragraph-letter-spacing);
+}
+
+.textarea:focus {
+  border-color: var(--accent-2);
+  background-color: var(--bg-1);
 }
 
 /* LAYOUT CLASSES  */
