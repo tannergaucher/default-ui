@@ -34,7 +34,7 @@
   --container: 850px;
   --max-width: 2000px;
   --responsive-unit: 0.5vw;
-  --space-baseline: calc(1rem + var(--responsive-unit));
+  --space-baseline: calc(1.3rem + var(--responsive-unit));
   --text-baseline: calc(0.6rem + var(--responsive-unit));
   /* STATIC VARIABLES */
 
@@ -200,7 +200,8 @@ p {
   margin-block-end: var(--space-md);
 }
 
-ul {
+ul,
+ol {
   margin-top: var(--space-md);
   margin-bottom: var(--space-md);
   padding-left: var(--space-md);
@@ -444,7 +445,8 @@ hr {
 }
 
 .input:focus {
-  background-color: var(--bg-2);
+  border-color: var(--accent-2);
+  background-color: var(--bg-1);
 }
 
 .main {
@@ -467,6 +469,11 @@ hr {
   resize: vertical;
   box-shadow: var(--elevation-1);
   letter-spacing: var(--paragraph-letter-spacing);
+}
+
+.textarea:focus {
+  border-color: var(--accent-2);
+  background-color: var(--bg-1);
 }
 
 /* LAYOUT CLASSES  */
