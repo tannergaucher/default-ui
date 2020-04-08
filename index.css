@@ -204,7 +204,7 @@ ul,
 ol {
   margin-top: var(--space-md);
   margin-bottom: var(--space-md);
-  padding-left: var(--space-md);
+  padding-left: var(--space-lg);
 }
 
 li {
