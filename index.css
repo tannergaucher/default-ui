@@ -103,7 +103,6 @@
     --primary-btn-color: var(--accent-1);
     --primary-btn-bg: var(--bg-2);
     --primary-btn-hover-color: var(--bg-1);
-    --input-border: var(--bg-2);
     --code-bg: var(--bg-2);
   }
 }
@@ -204,7 +203,7 @@ ul,
 ol {
   margin-top: var(--space-md);
   margin-bottom: var(--space-md);
-  padding-left: var(--space-lg);
+  padding-left: var(--space-md);
 }
 
 li {
@@ -281,12 +280,22 @@ pre {
 }
 
 hr {
-  border-color: var(--href-color);
-  border-top: var(--thickness) solid var(--href-color);
+  border-color: var(--accent-1);
+  border: calc(var(--thickness) / 2) solid var(--accent-1);
+  background-color: var(--accent-1);
   margin-block-start: var(--space-lg);
   margin-block-end: var(--space-lg);
   box-shadow: var(--elevation-2);
   border-radius: var(--radius);
+}
+
+summary {
+  font-size: var(--text-md);
+  padding: var(--space-md) 0;
+  border-top: var(--thickness) solid var(--accent-1);
+}
+
+details {
 }
 
 /* COMPONENT CLASSES */
@@ -306,6 +315,10 @@ hr {
   margin-right: var(--space-md);
 }
 
+summary {
+  margin: 0;
+}
+
 .btn:last-child {
   margin-right: 0;
 }
@@ -313,7 +326,7 @@ hr {
 .btn:hover,
 .btn:focus {
   transition: var(--transition);
-  border: var(--thickness) solid var(--href-hover-color);
+  border: var(--thickness) solid var(--grey);
   color: var(--btn-hover-color);
   box-shadow: inset var(--elevation-1);
 }
@@ -338,6 +351,7 @@ hr {
   color: var(--primary-btn-hover-color);
   box-shadow: var(--elevation-1);
   background: var(--href-hover-color);
+  border-color: var(--accent-2);
 }
 
 .btn-primary:disabled {
@@ -348,6 +362,7 @@ hr {
 .card {
   background: var(--bg-2);
   box-shadow: var(--elevation-1);
+  border: var(--thickness) solid var(--bg-2);
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
@@ -444,9 +459,13 @@ hr {
   box-shadow: var(--elevation-1);
 }
 
+.input:hover {
+  border-color: var(--grey);
+}
+
 .input:focus {
   border-color: var(--accent-2);
-  background-color: var(--bg-1);
+  box-shadow: var(--elevation-3);
 }
 
 .main {
@@ -471,9 +490,13 @@ hr {
   letter-spacing: var(--paragraph-letter-spacing);
 }
 
+.textarea:hover {
+  border: var(--thickness) solid var(--grey);
+}
+
 .textarea:focus {
   border-color: var(--accent-2);
-  background-color: var(--bg-1);
+  box-shadow: var(--elevation-3);
 }
 
 /* LAYOUT CLASSES  */
