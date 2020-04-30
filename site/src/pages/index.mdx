@@ -292,7 +292,7 @@ export default ({ location, children }) => {
 ```jsx live="true"
 function Navlink({
   text = "Navlink",
-  to = "/components",
+  to = "#",
   // Mocked reach router location object
   location = { pathname: "/" },
 }) {
@@ -302,7 +302,7 @@ function Navlink({
       data-is-active={location.pathname === to}
       to={to}
     >
-      {text}
+      <h4>{text}</h4>
     </Link>
   )
 }
