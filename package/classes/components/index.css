@@ -1,4 +1,4 @@
-@import url('./card/index.css');
-@import url('./card-heading/index.css');
-@import url('./card-text/index.css');
-@import url('./nav-link/index.css');
+@import url('./card-heading.css');
+@import url('./card-text.css');
+@import url('./card.css');
+@import url('./nav-link.css');
