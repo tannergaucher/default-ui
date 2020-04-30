@@ -1,0 +1,5 @@
+.card-text {
+  margin: 0;
+  padding: var(--space-sm);
+  color: var(--grey);
+}
