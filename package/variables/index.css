@@ -1,7 +1,7 @@
-@import url('./colors');
-@import url('./components');
-@import url('./dark-theme');
-@import url('./layout');
-@import url('./scale');
-@import url('./spacing');
-@import url('./typography');
+@import url('./colors/index.css');
+@import url('./components/index.css');
+@import url('./dark-theme/index.css');
+@import url('./layout/index.css');
+@import url('./scale/index.css');
+@import url('./spacing/index.css');
+@import url('./typography/index.css');

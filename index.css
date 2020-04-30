@@ -1,5 +1,5 @@
-@import url('./package/classes');
-@import url('./package/variables');
+@import url('./package/classes/index.css');
+@import url('./package/variables/index.css');
 
 body {
   margin: 0;
