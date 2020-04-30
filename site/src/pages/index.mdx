@@ -1,0 +1,479 @@
+import { Link } from "gatsby"
+
+import { useSiteMetadata } from "../hooks"
+import { Layout, SEO, Image, Card } from "../components"
+
+<!-- LAYOUT -->
+
+export default ({ location, children }) => {
+  const { description, subHeading } = useSiteMetadata()
+  return (
+    <Layout location={location}>
+      <article className="page">
+        <SEO title="Home" />
+        <div className="aside-content-grid">
+          <div className="content padding">
+            <br />
+            <div className="card">
+              <h1 className="card-heading text--xxxl">{description}</h1>
+              <Image />
+              <p className="card-text">{subHeading}</p>
+            </div>
+            <br />
+            {children}
+          </div>
+          <aside className="aside padding">
+            <a className="nav-link" href="#typography">
+              <h3>Typography</h3>
+            </a>
+            <a className="nav-link" href="#colors">
+              <h3>Colors</h3>
+            </a>
+            <a className="nav-link" href="#spacing">
+              <h3>Spacing</h3>
+            </a>
+            <a className="nav-link" href="#components">
+              <h3>Components</h3>
+            </a>
+            <a className="nav-link" href="#layout">
+              <h3>Layout</h3>
+            </a>
+          </aside>
+        </div>
+      </article>
+    </Layout>
+  )
+}
+
+<!-- MDX BODY  -->
+
+---
+
+<h2 className="title scroll-margin-top" id="typography">
+  Typography
+</h2>
+
+```jsx live="true"
+// I'm a live code snippet. Try me out 👨‍💻
+
+<>
+  <h1 className="title text--xxxl">Large Title Heading One</h1>
+  <h1 className="title">Title Heading One</h1>
+  <h1>Heading One</h1>
+  <h2>Heading Two</h2>
+  <h3>Heading Three</h3>
+  <h4>Heading Four</h4>
+  <small>Small</small>
+  <P />
+</>
+```
+
+---
+
+<h2 className="title scroll-margin-top" id="colors">
+  Colors
+</h2>
+
+```jsx live="true"
+<div className="content-grid">
+  <div
+    style={{
+      background: `var(--text-color)`,
+      color: `var(--accent-1)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+    }}
+  >
+    --text-color
+  </div>
+  <div
+    style={{
+      background: `var(--bg-1)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+    }}
+  >
+    --bg-1
+  </div>
+  <div
+    style={{
+      background: `var(--bg-2)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+    }}
+  >
+    --bg-2
+  </div>
+  <div
+    style={{
+      background: `var(--grey)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+    }}
+  >
+    --grey
+  </div>
+  <div
+    style={{
+      background: `var(--accent-1)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+      color: `var(--accent-2)`,
+    }}
+  >
+    --accent-1
+  </div>
+  <div
+    style={{
+      background: `var(--accent-2)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+      color: `var(--accent-1)`,
+    }}
+  >
+    --accent-2
+  </div>
+  <div
+    style={{
+      background: `var(--code-bg)`,
+      padding: `var(--space-lg)`,
+      borderRadius: `var(--radius)`,
+      boxShadow: `var(--elevation-1)`,
+      color: `var(--accent-1)`,
+    }}
+  >
+    --code-bg
+  </div>
+</div>
+```
+
+---
+
+<h2 className="title scroll-margin-top" id="spacing">
+  Spacing
+</h2>
+
+```jsx live="true"
+<div>
+  <div
+    className="card"
+    style={{
+      marginBottom: `var(--space-sm)`,
+      padding: `var(--space-sm)`,
+    }}
+  >
+    --space-sm
+  </div>
+
+  <div
+    className="card"
+    style={{
+      marginBottom: `var(--space-md)`,
+      padding: `var(--space-md) var(--space-sm)`,
+    }}
+  >
+    --space-md
+  </div>
+
+  <div
+    className="card"
+    style={{
+      marginBottom: `var(--space-lg)`,
+      padding: `var(--space-lg) var(--space-sm)`,
+    }}
+  >
+    --space-lg
+  </div>
+
+  <div
+    className="card"
+    style={{
+      marginBottom: `var(--space-xl)`,
+      padding: `var(--space-xl) var(--space-sm)`,
+    }}
+  >
+    --space-xl
+  </div>
+</div>
+```
+
+---
+
+<h2 className="title scroll-margin-top" id="components">
+  Components
+</h2>
+<br />
+<nav className="nav">
+  <a className="nav-link" href="#button">
+    <h3>Button</h3>
+  </a>
+  <a className="nav-link" href="#card">
+    <h3>Card</h3>
+  </a>
+  <a className="nav-link" href="#fieldset">
+    <h3>Fieldset</h3>
+  </a>
+  <a className="nav-link" href="#figure">
+    <h3>Figure</h3>
+  </a>
+  <a className="nav-link" href="#navlink">
+    <h3>Navlink</h3>
+  </a>
+  <a className="nav-link" href="#textarea">
+    <h3>Textarea</h3>
+  </a>
+</nav>
+
+---
+
+<h3 className="scroll-margin-top" id="button">{`<Button/>`}</h3>
+
+```jsx live="true"
+<div>
+  <button className="btn">Button</button>
+  <button className="btn btn-primary">Primary Button</button>
+  <button className="btn" disabled={true}>
+    Button Disabled
+  </button>
+  <button className="btn btn-primary" disabled={true}>
+    Primary Button Disabled
+  </button>
+</div>
+```
+
+---
+
+<h3 className="scroll-margin-top" id="card">{`<Card />`}</h3>
+
+```jsx live="true"
+<div className="card">
+  <h2 className="card-heading">Heading</h2>
+  <Image />
+  <p className="card-text">Text</p>
+</div>
+```
+
+---
+
+<h3 className="scroll-margin-top" id="fieldset">{`<Fieldset />`}</h3>
+
+```jsx live="true"
+<fieldset className="fieldset">
+  <form className="form" action="">
+    <input className="input" type="email" placeholder="Input" />
+    <button className="btn btn-primary" type="submit">
+      Primary Button
+    </button>
+  </form>
+</fieldset>
+```
+
+---
+
+<h3 className="scroll-margin-top" id="figure">{`<Figure />`}</h3>
+
+```jsx live="true"
+<figure className="figure">
+  <Image />
+  <figcaption className="figcaption">Figcaption</figcaption>
+</figure>
+```
+
+---
+
+<h3 className="scroll-margin-top" id="navlink">{`<Navlink />`}</h3>
+
+```jsx live="true"
+function Navlink({
+  text = "Navlink",
+  to = "/components",
+  // Mocked reach router location object
+  location = { pathname: "/" },
+}) {
+  return (
+    <Link
+      className="nav-link"
+      data-is-active={location.pathname === to}
+      to={to}
+    >
+      {text}
+    </Link>
+  )
+}
+```
+
+---
+
+<h3 className="scroll-margin-top" id="textarea">{`<Textarea />`}</h3>
+
+```jsx live="true"
+<form className="form">
+  <textarea className="textarea" />
+  <button className="btn btn-primary">Submit</button>
+</form>
+```
+
+---
+
+<h2 className="title scroll-margin-top" id="layout">
+  Layout
+</h2>
+<br />
+<nav className="nav">
+  <a className="nav-link" href="#app">
+    <h3>App</h3>
+  </a>
+  <a className="nav-link" href="#content-grid">
+    <h3>Content Grid</h3>
+  </a>
+  <a className="nav-link" href="#aside-content-grid">
+    <h3>Aside Content Grid</h3>
+  </a>
+  <a className="nav-link" href="#content-aside-grid">
+    <h3>Content Aside Grid</h3>
+  </a>
+  <a className="nav-link" href="#image-grid">
+    <h3>Image Grid</h3>
+  </a>
+</nav>
+
+---
+
+<h3 id="app" className="scroll-margin-top">{`<App />`}</h3>
+
+```jsx live="true"
+<div>
+  <header
+    className="header padding"
+    style={{
+      background: `var(--accent-2)`,
+    }}
+  >
+    <h4>Header </h4>
+  </header>
+  <main
+    className="main padding"
+    style={{
+      background: `var(--accent-1)`,
+    }}
+  >
+    Main
+  </main>
+  <footer
+    className="footer padding"
+    style={{
+      background: `var(--accent-2)`,
+    }}
+  >
+    <h4 className="site-title">Footer</h4>
+  </footer>
+</div>
+```
+
+---
+
+<h3 id="content-grid" className="scroll-margin-top">{`<ContentGrid />`}</h3>
+
+```jsx live="true"
+<div className="content-grid">
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+  <Card />
+</div>
+```
+
+---
+
+<h3
+  id="aside-content-grid"
+  className="scroll-margin-top"
+>{`<AsideContentGrid />`}</h3>
+
+```jsx live="true"
+<div className="aside-content-grid">
+  <aside
+    className="aside"
+    style={{
+      background: `var(--accent-2)`,
+      color: `var(--accent-1)`,
+      borderRadius: `var(--radius)`,
+    }}
+  >
+    Aside
+  </aside>
+  <div
+    className="content"
+    style={{
+      background: `var(--accent-1)`,
+      color: `var(--accent-2)`,
+      borderRadius: `var(--radius)`,
+    }}
+  >
+    Content
+  </div>
+</div>
+```
+
+---
+
+<h3
+  id="content-aside-grid"
+  className="scroll-margin-top"
+>{`<ContentAsideGrid />`}</h3>
+
+```jsx live="true"
+<div className="content-aside-grid">
+  <div
+    className="content"
+    style={{
+      background: `var(--accent-1)`,
+      color: `var(--accent-2)`,
+      boxShadow: `var(--elevation-2)`,
+      borderRadius: `var(--radius)`,
+    }}
+  >
+    Content
+  </div>
+  <aside
+    className="aside"
+    style={{
+      background: `var(--accent-2)`,
+      boxShadow: `var(--elevation-1)`,
+      borderRadius: `var(--radius)`,
+    }}
+  >
+    Aside
+  </aside>
+</div>
+```
+
+---
+
+<h3 id="image-grid" className="scroll-margin-top">{`<ImageGrid />`}</h3>
+
+```jsx live="true"
+<div className="image-grid only-fullscreen-padding">
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+  <Image />
+</div>
+```
+
+---

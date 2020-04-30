@@ -1,0 +1,117 @@
+import { Link } from "gatsby"
+
+import { useSiteMetadata } from "../hooks"
+import { Layout, SEO, Image, Card } from "../components"
+
+export default ({ location, children }) => {
+  return (
+    <Layout location={location}>
+      <article className="padding page">
+        <SEO title="Home" />
+        <div className="aside-content-grid">
+          <div className="content">{children}</div>
+          <aside className="aside">
+            <a className="nav-link" href="#colors">
+              <h3>Colors</h3>
+            </a>
+            <a className="nav-link" href="#components">
+              <h3>Components</h3>
+            </a>
+            <a className="nav-link" href="#layout">
+              <h3>Layout</h3>
+            </a>
+            <a className="nav-link" href="#typography">
+              <h3>Typography</h3>
+            </a>
+            <a className="nav-link" href="#scale">
+              <h3>Scale</h3>
+            </a>
+          </aside>
+        </div>
+      </article>
+    </Layout>
+  )
+}
+
+---
+
+<h1 className="text--xxxl title">Variables</h1>
+
+---
+
+<h2 className="title scroll-margin-top" id="colors">
+  Colors
+</h2>
+
+- `--text-color`
+- `--bg-1`
+- `--bg-2`
+- `--grey`
+- `--accent-1`
+- `--accent-2`
+- `--code-bg`
+
+---
+
+<h2 className="title scroll-margin-top" id="components">
+  Components
+</h2>
+
+- `--radius`
+- `--thickness`
+- `--elevation-1`
+- `--elevation-2`
+- `--elevation-3`
+- `--transition`
+- `--opacity`
+
+---
+
+<h2 className="title scroll-margin-top" id="layout">
+  Layout
+</h2>
+
+- `--container`
+- `--max-width`
+
+---
+
+<h2 className="title scroll-margin-top" id="typography">
+  Typography
+</h2>
+
+- `--sans`
+- `--serif`
+- `--mono`
+- `--heading-line-height`
+- `--heading-letter-spacing`
+- `--paragraph-letter-spacing`
+- `--caps-letter-spacing`
+- `--text-sm`
+- `--text-md`
+- `--text-lg`
+- `--text-xl`
+- `--text-xxl`
+- `--text-xxxl`
+
+---
+
+<h2 className="title scroll-margin-top" id="scale">
+  Scale
+</h2>
+
+- `--responsive-unit`
+- `--baseline`
+
+---
+
+<h2 className="title scroll-margin-top" id="spacing">
+  Spacing
+</h2>
+
+- `--space-sm`
+- `--space-md`
+- `--space-lg`
+- `--space-xl`
+
+---

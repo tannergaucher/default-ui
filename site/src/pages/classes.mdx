@@ -1,0 +1,103 @@
+import { Link } from "gatsby"
+
+import { useSiteMetadata } from "../hooks"
+import { Layout, SEO, Image, Card } from "../components"
+
+export default ({ location, children }) => {
+  return (
+    <Layout location={location}>
+      <article className="padding page">
+        <SEO title="Home" />
+        <div className="aside-content-grid">
+          <div className="content">{children}</div>
+          <aside className="aside">
+            <a className="nav-link" href="#elements">
+              <h3>Elements</h3>
+            </a>
+            <a className="nav-link" href="#components">
+              <h3>Components</h3>
+            </a>
+            <a className="nav-link" href="#layout">
+              <h3>Layout</h3>
+            </a>
+            <a className="nav-link" href="#typography">
+              <h3>Typography</h3>
+            </a>
+          </aside>
+        </div>
+      </article>
+    </Layout>
+  )
+}
+
+---
+
+<h1 className="text--xxxl title">Classes</h1>
+
+---
+
+<h2 className="title scroll-margin-top" id="elements">
+  Elements
+</h2>
+
+- `.aside`
+- `.btn`
+- `.btn-primary`
+- `.code`
+- `.fieldset`
+- `.figcaption`
+- `.figure`
+- `.footer`
+- `.form`
+- `.header`
+- `.input`
+- `.main`
+- `.nav`
+- `.textarea`
+
+---
+
+<h2 className="title scroll-margin-top" id="components">
+  Components
+</h2>
+
+- `.card`
+- `.card-text`
+- `.card-heading`
+- `.nav-link`
+
+---
+
+<h2 className="title scroll-margin-top" id="layout">
+  Layout
+</h2>
+
+- `.center`
+- `.container`
+- `.content-grid`
+- `.aside-content-grid`
+- `.content-aside-grid`
+- `.image-grid`
+- `.content`
+- `.none`
+- `.padding`
+- `.page`
+- `.only-mobile-padding`
+- `.only-fullscreen-padding`
+
+---
+
+<h2 className="title scroll-margin-top" id="typography">
+  Typography
+</h2>
+
+- `.title`
+- `.text--xs`
+- `.text--sm`
+- `.text--md`
+- `.text--lg`
+- `.text--xl`
+- `.text--xxl`
+- `.text--xxxl`
+
+---
