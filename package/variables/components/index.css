@@ -1,0 +1,21 @@
+:root {
+  --shadow-color: rgba(163, 119, 119, 0.1);
+  --radius: 5px;
+  --thickness: 0.2vw;
+  --elevation-1: 0 4px 12px var(--shadow-color);
+  --elevation-2: 0 8px 16px var(--shadow-color);
+  --elevation-3: 0 16px 32px var(--shadow-color);
+  --opacity: opacity(0.35);
+  --transition: all 0.2s ease 0s;
+  /* DERIVED COMPONENTS */
+  --href-color: var(--accent-1);
+  --href-hover-color: var(--accent-2);
+  --btn-bg: var(--bg-1);
+  --btn-color: var(--text-color);
+  --btn-border: var(--href-color);
+  --btn-hover-color: var(--text-color);
+  --primary-btn-bg: var(--accent-1);
+  --primary-btn-color: var(--bg-1);
+  --primary-btn-hover-color: var(--bg-1);
+  --input-border: var(--accent-1);
+}

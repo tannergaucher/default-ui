@@ -1,0 +1,12 @@
+.card {
+  background: var(--bg-2);
+  box-shadow: var(--elevation-1);
+  border: var(--thickness) solid var(--bg-2);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--elevation-3);
+}
