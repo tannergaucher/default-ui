@@ -1,0 +1,3 @@
+[submodule "semantic-styles-reach-ui"]
+	path = semantic-styles-reach-ui
+	url = https://github.com/tannergaucher/semantic-styles-reach-ui.git
