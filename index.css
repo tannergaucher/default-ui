@@ -305,7 +305,8 @@ details {
   background: var(--bg-1);
   color: var(--btn-color);
   padding: var(--space-sm) var(--space-md);
-  font: 700 var(--text-md) var(--sans);
+  font: var(--text-md) var(--sans);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: var(--heading-letter-spacing);
   border: var(--thickness) solid var(--btn-border);
