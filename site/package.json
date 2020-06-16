@@ -22,7 +22,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.2",
-    "semantic-styles": "0.0.20"
+    "semantic-styles": "0.0.21"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
