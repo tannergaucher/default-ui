@@ -1,6 +1,10 @@
 # Semantic Styles
 
+---
+
 ## A CSS Design System for Rapid, Responsive UI Prototyping
+
+---
 
 ## Features
 
@@ -9,7 +13,11 @@
 - Responsive light / dark theme with @user-prefers media query
 - Classes that match semantic HTML elements
 
+---
+
 ## Classes
+
+---
 
 ### Elements
 
@@ -70,6 +78,8 @@
 ---
 
 ## Variables
+
+---
 
 ### Colors
 

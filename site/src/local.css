@@ -1,5 +1,88 @@
-@import url("https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400&family=Lato:wght@300;400&display=swap");
 
 :root {
-  --sans: "Inter", sans-serif;
+  --serif: "Frank Ruhl Libre";
+  --sans: "Lato";
+  --text-color: #1b1b1b;
+  --bg-1: #fff;
+  --bg-2: #f3f3f3;
+  --grey: #666666;
+  --accent-2: #c16e15;
+  --accent-1: #f28a1b;
+  --warning: #f44336;
+  --success: #28a745;
+  --heading-letter-spacing: 0.2rem;
+  --radius: 0;
+}
+
+body {
+  font-family: var(--sans);
+}
+
+.input,
+.textarea {
+  font-family: var(--sans);
+  border-color: var(--grey);
+  background-color: var(--bg-1);
+  box-shadow: none;
+}
+
+.input:hover,
+.textarea:hover {
+  border-color: var(--accent-1);
+}
+
+/* TODO: Add to semantic-styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-color);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.aside {
+  margin-top: 0;
+}
+
+.btn,
+.title {
+  letter-spacing: var(--caps-letter-spacing);
+}
+
+.btn {
+  box-shadow: none;
+}
+
+.btn-primary {
+  border-color: var(--bg-1);
+}
+
+.card {
+  border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-1: #1a1a1b;
+    --bg-2: rgba(0, 0, 0, 0.4);
+    --text-color: #fff;
+    --shadow-color: var(--bg-2);
+    --href-color: var(--accent-1);
+    --href-hover-color: var(--accent-2);
+    --btn-color: var(--href-color);
+    --btn-hover-color: var(--href-hover-color);
+    --primary-btn-color: var(--accent-1);
+    --primary-btn-hover-color: var(--bg-1);
+    --code-bg: var(--bg-2);
+  }
 }
