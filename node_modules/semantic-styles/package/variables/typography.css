@@ -1,0 +1,43 @@
+:root {
+  --sans: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace;
+  --heading-line-height: 1.3;
+  --paragraph-line-height: 1.7;
+  --heading-letter-spacing: 0rem;
+  --paragraph-letter-spacing: 0rem;
+  --caps-letter-spacing: 0.17rem;
+  --text-scale-ratio: 1.17;
+  /* CALCULATED FONT SIZE */
+  --text-baseline: calc(0.6rem + var(--responsive-unit));
+  --font-size: calc(var(--baseline) + var(--responsive-unit));
+  /* CALCULATED TYPE SCALE */
+  --text-xs: calc(
+    var(--text-baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
+      var(--responsive-unit)
+  );
+  --text-sm: calc(
+    var(--text-baseline) / var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-md: calc(
+    var(--text-baseline) * var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-lg: calc(
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
+      var(--responsive-unit)
+  );
+  --text-xl: calc(
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-xxl: calc(
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
+  );
+  --text-xxxl: calc(
+    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) + var(--responsive-unit)
+  );
+}

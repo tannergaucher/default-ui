@@ -1,0 +1,9 @@
+.aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: var(--space-md);
+  height: 100vh;
+  margin-top: var(--space-xl);
+}
