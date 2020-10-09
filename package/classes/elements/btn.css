@@ -2,7 +2,7 @@
   cursor: pointer;
   background: var(--bg-1);
   color: var(--btn-color);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-xl);
   font-weight: 700;
   font-size: var(--text-md);
   font-family: var(--sans);
@@ -10,8 +10,7 @@
   letter-spacing: var(--heading-letter-spacing);
   border: var(--thickness) solid var(--btn-border);
   border-radius: var(--radius);
-  margin-bottom: var(--space-md);
-  box-shadow: var(--elevation-1);
+  margin-bottom: var(--space-lg);
   margin-right: var(--space-md);
 }
 
@@ -22,9 +21,9 @@
 .btn:hover,
 .btn:focus {
   transition: var(--transition);
-  border: var(--thickness) solid var(--grey);
-  color: var(--btn-hover-color);
-  box-shadow: inset var(--elevation-1);
+  border: var(--thickness) solid var(--accent-2);
+  color: var(--grey);
+  background-color: var(--bg-2);
 }
 
 .btn:disabled {

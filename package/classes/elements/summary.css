@@ -1,0 +1,17 @@
+.summary {
+  font-size: var(--text-md);
+  padding: var(--space-md);
+  border: var(--thickness) solid var(--accent-1);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-lg);
+  cursor: pointer;
+  color: var(--accent-1);
+  font-weight: bold;
+}
+
+.summary:hover,
+.summary:focus {
+  background-color: var(--bg-2);
+  color: var(--grey);
+  border-color: var(--accent-2);
+}

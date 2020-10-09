@@ -1,7 +1,7 @@
 :root {
   --shadow-color: rgba(163, 119, 119, 0.1);
-  --radius: 5px;
-  --thickness: 0.2vw;
+  --radius: 0.25rem;
+  --thickness: 0.25rem;
   --elevation-1: 0 4px 12px var(--shadow-color);
   --elevation-2: 0 8px 16px var(--shadow-color);
   --elevation-3: 0 16px 32px var(--shadow-color);

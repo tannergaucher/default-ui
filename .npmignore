@@ -1,7 +1,14 @@
+
+site
+
 index.html 
+classes.html
+
 local.css
 
 dist 
 .cache 
 
-site
+site 
+
+docs

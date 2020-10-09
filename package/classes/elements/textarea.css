@@ -2,20 +2,16 @@
   font-family: var(--sans);
   border-radius: var(--radius);
   border: var(--thickness) solid var(--input-border);
-  padding: var(--space-sm);
-  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
   background-color: var(--bg-2);
   color: var(--text-color);
-  resize: vertical;
   box-shadow: var(--elevation-1);
   letter-spacing: var(--paragraph-letter-spacing);
+  width: available;
 }
 
-.textarea:hover {
-  border: var(--thickness) solid var(--grey);
-}
-
+.textarea:hover,
 .textarea:focus {
-  border-color: var(--accent-2);
-  box-shadow: var(--elevation-3);
+  border: var(--thickness) solid var(--accent-2);
 }

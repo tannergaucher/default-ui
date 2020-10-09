@@ -2,8 +2,8 @@
   font-family: var(--sans);
   border-radius: var(--radius);
   border: var(--thickness) solid var(--input-border);
-  padding: var(--space-sm);
-  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
   background-color: var(--bg-2);
   color: var(--text-color);
   letter-spacing: var(--paragraph-letter-spacing);
@@ -11,7 +11,7 @@
 }
 
 .input:hover {
-  border-color: var(--grey);
+  border-color: var(--accent-2);
 }
 
 .input:focus {
