@@ -15,11 +15,11 @@ const A = (text, href) => `[${text}](${href})`
 
 // Programmatically document the library source code and generate a README.md file
 
-const READEME_FILENAME = 'readme.md'
+const README_FILENAME = 'readme.md'
 
 // Header
 fs.appendFile(
-  READEME_FILENAME,
+  README_FILENAME,
   String.prototype.concat(H1(`Semantic Styles`), Br, Br),
   function (err) {
     if (err) throw err
@@ -27,7 +27,7 @@ fs.appendFile(
 )
 
 fs.appendFile(
-  READEME_FILENAME,
+  README_FILENAME,
   String.prototype.concat(H2(`Responsive, themed, UI design system`), Br, Br),
   function (err) {
     if (err) throw err
@@ -35,7 +35,7 @@ fs.appendFile(
 )
 
 fs.appendFile(
-  READEME_FILENAME,
+  README_FILENAME,
   String.prototype.concat(H3(`Classes`), Br, Br),
   function (err) {
     if (err) throw err
@@ -48,7 +48,7 @@ fs.readdir(components, (err, files) => {
   const elementClasses = []
 
   fs.appendFile(
-    READEME_FILENAME,
+    README_FILENAME,
     String.prototype.concat(H4(`Layout`), Br, Br),
     function (err) {
       if (err) throw err
@@ -65,7 +65,7 @@ fs.readdir(components, (err, files) => {
   })
 
   elementClasses.forEach((elementClass) => {
-    fs.appendFile(READEME_FILENAME, `- .${elementClass}\r\n`, function (err) {
+    fs.appendFile(README_FILENAME, `- .${elementClass}\r\n`, function (err) {
       if (err) throw err
     })
   })
@@ -75,7 +75,7 @@ fs.readdir(layout, (err, files) => {
   const elementClasses = []
 
   fs.appendFile(
-    READEME_FILENAME,
+    README_FILENAME,
     String.prototype.concat(H4(`Layout`), Br, Br),
     function (err) {
       if (err) throw err
@@ -92,7 +92,7 @@ fs.readdir(layout, (err, files) => {
   })
 
   elementClasses.forEach((elementClass) => {
-    fs.appendFile(READEME_FILENAME, `- .${elementClass}\r\n`, function (err) {
+    fs.appendFile(README_FILENAME, `- .${elementClass}\r\n`, function (err) {
       if (err) throw err
     })
   })
@@ -102,7 +102,7 @@ fs.readdir(elements, (err, files) => {
   const elementClasses = []
 
   fs.appendFile(
-    READEME_FILENAME,
+    README_FILENAME,
     String.prototype.concat(H4(`Layout`), Br, Br),
     function (err) {
       if (err) throw err
@@ -119,7 +119,7 @@ fs.readdir(elements, (err, files) => {
   })
 
   elementClasses.forEach((elementClass) => {
-    fs.appendFile(READEME_FILENAME, `- .${elementClass}\r\n`, function (err) {
+    fs.appendFile(README_FILENAME, `- .${elementClass}\r\n`, function (err) {
       if (err) throw err
     })
   })
@@ -129,7 +129,7 @@ fs.readdir(layout, (err, files) => {
   const elementClasses = []
 
   fs.appendFile(
-    READEME_FILENAME,
+    README_FILENAME,
     String.prototype.concat(H4(`Layout`), Br, Br),
     function (err) {
       if (err) throw err
@@ -146,7 +146,7 @@ fs.readdir(layout, (err, files) => {
   })
 
   elementClasses.forEach((elementClass) => {
-    fs.appendFile(READEME_FILENAME, `- .${elementClass}\r\n`, function (err) {
+    fs.appendFile(README_FILENAME, `- .${elementClass}\r\n`, function (err) {
       if (err) throw err
     })
   })
