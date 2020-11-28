@@ -1,0 +1,5 @@
+.pre {
+  font-family: var(--mono);
+  background: var(--code-bg);
+  box-shadow: var(--elevation-1);
+}

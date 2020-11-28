@@ -1,0 +1,6 @@
+.summary {
+  font-size: var(--text-md);
+  padding: var(--space-md) 0;
+  border-top: var(--thickness) solid var(--accent-1);
+  margin: 0;
+}

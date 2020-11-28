@@ -1,0 +1,15 @@
+.blockquote {
+  background: var(--bg-2);
+  padding: var(--space-md);
+  border-left: 0.5rem solid var(--href-color);
+  box-shadow: var(--elevation-1);
+  border-radius: var(--radius);
+  letter-spacing: var(--paragraph-letter-spacing);
+  line-height: var(--paragraph-line-height);
+  margin: var(--space-lg) 0;
+}
+
+.blockquote > p {
+  margin: 0;
+  font-style: italic;
+}

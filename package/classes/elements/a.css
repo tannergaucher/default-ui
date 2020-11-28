@@ -1,0 +1,7 @@
+.a {
+  color: var(--href-color);
+}
+
+.a:hover {
+  color: var(--href-hover-color);
+}
