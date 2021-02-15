@@ -108,3 +108,14 @@ li > p {
 li > a {
   word-break: break-all;
 }
+
+a,
+.link {
+  text-decoration: none;
+  color: var(--href-color);
+}
+
+a:hover,
+.link:hover {
+  color: var(--href-hover-color);
+}
