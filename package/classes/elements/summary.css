@@ -1,6 +1,16 @@
 .summary {
-  font-size: var(--text-md);
-  padding: var(--space-md) 0;
-  border-top: var(--thickness) solid var(--accent-1);
-  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: bold;
+  padding: var(--space-md);
+  color: var(--href-color);
+}
+
+.summary:focus {
+  color: var(--href-hover-color);
+  border-color: var(--href-hover-color);
+}
+
+.summary:hover {
+  color: var(--href-hover-color);
+  border-color: var(--href-hover-color);
 }

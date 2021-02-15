@@ -1,3 +1,0 @@
-- Add /docs to repo
-- Deploy example site from docs
-- Change package dirname to system-styles
