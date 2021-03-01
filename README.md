@@ -136,11 +136,6 @@ import '../styles/local-semantic-styles.css'
   --accent-1: lime;
   --responsive-unit: 2rem;
 }
-
-/* Customized typography class */
-.title {
-  font-family: var(--mono);
-}
 ```
 
 ---
