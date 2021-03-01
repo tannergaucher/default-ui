@@ -10,3 +10,10 @@
 .card:hover {
   box-shadow: var(--elevation-3);
 }
+
+.card img {
+  max-width: 100%;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
