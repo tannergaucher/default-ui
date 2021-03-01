@@ -5,5 +5,4 @@
   position: sticky;
   top: var(--space-md);
   height: 100vh;
-  margin-top: var(--space-xl);
 }

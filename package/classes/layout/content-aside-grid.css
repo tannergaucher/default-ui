@@ -1,7 +1,7 @@
 .content-aside-grid {
   display: grid;
   grid-template-areas: 'content aside';
-  grid-template-columns: 5fr 2fr;
+  grid-template-columns: 1fr auto;
   grid-column-gap: var(--space-md);
 }
 
@@ -15,7 +15,6 @@
   }
 
   .aside {
-    margin-top: var(--space-md);
     height: 100%;
     position: initial;
   }
