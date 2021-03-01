@@ -33,4 +33,5 @@
   color: var(--grey);
   opacity: var(--opacity);
   filter: var(--opacity);
+  cursor: not-allowed;
 }
