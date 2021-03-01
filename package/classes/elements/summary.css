@@ -3,6 +3,8 @@
   font-weight: bold;
   padding: var(--space-md);
   color: var(--href-color);
+  background-color: var(--bg-2);
+  cursor: pointer;
 }
 
 .summary:focus {
@@ -13,4 +15,5 @@
 .summary:hover {
   color: var(--href-hover-color);
   border-color: var(--href-hover-color);
+  background-color: var(--bg-2);
 }
