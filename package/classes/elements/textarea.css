@@ -13,7 +13,7 @@
 }
 
 .textarea:hover {
-  border: var(--thickness) solid var(--grey);
+  border-color: var(--href-hover-color);
 }
 
 .textarea:focus {
