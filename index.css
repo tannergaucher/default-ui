@@ -116,3 +116,9 @@ a:focus {
 a:disabled {
   cursor: not-allowed;
 }
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: var(--caps-letter-spacing);
+  font-weight: 900;
+}
