@@ -103,13 +103,16 @@ li > a {
   word-break: break-all;
 }
 
-a,
-.link {
+a {
   text-decoration: none;
   color: var(--href-color);
 }
 
 a:hover,
-.link:hover {
+a:focus {
   color: var(--href-hover-color);
+}
+
+a:disabled {
+  cursor: not-allowed;
 }
