@@ -11,11 +11,12 @@
   box-shadow: var(--elevation-1);
 }
 
-.input:hover {
+.input:hover,
+.input:focus {
   border-color: var(--href-hover-color);
+  box-shadow: var(--elevation-3);
 }
 
 .input:focus {
-  border-color: var(--accent-2);
   box-shadow: var(--elevation-3);
 }
