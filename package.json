@@ -16,5 +16,6 @@
     "Dark theme",
     "UI",
     "System"
-  ]
+  ],
+  "dependencies": {}
 }

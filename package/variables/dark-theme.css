@@ -11,8 +11,8 @@
     --href-hover-color: var(--accent-2);
     --btn-color: var(--href-color);
     --btn-hover-color: var(--href-hover-color);
-    --primary-btn-color: var(--accent-1);
-    --primary-btn-bg: var(--bg-2);
+    --primary-btn-bg: var(--accent-1);
+    --primary-btn-color: var(--bg-1);
     --primary-btn-hover-color: var(--bg-1);
     --code-bg: var(--bg-2);
   }
