@@ -15,6 +15,7 @@
 
 .btn-primary:disabled {
   background: var(--grey);
+  border-color: var(--grey);
   color: var(--bg-1);
   cursor: not-allowed;
 }
