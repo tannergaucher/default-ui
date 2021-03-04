@@ -2,7 +2,6 @@
   font-family: var(--mono);
   color: white;
   padding: var(--space-sm);
-  margin: var(--space-lg) 0;
 }
 
 code[class*='language-'],
