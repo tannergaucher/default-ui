@@ -5,15 +5,13 @@
   color: var(--href-color);
   background-color: var(--bg-2);
   cursor: pointer;
+  transition: var(--transition);
 }
 
+.summary:focus,
 .summary:focus {
   color: var(--href-hover-color);
   border-color: var(--href-hover-color);
-}
-
-.summary:hover {
-  color: var(--href-hover-color);
-  border-color: var(--href-hover-color);
+  transition: var(--transition);
   background-color: var(--bg-2);
 }

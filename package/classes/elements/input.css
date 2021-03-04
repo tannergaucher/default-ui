@@ -9,14 +9,12 @@
   color: var(--text-color);
   letter-spacing: var(--paragraph-letter-spacing);
   box-shadow: var(--elevation-1);
+  transition: var(--transition);
 }
 
 .input:hover,
 .input:focus {
   border-color: var(--href-hover-color);
   box-shadow: var(--elevation-3);
-}
-
-.input:focus {
-  box-shadow: var(--elevation-3);
+  transition: var(--transition);
 }
