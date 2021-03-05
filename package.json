@@ -4,7 +4,9 @@
   "description": "\"Responsive, Themed, UI Design System.\"",
   "main": "index.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx parcel example.html",
+    "build": "npx parcel build example.html"
   },
   "author": " <tannergaucher@gmail.com>",
   "license": "MIT",
@@ -17,5 +19,8 @@
     "UI",
     "System"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
 }
