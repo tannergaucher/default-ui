@@ -5,8 +5,8 @@
   "main": "index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel example.html",
-    "build": "npx parcel build example.html"
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
   },
   "author": " <tannergaucher@gmail.com>",
   "license": "MIT",
