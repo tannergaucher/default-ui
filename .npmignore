@@ -4,5 +4,7 @@ docs-site.html
 dist 
 
 .cache 
+.prettierrc
 
 docs
+example-themes
