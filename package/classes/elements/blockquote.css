@@ -7,9 +7,18 @@
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   margin: var(--space-lg) 0;
+  width: fit-content;
 }
 
 .blockquote > p {
   margin: 0;
   font-style: italic;
+}
+
+.blockquote > h1,
+h2,
+h3,
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
