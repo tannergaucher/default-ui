@@ -1,0 +1,2 @@
+/* relative import to this directory to override user prefers media query light / dark mode toggle with only dark mode  */
+@import url('../variables/dark-theme.css');
