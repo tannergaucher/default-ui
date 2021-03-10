@@ -1,7 +1,7 @@
 @import url('./colors.css');
 @import url('./components.css');
-@import url('./dark-theme.css');
 @import url('./layout.css');
 @import url('./scale.css');
 @import url('./spacing.css');
 @import url('./typography.css');
+@import url('./dark-theme.css') (prefers-color-scheme: dark);
