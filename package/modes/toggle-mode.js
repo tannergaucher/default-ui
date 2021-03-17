@@ -67,9 +67,9 @@ async function toggleMode() {
   }
 }
 
-toggleMode()
+export default toggleMode()
 
-function setDarkTheme() {
+export function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -95,7 +95,7 @@ function setDarkTheme() {
   localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
 }
 
-function setLightTheme() {
+export function setLightTheme() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
