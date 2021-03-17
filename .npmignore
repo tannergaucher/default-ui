@@ -6,3 +6,6 @@ dist
 .netlify
 
 docs
+
+get-theme-from-params.js
+themes
