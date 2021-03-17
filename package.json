@@ -1,6 +1,5 @@
 {
   "name": "semantic-styles",
-  "version": "0.0.37",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "main": "index.css",
   "scripts": {
