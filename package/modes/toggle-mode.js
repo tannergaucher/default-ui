@@ -1,6 +1,6 @@
 const LOCAL_STORAGE_KEY = 'ss-theme-preference'
 
-async function toggleMode() {
+export function toggleMode() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (!toggleModeBtn) return
