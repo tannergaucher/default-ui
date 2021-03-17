@@ -1,7 +1,9 @@
-const LOCAL_STORAGE_KEY = 'ss-site'
+const LOCAL_STORAGE_KEY = 'ss-theme-preference'
 
 async function toggleMode() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
+  if (!toggleModeBtn) return
 
   // Check user preferred setting first to display btn text state correctly
   const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
