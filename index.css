@@ -1,5 +1,6 @@
 @import url('./package/classes/index.css');
 @import url('./package/variables/index.css');
+@import url('./package/modes/dark.css') (prefers-color-scheme: dark);
 
 body {
   margin: 0;

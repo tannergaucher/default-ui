@@ -1,9 +1,20 @@
 :root {
-  --text-color: black;
-  --bg-1: #fafafaee;
-  --bg-2: white;
-  --grey: #666666;
+  /*  */
+  --bg-1-light: #fafafaee;
+  --bg-2-light: white;
+  --text-color-light: black;
+  --grey-light: #666666;
+  --bg-1-dark: rgb(0, 0, 0);
+  --bg-2-dark: #1a1a1b;
+  --text-color-dark: white;
+  --grey-dark: #fafafa9f;
+  /*  */
   --accent-1: #01668b;
   --accent-2: #d93ca2;
   --code-bg: #28272c;
+  /*  */
+  --text-color: var(--text-color-light);
+  --grey: var(--grey-light);
+  --bg-1: var(--bg-1-light);
+  --bg-2: var(--bg-2-light);
 }
