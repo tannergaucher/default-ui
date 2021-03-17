@@ -1,6 +1,12 @@
 const LOCAL_STORAGE_KEY = 'ss-theme-preference'
 
-export function toggleMode() {
+getMode()
+toggleMode()
+watchMode()
+
+export function getMode() {
+  let myMode = ''
+
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (!toggleModeBtn) return
@@ -14,43 +20,34 @@ export function toggleMode() {
 
   if (initPrefersDark) {
     toggleModeBtn.innerHTML = 'LIGHT'
+    myMode = 'DARK'
   }
 
   if (initPrefersLight) {
     toggleModeBtn.innerHTML = 'DARK'
+    myMode = 'LIGHT'
   }
 
-  // Check persisted preference in local storage and override user prefers
+  // Also check persisted preference
   const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
 
   if (persistedPreference === 'DARK') {
     setDarkTheme()
+    myMode = 'DARK'
   }
 
   if (persistedPreference === 'LIGHT') {
     setLightTheme()
+    myMode = 'LIGHT'
   }
 
-  // Also listen for changes to user prefers media query
-  window
-    .matchMedia('(prefers-color-scheme:  dark)')
-    .addEventListener('change', (e) => {
-      console.log(`e`, e)
+  return myMode
+}
 
-      if (e.matches) {
-        setDarkTheme()
-      }
-    })
+export function toggleMode() {
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
-  window
-    .matchMedia('(prefers-color-scheme:  light)')
-    .addEventListener('change', (e) => {
-      console.log(`e`, e)
-
-      if (e.matches) {
-        setLightTheme()
-      }
-    })
+  if (!toggleModeBtn) return
 
   toggleModeBtn.addEventListener('click', handleToggle)
 
@@ -67,7 +64,7 @@ export function toggleMode() {
   }
 }
 
-export default toggleMode()
+export default toggleMode
 
 export function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
@@ -118,4 +115,31 @@ export function setLightTheme() {
 
   toggleModeBtn.innerHTML = 'DARK'
   localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
+}
+
+function watchMode() {
+  // Also listen for changes to user prefers media query
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
+  if (!toggleModeBtn) return
+
+  window
+    .matchMedia('(prefers-color-scheme:  dark)')
+    .addEventListener('change', (e) => {
+      console.log(`e`, e)
+
+      if (e.matches) {
+        setDarkTheme()
+      }
+    })
+
+  window
+    .matchMedia('(prefers-color-scheme:  light)')
+    .addEventListener('change', (e) => {
+      console.log(`e`, e)
+
+      if (e.matches) {
+        setLightTheme()
+      }
+    })
 }
