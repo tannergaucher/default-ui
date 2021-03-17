@@ -118,6 +118,8 @@ export function setLightTheme() {
 }
 
 export function watchMode() {
+  let mode = ''
+
   // Also listen for changes to user prefers media query
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
@@ -126,9 +128,8 @@ export function watchMode() {
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
-      console.log(`e`, e)
-
       if (e.matches) {
+        mode = 'DARK'
         setDarkTheme()
       }
     })
@@ -139,7 +140,10 @@ export function watchMode() {
       console.log(`e`, e)
 
       if (e.matches) {
+        mode = 'LIGHT'
         setLightTheme()
       }
     })
+
+  return mode
 }
