@@ -117,7 +117,7 @@ export function setLightTheme() {
   localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
 }
 
-function watchMode() {
+export function watchMode() {
   // Also listen for changes to user prefers media query
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
