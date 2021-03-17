@@ -19,7 +19,9 @@
     "UI",
     "System"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "regenerator-runtime": "^0.13.7"
+  },
   "devDependencies": {
     "cssnano": "^4.1.10"
   }

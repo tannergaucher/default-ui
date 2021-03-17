@@ -1,5 +1,4 @@
 .details {
-  /* border: var(--thickness) solid var(--accent-1); */
   border-radius: var(--radius);
   margin-bottom: var(--space-md);
   color: var(--text-color);
