@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Semantic Styles</title>
-  <!-- IMPORT PACKAGE -->
+  <meta name="description" content="Responsive, themed, framework agnostic UI design system">
+  <!--PACKAGE IMPORT-->
   <link rel="stylesheet" type="text/css" href="../index.css" />
 </head>
 
@@ -30,7 +31,6 @@
     <h4>Heading Four</h4>
     <p>Paragraph</p>
     <p style="font-size: var(--text-sm);">Small</p>
-    <!-- <p style="font-size: var(--text-xs);">Extra small</p> -->
     <br />
     <ul>
       <li>One</li>
@@ -42,10 +42,9 @@
       <li>Two</li>
       <li>Three</li>
     </ol>
-
     <blockquote class="blockquote" href="http://foo.com">
       <q>
-        The universe emerged from simple rules....
+        The universe emerged from simple rules...
       </q>
     </blockquote>
     <hr class="hr" />
@@ -94,7 +93,7 @@
     </section>
     <hr class="hr" />
     <div class="content-grid">
-      <a href="/#card-1">
+      <a href="/">
         <div class="card">
           <img src="https://source.unsplash.com/random" alt="random">
           <h3 class="card-heading">Card Heading</h3>
@@ -195,10 +194,9 @@
     <br />
   </footer>
   <button class="btn btn-primary toggle-mode-btn"
-    style="position: sticky; bottom: var(--space-md); float: right;">LIGHT</button>
-  <script src="./get-theme-from-params.js"></script>
+    style="position: sticky; bottom: var(--space-md); float: right;"></button>
+  <script src="./themes/get-theme-from-params.js"></script>
   <script src="../package/modes/toggle-mode.js"></script>
-
 
 </body>
 

@@ -1,5 +1,7 @@
 import 'regenerator-runtime/runtime'
 
+getThemeFromParams()
+
 async function getThemeFromParams() {
   const queryString = window.location.search
   const params = new URLSearchParams(queryString)
@@ -7,17 +9,28 @@ async function getThemeFromParams() {
 
   let dynamicTheme
 
+  console.log(`dynamicTheme`, dynamicTheme)
+
   if (themeFromParam === `uniswap`) {
-    dynamicTheme = await import('./themes/uniswap')
+    dynamicTheme = await import('./uniswap')
   }
 
   if (themeFromParam === `consensys`) {
-    dynamicTheme = await import('./themes/consensys')
+    dynamicTheme = await import('./consensys')
   }
 
   if (themeFromParam === `spotify`) {
-    dynamicTheme = await import('./themes/spotify')
+    dynamicTheme = await import('./spotify')
   }
+
+  if (themeFromParam === `coinbase`) {
+    dynamicTheme = await import('./coinbase')
+
+    console.log(`dynamicTheme`, dynamicTheme)
+  }
+
+  console.log(`dynamicTheme`, dynamicTheme)
+  console.log(`themeFromParam`, themeFromParam)
 
   if (dynamicTheme && dynamicTheme.imgSrc) {
     const images = document.querySelectorAll('img')
@@ -32,9 +45,9 @@ async function getThemeFromParams() {
     )
   }
 
+  document.title = `${document.title} X ${dynamicTheme.title}`
+
   document.querySelectorAll('a').forEach((anchor) => {
     anchor.href = anchor.href + window.location.search
   })
 }
-
-getThemeFromParams()
