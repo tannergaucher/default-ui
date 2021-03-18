@@ -25,8 +25,6 @@ async function getThemeFromParams() {
 
   if (themeFromParam === `coinbase`) {
     dynamicTheme = await import('./coinbase')
-
-    console.log(`dynamicTheme`, dynamicTheme)
   }
 
   if (dynamicTheme && dynamicTheme.imgSrc) {
