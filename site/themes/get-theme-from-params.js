@@ -7,9 +7,9 @@ async function getThemeFromParams() {
   const params = new URLSearchParams(queryString)
   const themeFromParam = params.get('theme')
 
-  let dynamicTheme
+  if (!themeFromParam) return
 
-  console.log(`dynamicTheme`, dynamicTheme)
+  let dynamicTheme
 
   if (themeFromParam === `uniswap`) {
     dynamicTheme = await import('./uniswap')
@@ -29,9 +29,6 @@ async function getThemeFromParams() {
     console.log(`dynamicTheme`, dynamicTheme)
   }
 
-  console.log(`dynamicTheme`, dynamicTheme)
-  console.log(`themeFromParam`, themeFromParam)
-
   if (dynamicTheme && dynamicTheme.imgSrc) {
     const images = document.querySelectorAll('img')
     images.forEach((image) => (image.src = dynamicTheme.imgSrc))
@@ -43,9 +40,9 @@ async function getThemeFromParams() {
       (title) =>
         (title.innerHTML = `${title.innerHTML} X ${dynamicTheme.title}`)
     )
-  }
 
-  document.title = `${document.title} X ${dynamicTheme.title}`
+    document.title = `${document.title} X ${dynamicTheme.title}`
+  }
 
   document.querySelectorAll('a').forEach((anchor) => {
     anchor.href = anchor.href + window.location.search
