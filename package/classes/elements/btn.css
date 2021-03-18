@@ -7,7 +7,7 @@
   font-size: var(--text-md);
   font-family: var(--sans);
   text-transform: uppercase;
-  letter-spacing: var(--heading-letter-spacing);
+  letter-spacing: var(--caps-letter-spacing);
   border: var(--thickness) solid var(--btn-border);
   border-radius: var(--radius);
   margin-bottom: var(--space-md);
