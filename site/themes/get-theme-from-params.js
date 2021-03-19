@@ -27,6 +27,10 @@ async function getThemeFromParams() {
     dynamicTheme = await import('./coinbase')
   }
 
+  if (themeFromParam === `amazon`) {
+    dynamicTheme = await import('./amazon')
+  }
+
   if (dynamicTheme && dynamicTheme.imgSrc) {
     const images = document.querySelectorAll('img')
     images.forEach((image) => (image.src = dynamicTheme.imgSrc))
