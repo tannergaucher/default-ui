@@ -1,0 +1,22 @@
+:root {
+  --serif: 'Apple New York Serif';
+}
+
+@font-face {
+  font-family: 'Apple New York Serif';
+  src: url('./fonts/NewYorkMedium-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Apple New York Serif';
+  src: url('./fonts/NewYorkMedium-Bold.otf');
+  font-weight: bold;
+}
+
+body {
+  font-family: var(--serif);
+}
+
+.btn {
+  font-family: var(--serif);
+}

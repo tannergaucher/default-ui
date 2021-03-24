@@ -33,6 +33,10 @@ async function getThemeFromParams() {
     dynamicTheme = await import('./amazon')
   }
 
+  if (themeFromParam === `apple`) {
+    dynamicTheme = await import('./apple')
+  }
+
   // also need to set persisted dynamic theme
   const persistedDynamicTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
 
