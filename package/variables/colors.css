@@ -1,20 +1,36 @@
 :root {
   /*  */
   --bg-1-light: #fafafaee;
-  --bg-2-light: white;
-  --text-color-light: black;
-  --grey-light: #666666;
   --bg-1-dark: rgb(0, 0, 0);
+  --bg-2-light: white;
   --bg-2-dark: #1a1a1b;
+  --text-color-light: black;
   --text-color-dark: white;
+  --grey-light: #666666;
   --grey-dark: #fafafa9f;
-  /*  */
-  --accent-1: #01668b;
-  --accent-2: #d93ca2;
+  --accent-1-light: black;
+  --accent-1-dark: white;
+  --accent-2-light: grey;
+  --accent-2-dark: grey;
+
+  /* TODO */
   --code-bg: #28272c;
-  /*  */
+  /* default to light theme */
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
   --bg-1: var(--bg-1-light);
   --bg-2: var(--bg-2-light);
+  --accent-1: var(--accent-1-light);
+  --accent-2: var(--accent-2-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--text-color-dark);
+    --grey: var(--grey-dark);
+    --bg-1: var(--bg-1-dark);
+    --bg-2: var(--bg-2-dark);
+    --accent-1: var(--accent-1-dark);
+    --accent-2: var(--accent-2-dark);
+  }
 }

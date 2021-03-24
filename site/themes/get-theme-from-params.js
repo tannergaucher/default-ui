@@ -1,4 +1,6 @@
 import 'regenerator-runtime/runtime'
+import { LOCAL_STORAGE_KEY } from '../../package/utils/constants'
+import { setDarkTheme, setLightTheme } from '../../package/modes/set-theme'
 
 getThemeFromParams()
 
@@ -29,6 +31,17 @@ async function getThemeFromParams() {
 
   if (themeFromParam === `amazon`) {
     dynamicTheme = await import('./amazon')
+  }
+
+  // also need to set persisted dynamic theme
+  const persistedDynamicTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+  if (persistedDynamicTheme === 'DARK') {
+    setDarkTheme()
+  }
+
+  if (persistedDynamicTheme === 'LIGHT') {
+    setLightTheme()
   }
 
   if (dynamicTheme && dynamicTheme.imgSrc) {

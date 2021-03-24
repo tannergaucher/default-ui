@@ -1,4 +1,6 @@
 :root {
-  --accent-1: #1db954;
-  --accent-2: #1db954b1;
+  --accent-1-light: #1db954;
+  --accent-2-light: #1db954b1;
+  --accent-1-dark: #1db954;
+  --accent-2-dark: #1db954b1;
 }

@@ -1,8 +1,9 @@
 :root {
-  --accent-1: #ff007a;
-  --accent-2: hsla(331, 100%, 50%, 0.582);
+  --accent-1-light: #ff007a;
+  --accent-2-light: hsla(331, 100%, 50%, 0.582);
+  --accent-1-dark: #ff007a;
+  --accent-2-dark: hsla(331, 100%, 50%, 0.582);
   --sans: 'GT Haptik';
-  --featured-img-src: './Card.png';
 }
 
 @font-face {
