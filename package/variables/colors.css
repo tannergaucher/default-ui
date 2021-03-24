@@ -18,6 +18,7 @@
   /* default to light theme */
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
+
   --bg-1: var(--bg-1-light);
   --bg-2: var(--bg-2-light);
   --accent-1: var(--accent-1-light);
