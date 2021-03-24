@@ -1,6 +1,6 @@
 {
   "name": "semantic-styles",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "main": "index.css",
   "scripts": {
@@ -19,9 +19,7 @@
     "UI",
     "System"
   ],
-  "dependencies": {
-    "regenerator-runtime": "^0.13.7"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cssnano": "^4.1.10"
   }
