@@ -1,8 +1,6 @@
 import { LOCAL_STORAGE_KEY } from '../utils/constants'
 
 export function setDarkTheme() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
-
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -29,13 +27,16 @@ export function setDarkTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Dark)
   document.documentElement.style.setProperty('--accent-2', accent2Dark)
 
-  toggleModeBtn.innerHTML = 'LIGHT'
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
+  if (toggleModeBtn) {
+    toggleModeBtn.innerHTML = 'LIGHT'
+  }
+
   localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
 }
 
 export function setLightTheme() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
-
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
@@ -62,6 +63,11 @@ export function setLightTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Light)
   document.documentElement.style.setProperty('--accent-2', accent2Light)
 
-  toggleModeBtn.innerHTML = 'DARK'
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
+  if (toggleModeBtn) {
+    toggleModeBtn.innerHTML = 'DARK'
+  }
+
   localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
 }
