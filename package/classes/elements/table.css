@@ -1,12 +1,14 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  box-shadow: var(--elevation-1);
   margin-bottom: var(--space-lg);
+  box-shadow: var(--elevation-1);
+  transition: var(--transition);
 }
 
 table:hover {
   box-shadow: var(--elevation-2);
+  transition: var(--transition);
 }
 
 th {
@@ -17,10 +19,12 @@ th {
 
 td {
   padding: var(--space-md) var(--space-sm);
+  transition: var(--transition);
 }
 
 td:hover {
   box-shadow: inset var(--elevation-1);
+  transition: var(--transition);
 }
 
 td,
