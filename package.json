@@ -22,5 +22,8 @@
   "dependencies": {},
   "devDependencies": {
     "cssnano": "^4.1.10"
-  }
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }

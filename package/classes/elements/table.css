@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: var(--elevation-1);
+}
+
+table:hover {
+  box-shadow: var(--elevation-2);
+}
+
+th {
+  text-align: left;
+  background-color: var(--bg-2);
+  padding: var(--space-md) var(--space-sm);
+}
+
+td {
+  padding: var(--space-md) var(--space-sm);
+}
+
+td:hover {
+  box-shadow: inset var(--elevation-1);
+}
+
+td,
+th {
+  border: calc(var(--thickness) * 2) solid var(--bg-2);
+}
