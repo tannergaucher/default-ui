@@ -21,14 +21,17 @@
 }
 
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn--hover,
+.btn--focus {
   transition: var(--transition);
   color: var(--btn-hover-color);
   border-color: var(--href-hover-color);
   box-shadow: inset var(--elevation-1);
 }
 
-.btn:disabled {
+.btn:disabled,
+.btn--disabled {
   background: var(--bg-2);
   border-color: var(--grey);
   color: var(--grey);
