@@ -12,11 +12,13 @@ function syncBtnText() {
 
   if (!toggleModeBtn) return
 
-  const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-    .matches
+  const initPrefersDark = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches
 
-  const initPrefersLight = window.matchMedia('(prefers-color-scheme: light)')
-    .matches
+  const initPrefersLight = window.matchMedia(
+    '(prefers-color-scheme: light)'
+  ).matches
 
   if (initPrefersDark) {
     toggleModeBtn.innerHTML = 'LIGHT'
@@ -44,10 +46,11 @@ export function handleUserPersistedPreference() {
 function handleUserChanges() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
+  if (!toggleModeBtn) return
+
   toggleModeBtn.addEventListener('click', handleToggle)
 
   function handleToggle() {
-    console.log('click')
     if (toggleModeBtn.innerHTML === 'DARK') {
       setDarkTheme()
       return
