@@ -1,11 +1,11 @@
 index.html
-dist 
 
 .cache 
 .prettierrc
 .netlify
+.storybook
 
 docs
-
+dist 
 site
-
+stories
