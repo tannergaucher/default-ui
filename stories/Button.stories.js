@@ -1,43 +1,26 @@
-import { createButton } from './Button';
-
 export default {
-  title: 'Example/Button',
+  title: 'Element/Button',
   argTypes: {
-    label: { control: 'text' },
     primary: { control: 'boolean' },
-    backgroundColor: { control: 'color' },
-    size: {
-      control: { type: 'select', options: ['small', 'medium', 'large'] },
-    },
-    onClick: { action: 'onClick' },
   },
-};
+}
 
 const Template = ({ label, ...args }) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;
-  return createButton({ label, ...args });
-};
+  return `
+  <button class="${args.primary ? `btn btn-primary` : `btn`}">
+     ${label}
+  </button>`
+}
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
+
 Primary.args = {
-  primary: true,
   label: 'Button',
-};
+  primary: true,
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
   label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+  primary: false,
+}

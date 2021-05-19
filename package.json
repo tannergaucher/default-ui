@@ -8,7 +8,8 @@
     "start": "npx parcel site/index.html",
     "build": "npx parcel build site/index.html",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=98498e0b86f1"
   },
   "author": " <tannergaucher@gmail.com>",
   "license": "MIT",
@@ -31,7 +32,9 @@
     "@storybook/addon-links": "^6.2.9",
     "@storybook/html": "^6.2.9",
     "babel-loader": "^8.2.2",
-    "cssnano": "^4.1.10"
+    "chromatic": "^5.8.2",
+    "cssnano": "^4.1.10",
+    "storybook-addon-pseudo-states": "^1.0.0"
   },
   "browserslist": [
     "last 1 Chrome version"
