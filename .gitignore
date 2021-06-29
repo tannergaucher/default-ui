@@ -1,10 +1,12 @@
 
 dist 
+node_modules
 .cache 
-
 .parcel-cache
 
-node_modules
+
+
+
 
 
 
