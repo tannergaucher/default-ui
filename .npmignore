@@ -4,6 +4,7 @@ index.html
 .prettierrc
 .netlify
 .storybook
+.parcel-cache/
 
 docs
 dist 
