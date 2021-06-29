@@ -1,22 +1,11 @@
 import { LOCAL_STORAGE_KEY } from '../utils/constants'
 
-// Sync theme with persisted preference, if any
-;(function handleUserPersistedPreference() {
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+syncBtnText()
+handleUserPersistedPreference()
+handleUserChanges()
+handleMediaQueryChanges()
 
-  if (!persistedPreference) return
-
-  if (persistedPreference === 'DARK') {
-    setDarkTheme()
-  }
-
-  if (persistedPreference === 'LIGHT') {
-    setLightTheme()
-  }
-})()
-
-// Sync btn text with current user prefers scheme
-;(function syncBtnText() {
+function syncBtnText() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (!toggleModeBtn) return
@@ -34,10 +23,23 @@ import { LOCAL_STORAGE_KEY } from '../utils/constants'
   if (initPrefersLight) {
     toggleModeBtn.innerHTML = 'DARK'
   }
-})()
+}
 
-// Handle toggle mode btn user changes
-;(function handleUserChanges() {
+export function handleUserPersistedPreference() {
+  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+  if (!persistedPreference) return
+
+  if (persistedPreference === 'DARK') {
+    setDarkTheme()
+  }
+
+  if (persistedPreference === 'LIGHT') {
+    setLightTheme()
+  }
+}
+
+function handleUserChanges() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   toggleModeBtn.addEventListener('click', handleToggle)
@@ -53,10 +55,9 @@ import { LOCAL_STORAGE_KEY } from '../utils/constants'
       return
     }
   }
-})()
+}
 
-// Handle media query changing, and set updated user prefers as current preference
-;(function handleMediaQueryChanges() {
+function handleMediaQueryChanges() {
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
@@ -72,9 +73,8 @@ import { LOCAL_STORAGE_KEY } from '../utils/constants'
         setLightTheme()
       }
     })
-})()
+}
 
-// Exporting these to be called in react implementation, etc...
 export function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
@@ -111,7 +111,6 @@ export function setDarkTheme() {
   localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
 }
 
-// Can be called in react theme implementation, etc...
 export function setLightTheme() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
