@@ -1,0 +1,79 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "handleUserPersistedPreference", function () {
+  return handleUserPersistedPreference;
+});
+var _utilsConstants = require('../utils/constants');
+var _setMode = require('./set-mode');
+syncBtnText();
+handleUserPersistedPreference();
+handleUserChanges();
+handleMediaQueryChanges();
+function syncBtnText() {
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn');
+  if (!toggleModeBtn) return;
+  const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  if (initPrefersDark) {
+    toggleModeBtn.innerHTML = 'DARK';
+  }
+  if (initPrefersLight) {
+    toggleModeBtn.innerHTML = 'LIGHT';
+  }
+}
+function handleUserPersistedPreference() {
+  const persistedPreference = localStorage.getItem(_utilsConstants.LOCAL_STORAGE_KEY);
+  if (!persistedPreference) return;
+  if (persistedPreference === 'DARK') {
+    _setMode.setDarkTheme();
+  }
+  if (persistedPreference === 'LIGHT') {
+    _setMode.setLightTheme();
+  }
+}
+function handleUserChanges() {
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn');
+  if (!toggleModeBtn) return;
+  toggleModeBtn.addEventListener('click', handleToggle);
+  const themesArr = ['LIGHT', 'DARK', 'LIGHT SERIF', 'DARK SERIF', 'LIGHT VAPORWAVE', 'DARK VAPORWAVE'];
+  async function handleToggle() {
+    const themeText = toggleModeBtn.innerHTML;
+    console.log(`themeText`, themeText);
+    const themeIndex = themesArr.indexOf(themeText.trim());
+    const nextText = themesArr[themeIndex + 1];
+    // import dynamic theme
+    if (nextText === 'LIGHT SERIF' || nextText === 'DARK SERIF') {
+      await require('../themes/serif');
+    }
+    if (nextText === 'LIGHT VAPORWAVE' || nextText === 'DARK VAPORWAVE') {
+      await require('../themes/vaporwave');
+    }
+    if (nextText === 'LIGHT' || nextText === 'DARK') {
+      // already imported, so must get and set vars declaratively
+      const baseFont = getComputedStyle(document.documentElement).getPropertyValue('--sans');
+      document.documentElement.style.backgroundColor = 'lime';
+      console.log(`baseFont`, baseFont);
+    }
+    if (toggleModeBtn.innerHTML.includes('DARK')) {
+      _setMode.setLightTheme(nextText);
+      return;
+    }
+    if (toggleModeBtn.innerHTML.includes('LIGHT')) {
+      _setMode.setDarkTheme(nextText);
+      return;
+    }
+  }
+}
+// move to dark mode
+function handleMediaQueryChanges() {
+  window.matchMedia('(prefers-color-scheme:  dark)').addEventListener('change', e => {
+    if (e.matches) {
+      _setMode.setDarkTheme();
+    }
+  });
+  window.matchMedia('(prefers-color-scheme:  light)').addEventListener('change', e => {
+    if (e.matches) {
+      _setMode.setLightTheme();
+    }
+  });
+}

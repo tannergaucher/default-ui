@@ -1,0 +1,20 @@
+.textarea {
+  font-family: var(--sans);
+  font-size: var(--text-md);
+  border-radius: var(--radius);
+  border: var(--thickness) solid var(--input-border);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-md);
+  background-color: var(--bg-2);
+  color: var(--text-color);
+  resize: vertical;
+  box-shadow: var(--elevation-1);
+  letter-spacing: var(--paragraph-letter-spacing);
+  transition: var(--transition);
+}
+
+.textarea:hover,
+.textarea:focus {
+  border-color: var(--accent-2);
+  box-shadow: var(--elevation-3);
+}

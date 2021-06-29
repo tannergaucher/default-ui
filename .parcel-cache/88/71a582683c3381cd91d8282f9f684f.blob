@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--font-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-1);
+  color: var(--text-color);
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+}
+.text--xxxl {
+  font-size: var(--text-xxxl);
+  margin: var(--space-xl) 0;
+}
+h1 {
+  font-weight: 900;
+}
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+h4,
+.text--md {
+  font-size: var(--text-md);
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-lg);
+}
+.text--sm,
+small {
+  font-size: var(--text-sm);
+  margin: var(--space-sm) 0;
+}
+.text--xs {
+  font-size: var(--text-xs);
+  margin: var(--space-sm) 0;
+}
+p {
+  line-height: var(--paragraph-line-height);
+  letter-spacing: var(--paragraph-letter-spacing);
+  font-weight: 500;
+  font-size: var(--text-md);
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-lg);
+}
+ul,
+ol {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-md);
+}
+li {
+  margin-bottom: var(--space-sm);
+  line-height: var(--paragraph-line-height);
+  font-weight: 500;
+  font-size: var(--text-md);
+}
+li:last-child {
+  margin-bottom: var(--space-lg);
+}
+li > p {
+  margin-bottom: var(--space-sm);
+}
+li > a {
+  word-break: break-all;
+}
+a {
+  text-decoration: none;
+  color: var(--href-color);
+  transition: var(--transition);
+}
+a:hover,
+a:focus {
+  color: var(--href-hover-color);
+  transition: var(--transition);
+}
+a:disabled {
+  cursor: not-allowed;
+}
+.title {
+  text-transform: uppercase;
+  letter-spacing: var(--caps-letter-spacing);
+  font-weight: 900;
+}

@@ -1,0 +1,50 @@
+var _modes = require('../modes');
+var _tokensJson = require('../tokens.json');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _tokensJsonDefault = _parcelHelpers.interopDefault(_tokensJson);
+syncBtnText();
+handleUserThemeChanges();
+function syncBtnText() {
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn');
+  if (!toggleModeBtn) return;
+  const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  if (initPrefersDark) {
+    toggleModeBtn.innerHTML = 'DARK';
+  }
+  if (initPrefersLight) {
+    toggleModeBtn.innerHTML = 'LIGHT';
+  }
+}
+function handleUserThemeChanges() {
+  const toggleModeBtn = document.querySelector('.toggle-mode-btn');
+  if (!toggleModeBtn) return;
+  toggleModeBtn.addEventListener('click', handleToggle);
+  const themesFromToken = Object.keys(_tokensJsonDefault.default.themes);
+  console.log(`themesFromToken`, themesFromToken);
+  // todo: dynamically create from tokens.json
+  const themesArr = ['LIGHT', 'DARK', 'LIGHT READER', 'DARK READER', 'LIGHT VAPORWAVE', 'DARK VAPORWAVE'];
+  async function handleToggle() {
+    const prevText = toggleModeBtn.innerHTML;
+    const themeIndex = themesArr.indexOf(prevText.trim());
+    const currentTheme = themesArr[themeIndex + 1];
+    // import dynamic theme
+    if (currentTheme === 'LIGHT READER' || currentTheme === 'DARK READER') {
+      await require('./reader');
+    }
+    if (currentTheme === 'LIGHT VAPORWAVE' || currentTheme === 'DARK VAPORWAVE') {
+      await require('./vaporwave');
+    }
+    if (currentTheme === 'LIGHT' || currentTheme === 'DARK') {
+      console.log(`reset`);
+    }
+    if (toggleModeBtn.innerHTML.includes('DARK')) {
+      _modes.setLightMode(currentTheme);
+      return;
+    }
+    if (toggleModeBtn.innerHTML.includes('LIGHT')) {
+      _modes.setDarkMode(currentTheme);
+      return;
+    }
+  }
+}

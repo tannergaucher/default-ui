@@ -1,0 +1,9 @@
+.hr {
+  border-color: var(--accent-1);
+  border: calc(var(--thickness)) solid var(--accent-1);
+  background-color: var(--accent-1);
+  margin-block-start: var(--space-xl);
+  margin-block-end: var(--space-xl);
+  box-shadow: var(--elevation-2);
+  border-radius: var(--radius);
+}

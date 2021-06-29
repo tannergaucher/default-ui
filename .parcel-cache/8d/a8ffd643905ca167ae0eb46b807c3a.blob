@@ -1,0 +1,21 @@
+.content-aside-grid {
+  display: grid;
+  grid-template-areas: 'content aside';
+  grid-template-columns: 1fr auto;
+  grid-column-gap: var(--space-md);
+}
+
+@media (max-width: 600px) {
+  .content-aside-grid {
+    grid-template-areas:
+      'content'
+      'aside';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .aside {
+    height: 100%;
+    position: initial;
+  }
+}

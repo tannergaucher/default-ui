@@ -1,0 +1,14 @@
+.scroll-margin-top-sm {
+  scroll-margin-top: var(--space-sm);
+}
+.scroll-margin-top-md {
+  scroll-margin-top: var(--space-md);
+}
+
+.scroll-margin-top-lg {
+  scroll-margin-top: var(--space-lg);
+}
+
+.scroll-margin-top-xl {
+  scroll-margin-top: var(--space-xl);
+}

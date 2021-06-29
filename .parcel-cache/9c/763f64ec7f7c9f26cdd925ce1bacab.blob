@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --mono: 'VT323', monospace;
+  --accent-1-light: #25bfff;
+  --accent-2-light: #4b7fff;
+  --accent-1-dark: #703fff;
+  --accent-2-dark: #9600ff;
+}
+
+body {
+  font-family: var(--mono);
+}
+
+/*# sourceMappingURL=vaporwave.HASH_REF_8ca1a85499559711438d8319490b856d.css.map */

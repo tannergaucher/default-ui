@@ -1,0 +1,9 @@
+.card-text {
+  margin: 0;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  padding-top: 0;
+  padding-bottom: var(--space-md);
+  color: var(--grey);
+  line-height: 1.33;
+}

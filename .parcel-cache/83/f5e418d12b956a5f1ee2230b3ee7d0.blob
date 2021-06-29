@@ -1,0 +1,22 @@
+.details {
+  border-radius: var(--radius);
+  margin-bottom: var(--space-md);
+  color: var(--text-color);
+  background-color: var(--bg-2);
+  box-shadow: var(--elevation-1);
+}
+
+.details:hover {
+  box-shadow: var(--elevation-3);
+}
+
+.details[open] {
+  box-shadow: var(--elevation-3);
+}
+
+.details > * {
+  padding-top: 0;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  padding-bottom: var(--space-md);
+}

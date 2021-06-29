@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Styles</title>
+  <meta name="description" content="Responsive, themed, framework agnostic UI design system">
+  <!--PACKAGE IMPORT-->
+  <link rel="stylesheet" type="text/css" href="5a90fdd9e0efc2a69cb34e9758d97b4a">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="320006d45e1dd6d6f2752e9038f5066b"></script>
+  <script data-parcel-key="da4e90993d379ae779553e81992afc02">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E2X4GR6JSL');
+  </script>
+</head>
+
+<body>
+  <header class=" header container padding">
+    <a href="/">
+      <h1 class="text--xxxl title brand-title">
+        Semantic Styles
+      </h1>
+    </a>
+  </header>
+  <main class="main container padding">
+    <h2 style="0902753da3f22afbd6fb94a72328d983">Responsive, themed, framework
+      agnostic UI design
+      system
+    </h2>
+    <div style="9e72c0f7ff6a64c3dd3c09e0818822a5">
+      <code class="code">npm i semantic-styles</code>
+    </div>
+    <hr class="hr">
+    <h1 class="title">Heading One Title </h1>
+    <h1>Heading One</h1>
+    <h2>Heading Two</h2>
+    <h3>Heading Three</h3>
+    <h4>Heading Four</h4>
+    <p>Paragraph</p>
+    <p style="3ff8616e96adeb0bbe8589112c71a764">Small</p>
+    <br>
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+    <ol>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ol>
+    <blockquote class="blockquote" href="http://foo.com">
+      <q>
+        The universe emerged from simple rules...
+      </q>
+    </blockquote>
+    <hr class="hr">
+    
+    <h3>Heading</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+      vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
+      primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
+      ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
+      nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
+      pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+      Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
+      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
+      semper sem facilisis varius interdum. In lacus tellus, blandit ac
+      nulla sit amet, sollicitudin laoreet quam.
+    </p>
+    <h3>Another Heading</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+      vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
+      primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
+      ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
+      nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
+      pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+      Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
+      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
+      semper sem facilisis varius interdum. In lacus tellus, blandit ac
+      nulla sit amet, sollicitudin laoreet quam.
+    </p>
+    <hr class="hr">
+    <section class="container">
+      <h3>Double Container Pattern</h3>
+      <p>
+        The universe emerged from simple rules, consectetur adipiscing elit. Nullam
+        vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
+        primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
+        ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
+        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
+        pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+        Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
+        semper sem facilisis varius interdum. In lacus tellus, blandit ac
+        nulla sit amet, sollicitudin laoreet quam.
+      </p>
+    </section>
+    <hr class="hr">
+    <div class="content-grid">
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+      <a href="/">
+        <div class="card">
+          <img src="1aaec64029576614c5dee5efb896d24d" alt="random">
+          <h3 class="card-heading">Card Heading</h3>
+          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+        </div>
+      </a>
+    </div>
+
+    <hr class="hr">
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3" class="text--md"> Table header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text--sm">Table body</td>
+          <td class="text--sm">with three</td>
+          <td class="text--sm">columns</td>
+
+        </tr>
+        <tr>
+          <td class="text--sm">Table body</td>
+          <td class="text--sm">with three</td>
+          <td class="text--sm">columns</td>
+
+        </tr>
+        <tr>
+          <td class="text--sm">Table body</td>
+          <td class="text--sm">with three</td>
+          <td class="text--sm">columns</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="hr">
+
+    <section>
+      <textarea class="textarea" placeholder="Textarea"></textarea>
+      <fieldset class="fieldset">
+        <form class="form">
+          <input type="text" class="input" placeholder="Input">
+          <button class="btn btn-primary" type="button">Btn Primary</button>
+        </form>
+      </fieldset>
+      <button class="btn">Btn</button>
+      <button class="btn" disabled="true">Btn</button>
+      <button class="btn btn-primary">Btn</button>
+      <button class="btn btn-primary" disabled="true">Btn</button>
+      <details class="details">
+        <summary class="summary">Summary One </summary>
+        <p> Details Vestibulum porttitor enim sit amet
+          pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+          Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
+          semper sem facilisis varius interdum. In lacus tellus, blandit ac
+          nulla sit amet, sollicitudin laoreet quam.
+        </p>
+      </details>
+      <details class="details">
+        <summary class="summary">Summary Two</summary>
+        <p> Details Vestibulum porttitor enim sit amet
+          pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+          Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
+          semper sem facilisis varius interdum. In lacus tellus, blandit ac
+          nulla sit amet, sollicitudin laoreet quam.</p>
+      </details>
+    </section>
+    <hr class="hr">
+  </main>
+  <footer class="container padding">
+    <a href="/">
+      <h1 class="title brand-title">
+        Semantic Styles
+      </h1>
+    </a>
+    <br>
+    <nav class="nav" style="82a5586652d222d1523c64d0abd4dd37">
+      <a href="852cd22dc8dd4b142d1c6b1be3b24c54" target="_blank" rel="noreferrer" class="nav-link">
+        Documentation Site
+      </a>
+      <br>
+      <a href="e04582959974b041fd7a30c1309be886" target="_blank" rel="noreferrer" class="nav-link">
+        Github Repository
+      </a>
+      <br>
+      <a href="4477ca7225f9cf98c751546d36649e22" target="_blank" rel="noreferrer" class="nav-link">
+        Semantic Styles X Reach UI
+      </a>
+    </nav>
+    <br>
+  </footer>
+  <button class="btn btn-primary toggle-mode-btn" style="f2f98fce329921113602c7cdd588d945"></button>
+  <script src="06e37f084697a03a59532c67ce27c5d4"></script>
+  <script src="1a952e80a8d3cd64729327482d792812"></script>
+</body>
+
+</html>
