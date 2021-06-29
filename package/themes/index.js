@@ -1,10 +1,8 @@
 import { setDarkMode, setLightMode } from '../modes'
 
-syncBtnText()
-handleUserThemeChanges()
-
 function syncBtnText() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
   if (!toggleModeBtn) return
 
   const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
@@ -23,18 +21,26 @@ function syncBtnText() {
 }
 
 function handleUserThemeChanges() {
+  console.log('handle')
+
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+
   if (!toggleModeBtn) return
 
+  toggleModeBtn.addEventListener('click', handleToggle)
+
   async function handleToggle() {
-    if (toggleModeBtn.innerHTML.includes('DARK')) {
-      setLightMode(currentTheme)
+    if (toggleModeBtn.innerHTML === 'DARK') {
+      setLightMode()
       return
     }
 
-    if (toggleModeBtn.innerHTML.includes('LIGHT')) {
-      setDarkMode(currentTheme)
+    if (toggleModeBtn.innerHTML === 'LIGHT') {
+      setDarkMode()
       return
     }
   }
 }
+
+syncBtnText()
+handleUserThemeChanges()

@@ -1,0 +1,6 @@
+.dialog {
+  background-color: var(--bg-1);
+  color: var(--text-color);
+  border: var(--thickness) solid var(--text-color);
+  border-radius: var(--radius);
+}

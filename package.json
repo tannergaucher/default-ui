@@ -2,7 +2,6 @@
   "name": "semantic-styles",
   "version": "0.0.45",
   "description": "\"Responsive, Themed, UI Design System.\"",
-  "main": "index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel site/index.html",

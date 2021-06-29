@@ -1,6 +1,9 @@
 import { LOCAL_STORAGE_KEY } from '../utils/constants'
 
-export function setDarkMode(currentTheme) {
+handleUserPersistedPreference()
+handleMediaQueryChanges()
+
+export function setDarkMode() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -30,13 +33,13 @@ export function setDarkMode(currentTheme) {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = `${currentTheme ? currentTheme : `DARK`}`
+    toggleModeBtn.innerHTML = `DARK`
   }
 
   localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
 }
 
-export function setLightMode(currentTheme) {
+export function setLightMode() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
@@ -66,13 +69,27 @@ export function setLightMode(currentTheme) {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = `${currentTheme ? currentTheme : `LIGHT`}`
+    toggleModeBtn.innerHTML = `LIGHT`
   }
 
-  // localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
+  localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
 }
 
-function handleMediaQueryChanges() {
+export function handleUserPersistedPreference() {
+  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+
+  if (!persistedPreference) return
+
+  if (persistedPreference === `DARK`) {
+    setDarkMode()
+  }
+
+  if (persistedPreference === `LIGHT`) {
+    setLightMode()
+  }
+}
+
+export function handleMediaQueryChanges() {
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {

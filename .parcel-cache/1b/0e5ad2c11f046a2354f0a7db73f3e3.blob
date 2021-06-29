@@ -1,4 +1,0 @@
-.card-heading {
-  margin: 0;
-  padding: var(--space-sm);
-}

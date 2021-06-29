@@ -1,6 +1,0 @@
-var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
-_parcelHelpers.defineInteropFlag(exports);
-_parcelHelpers.export(exports, "LOCAL_STORAGE_KEY", function () {
-  return LOCAL_STORAGE_KEY;
-});
-const LOCAL_STORAGE_KEY = 'ss-theme-preference';

@@ -1,8 +1,0 @@
-:root {
-  --responsive-unit: 0.5vw;
-  --space-baseline: calc(1.3rem + var(--responsive-unit));
-  --space-sm: calc(var(--space-baseline) / 2);
-  --space-md: var(--space-baseline);
-  --space-lg: calc(var(--space-baseline) * 2);
-  --space-xl: calc(var(--space-baseline) * 4);
-}
