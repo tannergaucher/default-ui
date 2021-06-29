@@ -1,22 +1,5 @@
 import { LOCAL_STORAGE_KEY } from '../utils/constants'
 
-handleUserPersistedPreference()
-handleMediaQueryChanges()
-
-export function handleUserPersistedPreference() {
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-  if (!persistedPreference) return
-
-  if (persistedPreference === 'DARK') {
-    setDarkMode()
-  }
-
-  if (persistedPreference === 'LIGHT') {
-    setLightMode()
-  }
-}
-
 export function setDarkMode(currentTheme) {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
@@ -50,7 +33,7 @@ export function setDarkMode(currentTheme) {
     toggleModeBtn.innerHTML = `${currentTheme ? currentTheme : `DARK`}`
   }
 
-  // localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
+  localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
 }
 
 export function setLightMode(currentTheme) {
