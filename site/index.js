@@ -3,7 +3,7 @@ const exampleDialog = document.querySelector('#dialog-example')
 
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
 
-if (exampleDialog.showModal !== 'function') {
+if (typeof exampleDialog.showModal !== 'function') {
   exampleDialog.style.display = 'none'
 }
 
