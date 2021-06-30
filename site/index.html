@@ -167,7 +167,7 @@
     <table>
       <thead>
         <tr>
-          <th colspan="3" class="text--md"> Table header</th>
+          <th colspan="3" class="text--md">Table Header</th>
         </tr>
       </thead>
       <tbody>
@@ -222,15 +222,17 @@
           nulla sit amet, sollicitudin laoreet quam.</p>
       </details>
     </section>
-    <!-- <section>
-      <dialog class="dialog" open>
+    <hr class="hr" />
+    <section>
+      <button class="btn btn-primary" id="show-dialog-example-btn" style="margin-bottom: 0;">Show Dialog</button>
+      <dialog class="dialog" id="dialog-example">
         <h1>Greetings 👋</h1>
-        <h2>Dialog element here, if you have one 🤓</h2>
+        <h2>Native HTML Dialog element here 🤓</h2>
         <form method="dialog">
-          <button class="btn btn-primary" style="width: 100%">Close</button>
+          <button class="btn btn-primary" style="width: 100%">Close Dialog</button>
         </form>
       </dialog>
-    </section> -->
+    </section>
     <hr class="hr">
   </main>
   <footer class="container padding">
@@ -259,7 +261,9 @@
   </footer>
   <button class="btn btn-primary toggle-mode-btn"
     style="position: sticky; bottom: var(--space-md); float: right;"></button>
+  <script src="./index.js"></script>
   <script src="../package/modes/index.js"></script>
+
 </body>
 
 </html>
