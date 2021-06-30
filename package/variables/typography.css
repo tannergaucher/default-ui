@@ -8,7 +8,7 @@
   --heading-letter-spacing: 0rem;
   --paragraph-letter-spacing: 0rem;
   --caps-letter-spacing: 0.17rem;
-  --text-scale-ratio: 1.3;
+  --text-scale-ratio: 1.333;
   --responsive-unit: 0.4vw;
   /* CALCULATED FONT SIZE */
   --text-baseline: calc(0.6rem + var(--responsive-unit));

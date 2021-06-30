@@ -1,5 +1,5 @@
 .textarea {
-  font-family: var(--sans);
+  font-family: var(--font-family);
   font-size: var(--text-md);
   border-radius: var(--radius);
   border: var(--thickness) solid var(--input-border);
