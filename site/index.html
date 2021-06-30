@@ -17,14 +17,29 @@
 
     gtag('config', 'G-E2X4GR6JSL');
   </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
+
+    :root {
+      --sans: 'Fira Sans', sans-serif;
+      --font-family: var(--sans);
+      --accent-2-dark: tomato;
+      --accent-2-light: palevioletred;
+      --caps-letter-spacing: .5rem;
+    }
+  </style>
+
 </head>
 
 <body class="fade-in">
   <header class=" header container padding">
     <a href="/">
-      <h1 class="text--xxxl title brand-title">
-        Semantic Styles
-      </h1>
+      <em>
+        <h1 class="text--xxxl title brand-title">
+          Semantic Styles
+        </h1>
+      </em>
     </a>
   </header>
   <main class="main container padding">
@@ -148,9 +163,7 @@
         </div>
       </a>
     </div>
-
     <hr class="hr" />
-
     <table>
       <thead>
         <tr>
@@ -168,19 +181,15 @@
           <td class="text--sm">Table body</td>
           <td class="text--sm">with three</td>
           <td class="text--sm">columns</td>
-
         </tr>
         <tr>
           <td class="text--sm">Table body</td>
           <td class="text--sm">with three</td>
           <td class="text--sm">columns</td>
-
         </tr>
       </tbody>
     </table>
-
     <hr class="hr" />
-
     <section>
       <textarea class="textarea" placeholder="Textarea"></textarea>
       <fieldset class="fieldset">
@@ -193,7 +202,6 @@
       <button class="btn" disabled="true">Btn</button>
       <button class="btn btn-primary">Btn</button>
       <button class="btn btn-primary" disabled="true">Btn</button>
-
       <details class="details">
         <summary class="summary">Summary One </summary>
         <p class="fade-in"> Details Vestibulum porttitor enim sit amet
@@ -216,7 +224,8 @@
     </section>
     <!-- <section>
       <dialog class="dialog" open>
-        <p>Greetings, HTML dialog element here!</p>
+        <h1>Greetings 👋</h1>
+        <h2>Dialog element here, if you have one 🤓</h2>
         <form method="dialog">
           <button class="btn btn-primary" style="width: 100%">Close</button>
         </form>
@@ -226,18 +235,20 @@
   </main>
   <footer class="container padding">
     <a href="/">
-      <h1 class="title brand-title">
-        Semantic Styles
-      </h1>
+      <em>
+        <h1 class="title brand-title">
+          Semantic Styles
+        </h1>
+      </em>
     </a>
     <br />
     <nav class="nav" style="margin: var(--space-md) 0; display: flex; flex-direction: column;">
-      <a href="https://semanticstylesmdx.netlify.app" target="_blank" rel="noreferrer" class="nav-link">
-        <h4>Documentation Site with Live Code Examples</h4>
-      </a>
-      <br />
       <a href="https://github.com/tannergaucher/semantic-styles" target="_blank" rel="noreferrer" class="nav-link">
         <h4>Github Repository</h4>
+      </a>
+      <br />
+      <a href="https://semanticstylesmdx.netlify.app" target="_blank" rel="noreferrer" class="nav-link">
+        <h4>Documentation Site with Live Code Examples</h4>
       </a>
       <br />
       <a href="https://semanticstylesreachui.netlify.app/" target="_blank" rel="noreferrer" class="nav-link">
