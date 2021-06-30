@@ -9,5 +9,4 @@ function handleDialogBtnClick() {
   } else {
     alert('The <dialog> API is not supported by this browser')
   }
-  exampleDialog.showModal()
 }
