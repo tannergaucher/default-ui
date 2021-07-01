@@ -4,6 +4,7 @@
   color: var(--text-color);
   background-color: var(--bg-2);
   box-shadow: var(--elevation-1);
+  border-radius: var(--radius);
 }
 
 .details:hover {
