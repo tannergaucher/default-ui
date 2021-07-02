@@ -11,7 +11,6 @@
 .summary:focus,
 .summary:hover {
   color: var(--href-hover-color);
-
   transition: var(--transition);
   background-color: var(--bg-2);
 }

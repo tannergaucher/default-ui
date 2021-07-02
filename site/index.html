@@ -24,8 +24,10 @@
     :root {
       --sans: 'Fira Sans', sans-serif;
       --font-family: var(--sans);
-      --accent-2-dark: tomato;
-      --accent-2-light: palevioletred;
+      /* tomato */
+      --accent-2-dark: #ff6347;
+      /* palevioletred */
+      --accent-2-light: #db7093;
       --caps-letter-spacing: .5rem;
     }
   </style>
@@ -309,16 +311,6 @@
           semper sem facilisis varius interdum. In lacus tellus, blandit ac
           nulla sit amet, sollicitudin laoreet quam.</p>
       </details>
-      <hr class="hr" />
-      <h2>Select</h2>
-      <select class="select" id="standard-select">
-        <option value="Option 1">Option 1</option>
-        <option value="Option 2">Option 2</option>
-        <option value="Option 3">Option 3</option>
-        <option value="Option 4">Option 4</option>
-        <option value="Option 5">Option 5</option>
-        <option value="Option length">Option that has too long of a value to fit</option>
-      </select>
     </section>
     <hr class="hr" />
     <section>
@@ -332,6 +324,72 @@
           <button class="btn btn-primary" style="width: 100%">Close Dialog</button>
         </form>
       </dialog>
+    </section>
+    <hr class="hr" />
+    <section>
+      <h2>Tokens</h2>
+      <div class="content-grid">
+        <div>
+          <label class="label" for="">
+            <p>Typography Scale</p>
+          </label>
+          <select class=" select" name="" id="type-scale-select">
+            <option value="1.067">1.067 | Minor Second</option>
+            <option value="1.125">1.125 | Major Second</option>
+            <option value="1.2">1.2 | Minor Third</option>
+            <option value="1.25">1.25 | Major Third</option>
+            <option value="1.333" selected="selected">1.333 | Perfect Fourth (Default)</option>
+            <option value="1.414">1.414 | Augmented Fourth</option>
+            <option value="1.5">1.5 | Perfect Fifth</option>
+            <option value="1.618">1.618 | Golden Ratio</option>
+          </select>
+        </div>
+        <div>
+          <label class="label" for="">
+            <p style="margin-top: var(--space-md);">Text Baseline</p>
+          </label>
+          <select class=" select" name="" id="text-base-select">
+            <option value=".4">.4 Rem</option>
+            <option value=".45">.45 Rem</option>
+            <option value=".5">.5 Rem</option>
+            <option value=".55">.55 Rem</option>
+            <option value=".6" selected="selected">.6 Rem (Default)</option>
+            <option value=".65">.65 Rem</option>
+            <option value=".7">.7 Rem</option>
+            <option value=".75">.75 Rem</option>
+            <option value=".8">.8 Rem</option>
+          </select>
+        </div>
+        <div>
+          <label for="">
+            <p>Accent 1 Light</p>
+          </label>
+          <input type="color" id="accent-1-light-input"
+            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-1-light); border-radius: var(--radius); cursor: pointer;">
+        </div>
+        <div>
+          <label for="">
+            <p>Accent 2 Light</p>
+          </label>
+          <input type="color" id="accent-2-light-input"
+            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-2-light); border-radius: var(--radius); cursor: pointer;">
+        </div>
+        <div>
+          <label for="">
+            <p>Accent 1 Dark</p>
+          </label>
+          <input type="color" id="accent-1-dark-input"
+            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-1-dark); border-radius: var(--radius); cursor: pointer">
+        </div>
+        <div>
+          <label for="">
+            <p>Accent 2 Dark</p>
+          </label>
+          <input type="color" id="accent-2-dark-input"
+            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-2-dark); border-radius: var(--radius); cursor: pointer;">
+        </div>
+      </div>
+      </div>
     </section>
     <hr class="hr">
   </main>
