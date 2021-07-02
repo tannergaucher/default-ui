@@ -26,7 +26,9 @@ function syncBtnText() {
     toggleModeBtn.innerHTML = 'DARK'
   }
 
-  toggleModeBtn.style.display = 'initial'
+  if (toggleModeBtn.innerHTML) {
+    toggleModeBtn.style.display = 'initial'
+  }
 }
 
 export function handleUserPersistedPreference() {
