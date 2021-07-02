@@ -10,6 +10,8 @@ function syncBtnText() {
 
   if (!toggleModeBtn) return
 
+  toggleModeBtn.style.display = 'none'
+
   const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
     .matches
 
@@ -23,6 +25,8 @@ function syncBtnText() {
   if (initPrefersLight) {
     toggleModeBtn.innerHTML = 'DARK'
   }
+
+  toggleModeBtn.style.display = 'initial'
 }
 
 export function handleUserPersistedPreference() {
