@@ -5,6 +5,10 @@
   grid-column-gap: var(--space-md);
 }
 
+.aside {
+  padding-top: var(--space-md);
+}
+
 @media (max-width: 600px) {
   .content-aside-grid {
     grid-template-areas:
