@@ -11,6 +11,7 @@
   cursor: pointer;
   line-height: inherit;
   color: var(--text-color);
+  margin-bottom: var(--space-md);
 }
 
 .select:hover,

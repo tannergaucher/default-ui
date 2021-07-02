@@ -1,17 +1,17 @@
 :root {
   --bg-1-light: #fafafaee;
-  --bg-2-light: white;
-  --text-color-light: black;
+  --bg-2-light: #ffffff;
+  --text-color-light: #000000;
   --grey-light: #666666;
-  --accent-1-light: black;
-  --accent-2-light: grey;
+  --accent-1-light: #000000;
+  --accent-2-light: #666666;
 
   --bg-1-dark: rgb(0, 0, 0);
   --bg-2-dark: #1a1a1b;
-  --text-color-dark: white;
+  --text-color-dark: #ffffff;
   --grey-dark: #fafafa9f;
-  --accent-1-dark: white;
-  --accent-2-dark: grey;
+  --accent-1-dark: #ffffff;
+  --accent-2-dark: #666666;
 
   /* TODO */
   --code-bg: #28272c;
