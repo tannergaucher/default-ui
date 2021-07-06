@@ -2,6 +2,9 @@ const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
 const typeScaleSelect = document.querySelector('#type-scale-select')
 const textBaseSelect = document.querySelector('#text-base-select')
+const spaceBaseSelect = document.querySelector('#space-base-select')
+const responsiveUnitSelect = document.querySelector('#responsive-unit-select')
+
 const accent1LightInput = document.querySelector('#accent-1-light-input')
 const accent1DarkInput = document.querySelector('#accent-1-dark-input')
 const accent2LightInput = document.querySelector('#accent-2-light-input')
@@ -16,6 +19,8 @@ window.addEventListener('load', setInitAccent2Dark)
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
 typeScaleSelect.addEventListener('change', handleTypeScaleChange)
 textBaseSelect.addEventListener('change', handleTextBaseSelect)
+spaceBaseSelect.addEventListener('change', handleSpaceBaseSelect)
+responsiveUnitSelect.addEventListener('change', handleResponsiveUnitSelect)
 accent1LightInput.addEventListener('change', handleAccent1LightChange)
 accent1DarkInput.addEventListener('change', handleAccent1DarkChange)
 accent2LightInput.addEventListener('change', handleAccent2LightChange)
@@ -48,6 +53,24 @@ function handleTextBaseSelect(e) {
   document.documentElement.style.setProperty(
     '--text-baseline',
     `calc(${responsiveUnit} + ${e.target.value}rem)`
+  )
+}
+
+function handleSpaceBaseSelect(e) {
+  const responsiveUnit = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--responsive-unit')
+
+  document.documentElement.style.setProperty(
+    '--space-baseline',
+    `calc(${e.target.value}rem + ${responsiveUnit})`
+  )
+}
+
+function handleResponsiveUnitSelect(e) {
+  document.documentElement.style.setProperty(
+    '--responsive-unit',
+    `${e.target.value}vw`
   )
 }
 
