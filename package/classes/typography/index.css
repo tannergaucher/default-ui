@@ -1,0 +1,36 @@
+.underline {
+  text-decoration: underline;
+}
+
+.center {
+  text-decoration: center;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.xxxl {
+  font-size: var(--text-xxxl);
+}
+
+.xxl {
+  font-size: var(--text-xxl);
+}
+
+.xl {
+  font-size: var(--text-xl);
+}
+
+.lg {
+  font-size: var(--text-lg);
+}
+
+.md {
+  font-size: var(--text-md);
+}
+
+.sm {
+  font-size: var(--text-sm);
+}
