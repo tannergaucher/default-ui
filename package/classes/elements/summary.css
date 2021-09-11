@@ -6,6 +6,7 @@
   background-color: var(--bg-2);
   cursor: pointer;
   transition: var(--transition);
+  border-radius: var(--radius);
 }
 
 .summary:focus,
