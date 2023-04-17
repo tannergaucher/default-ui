@@ -1,4 +1,4 @@
-.hr {
+hr {
   border-color: var(--accent-1);
   border: calc(var(--thickness)) solid var(--accent-1);
   background-color: var(--accent-1);
