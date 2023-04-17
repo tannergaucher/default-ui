@@ -1,4 +1,4 @@
-.summary {
+summary {
   font-size: var(--text-lg);
   font-weight: bold;
   padding: var(--space-md);
@@ -9,8 +9,8 @@
   border-radius: var(--radius);
 }
 
-.summary:focus,
-.summary:hover {
+summary:focus,
+summary:hover {
   color: var(--href-hover-color);
   transition: var(--transition);
   background-color: var(--bg-2);
