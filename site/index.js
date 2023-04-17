@@ -11,10 +11,7 @@ const accent2LightInput = document.querySelector('#accent-2-light-input')
 const accent2DarkInput = document.querySelector('#accent-2-dark-input')
 const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
-window.addEventListener('load', setInitAccent1Light)
-window.addEventListener('load', setInitAccent1Dark)
-window.addEventListener('load', setInitAccent2Light)
-window.addEventListener('load', setInitAccent2Dark)
+window.addEventListener('load', setInitValues)
 
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
 typeScaleSelect.addEventListener('change', handleTypeScaleChange)
@@ -74,36 +71,24 @@ function handleResponsiveUnitSelect(e) {
   )
 }
 
-function setInitAccent1Light() {
-  const val = getComputedStyle(document.documentElement).getPropertyValue(
-    '--accent-1-light'
-  )
+function setInitValues() {
+  const accentOneLightValue = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--accent-1-light')
+  const accentOneDarkValue = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--accent-1-dark')
+  const accentTwoLightValue = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--accent-2-light')
+  const accentTwoDarkValue = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue('--accent-2-dark')
 
-  accent1LightInput.value = handleBrowserFunk(val)
-}
-
-function setInitAccent1Dark() {
-  const val = getComputedStyle(document.documentElement).getPropertyValue(
-    '--accent-1-dark'
-  )
-
-  accent1DarkInput.value = handleBrowserFunk(val)
-}
-
-function setInitAccent2Light() {
-  const val = getComputedStyle(document.documentElement).getPropertyValue(
-    '--accent-2-light'
-  )
-
-  accent2LightInput.value = handleBrowserFunk(val)
-}
-
-function setInitAccent2Dark() {
-  const val = getComputedStyle(document.documentElement).getPropertyValue(
-    '--accent-2-dark'
-  )
-
-  accent2DarkInput.value = handleBrowserFunk(val)
+  accent1LightInput.value = handleBrowserFunk(accentOneLightValue)
+  accent1DarkInput.value = handleBrowserFunk(accentOneDarkValue)
+  accent2LightInput.value = handleBrowserFunk(accentTwoLightValue)
+  accent2DarkInput.value = handleBrowserFunk(accentTwoDarkValue)
 }
 
 function handleAccent1LightChange(e) {
@@ -119,6 +104,7 @@ function handleAccent1DarkChange(e) {
 
   if (toggleModeBtn.innerHTML === 'LIGHT') {
     document.documentElement.style.setProperty('--accent-1', e.target.value)
+    accent1LightInput.value = e.target.value
   }
 }
 
