@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=98498e0b86f1"
   },
-  "author": " <tannergaucher@gmail.com>",
+  "author": " <tannermichaelgaucher@gmail.com>",
   "license": "MIT",
   "keywords": [
     "CSS",
