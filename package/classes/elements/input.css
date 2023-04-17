@@ -1,4 +1,4 @@
-.input {
+input {
   font-family: var(--font-family);
   font-size: var(--text-md);
   border-radius: var(--radius);
@@ -12,8 +12,8 @@
   transition: var(--transition);
 }
 
-.input:hover,
-.input:focus {
+input:hover,
+input:focus {
   border-color: var(--href-hover-color);
   box-shadow: var(--elevation-3);
   transition: var(--transition);
