@@ -1,4 +1,4 @@
-.select {
+select {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--bg-2);
@@ -14,11 +14,11 @@
   margin-bottom: var(--space-md);
 }
 
-.select:hover,
-.select:focus {
+select:hover,
+select:focus {
   border-color: var(--accent-2);
 }
 
-.select::-ms-expand {
+select::-ms-expand {
   display: none;
 }
