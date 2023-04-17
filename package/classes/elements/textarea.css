@@ -1,4 +1,4 @@
-.textarea {
+textarea {
   font-family: var(--font-family);
   font-size: var(--text-md);
   border-radius: var(--radius);
@@ -13,8 +13,8 @@
   transition: var(--transition);
 }
 
-.textarea:hover,
-.textarea:focus {
+textarea:hover,
+textarea:focus {
   border-color: var(--accent-2);
   box-shadow: var(--elevation-3);
 }
