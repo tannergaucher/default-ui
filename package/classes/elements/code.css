@@ -1,7 +1,6 @@
-.code {
+code {
   font-family: var(--mono);
   color: white;
-  padding: var(--space-sm);
 }
 
 code[class*='language-'],
@@ -12,6 +11,7 @@ pre[class*='language-'] {
   margin-bottom: var(--space-md);
   border-radius: var(--radius);
   overflow-y: auto;
+  padding: var(--space-sm);
 }
 
 :not(pre) > code,
