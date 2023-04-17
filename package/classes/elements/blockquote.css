@@ -1,4 +1,4 @@
-.blockquote {
+blockquote {
   background: var(--bg-2);
   padding: var(--space-md);
   border-left: 0.5rem solid var(--href-color);
@@ -10,12 +10,12 @@
   width: fit-content;
 }
 
-.blockquote > p {
+blockquote > p {
   margin: 0;
   font-style: italic;
 }
 
-.blockquote > h1,
+blockquote > h1,
 h2,
 h3,
 h4 {
