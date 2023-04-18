@@ -1,4 +1,4 @@
-.btn {
+button {
   cursor: pointer;
   background: var(--bg-1);
   color: var(--btn-color);
@@ -17,26 +17,45 @@
   transition: var(--transition);
 }
 
-.btn:last-child {
+button:last-child {
   margin-right: 0;
 }
 
-.btn:hover,
-.btn:focus,
-.btn--hover,
-.btn--focus {
+button:hover,
+button:focus {
   transition: var(--transition);
   color: var(--btn-hover-color);
   border-color: var(--href-hover-color);
   box-shadow: inset var(--elevation-1);
 }
 
-.btn:disabled,
-.btn--disabled {
+button:disabled {
   background: var(--bg-2);
   border-color: var(--grey);
   color: var(--grey);
   opacity: var(--opacity);
   filter: var(--opacity);
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--primary-btn-bg);
+  color: var(--primary-btn-color);
+  border: var(--thickness) solid var(--primary-btn-bg);
+  box-shadow: var(--elevation-2);
+}
+
+.primary:hover,
+.primary:focus {
+  color: var(--primary-btn-hover-color);
+  box-shadow: var(--elevation-1);
+  background: var(--href-hover-color);
+  border-color: var(--accent-2);
+}
+
+.primary:disabled {
+  background: var(--grey);
+  border-color: var(--grey);
+  color: var(--bg-1);
   cursor: not-allowed;
 }
