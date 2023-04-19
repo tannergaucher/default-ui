@@ -50,6 +50,7 @@ button[type='submit'] {
 }
 
 button.primary:hover,
+button[type='submit']:hover,
 .btn-primary--hover,
 .btn-primary:focus,
 .btn-primary--focus {
