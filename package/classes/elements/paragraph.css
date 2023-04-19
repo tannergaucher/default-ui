@@ -1,0 +1,8 @@
+p {
+  line-height: var(--paragraph-line-height);
+  letter-spacing: var(--paragraph-letter-spacing);
+  font-weight: 500;
+  font-size: var(--text-md);
+  margin-block-start: var(--space-md);
+  margin-block-end: var(--space-lg);
+}

@@ -1,0 +1,14 @@
+a {
+  color: var(--href-color);
+  transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--href-hover-color);
+  transition: var(--transition);
+}
+
+a:disabled {
+  cursor: not-allowed;
+}
