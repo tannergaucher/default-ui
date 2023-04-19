@@ -41,7 +41,8 @@ button:disabled,
   cursor: not-allowed;
 }
 
-button.primary {
+button.primary,
+button[type='submit'] {
   background: var(--primary-btn-bg);
   color: var(--primary-btn-color);
   border: var(--thickness) solid var(--primary-btn-bg);
