@@ -1,407 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic Styles</title>
+    <meta
+      name="description"
+      content="Responsive, themed, framework agnostic UI design system"
+    />
+    <!--PACKAGE IMPORT-->
+    <link rel="stylesheet" type="text/css" href="../index.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-E2X4GR6JSL"
+      type="module"
+    ></script>
+    <script type="module">
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semantic Styles</title>
-  <meta name="description" content="Responsive, themed, framework agnostic UI design system">
-  <!--PACKAGE IMPORT-->
-  <link rel="stylesheet" type="text/css" href="../index.css" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2X4GR6JSL" type="module"></script>
-  <script type="module">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+      gtag('config', 'G-E2X4GR6JSL')
+    </script>
 
-    gtag('config', 'G-E2X4GR6JSL');
-  </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
+      :root {
+        --sans: 'Fira Sans', sans-serif;
+        --font-family: var(--sans);
+        /* tomato */
+        --accent-2-dark: #ff6347;
+        /* palevioletred */
+        --accent-2-light: #db7093;
+        --caps-letter-spacing: 0.5rem;
+      }
+    </style>
+  </head>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
-
-    :root {
-      --sans: 'Fira Sans', sans-serif;
-      --font-family: var(--sans);
-      /* tomato */
-      --accent-2-dark: #ff6347;
-      /* palevioletred */
-      --accent-2-light: #db7093;
-      --caps-letter-spacing: .5rem;
-    }
-  </style>
-
-
-</head>
-
-<body class="fade-in">
-  <header class=" header container padding">
-    <a href="/">
-      <em>
-        <h1 class="text--xxxl title brand-title">
-          Semantic Styles
-        </h1>
-      </em>
-    </a>
-  </header>
-  <main class="container padding">
-    <h2 style="margin-bottom: var(--space-xl); margin-top: 0;">Themed, responsive, default styles for rapid prototyping.
-    </h2>
-    <div style="padding: var(--space-md) 0; margin-top: var(--space-xl);">
-      <code lang="bash">npm i semantic-styles</code>
-    </div>
-    <figure>
-      <img src="https://source.unsplash.com/random" alt="Random image from unsplash image API"
-        style="margin-top: var(--space-xl); width: 100%">
-      <figcaption> Image from https://source.unsplash.com/random</figcaption>
-    </figure>
-    <hr />
-    <h1 class="title">Heading One Title </h1>
-    <h1>Heading One</h1>
-    <h2>Heading Two</h2>
-    <h3>Heading Three</h3>
-    <h4>Heading Four</h4>
-    <p>Paragraph</p>
-    <p style="font-size: var(--text-sm);">Small</p>
-    <br />
-    <ul>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ul>
-    <ol>
-      <li>One</li>
-      <li>Two</li>
-      <li>Three</li>
-    </ol>
-    <blockquote href="http://foo.com">
-      <q>
-        The blockquote emerged from simple rules...
-      </q>
-    </blockquote>
-    <hr />
-    </div>
-    <h2>Heading</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-      vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
-      primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
-      ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
-      nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
-      pretium dignissim. Fusce facilisis risus vitae sodales pretium.
-      Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
-      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
-      semper sem facilisis varius interdum. In lacus tellus, blandit ac
-      nulla sit amet, sollicitudin laoreet quam.
-    </p>
-    <h3>Another Heading</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-      vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
-      primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
-      ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
-      nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
-      pretium dignissim. Fusce facilisis risus vitae sodales pretium.
-      Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
-      Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
-      semper sem facilisis varius interdum. In lacus tellus, blandit ac
-      nulla sit amet, sollicitudin laoreet quam.
-    </p>
-    <hr />
-    <section class="container">
-      <h3>Double Container Pattern</h3>
-      <p>
-        The universe emerged from simple rules, consectetur adipiscing elit. Nullam
-        vehicula auctor iaculis. Interdum et malesuada fames ac ante ipsum
-        primis in faucibus. Duis pellentesque magna accumsan, tincidunt nunc
-        ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
-        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet
-        pretium dignissim. Fusce facilisis risus vitae sodales pretium.
-        Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
-        semper sem facilisis varius interdum. In lacus tellus, blandit ac
-        nulla sit amet, sollicitudin laoreet quam.
-      </p>
-    </section>
-    <hr />
-    <h2>Card Grid</h2>
-    <div class="content-grid">
-
-      <div class="card">
-        <a href="/">
-        <img src="https://source.unsplash.com/random" alt="random">
-        <h3 class="card-heading">Card Heading</h3>
-        <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
+  <body class="fade-in">
+    <header class="container">
+      <a href="/">
+        <em>
+          <h1 class="text--xxxl">Semantic Styles</h1>
+        </em>
       </a>
-      </div>
-      
-
-
-    
-        <div class="card">
-          <a href="/">
-          <img src="https://source.unsplash.com/random" alt="random">
-          <h3 class="card-heading">Card Heading</h3>
-          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
-        </a>
-        </div>
-        <div class="card">
-          <a href="/">
-          <img src="https://source.unsplash.com/random" alt="random">
-          <h3 class="card-heading">Card Heading</h3>
-          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
-        </a>
-        </div>
-        <div class="card">
-          <a href="/">
-          <img src="https://source.unsplash.com/random" alt="random">
-          <h3 class="card-heading">Card Heading</h3>
-          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
-        </a>
-        </div>
-      <div class="card">
-          <a href="/">
-          <img src="https://source.unsplash.com/random" alt="random">
-          <h3 class="card-heading">Card Heading</h3>
-          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
-        </a>
-        </div>
-        <div class="card">
-          <a href="/">
-          <img src="https://source.unsplash.com/random" alt="random">
-          <h3 class="card-heading">Card Heading</h3>
-          <p class="card-text">Paragraph element with class of card-text and a random unsplash image</p>
-        </a>
-        </div>
-    </div>
-    <hr />
-    <h2>Image Grid</h2>
-    <div class="image-grid">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-      <img src="https://source.unsplash.com/random" alt="random" style="max-width: 100%;">
-    </div>
-    <hr />
-    <h2>Table</h2>
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3" class="text--md">Table Header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text--sm">Table body</td>
-          <td class="text--sm">with three</td>
-          <td class="text--sm">columns</td>
-        </tr>
-        <tr>
-          <td class="text--sm">Table body</td>
-          <td class="text--sm">with three</td>
-          <td class="text--sm">columns</td>
-        </tr>
-        <tr>
-          <td class="text--sm">Table body</td>
-          <td class="text--sm">with three</td>
-          <td class="text--sm">columns</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr />
-    <section>
-      <h2>Fieldset, form, textarea, input, button</h2>
-      <fieldset>
-        <form>
-          <textarea placeholder="Textarea"></textarea>
-          <input type="text" placeholder="Input" />
-          <button class="btn btn-primary pulse" type="button">Btn Primary</button>
-        </form>
-      </fieldset>
-      <button class="btn">Btn</button>
-      <button class="btn" disabled="true">Btn</button>
-      <button class="btn btn-primary">Btn</button>
-      <button class="btn btn-primary" disabled="true">Btn</button>
+      <h2 style="margin-bottom: var(--space-xl); margin-top: 0">
+        Themed, responsive, default styles for rapid prototyping.
+      </h2>
+      <code lang="bash">npm i semantic-styles</code>
+    </header>
+    <main class="container">
+      <figure>
+        <img
+          src="https://source.unsplash.com/random"
+          alt="Random image from unsplash image API"
+          style="margin-top: var(--space-xl); width: 100%"
+        />
+        <figcaption>Image from https://source.unsplash.com/random</figcaption>
+      </figure>
       <hr />
-      <h2>Summary / Details</h2>
-      <details open>
-        <summary>Summary One </summary>
-        <p class="fade-in"> Details Vestibulum porttitor enim sit amet
-          pretium dignissim. Fusce facilisis risus vitae sodales pretium.
+      <h1 class="title">Heading One Title</h1>
+      <h1>Heading One</h1>
+      <h2>Heading Two</h2>
+      <h3>Heading Three</h3>
+      <h4>Heading Four</h4>
+      <p>Paragraph</p>
+      <p style="font-size: var(--text-sm)">Small</p>
+      <br />
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <ol>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ol>
+      <blockquote href="http://foo.com">
+        <q> The blockquote emerged from simple rules... </q>
+      </blockquote>
+      <hr />
+      <h2>Heading</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
+        auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
+        faucibus. Duis pellentesque magna accumsan, tincidunt nunc ac, convallis
+        urna. Suspendisse et tincidunt erat, vitae malesuada nisl. Donec eu
+        dictum lacus. Vestibulum porttitor enim sit amet pretium dignissim.
+        Fusce facilisis risus vitae sodales pretium. Suspendisse sem elit,
+        vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Sed semper sem facilisis varius
+        interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
+        laoreet quam.
+      </p>
+      <h3>Another Heading</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
+        auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
+        faucibus. Duis pellentesque magna accumsan, tincidunt nunc ac, convallis
+        urna. Suspendisse et tincidunt erat, vitae malesuada nisl. Donec eu
+        dictum lacus. Vestibulum porttitor enim sit amet pretium dignissim.
+        Fusce facilisis risus vitae sodales pretium. Suspendisse sem elit,
+        vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Sed semper sem facilisis varius
+        interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
+        laoreet quam.
+      </p>
+      <hr />
+      <section class="container">
+        <h3>Double Container Pattern</h3>
+        <p>
+          The universe emerged from simple rules, consectetur adipiscing elit.
+          Nullam vehicula auctor iaculis. Interdum et malesuada fames ac ante
+          ipsum primis in faucibus. Duis pellentesque magna accumsan, tincidunt
+          nunc ac, convallis urna. Suspendisse et tincidunt erat, vitae
+          malesuada nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit
+          amet pretium dignissim. Fusce facilisis risus vitae sodales pretium.
           Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
           Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
           semper sem facilisis varius interdum. In lacus tellus, blandit ac
           nulla sit amet, sollicitudin laoreet quam.
         </p>
-      </details>
-      <details class="fade-in">
-        <summary>Summary Two</summary>
-        <p class="fade-in"> Details Vestibulum porttitor enim sit amet
-          pretium dignissim. Fusce facilisis risus vitae sodales pretium.
-          Suspendisse sem elit, vestibulum non ornare eget, placerat ut turpis.
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
-          semper sem facilisis varius interdum. In lacus tellus, blandit ac
-          nulla sit amet, sollicitudin laoreet quam.</p>
-      </details>
-    </section>
-    <hr />
-    <section>
-      <h2>Dialog</h2>
-      <button class="btn btn-primary" id="show-dialog-example-btn" style="margin-bottom: 0; width: 100%;">Show
-        Dialog</button>
-      <dialog class="dialog" id="dialog-example">
-        <h1>Greetings 👋</h1>
-        <h2>Native HTML Dialog element here 🤓</h2>
-        <form method="dialog">
-          <button class="btn btn-primary" style="width: 100%">Close Dialog</button>
-        </form>
-      </dialog>
-    </section>
-    <hr />
-    <section>
-      <h2>Tokens</h2>
+      </section>
+      <hr />
+      <h2>Card Grid</h2>
       <div class="content-grid">
-        <div>
-          <label class="label" for="type-scale-select">
-            <p>Typography Scale</p>
-          </label>
-          <select name="" id="type-scale-select">
-            <option value="1.067">1.067 | Minor Second</option>
-            <option value="1.125">1.125 | Major Second</option>
-            <option value="1.2">1.2 | Minor Third</option>
-            <option value="1.25">1.25 | Major Third</option>
-            <option value="1.333" selected="selected">1.333 | Perfect Fourth (Default)</option>
-            <option value="1.414">1.414 | Augmented Fourth</option>
-            <option value="1.5">1.5 | Perfect Fifth</option>
-            <option value="1.618">1.618 | Golden Ratio</option>
-          </select>
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
-        <div>
-          <label class="label" for="text-base-select">
-            <p style="margin-top: var(--space-md);">Text Baseline</p>
-          </label>
-          <select name="" id="text-base-select">
-            <option value=".4">.4rem</option>
-            <option value=".45">.45rem</option>
-            <option value=".5">.5rem</option>
-            <option value=".55">.55rem</option>
-            <option value=".6" selected="selected">.6rem (Default)</option>
-            <option value=".65">.65rem</option>
-            <option value=".7">.7rem</option>
-            <option value=".75">.75rem</option>
-            <option value=".8">.8rem</option>
-          </select>
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
-        <div>
-          <label class="label" for="space-base-select">
-            <p style="margin-top: var(--space-md);">Space Baseline</p>
-          </label>
-          <select name="" id="space-base-select">
-            <option value=".9">.9rem</option>
-            <option value="1.1">1.0rem</option>
-            <option value="1.1">1.1rem</option>
-            <option value="1.2">1.2rem</option>
-            <option value="1.3" selected="selected">1.3rem (Default)</option>
-            <option value="1.4">1.4rem</option>
-            <option value="1.5">1.5rem</option>
-            <option value="1.6">1.6rem</option>
-            <option value="1.7">1.7rem</option>
-          </select>
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
-        <div>
-          <label class="label" for="responsive-unit-select">
-            <p style="margin-top: var(--space-md);">Responsive Unit</p>
-          </label>
-          <select name="" id="responsive-unit-select">
-            <option value=".2">.2vw</option>
-            <option value=".25">.25vw</option>
-            <option value=".3">.3vw</option>
-            <option value=".35">.35vw</option>
-            <option value=".4" selected="selected">.4vw (Default)</option>
-            <option value=".45">.45vw</option>
-            <option value=".5">.5vw</option>
-            <option value=".55">.55vw</option>
-            <option value=".6">.6vw</option>
-          </select>
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
-        <div>
-          <label for="accent-1-light-input">
-            <p>Accent 1 Light</p>
-          </label>
-          <input type="color" id="accent-1-light-input"
-            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-1-light); border-radius: var(--radius); cursor: pointer;">
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
-        <div>
-          <label for="accent-2-light-input">
-            <p>Accent 2 Light</p>
-          </label>
-          <input type="color" id="accent-2-light-input"
-            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-2-light); border-radius: var(--radius); cursor: pointer;">
-        </div>
-        <div>
-          <label for="accent-1-dark-input">
-            <p>Accent 1 Dark</p>
-          </label>
-          <input type="color" id="accent-1-dark-input"
-            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-1-dark); border-radius: var(--radius); cursor: pointer">
-        </div>
-        <div>
-          <label for="accent-2-dark-input">
-            <p>Accent 2 Dark</p>
-          </label>
-          <input type="color" id="accent-2-dark-input"
-            style="width: calc(100% - var(--space-md)); padding: var(--space-md) var(--space-sm); background-color: var(--accent-2-dark); border-radius: var(--radius); cursor: pointer;">
+        <div class="card">
+          <a href="/">
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3 class="card-heading">Card Heading</h3>
+            <p class="card-text">
+              Paragraph element with class of card-text and a random unsplash
+              image
+            </p>
+          </a>
         </div>
       </div>
+      <hr />
+      <h2>Image Grid</h2>
+      <div class="image-grid">
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
+        <img
+          src="https://source.unsplash.com/random"
+          alt="random"
+          style="max-width: 100%"
+        />
       </div>
-    </section>
-    <hr>
-  </main>
-  <footer class="container padding">
-    <a href="/">
-      <em>
-        <h1 class="title brand-title">
-          Semantic Styles
-        </h1>
-      </em>
-    </a>
-    <br />
-    <nav>
-
-      <ul>
-        <li>
-          <a href="https://github.com/tannergaucher/semantic-styles" target="_blank" rel="noreferrer" class="nav-link">
-            Github Repository
-          </a>
-        </li>
-        <li>
-          <a href="https://semanticstylesmdx.netlify.app" target="_blank" rel="noreferrer" class="nav-link">
-            Documentation Site with Live Code Examples
-          </a>
-        </li>
-        <li>
-          <a href="https://semanticstylesreachui.netlify.app/" target="_blank" rel="noreferrer" class="nav-link">
-            Semantic Styles X Reach UI (WIP)
-          </a>
-        </li>
-      </ul>
-      
-      
-
-    </nav>
-    
-  </footer>
-  <button class="btn btn-primary toggle-mode-btn pulse"
-    style="position: sticky; bottom: var(--space-md); float: right;"></button>
-  <script src="./index.js" type="module"></script>
-  <script src="../package/modes/index.js" type="module"></script>
-
-</body>
-
+      <hr />
+      <h2>Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3" class="text--md">Table Header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text--sm">Table body</td>
+            <td class="text--sm">with three</td>
+            <td class="text--sm">columns</td>
+          </tr>
+          <tr>
+            <td class="text--sm">Table body</td>
+            <td class="text--sm">with three</td>
+            <td class="text--sm">columns</td>
+          </tr>
+          <tr>
+            <td class="text--sm">Table body</td>
+            <td class="text--sm">with three</td>
+            <td class="text--sm">columns</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <section>
+        <h2>Fieldset, form, textarea, input, button</h2>
+        <fieldset>
+          <form>
+            <textarea placeholder="Textarea"></textarea>
+            <input type="text" placeholder="Input" />
+            <button class="btn btn-primary pulse" type="button">
+              Btn Primary
+            </button>
+          </form>
+        </fieldset>
+        <button class="btn">Btn</button>
+        <button class="btn" disabled="true">Btn</button>
+        <button class="btn btn-primary">Btn</button>
+        <button class="btn btn-primary" disabled="true">Btn</button>
+        <hr />
+        <h2>Summary / Details</h2>
+        <details open>
+          <summary>Summary One</summary>
+          <p class="fade-in">
+            Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
+            facilisis risus vitae sodales pretium. Suspendisse sem elit,
+            vestibulum non ornare eget, placerat ut turpis. Interdum et
+            malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
+            facilisis varius interdum. In lacus tellus, blandit ac nulla sit
+            amet, sollicitudin laoreet quam.
+          </p>
+        </details>
+        <details class="fade-in">
+          <summary>Summary Two</summary>
+          <p class="fade-in">
+            Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
+            facilisis risus vitae sodales pretium. Suspendisse sem elit,
+            vestibulum non ornare eget, placerat ut turpis. Interdum et
+            malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
+            facilisis varius interdum. In lacus tellus, blandit ac nulla sit
+            amet, sollicitudin laoreet quam.
+          </p>
+        </details>
+      </section>
+      <hr />
+      <section>
+        <h2>Dialog</h2>
+        <button
+          class="btn btn-primary"
+          id="show-dialog-example-btn"
+          style="margin-bottom: 0; width: 100%"
+        >
+          Show Dialog
+        </button>
+        <dialog class="dialog" id="dialog-example">
+          <h1>Greetings 👋</h1>
+          <h2>Native HTML Dialog element here 🤓</h2>
+          <form method="dialog">
+            <button class="btn btn-primary" style="width: 100%">
+              Close Dialog
+            </button>
+          </form>
+        </dialog>
+      </section>
+      <hr />
+      <section>
+        <h2>Tokens</h2>
+        <div class="content-grid">
+          <div>
+            <label class="label" for="type-scale-select">
+              <p>Typography Scale</p>
+            </label>
+            <select name="" id="type-scale-select">
+              <option value="1.067">1.067 | Minor Second</option>
+              <option value="1.125">1.125 | Major Second</option>
+              <option value="1.2">1.2 | Minor Third</option>
+              <option value="1.25">1.25 | Major Third</option>
+              <option value="1.333" selected="selected">
+                1.333 | Perfect Fourth (Default)
+              </option>
+              <option value="1.414">1.414 | Augmented Fourth</option>
+              <option value="1.5">1.5 | Perfect Fifth</option>
+              <option value="1.618">1.618 | Golden Ratio</option>
+            </select>
+          </div>
+          <div>
+            <label class="label" for="text-base-select">
+              <p style="margin-top: var(--space-md)">Text Baseline</p>
+            </label>
+            <select name="" id="text-base-select">
+              <option value=".4">.4rem</option>
+              <option value=".45">.45rem</option>
+              <option value=".5">.5rem</option>
+              <option value=".55">.55rem</option>
+              <option value=".6" selected="selected">.6rem (Default)</option>
+              <option value=".65">.65rem</option>
+              <option value=".7">.7rem</option>
+              <option value=".75">.75rem</option>
+              <option value=".8">.8rem</option>
+            </select>
+          </div>
+          <div>
+            <label class="label" for="space-base-select">
+              <p style="margin-top: var(--space-md)">Space Baseline</p>
+            </label>
+            <select name="" id="space-base-select">
+              <option value=".9">.9rem</option>
+              <option value="1.1">1.0rem</option>
+              <option value="1.1">1.1rem</option>
+              <option value="1.2">1.2rem</option>
+              <option value="1.3" selected="selected">1.3rem (Default)</option>
+              <option value="1.4">1.4rem</option>
+              <option value="1.5">1.5rem</option>
+              <option value="1.6">1.6rem</option>
+              <option value="1.7">1.7rem</option>
+            </select>
+          </div>
+          <div>
+            <label class="label" for="responsive-unit-select">
+              <p style="margin-top: var(--space-md)">Responsive Unit</p>
+            </label>
+            <select name="" id="responsive-unit-select">
+              <option value=".2">.2vw</option>
+              <option value=".25">.25vw</option>
+              <option value=".3">.3vw</option>
+              <option value=".35">.35vw</option>
+              <option value=".4" selected="selected">.4vw (Default)</option>
+              <option value=".45">.45vw</option>
+              <option value=".5">.5vw</option>
+              <option value=".55">.55vw</option>
+              <option value=".6">.6vw</option>
+            </select>
+          </div>
+          <div>
+            <label for="accent-1-light-input">
+              <p>Accent 1 Light</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-light-input"
+              style="
+                width: calc(100% - var(--space-md));
+                padding: var(--space-md) var(--space-sm);
+                background-color: var(--accent-1-light);
+                border-radius: var(--radius);
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div>
+            <label for="accent-2-light-input">
+              <p>Accent 2 Light</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-light-input"
+              style="
+                width: calc(100% - var(--space-md));
+                padding: var(--space-md) var(--space-sm);
+                background-color: var(--accent-2-light);
+                border-radius: var(--radius);
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div>
+            <label for="accent-1-dark-input">
+              <p>Accent 1 Dark</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-dark-input"
+              style="
+                width: calc(100% - var(--space-md));
+                padding: var(--space-md) var(--space-sm);
+                background-color: var(--accent-1-dark);
+                border-radius: var(--radius);
+                cursor: pointer;
+              "
+            />
+          </div>
+          <div>
+            <label for="accent-2-dark-input">
+              <p>Accent 2 Dark</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-dark-input"
+              style="
+                width: calc(100% - var(--space-md));
+                padding: var(--space-md) var(--space-sm);
+                background-color: var(--accent-2-dark);
+                border-radius: var(--radius);
+                cursor: pointer;
+              "
+            />
+          </div>
+        </div>
+      </section>
+      <hr />
+    </main>
+    <footer class="container">
+      <a href="/">
+        <em>
+          <h1 class="title brand-title">Semantic Styles</h1>
+        </em>
+      </a>
+      <br />
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/tannergaucher/semantic-styles"
+              target="_blank"
+              rel="noreferrer"
+              class="nav-link"
+            >
+              Github Repository
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://semanticstylesmdx.netlify.app"
+              target="_blank"
+              rel="noreferrer"
+              class="nav-link"
+            >
+              Documentation Site with Live Code Examples
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://semanticstylesreachui.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              class="nav-link"
+            >
+              Semantic Styles X Reach UI (WIP)
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <button
+      class="btn btn-primary toggle-mode-btn pulse"
+      style="position: sticky; bottom: var(--space-md); float: right"
+    ></button>
+    <script src="./index.js" type="module"></script>
+    <script src="../package/modes/index.js" type="module"></script>
+  </body>
 </html>
