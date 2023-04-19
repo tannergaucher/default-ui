@@ -21,9 +21,6 @@
     "UI",
     "System"
   ],
-  "dependencies": {
-    "regenerator-runtime": "^0.13.7"
-  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@storybook/addon-actions": "^6.2.9",
@@ -33,7 +30,8 @@
     "babel-loader": "^8.2.2",
     "chromatic": "^5.8.2",
     "cssnano": "^4.1.10",
-    "storybook-addon-pseudo-states": "^1.0.0"
+    "storybook-addon-pseudo-states": "^1.0.0",
+    "regenerator-runtime": "^0.13.7"
   },
   "browserslist": [
     "last 1 Chrome version"
