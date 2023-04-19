@@ -18,3 +18,10 @@ input:focus {
   box-shadow: var(--elevation-3);
   transition: var(--transition);
 }
+
+input[type='color'] {
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
