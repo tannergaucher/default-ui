@@ -1,9 +1,13 @@
 const { LOCAL_STORAGE_KEY } = require('../utils/constants')
 
-syncBtnText()
-handleUserPersistedPreference()
-handleUserChanges()
-handleMediaQueryChanges()
+export default function initTheme() {
+  syncBtnText()
+  handleUserPersistedPreference()
+  handleUserChanges()
+  handleMediaQueryChanges()
+}
+
+initTheme()
 
 function syncBtnText() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
