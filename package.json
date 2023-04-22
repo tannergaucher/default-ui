@@ -1,6 +1,6 @@
 {
   "name": "semantic-styles",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
