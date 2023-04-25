@@ -52,6 +52,8 @@ export function handleUserPersistedPreference() {
 function handleUserChanges() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
+  if (!toggleModeBtn) return
+
   toggleModeBtn.addEventListener('click', handleToggle)
 
   function handleToggle() {
