@@ -14,10 +14,6 @@ const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 window.addEventListener('load', setInitValues)
 
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
-typeScaleSelect.addEventListener('change', handleTypeScaleChange)
-textBaseSelect.addEventListener('change', handleTextBaseSelect)
-spaceBaseSelect.addEventListener('change', handleSpaceBaseSelect)
-responsiveUnitSelect.addEventListener('change', handleResponsiveUnitSelect)
 accent1LightInput.addEventListener('change', handleAccent1LightChange)
 accent1DarkInput.addEventListener('change', handleAccent1DarkChange)
 accent2LightInput.addEventListener('change', handleAccent2LightChange)
@@ -33,42 +29,6 @@ function handleDialogBtnClick() {
   } else {
     alert('The <dialog> API is not supported by this browser')
   }
-}
-
-function handleTypeScaleChange(e) {
-  document.documentElement.style.setProperty(
-    '--text-scale-ratio',
-    e.target.value
-  )
-}
-
-function handleTextBaseSelect(e) {
-  const responsiveUnit = getComputedStyle(
-    document.documentElement
-  ).getPropertyValue('--responsive-unit')
-
-  document.documentElement.style.setProperty(
-    '--text-baseline',
-    `calc(${responsiveUnit} + ${e.target.value}rem)`
-  )
-}
-
-function handleSpaceBaseSelect(e) {
-  const responsiveUnit = getComputedStyle(
-    document.documentElement
-  ).getPropertyValue('--responsive-unit')
-
-  document.documentElement.style.setProperty(
-    '--space-baseline',
-    `calc(${e.target.value}rem + ${responsiveUnit})`
-  )
-}
-
-function handleResponsiveUnitSelect(e) {
-  document.documentElement.style.setProperty(
-    '--responsive-unit',
-    `${e.target.value}vw`
-  )
 }
 
 function setInitValues() {
