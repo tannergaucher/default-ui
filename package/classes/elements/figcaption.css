@@ -1,3 +1,4 @@
 figcaption {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-sm);
+  font-style: italic;
 }
