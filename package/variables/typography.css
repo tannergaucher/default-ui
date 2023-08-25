@@ -10,35 +10,23 @@
   --caps-letter-spacing: 0.17rem;
   --text-scale-ratio: 1.333;
   --responsive-unit: 0.4vw;
-  /* CALCULATED FONT SIZE */
-  --text-baseline: calc(0.6rem + var(--responsive-unit));
-  --font-size: calc(var(--text-baseline) + var(--responsive-unit));
-  /* CALCULATED TYPE SCALE */
-  --text-xs: calc(
-    var(--text-baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
-      var(--responsive-unit)
-  );
-  --text-sm: calc(
-    var(--text-baseline) / var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-md: calc(
-    var(--text-baseline) * var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-lg: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
-      var(--responsive-unit)
-  );
-  --text-xl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-xxl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-xxxl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) + var(--responsive-unit)
-  );
+
+  /* fibonacci based text sizes */
+  /* @todo move this, to constraints.css? */
+  --6: 144px;
+  --5: 89px;
+  --4: 55px;
+  --3: 34px;
+  --2: 21px;
+  --1: 13px;
+  --0: 8px;
+
+  /*  */
+  --text-xs: var(--0);
+  --text-sm: var(--1);
+  --text-md: var(--2);
+  --text-lg: var(--3);
+  --text-xl: var(--4);
+  --text-xxl: var(--5);
+  --text-xxxl: var(--6);
 }

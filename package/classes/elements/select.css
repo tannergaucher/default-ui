@@ -7,7 +7,7 @@ select {
   padding: var(--space-md) var(--space-sm);
   width: 100%;
   font-family: var(--font-family);
-  font-size: var(--font-size);
+  font-size: var(--text-md);
   cursor: pointer;
   line-height: inherit;
   color: var(--text-color);
