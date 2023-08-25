@@ -33,56 +33,76 @@
       }
 
       input[type='color'] {
-        height: 30vh;
+        height: 33vh;
         border: none;
       }
     </style>
   </head>
   <body class="fade-in">
-    <header class="container padding">
-      <a href="/">
-        <em>
-          <h1 style="margin-block-start: var(--space-xl)">Semantic Styles</h1>
-        </em>
-      </a>
-      <h2 style="margin-block: var(--space-xxl)">
-        Themed, responsive, default styles for rapid prototyping.
-      </h2>
-      <code lang="bash">npm i semantic-styles</code>
+    <header>
+      <details>
+        <summary>MENU</summary>
+        <ul>
+          <li>
+            <a href="#elements">
+              <h3>Elements</h3>
+            </a>
+          </li>
+
+          <li>
+            <a href="#layout">
+              <h3>Layout</h3>
+            </a>
+          </li>
+
+          <li>
+            <a href="#colors">
+              <h3>Color</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#spacing">
+              <h3>Spacing</h3>
+            </a>
+          </li>
+        </ul>
+
+        <menu>
+          <button
+            class="toggle-mode-btn primary"
+            style="width: 100%; margin-bottom: 0"
+          ></button>
+        </menu>
+      </details>
     </header>
+
     <main class="container padding">
-      <figure>
-        <img
-          src="https://source.unsplash.com/random"
-          alt="Random image from unsplash image API"
-          style="margin-top: var(--space-xxl); width: 100%"
-        />
-        <figcaption>Image from https://source.unsplash.com/random</figcaption>
-      </figure>
-      <hr />
-      <h1>Heading One</h1>
-      <h2>Heading Two</h2>
-      <h3>Heading Three</h3>
-      <h4>Heading Four</h4>
-      <p>Paragraph</p>
-      <small>Small</small>
-      <hr />
-      <ul>
+      <h1 id="typography">Semantic Styles</h1>
+      <h2>Responsive, themed, framework agnostic UI design system</h2>
+
+      <!-- <ul>
         <li>One</li>
         <li>Two</li>
         <li>Three</li>
       </ul>
-      <hr />
+
       <ol>
         <li>One</li>
         <li>Two</li>
         <li>Three</li>
-      </ol>
+      </ol> -->
+
+      <div
+        style="
+          margin-block-start: var(--space-xl);
+          margin-block-end: var(--space-xxl);
+        "
+      >
+        <code> npm i semantic-styles </code>
+      </div>
+
       <hr />
-      <blockquote href="http://foo.com">
-        <q> The blockquote emerged from simple rules... </q>
-      </blockquote>
-      <hr />
+
       <h2>Heading</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
@@ -96,6 +116,7 @@
         interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
         laoreet quam.
       </p>
+
       <h3>Another Heading</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
@@ -109,7 +130,11 @@
         interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
         laoreet quam.
       </p>
-      <hr />
+
+      <blockquote href="http://foo.com">
+        <q>A Blockquote built for rapid prototyping!</q>
+      </blockquote>
+
       <h2>Card Grid</h2>
       <div class="content-grid">
         <div class="card">
@@ -174,7 +199,7 @@
           </a>
         </div>
       </div>
-      <hr />
+
       <h2>Image Grid</h2>
       <div class="image-grid">
         <img
@@ -309,55 +334,65 @@
         </dialog>
       </section>
       <hr />
-      <h2>Colors</h2>
-      <section class="content-grid">
-        <div>
-          <label for="accent-1-light-input">
-            <p>Accent 1 Light</p>
-          </label>
-          <input
-            type="color"
-            id="accent-1-light-input"
-            style="background-color: var(--accent-1-light)"
-          />
-        </div>
-        <div>
-          <label for="accent-2-light-input">
-            <p>Accent 2 Light</p>
-          </label>
-          <input
-            type="color"
-            id="accent-2-light-input"
-            style="background-color: var(--accent-2-light)"
-          />
-        </div>
-        <div>
-          <label for="accent-1-dark-input">
-            <p>Accent 1 Dark</p>
-          </label>
-          <input
-            type="color"
-            id="accent-1-dark-input"
-            style="background-color: var(--accent-1-dark)"
-          />
-        </div>
-        <div>
-          <label for="accent-2-dark-input">
-            <p>Accent 2 Dark</p>
-          </label>
-          <input
-            type="color"
-            id="accent-2-dark-input"
-            style="background-color: var(--accent-2-dark)"
-          />
+
+      <section class="light-color-section">
+        <h2>Light Theme Colors</h2>
+        <div class="content-grid">
+          <div>
+            <label for="accent-1-light-input">
+              <p>Accent 1</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-light-input"
+              style="background-color: var(--accent-1-light)"
+            />
+          </div>
+          <div>
+            <label for="accent-2-light-input">
+              <p>Accent 2</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-light-input"
+              style="background-color: var(--accent-2-light)"
+            />
+          </div>
         </div>
       </section>
+
+      <section>
+        <h2>Dark Theme Colors</h2>
+        <div class="content-grid">
+          <div>
+            <label for="accent-1-dark-input">
+              <p>Accent 1 Dark</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-dark-input"
+              style="background-color: var(--accent-1-dark)"
+            />
+          </div>
+          <div>
+            <label for="accent-2-dark-input">
+              <p>Accent 2 Dark</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-dark-input"
+              style="background-color: var(--accent-2-dark)"
+            />
+          </div>
+        </div>
+      </section>
+
       <hr />
     </main>
     <footer class="container padding">
       <a href="/">
         <em>
-          <h1 class="title brand-title">Semantic Styles</h1>
+          <h2>Semantic Styles</h2>
         </em>
       </a>
       <br />
@@ -396,10 +431,6 @@
         </ul>
       </nav>
     </footer>
-    <button
-      class="primary toggle-mode-btn pulse"
-      style="position: sticky; bottom: var(--space-md); float: right"
-    ></button>
     <script src="./index.js" type="module"></script>
     <script src="../package/modes/index.js" type="module"></script>
   </body>

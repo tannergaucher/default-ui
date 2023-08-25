@@ -5,5 +5,4 @@ hr {
   margin-block-start: var(--space-xl);
   margin-block-end: var(--space-xl);
   box-shadow: var(--elevation-2);
-  border-radius: var(--radius);
 }

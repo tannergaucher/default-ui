@@ -1,9 +1,9 @@
 details {
   border-radius: var(--radius);
-  margin-bottom: var(--space-md);
   color: var(--text-color);
   background-color: var(--bg-2);
   box-shadow: var(--elevation-1);
+  width: 100%;
 }
 
 details:hover {
