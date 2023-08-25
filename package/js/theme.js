@@ -23,11 +23,11 @@ function syncBtnText() {
     .matches
 
   if (initPrefersDark) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = 'LIGHT THEME'
   }
 
   if (initPrefersLight) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = 'DARK THEME'
   }
 
   if (toggleModeBtn.innerHTML) {
@@ -40,11 +40,11 @@ export function handleUserPersistedPreference() {
 
   if (!persistedPreference) return
 
-  if (persistedPreference === 'DARK') {
+  if (persistedPreference === 'DARK THEME') {
     setDarkTheme()
   }
 
-  if (persistedPreference === 'LIGHT') {
+  if (persistedPreference === 'LIGHT THEME') {
     setLightTheme()
   }
 }
@@ -57,12 +57,12 @@ function handleUserChanges() {
   toggleModeBtn.addEventListener('click', handleToggle)
 
   function handleToggle() {
-    if (toggleModeBtn.innerHTML === 'DARK') {
+    if (toggleModeBtn.innerHTML === 'DARK THEME') {
       setDarkTheme()
       return
     }
 
-    if (toggleModeBtn.innerHTML === 'LIGHT') {
+    if (toggleModeBtn.innerHTML === 'LIGHT THEME') {
       setLightTheme()
       return
     }
@@ -117,10 +117,10 @@ function setDarkTheme() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = 'LIGHT THEME'
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
+  localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK THEME')
 }
 
 function setLightTheme() {
@@ -153,8 +153,8 @@ function setLightTheme() {
   const toggleModeBtn = document.querySelector('.toggle-mode-btn')
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = 'DARK THEME'
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
+  localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT THEME')
 }
