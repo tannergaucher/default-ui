@@ -4,15 +4,13 @@
   --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
   --heading-line-height: 1.4;
-  --paragraph-line-height: 1.7;
+  --paragraph-line-height: 2;
   --heading-letter-spacing: 0rem;
-  --paragraph-letter-spacing: 0rem;
+  --paragraph-letter-spacing: 0.5px;
   --caps-letter-spacing: 0.17rem;
   --text-scale-ratio: 1.333;
   --responsive-unit: 0.4vw;
 
-  /* fibonacci based text sizes */
-  /* @todo move this, to constraints.css? */
   --6: 144px;
   --5: 89px;
   --4: 55px;
@@ -21,7 +19,6 @@
   --1: 13px;
   --0: 8px;
 
-  /*  */
   --text-xs: var(--0);
   --text-sm: var(--1);
   --text-md: var(--2);
