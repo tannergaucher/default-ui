@@ -237,7 +237,6 @@
           style="max-width: 100%"
         />
       </div>
-      <hr />
       <h2>Table</h2>
       <table>
         <thead>
@@ -263,120 +262,113 @@
           </tr>
         </tbody>
       </table>
-      <hr />
-      <section>
-        <h2>Fieldset, form, textarea, input, button</h2>
-        <fieldset>
-          <form>
-            <textarea placeholder="Textarea"></textarea>
-            <input type="text" placeholder="Input" />
-            <button class="pulse" type="submit">Btn Primary</button>
-          </form>
-        </fieldset>
-        <button>Btn</button>
-        <button disabled="true">Btn</button>
-        <button class="primary">Btn</button>
-        <button class="primary" disabled="true">Btn</button>
-        <hr />
-        <h2>Summary / Details</h2>
-        <details open>
-          <summary>Summary One</summary>
-          <p class="fade-in">
-            Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
-            facilisis risus vitae sodales pretium. Suspendisse sem elit,
-            vestibulum non ornare eget, placerat ut turpis. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
-            facilisis varius interdum. In lacus tellus, blandit ac nulla sit
-            amet, sollicitudin laoreet quam.
-          </p>
-        </details>
-        <details class="fade-in">
-          <summary>Summary Two</summary>
-          <p class="fade-in">
-            Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
-            facilisis risus vitae sodales pretium. Suspendisse sem elit,
-            vestibulum non ornare eget, placerat ut turpis. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
-            facilisis varius interdum. In lacus tellus, blandit ac nulla sit
-            amet, sollicitudin laoreet quam.
-          </p>
-        </details>
-      </section>
-      <hr />
-      <section>
-        <h2>Dialog</h2>
-        <button
-          class="primary"
-          id="show-dialog-example-btn"
-          style="margin-bottom: 0; width: 100%"
-        >
-          Show Dialog
-        </button>
-        <dialog class="dialog" id="dialog-example">
-          <h1>Greetings 👋</h1>
-          <h2>Native HTML Dialog element here 🤓</h2>
-          <form method="dialog">
-            <button class="btn btn-primary" style="width: 100%">
-              Close Dialog
-            </button>
-          </form>
-        </dialog>
-      </section>
+
+      <fieldset>
+        <form>
+          <h2>Textarea</h2>
+          <textarea placeholder="Textarea"></textarea>
+          <h2>Input</h2>
+          <input type="text" placeholder="Input" />
+          <h2>Button</h2>
+          <button class="pulse" type="submit">Btn Primary</button>
+        </form>
+      </fieldset>
+      <button>Btn</button>
+      <button disabled="true">Btn</button>
+      <button class="primary">Btn</button>
+      <button class="primary" disabled="true">Btn</button>
+
+      <h2>Summary / Details</h2>
+      <details open>
+        <summary>Summary One</summary>
+        <p class="fade-in">
+          Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
+          facilisis risus vitae sodales pretium. Suspendisse sem elit,
+          vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
+          fames ac ante ipsum primis in faucibus. Sed semper sem facilisis
+          varius interdum. In lacus tellus, blandit ac nulla sit amet,
+          sollicitudin laoreet quam.
+        </p>
+      </details>
+      <details class="fade-in">
+        <summary>Summary Two</summary>
+        <p class="fade-in">
+          Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
+          facilisis risus vitae sodales pretium. Suspendisse sem elit,
+          vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
+          fames ac ante ipsum primis in faucibus. Sed semper sem facilisis
+          varius interdum. In lacus tellus, blandit ac nulla sit amet,
+          sollicitudin laoreet quam.
+        </p>
+      </details>
+
+      <h2>Dialog</h2>
+      <button
+        class="primary"
+        id="show-dialog-example-btn"
+        style="margin-bottom: 0; width: 100%"
+      >
+        Show Dialog
+      </button>
+      <dialog class="dialog" id="dialog-example">
+        <h1>Greetings 👋</h1>
+        <h2>Native HTML Dialog element here 🤓</h2>
+        <form method="dialog">
+          <button class="btn btn-primary" style="width: 100%">
+            Close Dialog
+          </button>
+        </form>
+      </dialog>
+
       <hr />
 
-      <section class="light-color-section">
-        <h2>Light Theme Colors</h2>
-        <div class="content-grid">
-          <div>
-            <label for="accent-1-light-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-light-input"
-              style="background-color: var(--accent-1-light)"
-            />
-          </div>
-          <div>
-            <label for="accent-2-light-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-light-input"
-              style="background-color: var(--accent-2-light)"
-            />
-          </div>
+      <h2>Light Theme Colors</h2>
+      <div class="content-grid">
+        <div>
+          <label for="accent-1-light-input">
+            <p>Accent 1</p>
+          </label>
+          <input
+            type="color"
+            id="accent-1-light-input"
+            style="background-color: var(--accent-1-light)"
+          />
         </div>
-      </section>
-
-      <section>
-        <h2>Dark Theme Colors</h2>
-        <div class="content-grid">
-          <div>
-            <label for="accent-1-dark-input">
-              <p>Accent 1 Dark</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-dark-input"
-              style="background-color: var(--accent-1-dark)"
-            />
-          </div>
-          <div>
-            <label for="accent-2-dark-input">
-              <p>Accent 2 Dark</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-dark-input"
-              style="background-color: var(--accent-2-dark)"
-            />
-          </div>
+        <div>
+          <label for="accent-2-light-input">
+            <p>Accent 2</p>
+          </label>
+          <input
+            type="color"
+            id="accent-2-light-input"
+            style="background-color: var(--accent-2-light)"
+          />
         </div>
-      </section>
+      </div>
 
-      <hr />
+      <h2>Dark Theme Colors</h2>
+      <div class="content-grid">
+        <div>
+          <label for="accent-1-dark-input">
+            <p>Accent 1 Dark</p>
+          </label>
+          <input
+            type="color"
+            id="accent-1-dark-input"
+            style="background-color: var(--accent-1-dark)"
+          />
+        </div>
+        <div>
+          <label for="accent-2-dark-input">
+            <p>Accent 2 Dark</p>
+          </label>
+          <input
+            type="color"
+            id="accent-2-dark-input"
+            style="background-color: var(--accent-2-dark)"
+          />
+        </div>
+      </div>
     </main>
     <footer class="container padding">
       <a href="/">
