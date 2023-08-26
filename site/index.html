@@ -31,11 +31,6 @@
         --accent-2-light: #db7093;
         --caps-letter-spacing: 0.5rem;
       }
-
-      input[type='color'] {
-        height: 33vh;
-        border: none;
-      }
     </style>
   </head>
   <body class="fade-in">
@@ -69,13 +64,31 @@
         <button
           class="toggle-mode-btn primary"
           style="
-            padding: var(--space-md);
             margin-left: var(--space-md);
             margin-right: 0;
             margin-top: 0;
+            padding: var(--space-sm);
             width: calc(100% - var(--space-md) * 2);
           "
-        ></button>
+        />
+
+        <!-- <div>
+          <label for="accent-1-dark-input"> Accent 1 Dark </label>
+          <input
+            type="color"
+            id="accent-1-dark-input"
+            style="background-color: var(--accent-1-dark)"
+          />
+        </div>
+
+        <div>
+          <label for="accent-2-dark-input"> Accent 2 Dark </label>
+          <input
+            type="color"
+            id="accent-2-dark-input"
+            style="background-color: var(--accent-2-dark)"
+          />
+        </div> -->
       </details>
     </header>
 
@@ -127,7 +140,7 @@
         <q>A Blockquote built for rapid prototyping!</q>
       </blockquote>
 
-      <h2>Card Grid</h2>
+      <h3>Card Grid</h3>
       <div class="content-grid">
         <div class="card">
           <a href="/">
@@ -192,7 +205,7 @@
         </div>
       </div>
 
-      <h2>Image Grid</h2>
+      <h3>Image Grid</h3>
       <div class="image-grid">
         <img
           src="https://source.unsplash.com/random"
@@ -240,7 +253,7 @@
           style="max-width: 100%"
         />
       </div>
-      <h2>Table</h2>
+      <h3>Table</h3>
       <table>
         <thead>
           <tr>
@@ -268,11 +281,11 @@
 
       <fieldset>
         <form>
-          <h2>Textarea</h2>
+          <h3>Textarea</h3>
           <textarea placeholder="Textarea"></textarea>
-          <h2>Input</h2>
+          <h3>Input</h3>
           <input type="text" placeholder="Input" />
-          <h2>Button</h2>
+          <h3>Button</h3>
           <button class="pulse" type="submit">Btn Primary</button>
         </form>
       </fieldset>
@@ -281,7 +294,7 @@
       <button class="primary">Btn</button>
       <button class="primary" disabled="true">Btn</button>
 
-      <h2>Summary / Details</h2>
+      <h3>Summary / Details</h3>
       <details open>
         <summary>Summary One</summary>
         <p class="fade-in">
@@ -305,7 +318,7 @@
         </p>
       </details>
 
-      <h2>Dialog</h2>
+      <h3>Dialog</h3>
       <button
         class="primary"
         id="show-dialog-example-btn"
@@ -325,7 +338,7 @@
 
       <hr />
 
-      <h2>Light Theme Colors</h2>
+      <h3>Light Theme Colors</h3>
       <div class="content-grid">
         <div>
           <label for="accent-1-light-input">
@@ -348,8 +361,7 @@
           />
         </div>
       </div>
-
-      <h2>Dark Theme Colors</h2>
+      <h3>Dark Theme Colors</h3>
       <div class="content-grid">
         <div>
           <label for="accent-1-dark-input">
@@ -372,6 +384,7 @@
           />
         </div>
       </div>
+      <hr />
     </main>
     <footer class="container padding">
       <a href="/">
