@@ -42,56 +42,46 @@
     <header style="opacity: 0.93">
       <details id="details-menu">
         <summary>MENU</summary>
-        <menu>
-          <ul>
-            <li>
-              <a href="#elements">
-                <h3>Elements</h3>
-              </a>
-            </li>
+        <ul style="margin-block-end: 0">
+          <li>
+            <a href="#layout">
+              <h3 style="margin-block-start: 0">Elements</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#layout">
+              <h3>Layout</h3>
+            </a>
+          </li>
 
-            <li>
-              <a href="#layout">
-                <h3>Layout</h3>
-              </a>
-            </li>
+          <li>
+            <a href="#colors">
+              <h3>Color</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#spacing">
+              <h3>Spacing</h3>
+            </a>
+          </li>
+        </ul>
 
-            <li>
-              <a href="#colors">
-                <h3>Color</h3>
-              </a>
-            </li>
-            <li>
-              <a href="#spacing">
-                <h3>Spacing</h3>
-              </a>
-            </li>
-          </ul>
-
-          <button
-            class="toggle-mode-btn primary"
-            style="width: 100%; margin-bottom: 0; margin-top: var(--space-md)"
-          ></button>
-        </menu>
+        <button
+          class="toggle-mode-btn primary"
+          style="
+            padding: var(--space-md);
+            margin-left: var(--space-md);
+            margin-right: 0;
+            margin-top: 0;
+            width: calc(100% - var(--space-md) * 2);
+          "
+        ></button>
       </details>
     </header>
 
     <main class="container padding">
       <h1 id="typography">Semantic Styles</h1>
       <h2>Responsive, themed, framework agnostic UI design system</h2>
-
-      <!-- <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-      </ul>
-
-      <ol>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-      </ol> -->
-
       <div
         style="
           margin-block-start: var(--space-xl);
@@ -103,7 +93,6 @@
 
       <hr />
 
-      <h2>Heading</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
         auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
@@ -117,7 +106,7 @@
         laoreet quam.
       </p>
 
-      <h3>Another Heading</h3>
+      <h3>Heading is as Heading Does</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
         auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
