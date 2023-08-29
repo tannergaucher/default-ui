@@ -1,3 +1,9 @@
 .padding {
   padding: 0 var(--space-md);
 }
+
+@media (max-width: 900px) {
+  .padding {
+    padding: 0 var(--space-sm);
+  }
+}

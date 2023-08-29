@@ -42,3 +42,33 @@ h4,
   margin-block-start: var(--4);
   margin-block-end: var(--4);
 }
+
+@media (max-width: 900px) {
+  h1,
+  .text--xxl {
+    font-size: var(--text-xl);
+    margin-block-start: var(--3);
+    margin-block-end: var(--3);
+  }
+
+  h2,
+  .text--xl {
+    font-size: var(--text-lg);
+    margin-block-start: var(--3);
+    margin-block-end: var(--3);
+  }
+
+  h3,
+  .text--lg {
+    font-size: var(--text-md);
+    margin-block-start: var(--2);
+    margin-block-end: var(--2);
+  }
+
+  h4,
+  .text--md {
+    font-size: var(--text-sm);
+    margin-block-start: var(--2);
+    margin-block-end: var(--2);
+  }
+}
