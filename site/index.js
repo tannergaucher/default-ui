@@ -2,10 +2,6 @@ import '../index.css'
 
 const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
-const typeScaleSelect = document.querySelector('#type-scale-select')
-const textBaseSelect = document.querySelector('#text-base-select')
-const spaceBaseSelect = document.querySelector('#space-base-select')
-const responsiveUnitSelect = document.querySelector('#responsive-unit-select')
 
 const accent1LightInput = document.querySelector('#accent-1-light-input')
 const accent1DarkInput = document.querySelector('#accent-1-dark-input')
@@ -56,7 +52,7 @@ function setInitValues() {
 function handleAccent1LightChange(e) {
   document.documentElement.style.setProperty('--accent-1-light', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'DARK THEME') {
+  if (toggleModeBtn.innerHTML === 'DARK') {
     document.documentElement.style.setProperty('--accent-1', e.target.value)
   }
 }
@@ -64,7 +60,7 @@ function handleAccent1LightChange(e) {
 function handleAccent1DarkChange(e) {
   document.documentElement.style.setProperty('--accent-1-dark', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'LIGHT THEME') {
+  if (toggleModeBtn.innerHTML === 'LIGHT') {
     document.documentElement.style.setProperty('--accent-1', e.target.value)
     accent1LightInput.value = e.target.value
   }
@@ -73,7 +69,7 @@ function handleAccent1DarkChange(e) {
 function handleAccent2LightChange(e) {
   document.documentElement.style.setProperty('--accent-2-light', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'DARK THEME') {
+  if (toggleModeBtn.innerHTML === 'DARK') {
     document.documentElement.style.setProperty('--accent-2', e.target.value)
   }
 }
@@ -81,7 +77,7 @@ function handleAccent2LightChange(e) {
 function handleAccent2DarkChange(e) {
   document.documentElement.style.setProperty('--accent-2-dark', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'LIGHT THEME') {
+  if (toggleModeBtn.innerHTML === 'LIGHT') {
     document.documentElement.style.setProperty('--accent-2', e.target.value)
   }
 }

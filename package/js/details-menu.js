@@ -5,3 +5,5 @@ document.addEventListener('click', function (e) {
     detailsMenu.removeAttribute('open')
   }
 })
+
+export default {}
