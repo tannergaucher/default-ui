@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx parcel site/index.html",
+    "tunnel": "npx ngrok http 1234",
     "build": "npx parcel build site/index.html",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
