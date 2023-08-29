@@ -1,3 +1,3 @@
-import modes from '../package/modes'
+import modes from '../package/js/theme.js'
 
 export default modes
