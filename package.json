@@ -3,13 +3,7 @@
   "version": "0.1.16",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel site/index.html",
-    "tunnel": "npx ngrok http 1234",
-    "build": "npx parcel build site/index.html",
-    "storybook": "npx run storybook",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=98498e0b86f1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": " <tannermichaelgaucher@gmail.com>",
   "license": "MIT",
@@ -25,7 +19,6 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "babel-loader": "^8.2.2",
-    "chromatic": "^5.8.2",
     "create-vite": "^4.4.1",
     "cssnano": "^4.1.10",
     "regenerator-runtime": "^0.13.7"
