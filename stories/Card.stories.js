@@ -15,7 +15,6 @@ export const Default = {
 
     const cardImage = document.createElement('img')
     cardImage.classList.add('card-image')
-    // random image from unsplash
     cardImage.src = 'https://source.unsplash.com/random/300x200'
 
     const cardText = document.createElement('p')
