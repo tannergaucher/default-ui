@@ -37,29 +37,44 @@
     <header style="opacity: 0.93">
       <details id="details-menu">
         <summary>MENU</summary>
-        <ul style="margin-block-end: 0">
+        <ul style="margin-block-end: 0; padding-bottom: 0">
           <li>
-            <a href="#layout">
-              <h3 style="margin-block-start: 0">Elements</h3>
+            <a href="#docs">
+              <h3 style="margin-block-start: 0">Storybook Docs</h3>
             </a>
           </li>
           <li>
-            <a href="#layout">
-              <h3>Layout</h3>
-            </a>
-          </li>
-
-          <li>
-            <a href="#colors">
-              <h3>Color</h3>
-            </a>
-          </li>
-          <li>
-            <a href="#spacing">
-              <h3>Spacing</h3>
+            <a href="">
+              <h3 style="margin-block-start: 0">Github</h3>
             </a>
           </li>
         </ul>
+
+        <div
+          class="content-grid"
+          style="margin-block-start: 0; margin-block-end: 0"
+        >
+          <div>
+            <label for="accent-1-dark-input">
+              <p>Accent 1</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-dark-input"
+              style="background-color: var(--accent-1-dark)"
+            />
+          </div>
+          <div>
+            <label for="accent-2-dark-input">
+              <p>Accent 2</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-dark-input"
+              style="background-color: var(--accent-2-dark)"
+            />
+          </div>
+        </div>
 
         <button
           class="toggle-mode-btn primary"
@@ -71,23 +86,6 @@
             width: calc(100% - var(--space-md) * 2);
           "
         />
-        <!-- <div>
-          <label for="accent-1-dark-input"> Accent 1 Dark </label>
-          <input
-            type="color"
-            id="accent-1-dark-input"
-            style="background-color: var(--accent-1-dark)"
-          />
-        </div>
-
-        <div>
-          <label for="accent-2-dark-input"> Accent 2 Dark </label>
-          <input
-            type="color"
-            id="accent-2-dark-input"
-            style="background-color: var(--accent-2-dark)"
-          />
-        </div> -->
       </details>
     </header>
 
