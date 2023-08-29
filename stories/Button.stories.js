@@ -1,67 +1,45 @@
+import '../index.css'
+
 export default {
-  title: 'Element/Button',
-  argTypes: {
-    label: { control: 'text' },
-    classes: { control: 'text' },
+  title: 'Button',
+}
+
+export const Primary = {
+  render() {
+    const button = document.createElement('button')
+    button.innerText = 'Primary'
+    button.type = 'submit'
+
+    return button
   },
 }
 
-const Template = ({ label, classes }) => {
-  return `
-  <button class="${classes}">
-     ${label}
-  </button>`
+export const PrimaryDisabled = {
+  render() {
+    const button = document.createElement('button')
+    button.innerText = 'Primary Disabled'
+    button.type = 'submit'
+    button.disabled = true
+
+    return button
+  },
 }
 
-export const Primary = Template.bind({})
+export const Secondary = {
+  render() {
+    const button = document.createElement('button')
+    button.innerText = 'Secondary'
 
-Primary.args = {
-  label: 'Button',
-  classes: 'btn btn-primary',
+    return button
+  },
 }
 
-export const PrimaryHover = Template.bind({})
-PrimaryHover.args = {
-  label: 'Button',
-  classes: 'btn btn-primary btn-primary--hover',
-}
+export const SecondaryDisabled = {
+  render() {
+    const button = document.createElement('button')
+    button.innerText = 'Secondary Disabled'
+    button.disabled = true
 
-export const PrimaryFocus = Template.bind({})
-PrimaryFocus.args = {
-  label: 'Button',
-  classes: 'btn btn-primary btn-primary--focus',
-}
-
-export const PrimaryDisabled = Template.bind({})
-PrimaryDisabled.args = {
-  label: 'Button',
-  classes: 'btn btn-primary btn-primary--disabled',
-}
-
-export const Secondary = Template.bind({})
-
-Secondary.args = {
-  label: 'Button',
-  classes: 'btn',
-}
-
-export const SecondaryHover = Template.bind({})
-
-SecondaryHover.args = {
-  label: 'Button',
-  classes: 'btn btn--hover',
-}
-
-export const SecondaryFocus = Template.bind({})
-
-SecondaryFocus.args = {
-  label: 'Button',
-  classes: 'btn btn--focus',
-}
-
-export const SecondaryDisabled = Template.bind({})
-
-SecondaryDisabled.args = {
-  label: 'Button',
-  classes: 'btn btn--disabled',
+    return button
+  },
 }

@@ -1,4 +1,4 @@
-const { LOCAL_STORAGE_KEY } = require('../utils/constants')
+const LOCAL_STORAGE_KEY = 'ss-theme-preference'
 
 export default function initTheme() {
   syncBtnText()
@@ -16,11 +16,13 @@ function syncBtnText() {
 
   toggleModeBtn.style.display = 'none'
 
-  const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-    .matches
+  const initPrefersDark = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches
 
-  const initPrefersLight = window.matchMedia('(prefers-color-scheme: light)')
-    .matches
+  const initPrefersLight = window.matchMedia(
+    '(prefers-color-scheme: light)'
+  ).matches
 
   if (initPrefersDark) {
     toggleModeBtn.innerHTML = 'LIGHT THEME'

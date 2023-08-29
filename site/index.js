@@ -1,3 +1,5 @@
+import '../index.css'
+
 const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
 const typeScaleSelect = document.querySelector('#type-scale-select')
