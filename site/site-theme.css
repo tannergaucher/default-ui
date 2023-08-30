@@ -9,13 +9,17 @@
 }
 
 #accent-1-light-input,
-#accent-2-light-input {
+#accent-2-light-input,
+#accent-1-dark-input,
+#accent-2-dark-input {
   height: 99px;
 }
 
 @media (max-width: 900px) {
   #accent-1-light-input,
-  #accent-2-light-input {
+  #accent-2-light-input,
+  #accent-1-dark-input,
+  #accent-2-dark-input {
     height: 73px;
   }
 }
