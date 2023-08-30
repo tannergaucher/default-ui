@@ -34,8 +34,6 @@ const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
 if (toggleModeBtn) {
   toggleModeBtn.addEventListener('click', (e) => {
-    console.log(e.target.innerHTML)
-
     if (e.target.innerHTML === DARK) {
       accentLightPicker.style.display = 'inline'
       accentDarkPicker.style.display = 'none'
