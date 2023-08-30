@@ -11,14 +11,9 @@ button {
   letter-spacing: var(--caps-letter-spacing);
   border: var(--thickness) solid var(--btn-border);
   border-radius: var(--radius);
-  margin-bottom: var(--space-md);
   box-shadow: var(--elevation-1);
-  margin-right: var(--space-md);
   transition: var(--transition);
-}
-
-button:last-child {
-  margin-right: 0;
+  margin-right: var(--space-md);
 }
 
 button:hover,

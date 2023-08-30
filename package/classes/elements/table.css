@@ -1,7 +1,6 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: var(--space-lg);
   box-shadow: var(--elevation-1);
   transition: var(--transition);
 }
