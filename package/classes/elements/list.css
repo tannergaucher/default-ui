@@ -19,7 +19,3 @@ li:last-child {
 li > p {
   margin-bottom: var(--space-sm);
 }
-
-li > a {
-  word-break: break-all;
-}

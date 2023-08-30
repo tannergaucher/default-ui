@@ -1,24 +1,49 @@
 import '../index.css'
+import './site-theme.css'
+
+import {
+  DARK,
+  LIGHT,
+  THEME_STORAGE_KEY,
+  TOGGLE_MODE_BTN_SELECTOR,
+} from '../package/js/theme'
 
 const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
+
+if (typeof exampleDialog.showModal !== 'function') {
+  exampleDialog.style.display = 'none'
+}
 
 const accent1LightInput = document.querySelector('#accent-1-light-input')
 const accent1DarkInput = document.querySelector('#accent-1-dark-input')
 const accent2LightInput = document.querySelector('#accent-2-light-input')
 const accent2DarkInput = document.querySelector('#accent-2-dark-input')
-const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+const accentLightPicker = document.querySelector('#accent-light-picker')
+const accentDarkPicker = document.querySelector('#accent-dark-picker')
 
 window.addEventListener('load', setInitValues)
 
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
-accent1LightInput.addEventListener('change', handleAccent1LightChange)
-accent1DarkInput.addEventListener('change', handleAccent1DarkChange)
-accent2LightInput.addEventListener('change', handleAccent2LightChange)
-accent2DarkInput.addEventListener('change', handleAccent2DarkChange)
+accent1LightInput.addEventListener('input', handleAccent1LightChange)
+accent1DarkInput.addEventListener('input', handleAccent1DarkChange)
+accent2LightInput.addEventListener('input', handleAccent2LightChange)
+accent2DarkInput.addEventListener('input', handleAccent2DarkChange)
 
-if (typeof exampleDialog.showModal !== 'function') {
-  exampleDialog.style.display = 'none'
+const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+
+if (toggleModeBtn) {
+  toggleModeBtn.addEventListener('click', (e) => {
+    if (e.target.innerHTML === DARK) {
+      accentLightPicker.style.display = 'inline'
+      accentDarkPicker.style.display = 'none'
+    }
+
+    if (e.target.innerHTML === LIGHT) {
+      accentDarkPicker.style.display = 'inline'
+      accentLightPicker.style.display = 'none'
+    }
+  })
 }
 
 function handleDialogBtnClick() {
@@ -47,12 +72,34 @@ function setInitValues() {
   accent1DarkInput.value = handleBrowserFunk(accentOneDarkValue)
   accent2LightInput.value = handleBrowserFunk(accentTwoLightValue)
   accent2DarkInput.value = handleBrowserFunk(accentTwoDarkValue)
+
+  const isPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
+  const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
+
+  if (!persistedPreference) {
+    if (isPrefersDark.matches) {
+      console.log('show dark picker')
+      accentLightPicker.style.display = 'none'
+      accentDarkPicker.style.display = 'inline'
+    } else {
+      accentLightPicker.style.display = 'inline'
+      accentDarkPicker.style.display = 'none'
+    }
+  } else {
+    if (persistedPreference === DARK) {
+      accentLightPicker.style.display = 'none'
+      accentDarkPicker.style.display = 'inline'
+    } else {
+      accentLightPicker.style.display = 'inline'
+      accentDarkPicker.style.display = 'none'
+    }
+  }
 }
 
 function handleAccent1LightChange(e) {
   document.documentElement.style.setProperty('--accent-1-light', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'DARK') {
+  if (toggleModeBtn.innerHTML === DARK) {
     document.documentElement.style.setProperty('--accent-1', e.target.value)
   }
 }
@@ -60,7 +107,7 @@ function handleAccent1LightChange(e) {
 function handleAccent1DarkChange(e) {
   document.documentElement.style.setProperty('--accent-1-dark', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'LIGHT') {
+  if (toggleModeBtn.innerHTML === LIGHT) {
     document.documentElement.style.setProperty('--accent-1', e.target.value)
     accent1LightInput.value = e.target.value
   }
@@ -69,7 +116,7 @@ function handleAccent1DarkChange(e) {
 function handleAccent2LightChange(e) {
   document.documentElement.style.setProperty('--accent-2-light', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'DARK') {
+  if (toggleModeBtn.innerHTML === DARK) {
     document.documentElement.style.setProperty('--accent-2', e.target.value)
   }
 }
@@ -77,12 +124,11 @@ function handleAccent2LightChange(e) {
 function handleAccent2DarkChange(e) {
   document.documentElement.style.setProperty('--accent-2-dark', e.target.value)
 
-  if (toggleModeBtn.innerHTML === 'LIGHT') {
+  if (toggleModeBtn.innerHTML === LIGHT) {
     document.documentElement.style.setProperty('--accent-2', e.target.value)
   }
 }
 
-// Because browser returns #000 for #000000, #fff for #ffffff (only in build env)
 function handleBrowserFunk(str) {
   // Because browser returns 'tomato' for hex of that color
   if (str[0] !== '#') {
@@ -100,7 +146,6 @@ function handleBrowserFunk(str) {
 }
 
 function colorNameToHex(str) {
-  // Map of css color names
   const map = {
     AliceBlue: '#F0F8FF',
     AntiqueWhite: '#FAEBD7',

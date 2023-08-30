@@ -21,62 +21,73 @@
       gtag('js', new Date())
       gtag('config', 'G-E2X4GR6JSL')
     </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
-      :root {
-        --sans: 'Fira Sans', sans-serif;
-        --font-family: var(--sans);
-        --accent-2-dark: #ff6347;
-        --accent-2-light: #db7093;
-        --caps-letter-spacing: 0.5rem;
-      }
-    </style>
   </head>
   <body class="fade-in">
     <header style="opacity: 0.93">
       <details id="details-menu">
         <summary>THEME</summary>
-        <div
-          class="content-grid"
-          style="margin-block-start: 0; margin-block-end: 0"
-        >
-          <div>
-            <label for="accent-1-dark-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-dark-input"
-              style="background-color: var(--accent-1-dark)"
-            />
-          </div>
-          <div>
-            <label for="accent-2-dark-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-dark-input"
-              style="background-color: var(--accent-2-dark)"
-            />
-          </div>
-        </div>
 
-        <button
-          class="toggle-mode-btn primary"
-          style="
-            margin-left: var(--space-md);
-            margin-right: 0;
-            margin-top: 0;
-            padding: var(--space-sm);
-            width: calc(100% - var(--space-md) * 2);
-          "
-        />
+        <section class="container">
+          <div
+            class="content-grid"
+            style="margin-block-start: 0; margin-block-end: 0"
+            id="accent-dark-picker"
+          >
+            <div>
+              <label for="accent-1-dark-input">
+                <p>Accent 1</p>
+              </label>
+              <input
+                type="color"
+                id="accent-1-dark-input"
+                style="background-color: var(--accent-1-dark)"
+              />
+            </div>
+            <div>
+              <label for="accent-2-dark-input">
+                <p>Accent 2</p>
+              </label>
+              <input
+                type="color"
+                id="accent-2-dark-input"
+                style="background-color: var(--accent-2-dark)"
+              />
+            </div>
+          </div>
+
+          <div class="content-grid" id="accent-light-picker">
+            <div>
+              <label for="accent-1-light-input">
+                <p>Accent 1</p>
+              </label>
+              <input
+                type="color"
+                id="accent-1-light-input"
+                style="background-color: var(--accent-1-light)"
+              />
+            </div>
+            <div>
+              <label for="accent-2-light-input">
+                <p>Accent 2</p>
+              </label>
+              <input
+                type="color"
+                id="accent-2-light-input"
+                style="background-color: var(--accent-2-light)"
+              />
+            </div>
+          </div>
+
+          <button
+            id="toggle-mode-btn"
+            class="primary"
+            style="width: 100%; margin-block-start: var(--space-lg)"
+          />
+        </section>
       </details>
     </header>
-
     <main class="container padding">
-      <h1 id="typography">Semantic Styles</h1>
+      <h1 style="margin-block-start: var(--space-xl)">Semantic Styles</h1>
       <h2>
         Responsive, themed, framework agnostic UI design system for rapid
         prototyping
@@ -276,7 +287,6 @@
       <button disabled="true">Btn</button>
       <button class="primary">Btn</button>
       <button class="primary" disabled="true">Btn</button>
-
       <h3>Summary / Details</h3>
       <details open>
         <summary>Summary One</summary>
@@ -319,57 +329,10 @@
         </form>
       </dialog>
       <hr />
-      <h3>Light Theme Colors</h3>
-      <div class="content-grid">
-        <div>
-          <label for="accent-1-light-input">
-            <p>Accent 1</p>
-          </label>
-          <input
-            type="color"
-            id="accent-1-light-input"
-            style="background-color: var(--accent-1-light)"
-          />
-        </div>
-        <div>
-          <label for="accent-2-light-input">
-            <p>Accent 2</p>
-          </label>
-          <input
-            type="color"
-            id="accent-2-light-input"
-            style="background-color: var(--accent-2-light)"
-          />
-        </div>
-      </div>
-      <h3>Dark Theme Colors</h3>
-      <div class="content-grid">
-        <div>
-          <label for="accent-1-dark-input">
-            <p>Accent 1 Dark</p>
-          </label>
-          <input
-            type="color"
-            id="accent-1-dark-input"
-            style="background-color: var(--accent-1-dark)"
-          />
-        </div>
-        <div>
-          <label for="accent-2-dark-input">
-            <p>Accent 2 Dark</p>
-          </label>
-          <input
-            type="color"
-            id="accent-2-dark-input"
-            style="background-color: var(--accent-2-dark)"
-          />
-        </div>
-      </div>
-      <hr />
     </main>
-    <footer>
+    <footer style="padding-block: var(--space-lg)">
       <section class="container padding">
-        <h2 style="padding-top: var(--space-lg)">Semantic Styles</h2>
+        <h2 style="margin-block-start: var(--space-xl)">Semantic Styles</h2>
         <h3>
           Responsive, themed, framework agnostic UI design system for rapid
           prototyping
