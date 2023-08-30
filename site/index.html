@@ -36,66 +36,63 @@
     <header style="opacity: 0.93">
       <details id="details-menu">
         <summary>THEME</summary>
-        <div
-          class="content-grid"
-          style="margin-block-start: 0; margin-block-end: 0"
-          id="accent-dark-picker"
-        >
-          <div>
-            <label for="accent-1-dark-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-dark-input"
-              style="background-color: var(--accent-1-dark)"
-            />
-          </div>
-          <div>
-            <label for="accent-2-dark-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-dark-input"
-              style="background-color: var(--accent-2-dark)"
-            />
-          </div>
-        </div>
 
-        <div class="content-grid" id="accent-light-picker">
-          <div>
-            <label for="accent-1-light-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-light-input"
-              style="background-color: var(--accent-1-light)"
-            />
+        <section class="container">
+          <div
+            class="content-grid"
+            style="margin-block-start: 0; margin-block-end: 0"
+            id="accent-dark-picker"
+          >
+            <div>
+              <label for="accent-1-dark-input">
+                <p>Accent 1</p>
+              </label>
+              <input
+                type="color"
+                id="accent-1-dark-input"
+                style="background-color: var(--accent-1-dark)"
+              />
+            </div>
+            <div>
+              <label for="accent-2-dark-input">
+                <p>Accent 2</p>
+              </label>
+              <input
+                type="color"
+                id="accent-2-dark-input"
+                style="background-color: var(--accent-2-dark)"
+              />
+            </div>
           </div>
-          <div>
-            <label for="accent-2-light-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-light-input"
-              style="background-color: var(--accent-2-light)"
-            />
-          </div>
-        </div>
 
-        <button
-          class="toggle-mode-btn primary"
-          style="
-            margin-left: var(--space-md);
-            margin-right: 0;
-            margin-top: 0;
-            padding: var(--space-sm);
-            width: calc(100% - var(--space-md) * 2);
-          "
-        />
+          <div class="content-grid" id="accent-light-picker">
+            <div>
+              <label for="accent-1-light-input">
+                <p>Accent 1</p>
+              </label>
+              <input
+                type="color"
+                id="accent-1-light-input"
+                style="background-color: var(--accent-1-light)"
+              />
+            </div>
+            <div>
+              <label for="accent-2-light-input">
+                <p>Accent 2</p>
+              </label>
+              <input
+                type="color"
+                id="accent-2-light-input"
+                style="background-color: var(--accent-2-light)"
+              />
+            </div>
+          </div>
+
+          <button
+            class="toggle-mode-btn primary"
+            style="width: 100%; margin-block-start: var(--space-lg)"
+          />
+        </section>
       </details>
     </header>
     <main class="container padding">
