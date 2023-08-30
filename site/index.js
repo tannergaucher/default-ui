@@ -4,7 +4,7 @@ import './site-theme.css'
 import {
   DARK,
   LIGHT,
-  LOCAL_STORAGE_KEY,
+  THEME_STORAGE_KEY,
   TOGGLE_MODE_BTN_SELECTOR,
 } from '../package/js/theme'
 
@@ -74,7 +74,7 @@ function setInitValues() {
   accent2DarkInput.value = handleBrowserFunk(accentTwoDarkValue)
 
   const isPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+  const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedPreference) {
     if (isPrefersDark.matches) {

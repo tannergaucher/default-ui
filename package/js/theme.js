@@ -1,4 +1,5 @@
-export const LOCAL_STORAGE_KEY = 'ss-theme-preference'
+export const THEME_STORAGE_KEY = 'ss-theme-preference'
+
 export const DARK = 'DARK'
 export const LIGHT = 'LIGHT'
 export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
@@ -41,7 +42,7 @@ function syncBtnText() {
 }
 
 export function handleUserPersistedPreference() {
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+  const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedPreference) return
 
@@ -125,7 +126,7 @@ function setDarkTheme() {
     toggleModeBtn.innerHTML = LIGHT
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, DARK)
+  localStorage.setItem(THEME_STORAGE_KEY, DARK)
 }
 
 function setLightTheme() {
@@ -161,5 +162,5 @@ function setLightTheme() {
     toggleModeBtn.innerHTML = DARK
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, LIGHT)
+  localStorage.setItem(THEME_STORAGE_KEY, LIGHT)
 }
