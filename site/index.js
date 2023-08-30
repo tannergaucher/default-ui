@@ -1,4 +1,5 @@
 import '../index.css'
+import './site-theme.css'
 
 const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
