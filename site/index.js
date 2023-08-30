@@ -25,10 +25,10 @@ const accentDarkPicker = document.querySelector('#accent-dark-picker')
 window.addEventListener('load', setInitValues)
 
 exampleDialogBtn.addEventListener('click', handleDialogBtnClick)
-accent1LightInput.addEventListener('change', handleAccent1LightChange)
-accent1DarkInput.addEventListener('change', handleAccent1DarkChange)
-accent2LightInput.addEventListener('change', handleAccent2LightChange)
-accent2DarkInput.addEventListener('change', handleAccent2DarkChange)
+accent1LightInput.addEventListener('input', handleAccent1LightChange)
+accent1DarkInput.addEventListener('input', handleAccent1DarkChange)
+accent2LightInput.addEventListener('input', handleAccent2LightChange)
+accent2DarkInput.addEventListener('input', handleAccent2DarkChange)
 
 const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
