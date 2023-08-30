@@ -34,14 +34,16 @@ const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
 if (toggleModeBtn) {
   toggleModeBtn.addEventListener('click', (e) => {
+    console.log(e.target.innerHTML)
+
     if (e.target.innerHTML === DARK) {
-      accentLightPicker.style.display = 'none'
-      accentDarkPicker.style.display = 'inline'
+      accentLightPicker.style.display = 'inline'
+      accentDarkPicker.style.display = 'none'
     }
 
     if (e.target.innerHTML === LIGHT) {
-      accentLightPicker.style.display = 'inline'
-      accentDarkPicker.style.display = 'none'
+      accentDarkPicker.style.display = 'inline'
+      accentLightPicker.style.display = 'none'
     }
   })
 }
