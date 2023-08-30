@@ -1,7 +1,7 @@
 summary {
   font-size: var(--text-lg);
   font-weight: bold;
-  padding: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
   color: var(--href-color);
   background-color: var(--bg-2);
   cursor: pointer;

@@ -1,4 +1,8 @@
-const LOCAL_STORAGE_KEY = 'ss-theme-preference'
+export const THEME_STORAGE_KEY = 'ss-theme-preference'
+
+export const DARK = 'DARK'
+export const LIGHT = 'LIGHT'
+export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
 
 export default function initTheme() {
   syncBtnText()
@@ -10,7 +14,7 @@ export default function initTheme() {
 initTheme()
 
 function syncBtnText() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   if (!toggleModeBtn) return
 
@@ -25,11 +29,11 @@ function syncBtnText() {
   ).matches
 
   if (initPrefersDark) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = LIGHT
   }
 
   if (initPrefersLight) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = DARK
   }
 
   if (toggleModeBtn.innerHTML) {
@@ -38,33 +42,33 @@ function syncBtnText() {
 }
 
 export function handleUserPersistedPreference() {
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+  const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedPreference) return
 
-  if (persistedPreference === 'DARK') {
+  if (persistedPreference === DARK) {
     setDarkTheme()
   }
 
-  if (persistedPreference === 'LIGHT') {
+  if (persistedPreference === LIGHT) {
     setLightTheme()
   }
 }
 
 function handleUserChanges() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   if (!toggleModeBtn) return
 
   toggleModeBtn.addEventListener('click', handleToggle)
 
   function handleToggle() {
-    if (toggleModeBtn.innerHTML === 'DARK') {
+    if (toggleModeBtn.innerHTML === DARK) {
       setDarkTheme()
       return
     }
 
-    if (toggleModeBtn.innerHTML === 'LIGHT') {
+    if (toggleModeBtn.innerHTML === LIGHT) {
       setLightTheme()
       return
     }
@@ -116,13 +120,13 @@ function setDarkTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Dark)
   document.documentElement.style.setProperty('--accent-2', accent2Dark)
 
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = LIGHT
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
+  localStorage.setItem(THEME_STORAGE_KEY, DARK)
 }
 
 function setLightTheme() {
@@ -152,11 +156,11 @@ function setLightTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Light)
   document.documentElement.style.setProperty('--accent-2', accent2Light)
 
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = DARK
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
+  localStorage.setItem(THEME_STORAGE_KEY, LIGHT)
 }

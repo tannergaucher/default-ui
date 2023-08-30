@@ -1,0 +1,4 @@
+label > p {
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-sm);
+}

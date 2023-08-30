@@ -2,7 +2,7 @@ ul,
 ol {
   margin-top: var(--space-md);
   margin-bottom: var(--space-md);
-  padding-left: var(--space-md);
+  padding-left: var(--space-lg);
 }
 
 li {
@@ -18,8 +18,4 @@ li:last-child {
 
 li > p {
   margin-bottom: var(--space-sm);
-}
-
-li > a {
-  word-break: break-all;
 }
