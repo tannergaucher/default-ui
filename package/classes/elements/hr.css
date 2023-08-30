@@ -1,6 +1,6 @@
 hr {
   border-color: var(--accent-1);
-  border: calc(var(--thickness) * 3) solid var(--accent-1);
+  border: var(--thickness) solid var(--accent-1);
   background-color: var(--accent-1);
   margin-block-start: var(--space-xl);
   margin-block-end: var(--space-xl);

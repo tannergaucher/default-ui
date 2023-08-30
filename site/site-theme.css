@@ -7,3 +7,15 @@
   --accent-2-light: #db7093;
   --caps-letter-spacing: 0.5rem;
 }
+
+#accent-1-light-input,
+#accent-2-light-input {
+  height: 99px;
+}
+
+@media (max-width: 900px) {
+  #accent-1-light-input,
+  #accent-2-light-input {
+    height: 73px;
+  }
+}
