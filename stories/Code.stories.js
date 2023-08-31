@@ -1,7 +1,7 @@
 import '../index.css'
 
 export default {
-  title: 'Card',
+  title: 'Code',
 }
 
 export const Default = {

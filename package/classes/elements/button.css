@@ -1,7 +1,7 @@
 button {
   cursor: pointer;
   background: var(--bg-1);
-  color: var(--btn-color);
+  color: var(--accent-1);
   padding: var(--space-sm) var(--space-md);
   font-weight: 700;
   font-size: var(--text-lg);
@@ -9,7 +9,7 @@ button {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: var(--caps-letter-spacing);
-  border: var(--thickness) solid var(--btn-border);
+  border: var(--thickness) solid var(--accent-1);
   border-radius: var(--radius);
   box-shadow: var(--elevation-1);
   transition: var(--transition);
@@ -21,8 +21,8 @@ button:focus,
 .btn--hover,
 .btn--focus {
   transition: var(--transition);
-  color: var(--btn-hover-color);
-  border-color: var(--href-hover-color);
+  color: var(--accent-2);
+  border-color: var(--accent-2);
   box-shadow: inset var(--elevation-1);
 }
 
@@ -38,9 +38,9 @@ button:disabled,
 
 button.primary,
 button[type='submit'] {
-  background: var(--primary-btn-bg);
-  color: var(--primary-btn-color);
-  border: var(--thickness) solid var(--primary-btn-bg);
+  background: var(--accent-1);
+  color: var(--bg-1);
+  border: var(--thickness) solid var(--accent-1);
   box-shadow: var(--elevation-2);
 }
 
@@ -49,9 +49,9 @@ button[type='submit']:hover,
 .btn-primary--hover,
 .btn-primary:focus,
 .btn-primary--focus {
-  color: var(--primary-btn-hover-color);
+  color: var(--bg-1);
   box-shadow: var(--elevation-1);
-  background: var(--href-hover-color);
+  background: var(--accent-2);
   border-color: var(--accent-2);
 }
 

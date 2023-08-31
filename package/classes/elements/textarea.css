@@ -2,7 +2,7 @@ textarea {
   font-family: var(--font-family);
   font-size: var(--text-lg);
   border-radius: var(--radius);
-  border: var(--thickness) solid var(--input-border);
+  border: var(--thickness) solid var(--accent-1);
   padding: var(--space-sm);
   background-color: var(--bg-2);
   color: var(--text-color);

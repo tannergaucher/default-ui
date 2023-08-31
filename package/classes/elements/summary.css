@@ -1,17 +1,17 @@
 summary {
-  font-size: var(--text-lg);
-  font-weight: bold;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--href-color);
-  background-color: var(--bg-2);
   cursor: pointer;
+  font-weight: bold;
+  font-size: var(--text-lg);
+  color: var(--accent-1);
+  background-color: var(--bg-2);
   transition: var(--transition);
   border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
 }
 
 summary:focus,
 summary:hover {
-  color: var(--href-hover-color);
   transition: var(--transition);
+  color: var(--accent-2);
   background-color: var(--bg-2);
 }

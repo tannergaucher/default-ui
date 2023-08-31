@@ -1,7 +1,7 @@
 .nav-link {
   text-decoration: none;
   margin-right: var(--space-md);
-  color: var(--href-color);
+  color: var(--accent-1);
   transition: var(--transition);
   font-weight: 700;
 }
@@ -11,14 +11,14 @@
 }
 
 .nav-link:focus {
-  color: var(--href-hover-color);
+  color: var(--accent-2);
 }
 
 .nav-link:hover {
-  color: var(--href-hover-color);
+  color: var(--accent-2);
 }
 
 .nav-link[data-is-active='true'] {
-  color: var(--href-hover-color);
+  color: var(--accent-2);
   text-decoration: underline;
 }

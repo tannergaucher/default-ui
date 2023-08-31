@@ -1,11 +1,11 @@
 a {
-  color: var(--href-color);
+  color: var(--accent-1);
   transition: var(--transition);
 }
 
 a:hover,
 a:focus {
-  color: var(--href-hover-color);
+  color: var(--accent-2);
   transition: var(--transition);
 }
 
