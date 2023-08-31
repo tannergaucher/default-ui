@@ -1,9 +1,13 @@
-const detailsMenu = document.querySelector('#details-menu')
+export default function handleDetailsClose() {
+  const detailsMenu = document.querySelector('#details-menu')
 
-document.addEventListener('click', function (e) {
-  if (!detailsMenu.contains(e.target)) {
-    detailsMenu.removeAttribute('open')
+  if (detailsMenu) {
+    document.addEventListener('click', function (e) {
+      if (!detailsMenu.contains(e.target)) {
+        detailsMenu.removeAttribute('open')
+      }
+    })
   }
-})
+}
 
-export default {}
+handleDetailsClose()
