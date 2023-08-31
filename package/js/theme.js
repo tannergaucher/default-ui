@@ -6,7 +6,7 @@ export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
 
 const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-toggleModeBtn.addEventListener('click', handleToggleTheme)
+toggleModeBtn.addEventListener('click', handleThemeToggle)
 
 export default function syncTheme() {
   syncThemeBtnText()
@@ -53,7 +53,7 @@ export function handleUserPersistedTheme() {
   }
 }
 
-function handleToggleTheme() {
+function handleThemeToggle() {
   if (toggleModeBtn.innerHTML === DARK) {
     return setDarkTheme()
   }
