@@ -1,6 +1,6 @@
 .container {
-  margin-left: var(--space-xl);
-  margin-right: var(--space-xl);
+  margin-left: var(--space-lg);
+  margin-right: var(--space-lg);
 }
 
 @media (max-width: 900px) {
