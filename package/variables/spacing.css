@@ -1,6 +1,4 @@
 :root {
-  --responsive-unit: 0.5vw;
-
   --space-xxs: var(--0);
   --space-xs: var(--1);
   --space-sm: var(--2);
