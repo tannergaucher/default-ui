@@ -13,7 +13,6 @@ button {
   border-radius: var(--radius);
   box-shadow: var(--elevation-1);
   transition: var(--transition);
-  margin-right: var(--space-md);
 }
 
 button:hover,
