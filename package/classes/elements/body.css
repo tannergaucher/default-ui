@@ -7,4 +7,5 @@ body {
   background: var(--bg-1);
   color: var(--text-color);
   display: block;
+  animation: fadein 2s;
 }
