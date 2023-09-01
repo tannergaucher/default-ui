@@ -6,8 +6,9 @@ blockquote {
   border-radius: var(--radius);
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
-  margin: var(--space-lg) 0;
   width: fit-content;
+  margin-inline: var(--space-sm);
+  margin-block: 0;
 }
 
 blockquote > p {
