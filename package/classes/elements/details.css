@@ -5,7 +5,7 @@ details {
   /* so that they can be stacked in an according like pattern */
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  border-bottom: var(--thickness) solid var(--input-border);
+  border-bottom: var(--thickness) solid var(--accent-1);
 }
 
 details:last-of-type {

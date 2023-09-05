@@ -2,7 +2,7 @@ select {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--bg-2);
-  border: var(--thickness) solid var(--input-border);
+  border: var(--thickness) solid var(--accent-1);
   border-radius: var(--radius);
   padding: var(--space-md) var(--space-sm);
   width: 100%;

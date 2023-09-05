@@ -1,18 +1,9 @@
-.underline {
-  text-decoration: underline;
-}
-
 .center {
   text-align: center;
 }
 
 .uppercase {
   text-transform: uppercase;
-}
-
-.sticky {
-  position: sticky;
-  top: 0;
 }
 
 .xxxl {

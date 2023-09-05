@@ -2,7 +2,7 @@ input {
   font-family: var(--font-family);
   font-size: var(--text-lg);
   border-radius: var(--radius);
-  border: calc(var(--thickness)) solid var(--input-border);
+  border: calc(var(--thickness)) solid var(--accent-1);
   padding: var(--space-sm);
   background-color: var(--bg-2);
   color: var(--text-color);
@@ -13,7 +13,7 @@ input {
 
 input:hover,
 input:focus {
-  border-color: var(--href-hover-color);
+  border-color: var(--accent-2);
   box-shadow: var(--elevation-3);
   transition: var(--transition);
 }
