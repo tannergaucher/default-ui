@@ -1,0 +1,44 @@
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
+}
+
+.text--xxxl {
+  font-size: var(--text-xxxl);
+  margin: var(--text-xxxl) 0;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+  margin-block-start: var(--4);
+  margin-block-end: var(--4);
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+  margin-block-start: var(--4);
+  margin-block-end: var(--4);
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+  margin-block-start: var(--4);
+  margin-block-end: var(--4);
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+  margin-block-start: var(--4);
+  margin-block-end: var(--4);
+}

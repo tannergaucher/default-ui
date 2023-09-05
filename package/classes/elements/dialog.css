@@ -1,12 +1,12 @@
 dialog {
   background-color: var(--bg-1);
   color: var(--text-color);
-  border: var(--thickness) solid var(--text-color);
+  border: var(--thickness) solid var(--accent-2);
   border-radius: var(--radius);
-  max-width: 80%;
   box-shadow: var(--elevation-3);
+  max-width: var(--container);
 }
 
 dialog::backdrop {
-  background: rgba(255, 111, 0, 0.25);
+  background: rgba(0, 0, 0, 0.5);
 }

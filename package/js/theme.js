@@ -1,13 +1,21 @@
-import { LOCAL_STORAGE_KEY } from '../utils/constants'
+export const THEME_STORAGE_KEY = 'ss-theme-preference'
 
-syncBtnText()
-handleUserPersistedPreference()
-handleUserChanges()
-handleMediaQueryChanges()
+export const DARK = 'DARK'
+export const LIGHT = 'LIGHT'
+export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
 
-function syncBtnText() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
+toggleModeBtn.addEventListener('click', handleThemeToggle)
+
+export default function syncTheme() {
+  syncThemeBtnText()
+  handleUserPersistedTheme()
+  handleMediaQueryChangeEvent()
+}
+syncTheme()
+
+function syncThemeBtnText() {
   if (!toggleModeBtn) return
 
   toggleModeBtn.style.display = 'none'
@@ -19,11 +27,11 @@ function syncBtnText() {
     .matches
 
   if (initPrefersDark) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = LIGHT
   }
 
   if (initPrefersLight) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = DARK
   }
 
   if (toggleModeBtn.innerHTML) {
@@ -31,39 +39,31 @@ function syncBtnText() {
   }
 }
 
-export function handleUserPersistedPreference() {
-  const persistedPreference = localStorage.getItem(LOCAL_STORAGE_KEY)
+export function handleUserPersistedTheme() {
+  const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedPreference) return
 
-  if (persistedPreference === 'DARK') {
+  if (persistedPreference === DARK) {
     setDarkTheme()
   }
 
-  if (persistedPreference === 'LIGHT') {
+  if (persistedPreference === LIGHT) {
     setLightTheme()
   }
 }
 
-function handleUserChanges() {
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
+function handleThemeToggle() {
+  if (toggleModeBtn.innerHTML === DARK) {
+    return setDarkTheme()
+  }
 
-  toggleModeBtn.addEventListener('click', handleToggle)
-
-  function handleToggle() {
-    if (toggleModeBtn.innerHTML === 'DARK') {
-      setDarkTheme()
-      return
-    }
-
-    if (toggleModeBtn.innerHTML === 'LIGHT') {
-      setLightTheme()
-      return
-    }
+  if (toggleModeBtn.innerHTML === LIGHT) {
+    return setLightTheme()
   }
 }
 
-function handleMediaQueryChanges() {
+function handleMediaQueryChangeEvent() {
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
@@ -81,7 +81,7 @@ function handleMediaQueryChanges() {
     })
 }
 
-export function setDarkTheme() {
+function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -108,16 +108,14 @@ export function setDarkTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Dark)
   document.documentElement.style.setProperty('--accent-2', accent2Dark)
 
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
-
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'LIGHT'
+    toggleModeBtn.innerHTML = LIGHT
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'DARK')
+  localStorage.setItem(THEME_STORAGE_KEY, DARK)
 }
 
-export function setLightTheme() {
+function setLightTheme() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
@@ -144,11 +142,9 @@ export function setLightTheme() {
   document.documentElement.style.setProperty('--accent-1', accent1Light)
   document.documentElement.style.setProperty('--accent-2', accent2Light)
 
-  const toggleModeBtn = document.querySelector('.toggle-mode-btn')
-
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = 'DARK'
+    toggleModeBtn.innerHTML = DARK
   }
 
-  localStorage.setItem(LOCAL_STORAGE_KEY, 'LIGHT')
+  localStorage.setItem(THEME_STORAGE_KEY, LIGHT)
 }

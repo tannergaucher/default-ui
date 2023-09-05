@@ -1,10 +1,9 @@
 textarea {
   font-family: var(--font-family);
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   border-radius: var(--radius);
-  border: var(--thickness) solid var(--input-border);
+  border: var(--thickness) solid var(--accent-1);
   padding: var(--space-sm);
-  margin-bottom: var(--space-md);
   background-color: var(--bg-2);
   color: var(--text-color);
   resize: vertical;

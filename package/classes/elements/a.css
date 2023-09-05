@@ -1,0 +1,14 @@
+a {
+  color: var(--accent-1);
+  transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-2);
+  transition: var(--transition);
+}
+
+a:disabled {
+  cursor: not-allowed;
+}

@@ -1,0 +1,22 @@
+:root {
+  --6: 144px;
+  --5: 89px;
+  --4: 55px;
+  --3: 34px;
+  --2: 21px;
+  --1: 13px;
+  --0: 8px;
+  --mobile-denominator: 1.3;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --6: calc(144px / var(--mobile-denominator));
+    --5: calc(89px / var(--mobile-denominator));
+    --4: calc(55px / var(--mobile-denominator));
+    --3: calc(34px / var(--mobile-denominator));
+    --2: calc(21px / var(--mobile-denominator));
+    --1: calc(13px / var(--mobile-denominator));
+    --0: calc(8px / var(--mobile-denominator));
+  }
+}

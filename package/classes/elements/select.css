@@ -2,12 +2,12 @@ select {
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--bg-2);
-  border: var(--thickness) solid var(--input-border);
+  border: var(--thickness) solid var(--accent-1);
   border-radius: var(--radius);
   padding: var(--space-md) var(--space-sm);
   width: 100%;
   font-family: var(--font-family);
-  font-size: var(--font-size);
+  font-size: var(--text-lg);
   cursor: pointer;
   line-height: inherit;
   color: var(--text-color);

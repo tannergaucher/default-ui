@@ -18,6 +18,6 @@ pre[class*='language-'] {
 pre {
   background: var(--code-bg);
   color: white;
-  padding: 0 var(--space-sm);
+  padding: var(--space-sm);
   border-radius: var(--radius);
 }

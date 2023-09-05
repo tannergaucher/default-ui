@@ -1,13 +1,37 @@
 details {
-  border-radius: var(--radius);
-  margin-bottom: var(--space-md);
   color: var(--text-color);
   background-color: var(--bg-2);
+  width: 100%;
+  /* so that they can be stacked in an according like pattern */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-bottom: var(--thickness) solid var(--accent-1);
+}
+
+details:last-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  border-bottom-color: var(--bg-2);
   box-shadow: var(--elevation-1);
 }
+/* end accordian pattern */
 
 details:hover {
   box-shadow: var(--elevation-3);
+}
+
+details > p:first-of-type {
+  margin-top: 0;
+}
+
+details > p {
+  margin-bottom: var(--space-md);
+}
+
+details > p:last-of-type {
+  margin-bottom: 0;
 }
 
 details[open] {

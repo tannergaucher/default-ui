@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--text-md);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-1);
+  color: var(--text-color);
+  display: block;
+  animation: fadein 2s;
+}

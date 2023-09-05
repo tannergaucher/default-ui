@@ -13,10 +13,10 @@
   --accent-1-dark: #ffffff;
   --accent-2-dark: #666666;
 
-  /* TODO */
+  /* TODO RESPONSIVE */
   --code-bg: #28272c;
 
-  /* Now default to light theme */
+  /*  Default to light theme for now */
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
   --bg-1: var(--bg-1-light);

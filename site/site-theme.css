@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap');
+
+:root {
+  --sans: 'Fira Sans', sans-serif;
+  --font-family: var(--sans);
+  --accent-2-dark: #ff6347;
+  --accent-2-light: #db7093;
+  --caps-letter-spacing: 0.5rem;
+}
+
+#accent-1-light-input,
+#accent-2-light-input,
+#accent-1-dark-input,
+#accent-2-dark-input {
+  height: 99px;
+}
+
+#accent-1-light-input {
+  border-color: var(--accent-1-light);
+}
+
+#accent-2-light-input {
+  border-color: var(--accent-2-light);
+}
+
+#accent-1-dark-input {
+  border-color: var(--accent-1-dark);
+}
+
+#accent-2-dark-input {
+  border-color: var(--accent-2-dark);
+}
+
+@media (max-width: 900px) {
+  #accent-1-light-input,
+  #accent-2-light-input,
+  #accent-1-dark-input,
+  #accent-2-dark-input {
+    height: 73px;
+  }
+}

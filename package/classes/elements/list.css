@@ -1,0 +1,21 @@
+ul,
+ol {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-sm);
+  line-height: var(--paragraph-line-height);
+  font-weight: 500;
+  font-size: var(--text-md);
+}
+
+li:last-child {
+  margin-bottom: var(--space-lg);
+}
+
+li > p {
+  margin-bottom: var(--space-sm);
+}

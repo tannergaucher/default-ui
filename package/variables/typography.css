@@ -3,42 +3,18 @@
     sans-serif, Apple Color Emoji, Segoe UI Emoji;
   --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
-  --heading-line-height: 1.4;
-  --paragraph-line-height: 1.7;
+  --heading-line-height: 1.33;
+  --paragraph-line-height: 2;
   --heading-letter-spacing: 0rem;
-  --paragraph-letter-spacing: 0rem;
+  --paragraph-letter-spacing: 0.5px;
   --caps-letter-spacing: 0.17rem;
   --text-scale-ratio: 1.333;
   --responsive-unit: 0.4vw;
-  /* CALCULATED FONT SIZE */
-  --text-baseline: calc(0.6rem + var(--responsive-unit));
-  --font-size: calc(var(--text-baseline) + var(--responsive-unit));
-  /* CALCULATED TYPE SCALE */
-  --text-xs: calc(
-    var(--text-baseline) / (var(--text-scale-ratio) * var(--text-scale-ratio)) +
-      var(--responsive-unit)
-  );
-  --text-sm: calc(
-    var(--text-baseline) / var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-md: calc(
-    var(--text-baseline) * var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-lg: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) +
-      var(--responsive-unit)
-  );
-  --text-xl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-xxl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio) + var(--responsive-unit)
-  );
-  --text-xxxl: calc(
-    var(--text-baseline) * var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) * var(--text-scale-ratio) *
-      var(--text-scale-ratio) + var(--responsive-unit)
-  );
+  --text-xs: var(--0);
+  --text-sm: var(--1);
+  --text-md: var(--2);
+  --text-lg: var(--3);
+  --text-xl: var(--4);
+  --text-xxl: var(--5);
+  --text-xxxl: var(--6);
 }
