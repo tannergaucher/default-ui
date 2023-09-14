@@ -1,4 +1,4 @@
-export default function handleDetailsClose() {
+export function handleDetailsClose() {
   const detailsMenu = document.querySelector('#details-menu')
 
   if (detailsMenu) {
@@ -9,5 +9,3 @@ export default function handleDetailsClose() {
     })
   }
 }
-
-handleDetailsClose()
