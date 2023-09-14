@@ -13,11 +13,11 @@
     <header style="opacity: 0.93">
       <details id="details-menu">
         <summary>THEME</summary>
-        <section class="container">
+        <section>
           <div
-            class="content-grid"
             style="margin-block-start: 0; margin-block-end: 0"
             id="accent-dark-picker"
+            data-content-grid
           >
             <div>
               <label for="accent-1-dark-input">
@@ -40,7 +40,7 @@
               />
             </div>
           </div>
-          <div class="content-grid" id="accent-light-picker">
+          <div data-content-grid id="accent-light-picker">
             <div>
               <label for="accent-1-light-input">
                 <p>Accent 1</p>
@@ -62,15 +62,15 @@
               />
             </div>
           </div>
-          <button
-            id="toggle-mode-btn"
-            class="primary"
-            style="width: 100%; margin-block-start: var(--space-lg)"
-          />
+
+          <label for="">
+            <p>Mode</p>
+          </label>
+          <button id="toggle-mode-btn" class="primary" style="width: 100%" />
         </section>
       </details>
     </header>
-    <main class="container padding">
+    <main data-container>
       <h1>Semantic Styles</h1>
       <h2>
         Responsive, themed, framework agnostic UI design system for rapid
@@ -97,184 +97,136 @@
         interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
         laoreet quam.
       </p>
-      <h3>Heading is as Heading Does</h3>
+      <h1>Heading One</h1>
+      <h2>Heading Two</h2>
+      <h3>Heading Three</h3>
+      <h4>Heading Four</h4>
+      <small>Small</small>
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <ol>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ol>
+
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
-        auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Duis pellentesque magna accumsan, tincidunt nunc ac, convallis
-        urna. Suspendisse et tincidunt erat, vitae malesuada nisl. Donec eu
-        dictum lacus. Vestibulum porttitor enim sit amet pretium dignissim.
-        Fusce facilisis risus vitae sodales pretium. Suspendisse sem elit,
-        vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Sed semper sem facilisis varius
-        interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
-        laoreet quam.
+        Paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam vehicula auctor iaculis. Interdum et malesuada fames ac ante
+        ipsum primis in faucibus. Duis pellentesque magna accumsan, tincidunt
+        nunc ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
+        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet pretium
+        dignissim. Fusce facilisis risus vitae sodales pretium. Suspendisse sem
+        elit, vestibulum non ornare eget, placerat ut turpis. Interdum et
+        malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
+        facilisis varius interdum. In lacus tellus, blandit ac nulla sit amet,
+        sollicitudin laoreet quam.
       </p>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
-        auctor iaculis. Interdum et malesuada fames ac ante ipsum primis in
-        faucibus. Duis pellentesque magna accumsan, tincidunt nunc ac, convallis
-        urna. Suspendisse et tincidunt erat, vitae malesuada nisl. Donec eu
-        dictum lacus. Vestibulum porttitor enim sit amet pretium dignissim.
-        Fusce facilisis risus vitae sodales pretium. Suspendisse sem elit,
-        vestibulum non ornare eget, placerat ut turpis. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Sed semper sem facilisis varius
-        interdum. In lacus tellus, blandit ac nulla sit amet, sollicitudin
-        laoreet quam.
+        Paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Nullam vehicula auctor iaculis. Interdum et malesuada fames ac ante
+        ipsum primis in faucibus. Duis pellentesque magna accumsan, tincidunt
+        nunc ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
+        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet pretium
+        dignissim. Fusce facilisis risus vitae sodales pretium. Suspendisse sem
+        elit, vestibulum non ornare eget, placerat ut turpis. Interdum et
+        malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
+        facilisis varius interdum. In lacus tellus, blandit ac nulla sit amet,
+        sollicitudin laoreet quam.
       </p>
+
+      <h3>Article</h3>
+
+      <article data-card>
+        <img src="https://source.unsplash.com/random" alt="random" />
+        <h3>Article Heading</h3>
+        <p>Article paragraph and a random unsplash image</p>
+      </article>
+
+      <h3>Article Grid</h3>
+
+      <section data-content-grid>
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+
+        <a href="/" data-none>
+          <article data-card>
+            <img src="https://source.unsplash.com/random" alt="random" />
+            <h3>Article Heading</h3>
+            <p>Card paragraph element and a random unsplash image</p>
+          </article>
+        </a>
+      </section>
+
+      <h3>Blockquote</h3>
       <blockquote href="http://foo.com">
         <q>A Blockquote built for rapid prototyping!</q>
       </blockquote>
-      <h3>Card Grid</h3>
-      <div class="content-grid">
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-        <div class="card">
-          <a href="/">
-            <img src="https://source.unsplash.com/random" alt="random" />
-            <h3 class="card-heading">Card Heading</h3>
-            <p class="card-text">
-              Paragraph element with class of card-text and a random unsplash
-              image
-            </p>
-          </a>
-        </div>
-      </div>
-      <h3>Image Grid</h3>
-      <div class="image-grid">
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-        <img
-          src="https://source.unsplash.com/random"
-          alt="random"
-          style="max-width: 100%"
-        />
-      </div>
-      <h3>Table</h3>
-      <table>
-        <thead>
-          <tr>
-            <th colspan="3" class="text--md">Table Header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Table body</td>
-            <td>with three</td>
-            <td>columns</td>
-          </tr>
-          <tr>
-            <td>Table body</td>
-            <td>with three</td>
-            <td>columns</td>
-          </tr>
-          <tr>
-            <td>Table body</td>
-            <td>with three</td>
-            <td>columns</td>
-          </tr>
-        </tbody>
-      </table>
-      <fieldset>
-        <form>
-          <h3>Textarea</h3>
-          <textarea placeholder="Textarea"></textarea>
-          <h3>Input</h3>
-          <input type="text" placeholder="Input" />
-          <h3>Primary Button</h3>
-          <button class="pulse" type="submit">Button</button>
-        </form>
-      </fieldset>
+
       <h3>Button</h3>
       <button style="width: 100%">Button</button>
+
+      <h3>Dialog</h3>
+      <button
+        id="show-dialog-example-btn"
+        style="margin-bottom: 0; width: 100%"
+        type="submit"
+      >
+        Show Dialog
+      </button>
+      <dialog class="dialog" id="dialog-example">
+        <h1>Greetings 👋</h1>
+        <h2>Native HTML Dialog element here 🤓</h2>
+        <form method="dialog">
+          <button class="btn btn-primary" style="width: 100%">
+            Close Dialog
+          </button>
+        </form>
+      </dialog>
+
       <h3>Summary / Details</h3>
+      <!-- todo single, stacked and nested -->
       <details open class="fade-in">
         <summary>Summary One</summary>
         <p>
@@ -306,70 +258,176 @@
           sollicitudin laoreet quam.
         </p>
       </details>
-      <h3>Dialog</h3>
-      <button
-        class="primary"
-        id="show-dialog-example-btn"
-        style="margin-bottom: 0; width: 100%"
-      >
-        Show Dialog
-      </button>
-      <dialog class="dialog" id="dialog-example">
-        <h1>Greetings 👋</h1>
-        <h2>Native HTML Dialog element here 🤓</h2>
-        <form method="dialog">
-          <button class="btn btn-primary" style="width: 100%">
-            Close Dialog
-          </button>
+
+      <h3>Table</h3>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3" class="text--md">Table Header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table body</td>
+            <td>with three</td>
+            <td>columns</td>
+          </tr>
+          <tr>
+            <td>Table body</td>
+            <td>with three</td>
+            <td>columns</td>
+          </tr>
+          <tr>
+            <td>Table body</td>
+            <td>with three</td>
+            <td>columns</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <h3>Inputs</h3> -->
+
+      <!-- 
+      <label for="">
+        <h4>Text</h4>
+      </label>
+      <input type="text" placeholder="Text" /> -->
+
+      <!-- <label for="">
+        <h4>Textarea</h4>
+      </label>
+      <textarea placeholder="Textarea"></textarea> -->
+
+      <!-- <label for="">
+        <h4>Number</h4>
+      </label>
+      <input type="number" placeholder="Number" />
+
+      <label for="">
+        <h4>Checkbox</h4>
+      </label>
+      <input type="checkbox" />
+
+      <label for="">
+        <h4>File</h4>
+      </label>
+      <input type="file" />
+
+      <label for="">
+        <h4>Color</h4>
+      </label>
+      <input type="color" />
+
+      <label for="">
+        <h4>Date</h4>
+      </label>
+      <input type="date" name="" id="" /> -->
+
+      <!-- <label for="">
+        <h4>Submit Button</h4>
+      </label>
+
+      <button class="pulse" type="submit">Button</button> -->
+
+      <!-- <label for="">
+        <h4>Secondary</h4>
+      </label>
+      <button class="pulse">Secondary Button</button> -->
+
+      <h3>Fieldset > Form > Input | Button</h3>
+      <fieldset>
+        <form>
+          <input type="text" placeholder="Subject" required />
+          <input type="email" placeholder="Email" required />
+          <textarea
+            name=""
+            id=""
+            cols="10"
+            rows="5"
+            placeholder="Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
         </form>
-      </dialog>
-      <hr />
+      </fieldset>
+
+      <!-- todo handle disabled fieldset styles-->
+      <!-- <h4>Disabled</h4>
+      <fieldset disabled>
+        <form>
+          <input type="text" placeholder="Subject" />
+          <input type="email" placeholder="Email" />
+          <textarea
+            name=""
+            id=""
+            cols="10"
+            rows="5"
+            placeholder="Message"
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </fieldset> -->
+
+      <!-- todo handle loading fieldset styles-->
+      <!-- <h4>Loading</h4>
+      <fieldset data-loading>
+        <form>
+          <input type="text" placeholder="Subject" />
+          <input type="email" placeholder="Email" />
+          <textarea
+            name=""
+            id=""
+            cols="10"
+            rows="5"
+            placeholder="Message"
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </fieldset> -->
     </main>
-    <footer style="padding-block: var(--space-lg)">
-      <section class="container padding">
-        <h2 style="margin-block-start: var(--space-xl)">Semantic Styles</h2>
+    <footer>
+      <section data-container>
+        <h2 style="padding-block-start: var(--space-lg)">Semantic Styles</h2>
         <h3>
           Responsive, themed, framework agnostic UI design system for rapid
           prototyping
         </h3>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/tannergaucher/semantic-styles"
+                target="_blank"
+                rel="noreferrer"
+                class="nav-link"
+              >
+                Github Repository
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://semanticstylesmdx.netlify.app"
+                target="_blank"
+                rel="noreferrer"
+                class="nav-link"
+              >
+                Documentation Site with Live Code Examples
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://semanticstylesreachui.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                class="nav-link"
+              >
+                Semantic Styles X Reach UI (WIP)
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
-      <nav class="container">
-        <ul>
-          <li>
-            <a
-              href="https://github.com/tannergaucher/semantic-styles"
-              target="_blank"
-              rel="noreferrer"
-              class="nav-link"
-            >
-              Github Repository
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://semanticstylesmdx.netlify.app"
-              target="_blank"
-              rel="noreferrer"
-              class="nav-link"
-            >
-              Documentation Site with Live Code Examples
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://semanticstylesreachui.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-              class="nav-link"
-            >
-              Semantic Styles X Reach UI (WIP)
-            </a>
-          </li>
-        </ul>
-      </nav>
     </footer>
     <script src="./index.js" type="module"></script>
-    <script src="./modes-wrapper.js" type="module"></script>
-    <script src="./progressive-enhancements.js" type="module"></script>
   </body>
 </html>

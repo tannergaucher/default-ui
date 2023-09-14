@@ -1,12 +1,17 @@
 import '../index.css'
 import './site-theme.css'
 
+import '../package/js/progressive-enhancements'
+
 import {
+  useTheme,
   DARK,
   LIGHT,
   THEME_STORAGE_KEY,
   TOGGLE_MODE_BTN_SELECTOR,
 } from '../package/js/theme'
+
+useTheme()
 
 const exampleDialogBtn = document.querySelector('#show-dialog-example-btn')
 const exampleDialog = document.querySelector('#dialog-example')
@@ -78,7 +83,6 @@ function setInitValues() {
 
   if (!persistedPreference) {
     if (isPrefersDark.matches) {
-      console.log('show dark picker')
       accentLightPicker.style.display = 'none'
       accentDarkPicker.style.display = 'inline'
     } else {
