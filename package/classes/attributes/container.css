@@ -1,0 +1,13 @@
+main[data-container],
+section[data-container],
+div[data-container] {
+  margin-inline: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+  main[data-container],
+  section[data-container],
+  div[data-container] {
+    margin-inline: var(--space-md);
+  }
+}

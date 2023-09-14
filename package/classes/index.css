@@ -1,5 +1,3 @@
 @import url('./animation/index.css');
-@import url('./components/index.css');
+@import url('./attributes/index.css');
 @import url('./elements/index.css');
-@import url('./typography/index.css');
-@import url('./layout/index.css');

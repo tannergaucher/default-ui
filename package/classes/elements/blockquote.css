@@ -7,7 +7,7 @@ blockquote {
   letter-spacing: var(--paragraph-letter-spacing);
   line-height: var(--paragraph-line-height);
   width: fit-content;
-  margin-inline: var(--space-sm);
+  margin-inline: 0;
   margin-block: 0;
 }
 

@@ -1,6 +1,6 @@
 :root {
-  --bg-1-light: #fafafaee;
-  --bg-2-light: #ffffff;
+  --bg-1-light: #ffffff;
+  --bg-2-light: #fafafaee;
   --text-color-light: #000000;
   --grey-light: #666666;
   --accent-1-light: #000000;
@@ -16,7 +16,7 @@
   /* TODO RESPONSIVE */
   --code-bg: #28272c;
 
-  /*  Default to light theme for now */
+  /*  Default to light theme */
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
   --bg-1: var(--bg-1-light);

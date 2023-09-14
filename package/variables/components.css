@@ -1,5 +1,4 @@
 :root {
-  --shadow-color: rgba(163, 119, 119, 0.1);
   --radius: var(--0);
   --thickness: var(--0);
   --elevation-1: 0 4px 12px var(--shadow-color);

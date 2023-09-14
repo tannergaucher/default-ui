@@ -1,4 +1,5 @@
 @import url('./a.css');
+@import url('./article.css');
 @import url('./aside.css');
 @import url('./blockquote.css');
 @import url('./body.css');
@@ -20,6 +21,7 @@
 @import url('./main.css');
 @import url('./nav.css');
 @import url('./p.css');
+@import url('./section.css');
 @import url('./select.css');
 @import url('./small.css');
 @import url('./summary.css');

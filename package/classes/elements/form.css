@@ -2,3 +2,8 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+form > input:not(:last-child),
+form > textarea:not(:last-child) {
+  margin-block-end: var(--space-md);
+}

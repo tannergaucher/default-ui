@@ -22,18 +22,6 @@ details:hover {
   box-shadow: var(--elevation-3);
 }
 
-details > p:first-of-type {
-  margin-top: 0;
-}
-
-details > p {
-  margin-bottom: var(--space-md);
-}
-
-details > p:last-of-type {
-  margin-bottom: 0;
-}
-
 details[open] {
   box-shadow: var(--elevation-3);
 }

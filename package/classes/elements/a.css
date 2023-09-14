@@ -12,3 +12,7 @@ a:focus {
 a:disabled {
   cursor: not-allowed;
 }
+
+a[data-none] {
+  text-decoration: none;
+}

@@ -8,23 +8,24 @@ const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
 toggleModeBtn.addEventListener('click', handleThemeToggle)
 
-export default function syncTheme() {
+export function useTheme() {
   syncThemeBtnText()
   handleUserPersistedTheme()
   handleMediaQueryChangeEvent()
 }
-syncTheme()
 
 function syncThemeBtnText() {
   if (!toggleModeBtn) return
 
   toggleModeBtn.style.display = 'none'
 
-  const initPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
-    .matches
+  const initPrefersDark = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches
 
-  const initPrefersLight = window.matchMedia('(prefers-color-scheme: light)')
-    .matches
+  const initPrefersLight = window.matchMedia(
+    '(prefers-color-scheme: light)'
+  ).matches
 
   if (initPrefersDark) {
     toggleModeBtn.innerHTML = LIGHT
@@ -81,7 +82,7 @@ function handleMediaQueryChangeEvent() {
     })
 }
 
-function setDarkTheme() {
+export function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -115,7 +116,7 @@ function setDarkTheme() {
   localStorage.setItem(THEME_STORAGE_KEY, DARK)
 }
 
-function setLightTheme() {
+export function setLightTheme() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
