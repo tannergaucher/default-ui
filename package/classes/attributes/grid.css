@@ -1,5 +1,5 @@
-section[data-content-grid],
-div[data-content-grid] {
+section[data-grid],
+div[data-grid] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: var(--space-sm);
@@ -8,15 +8,15 @@ div[data-content-grid] {
 }
 
 @media (max-width: 1300px) {
-  section[data-content-grid],
+  section[data-grid],
   div[data-content-grid] {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 900px) {
-  section[data-content-grid],
-  div[data-content-grid] {
+  section[data-grid],
+  div[data-grid] {
     grid-template-columns: 1fr;
   }
 }
