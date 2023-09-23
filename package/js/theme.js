@@ -40,7 +40,7 @@ function syncThemeBtnText() {
   }
 }
 
-export function handleUserPersistedTheme() {
+function handleUserPersistedTheme() {
   const persistedPreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedPreference) return
@@ -82,7 +82,7 @@ function handleMediaQueryChangeEvent() {
     })
 }
 
-export function setDarkTheme() {
+function setDarkTheme() {
   const bg1Dark = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-dark'
   )
@@ -116,7 +116,7 @@ export function setDarkTheme() {
   localStorage.setItem(THEME_STORAGE_KEY, DARK)
 }
 
-export function setLightTheme() {
+function setLightTheme() {
   const bg1Light = getComputedStyle(document.documentElement).getPropertyValue(
     '--bg-1-light'
   )
