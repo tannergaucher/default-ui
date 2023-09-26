@@ -18,8 +18,20 @@ jobs:
 
       - name: Get Semver Type of Change
         run: |
+          # get the list of all markdown files in the changeset directory
+          CHANGESET_FILES=$(ls ./changeset/*.md)
+
+          # if there are no markdown files in the changeset directory, exit with an error
+          if [[ -z "$CHANGESET_FILES" ]]; then
+            echo "No markdown files found in changeset directory"
+            exit 1
+          fi
+
+          # get the first markdown file in the list
+          CHANGESET_FILE="${CHANGESET_FILES[0]}"
+
           # get the semver type of change from the changeset file
-          SEMVER_TYPE=$(cat ./changeset/<any-file.md> | sed -n '/semantic-styles/p' | awk '{print $2}')
+          SEMVER_TYPE=$(cat "$CHANGESET_FILE" | sed -n '/semantic-styles/p' | awk '{print $2}')
 
           # echo the semver type of change to the console
           echo "Semver type of change: $SEMVER_TYPE"
