@@ -1,1 +1,49 @@
 name: Create a Release Branch
+
+# on creating a pull request to master
+on:
+  pull_request:
+    branches:
+      - master
+
+# create a release branch called release/<next-release-version-number>
+
+jobs:
+  create-release-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get Semver Type of Change
+        run: |
+          # get the semver type of change from the changeset file
+          SEMVER_TYPE=$(cat ./changeset/<any-file.md> | sed -n '/semantic-styles/p' | awk '{print $2}')
+
+          # echo the semver type of change to the console
+          echo "Semver type of change: $SEMVER_TYPE"
+
+      - name: Update Package Version
+        run: |
+          # update the package version in package.json based on the semver type of change
+          if [[ "$SEMVER_TYPE" == "major" ]]; then
+            npm version major
+          elif [[ "$SEMVER_TYPE" == "minor" ]]; then
+            npm version minor
+          elif [[ "$SEMVER_TYPE" == "patch" ]]; then
+            npm version patch
+          else
+            echo "Unknown semver type of change"
+            exit 1
+          fi
+
+      - name: Create Release Branch
+        run: |
+          # get the next release version number
+          NEXT_RELEASE_VERSION=$(node -p "require('./package.json').version")
+          echo "Next release version: $NEXT_RELEASE_VERSION"
+
+          # create a release branch
+          git checkout -b "release/$NEXT_RELEASE_VERSION"
+          git push origin "release/$NEXT_RELEASE_VERSION"
