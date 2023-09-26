@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Check for Changeset Files
         run: |
-          CHANGES_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '\.changesets/.*\.md$')
+          CHANGES_FILES=$(git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.sha }}" | grep -E '\.changesets/.*\.md$')
           if [ -z "$CHANGES_FILES" ]; then
             echo "No changeset markdown files found in the PR."
             echo "::error::No changeset markdown files found in the PR. Please add them."
