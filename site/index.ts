@@ -100,13 +100,13 @@ function toggleUserAccentPicker(e: ToggleModeButtonEvent) {
   }
 
   if (e.target.innerHTML === Mode.LIGHT) {
-    accentLightPicker.style.display = 'none'
-    accentDarkPicker.style.display = 'inline'
+    accentLightPicker.style.display = 'inline'
+    accentDarkPicker.style.display = 'none'
   }
 
   if (e.target.innerHTML === Mode.DARK) {
-    accentLightPicker.style.display = 'inline'
-    accentDarkPicker.style.display = 'none'
+    accentDarkPicker.style.display = 'inline'
+    accentLightPicker.style.display = 'none'
   }
 }
 

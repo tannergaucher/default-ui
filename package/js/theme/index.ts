@@ -111,7 +111,7 @@ function setTheme(theme: { mode: Mode }) {
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = mode === Mode.DARK ? Mode.LIGHT : Mode.DARK
+    toggleModeBtn.innerHTML = mode
   }
 
   localStorage.setItem(THEME_STORAGE_KEY, mode)
