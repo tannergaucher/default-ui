@@ -111,32 +111,32 @@ function getPropertyString(property: PropertyString, mode: Mode) {
   switch (property) {
     case BackgroundProperty.BACKGROUND_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--bg-1-${variableSuffix}`
+        `${BackgroundProperty.BACKGROUND_1}-${variableSuffix}`
       )
 
     case BackgroundProperty.BACKGROUND_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--bg-2-${variableSuffix}`
+        `${BackgroundProperty.BACKGROUND_2}-${variableSuffix}`
       )
 
     case TextProperty.TEXT_COLOR:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--text-color-${variableSuffix}`
+        `${TextProperty.TEXT_COLOR}-${variableSuffix}`
       )
 
     case AccentProperty.ACCENT_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--accent-1-${variableSuffix}`
+        `${AccentProperty.ACCENT_1}-${variableSuffix}`
       )
 
     case AccentProperty.ACCENT_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--accent-2-${variableSuffix}`
+        `${AccentProperty.ACCENT_2}-${variableSuffix}`
       )
 
     case GreyProperty.GREY:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `--grey-${variableSuffix}`
+        `${GreyProperty.GREY}-${variableSuffix}`
       )
   }
 }
