@@ -31,9 +31,7 @@ export enum Mode {
 }
 
 export function useTheme() {
-  // 1. look for the theme in local storage
-
-  // todo update to theme object
+  // 1. handle setting up the theme based on the user's explicit preference
   const storageMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode | null
 
   if (storageMode) {
@@ -42,7 +40,7 @@ export function useTheme() {
     })
   }
 
-  // 2. handle setting up listeners for the media query change event
+  // 2. Handle setting the theme based on the user's OS preference
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
@@ -63,7 +61,7 @@ export function useTheme() {
       }
     })
 
-  // 3. Handle user theme toggle events
+  // 3. Handle setting up the toggle mode button listener
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   toggleModeBtn?.addEventListener('click', () => {
