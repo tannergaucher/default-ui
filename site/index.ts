@@ -30,12 +30,11 @@ type AccentInput = Element & {
   value: string
 }
 
-type AccentPicker =
-  | Element & {
-      style: {
-        display: 'inline' | 'none'
-      }
-    }
+type AccentPicker = Element & {
+  style: {
+    display: 'inline' | 'none'
+  }
+}
 
 const accent1LightInput = document.querySelector(
   '#accent-1-light-input'
