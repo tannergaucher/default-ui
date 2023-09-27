@@ -33,11 +33,14 @@ export enum Mode {
 export function useTheme() {
   // 1. look for the theme in local storage
 
-  const storageTheme = localStorage.getItem(THEME_STORAGE_KEY)
+  // todo update to theme object
+  const storageMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode | null
 
-  setTheme({
-    mode: storageTheme === Mode.DARK ? Mode.DARK : Mode.LIGHT,
-  })
+  if (storageMode) {
+    setTheme({
+      mode: storageMode,
+    })
+  }
 
   // 2. handle setting up listeners for the media query change event
   window
@@ -70,7 +73,6 @@ export function useTheme() {
     return setTheme({
       mode: nextMode,
     })
-    // }
   })
 }
 
