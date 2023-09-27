@@ -23,7 +23,7 @@ jobs:
 
       - name: Get semver bump type
         run: |
-          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
+          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e 'semantic-styles')
           echo "Semver bump type: ${BUMP_TYPE}"
 
       - name: Bump version
