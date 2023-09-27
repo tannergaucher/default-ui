@@ -28,7 +28,7 @@ jobs:
 
       - name: Bump version
         run: |
-          npx changeset version --bump=${BUMP_TYPE}
+          changeset version --bump=${BUMP_TYPE}
 
       - name: Create release branch
         run: |
