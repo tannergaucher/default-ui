@@ -52,14 +52,6 @@ const accent2DarkInput = document.querySelector(
   '#accent-2-dark-input'
 ) as AccentInput | null
 
-const accentLightPicker = document.querySelector(
-  '#accent-light-picker'
-) as AccentPicker | null
-
-const accentDarkPicker = document.querySelector(
-  '#accent-dark-picker'
-) as AccentPicker | null
-
 window.addEventListener('load', setInitialAccentPickerValues)
 
 accent1LightInput?.addEventListener('input', (e) => {
@@ -94,19 +86,27 @@ accent2DarkInput?.addEventListener('input', (e) => {
   )
 })
 
+const accentLightPickerSection = document.querySelector(
+  '#accent-light-picker'
+) as AccentPicker | null
+
+const accentDarkPickerSection = document.querySelector(
+  '#accent-dark-picker'
+) as AccentPicker | null
+
 function toggleUserAccentPicker(e: ToggleModeButtonEvent) {
-  if (!accentLightPicker || !accentDarkPicker) {
+  if (!accentLightPickerSection || !accentDarkPickerSection) {
     return
   }
 
   if (e.target.innerHTML === Mode.LIGHT) {
-    accentLightPicker.style.display = 'inline'
-    accentDarkPicker.style.display = 'none'
+    accentLightPickerSection.style.display = 'inline'
+    accentDarkPickerSection.style.display = 'none'
   }
 
   if (e.target.innerHTML === Mode.DARK) {
-    accentDarkPicker.style.display = 'inline'
-    accentLightPicker.style.display = 'none'
+    accentDarkPickerSection.style.display = 'inline'
+    accentLightPickerSection.style.display = 'none'
   }
 }
 
@@ -119,7 +119,7 @@ toggleModeBtn?.addEventListener('click', (e) => {
 })
 
 function setInitialAccentPickerValues() {
-  if (!accentDarkPicker || !accentLightPicker) {
+  if (!accentDarkPickerSection || !accentLightPickerSection) {
     return
   }
 
@@ -152,26 +152,26 @@ function setInitialAccentPickerValues() {
   const persistedModePreference = localStorage.getItem(THEME_STORAGE_KEY)
 
   if (!persistedModePreference && isPrefersDark.matches) {
-    accentLightPicker.style.display = 'none'
-    accentDarkPicker.style.display = 'inline'
+    accentLightPickerSection.style.display = 'none'
+    accentDarkPickerSection.style.display = 'inline'
 
     return
   }
 
   if (persistedModePreference === Mode.DARK) {
-    accentLightPicker.style.display = 'none'
-    accentDarkPicker.style.display = 'inline'
+    accentLightPickerSection.style.display = 'none'
+    accentDarkPickerSection.style.display = 'inline'
 
     return
   }
 
   if (
     persistedModePreference === Mode.LIGHT &&
-    accentDarkPicker &&
-    accentLightPicker
+    accentDarkPickerSection &&
+    accentLightPickerSection
   ) {
-    accentLightPicker.style.display = 'inline'
-    accentDarkPicker.style.display = 'none'
+    accentLightPickerSection.style.display = 'inline'
+    accentDarkPickerSection.style.display = 'none'
 
     return
   }
