@@ -18,8 +18,8 @@ jobs:
 
       - name: Get Semver Type of Change
         run: |
-          # get the list of all markdown files in the changeset directory
-          CHANGESET_FILES=$(ls ./changeset/*.md)
+          # get the list of all markdown files in the changeset directory except README.md
+          CHANGESET_FILES=($(ls ./changeset/*.md | grep -v 'README.md'))
 
           # if there are no markdown files in the changeset directory, exit with an error
           if [[ -z "$CHANGESET_FILES" ]]; then

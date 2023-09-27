@@ -1,7 +1,7 @@
 import { handleDetailsClose } from './details-menu.js'
 
-function main() {
+export function progressiveEnhancements() {
   handleDetailsClose()
 }
 
-main()
+progressiveEnhancements()
