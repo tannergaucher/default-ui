@@ -77,34 +77,24 @@ export function useTheme() {
 function setTheme(theme: { mode: Mode }) {
   const { mode } = theme
 
-  const bg1Value = getPropertyString(BackgroundProperty.BACKGROUND_1, mode)
-  const bg2Value = getPropertyString(BackgroundProperty.BACKGROUND_2, mode)
-  const textColorValue = getPropertyString(TextProperty.TEXT_COLOR, mode)
-  const accent1Value = getPropertyString(AccentProperty.ACCENT_1, mode)
-  const accent2Value = getPropertyString(AccentProperty.ACCENT_2, mode)
-  const greyValue = getPropertyString(GreyProperty.GREY, mode)
+  const cssVariableMap = {
+    [BackgroundProperty.BACKGROUND_1]: getPropertyString(
+      BackgroundProperty.BACKGROUND_1,
+      mode
+    ),
+    [BackgroundProperty.BACKGROUND_2]: getPropertyString(
+      BackgroundProperty.BACKGROUND_2,
+      mode
+    ),
+    [TextProperty.TEXT_COLOR]: getPropertyString(TextProperty.TEXT_COLOR, mode),
+    [AccentProperty.ACCENT_1]: getPropertyString(AccentProperty.ACCENT_1, mode),
+    [AccentProperty.ACCENT_2]: getPropertyString(AccentProperty.ACCENT_2, mode),
+    [GreyProperty.GREY]: getPropertyString(GreyProperty.GREY, mode),
+  }
 
-  document.documentElement.style.setProperty(
-    BackgroundProperty.BACKGROUND_1,
-    bg1Value
-  )
-  document.documentElement.style.setProperty(
-    BackgroundProperty.BACKGROUND_2,
-    bg2Value
-  )
-  document.documentElement.style.setProperty(
-    TextProperty.TEXT_COLOR,
-    textColorValue
-  )
-  document.documentElement.style.setProperty(
-    AccentProperty.ACCENT_1,
-    accent1Value
-  )
-  document.documentElement.style.setProperty(
-    AccentProperty.ACCENT_2,
-    accent2Value
-  )
-  document.documentElement.style.setProperty(GreyProperty.GREY, greyValue)
+  for (const [key, value] of Object.entries(cssVariableMap)) {
+    document.documentElement.style.setProperty(key, value)
+  }
 
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
