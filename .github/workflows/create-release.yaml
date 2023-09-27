@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for changeset
+        run: |
+          CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
+
+          if [ ! -f "$CHANGESET_FILE" ]; then
+            echo "No changeset found. Please create a changeset file for this PR."
+            exit 1
+          fi
+
+      - name: Get semver bump type
+        run: |
+          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
+          echo "Semver bump type: ${BUMP_TYPE}"
+
+      - name: Bump version
+        run: |
+          npx changeset version --bump=${BUMP_TYPE}
+
+      - name: Create release branch
+        run: |
+          git checkout -b release/${VERSION}
+
+      - name: Push release branch
+        run: |
+          git push origin release/${VERSION}
