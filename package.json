@@ -4,6 +4,7 @@
   "description": "\"Responsive, Themed, UI Design System.\"",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build site",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "changeset": "npx changeset"
