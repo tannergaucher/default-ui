@@ -37,7 +37,6 @@
     "react-dom": "^18.2.0",
     "regenerator-runtime": "^0.13.7",
     "storybook": "^7.4.0",
-    "typescript": "^5.2.2",
     "vite": "^4.4.5"
   },
   "browserslist": [
