@@ -178,8 +178,6 @@ function setInitialAccentPickerValues() {
   }
 }
 
-// consolidate to one function
-
 function handleAccentChange(
   e: AccentPickerInputEvent,
   accentProperty: AccentProperty,
