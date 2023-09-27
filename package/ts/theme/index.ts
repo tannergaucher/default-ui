@@ -106,35 +106,37 @@ function setTheme(theme: { mode: Mode }) {
 }
 
 function getPropertyString(property: PropertyString, mode: Mode) {
+  const variableSuffix = mode === Mode.DARK ? 'dark' : 'light'
+
   switch (property) {
     case BackgroundProperty.BACKGROUND_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--bg-1-dark' : '--bg-1-light'
+        `--bg-1-${variableSuffix}`
       )
 
     case BackgroundProperty.BACKGROUND_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--bg-2-dark' : '--bg-2-light'
+        `--bg-2-${variableSuffix}`
       )
 
     case TextProperty.TEXT_COLOR:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--text-color-dark' : '--text-color-light'
+        `--text-color-${variableSuffix}`
       )
 
     case AccentProperty.ACCENT_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--accent-1-dark' : '--accent-1-light'
+        `--accent-1-${variableSuffix}`
       )
 
     case AccentProperty.ACCENT_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--accent-2-dark' : '--accent-2-light'
+        `--accent-2-${variableSuffix}`
       )
 
     case GreyProperty.GREY:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        mode === Mode.DARK ? '--grey-dark' : '--grey-light'
+        `--grey-${variableSuffix}`
       )
   }
 }
