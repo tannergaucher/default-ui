@@ -1,15 +1,15 @@
 import '../index.css'
 import './site-theme.css'
 
-import '../package/js/progressive-enhancements'
+import '../package/ts/progressive-enhancements'
 
-import { useProgressiveEnhancements } from '../package/js/progressive-enhancements'
-import { Mode, AccentProperty } from '../package/js/theme'
+import { useProgressiveEnhancements } from '../package/ts/progressive-enhancements'
+import { Mode, AccentProperty } from '../package/ts/theme'
 import {
   TOGGLE_MODE_BTN_SELECTOR,
   THEME_STORAGE_KEY,
   useTheme,
-} from '../package/js/theme'
+} from '../package/ts/theme'
 
 useProgressiveEnhancements()
 useTheme()
