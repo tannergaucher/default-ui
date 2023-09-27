@@ -16,7 +16,7 @@ useTheme()
 
 type ToggleModeButtonEvent = Event & {
   target: {
-    innerHTML: Mode.DARK | Mode.LIGHT
+    innerHTML: Mode
   }
 }
 
