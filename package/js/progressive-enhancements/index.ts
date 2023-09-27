@@ -1,4 +1,4 @@
-import { handleDetailsClose } from './details-menu.js'
+import { handleDetailsClose } from './details-menu'
 
 export function useProgressiveEnhancements() {
   handleDetailsClose()

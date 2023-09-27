@@ -3,7 +3,7 @@ export function handleDetailsClose() {
 
   if (detailsMenu) {
     document.addEventListener('click', function (e) {
-      if (!detailsMenu.contains(e.target)) {
+      if (!detailsMenu.contains(e.target as Node)) {
         detailsMenu.removeAttribute('open')
       }
     })
