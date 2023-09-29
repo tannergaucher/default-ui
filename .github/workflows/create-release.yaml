@@ -37,6 +37,7 @@ jobs:
       - name: Push release branch
         run: |
           git push origin release/${VERSION}
+
       - name: Delete changeset files
         run: |
           git rm -rf .changeset/*.md
