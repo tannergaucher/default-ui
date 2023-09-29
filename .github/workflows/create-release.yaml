@@ -31,6 +31,8 @@ jobs:
 
           CHANGESET_LINE=$CHANGESET_LINES[0]
 
+          echo "Changeset line: $CHANGESET_LINE"
+
           if [[ $CHANGESET_LINE == *major* ]]; then
             echo "Major changeset found. Creating major release branch."
 
