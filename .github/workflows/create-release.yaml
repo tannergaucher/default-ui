@@ -51,6 +51,7 @@ jobs:
 
       - name: Bump version
         run: |
+          echo "npm run changeset:${BUMP_TYPE}"
           npm run changeset:${BUMP_TYPE}
 
       - name: Create release branch
