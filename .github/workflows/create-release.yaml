@@ -22,7 +22,7 @@ jobs:
             exit 1
           fi
 
-      - name: Get semver bump type
+      - name: Get semver change type and bump version
         run: |
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
@@ -49,12 +49,6 @@ jobs:
 
           echo "Semver bump type: ${BUMP_TYPE}"
 
-          env:
-            BUMP_TYPE: ${{ steps.get-semver-bump-type.outputs.bump-type }}
-
-      - name: Bump version
-        run: |
-          echo "npm run changeset:${BUMP_TYPE}"
           npm run changeset:${BUMP_TYPE}
 
       # todo get version from package json
