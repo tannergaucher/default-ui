@@ -24,8 +24,16 @@ jobs:
 
       - name: Get semver bump type
         run: |
-          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
+          CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
+
+          CHANGESET_LINES=$(cat "$CHANGESET_FILE")
+
+          FRONTMATTER=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
+
+          VERSION=$(echo "$CHANGESET_LINES[$FRONTMATTER]" | cut -d" " -f3)
+
           echo "Semver bump type: ${BUMP_TYPE}"
+          echo "Version: $VERSION"
 
       - name: Bump version
         run: |
