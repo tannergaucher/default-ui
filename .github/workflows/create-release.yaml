@@ -48,13 +48,14 @@ jobs:
           fi
 
           echo "Semver bump type: ${BUMP_TYPE}"
-        outputs:
-          BUMP_TYPE: ${{ steps.get-semver-bump-type.outputs.BUMP_TYPE }}
+
+          env:
+            BUMP_TYPE: ${{ steps.get-semver-bump-type.outputs.bump-type }}
 
       - name: Bump version
         run: |
           echo "npm run changeset:${BUMP_TYPE}"
-          npm run changeset:${{ needs.get-semver-bump-type.outputs.BUMP_TYPE }}
+          npm run changeset:${BUMP_TYPE}
 
       # todo get version from package json
       - name: Create release branch
