@@ -26,7 +26,7 @@ jobs:
           BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
           echo "Semver bump type: ${BUMP_TYPE}"
 
-          npx changeset version --bump=${BUMP_TYPE}
+          npm run changeset:"$BUMP_TYPE"
 
       - name: Create release branch
         run: |
