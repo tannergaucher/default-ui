@@ -29,12 +29,17 @@ jobs:
 
           echo "Changeset lines: $CHANGESET_LINES[0]"
 
-          BUMP_TYPE=$(echo "$CHANGESET_LINES" | grep '##' | head -n 1 | sed -E 's/## //g')
+          CHANGESET_LINE = $CHANGESET_LINES[0]
 
-          echo "Bump type: ${BUMP_TYPE}"
+          if [[ CHANGESET_LINE == *major* ]]; then
+            echo "Major changeset found. Creating major release branch."
 
-          npm run changeset:${BUMP_TYPE}
+          if [[ CHANGESET_LINE == *minor* ]]; then
+            echo "Minor changeset found. Creating minor release branch."
 
+          if [[ CHANGESET_LINE == *patch* ]]; then
+            echo "Patch changeset found. Creating patch release branch."
+              
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
           echo "Package version: $PACKAGE_VERSION"  
