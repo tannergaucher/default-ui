@@ -33,13 +33,11 @@ jobs:
 
           echo "Lib name: ${LIB_NAME}"
 
-          BUMP_TYPE_LINE=$(echo "${CHANGESET_LINES[${LIB_NAME}]}" | cut -d" " -f2)
-
-          echo "Bump type line ${BUMP_TYPE_LINE} Endd"
+          BUMP_TYPE_LINE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | cut -d" " -f2)
 
           BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | sed 's/[^a-zA-Z0-9]//g' | tr -d '[:space:]')
 
-          echo "Bump type ${BUMP_TYPE}"
+          echo "Semver bump type: ${BUMP_TYPE}"
 
           npm run changeset:${BUMP_TYPE}
 
