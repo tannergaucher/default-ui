@@ -30,7 +30,12 @@ jobs:
           echo "Changeset lines: ${CHANGESET_LINES}"
 
           LIB_NAME=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
+
+          echo "Lib name: ${LIB_NAME}"
+
           BUMP_TYPE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | cut -d" " -f2)
+
+          echo "Bump type ${BUMP_TYPE}"
 
           if [[ "$BUMP_TYPE" == "major" ]]; then
             BUMP_TYPE="major"
