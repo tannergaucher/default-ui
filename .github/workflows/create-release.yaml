@@ -27,7 +27,7 @@ jobs:
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
 
-          BUMP_TYPE=$(grep -oP '"semantic-styles": \K\w+' "$CHANGESET_LINES")
+          BUMP_TYPE=$(echo "$CHANGESET_LINES" | grep -oP '(?<=semantic-styles": ).*' | grep -oP '^\w+')
 
           echo "Bump type: ${BUMP_TYPE} ENDD"
 
