@@ -39,16 +39,6 @@ jobs:
 
           echo "Bump type ${BUMP_TYPE}"
 
-          if [[ "$BUMP_TYPE" == "major" ]]; then
-            BUMP_TYPE="major"
-          fi
-
-          if [[ "$BUMP_TYPE" == "patch" ]]; then
-            BUMP_TYPE="patch"
-          fi
-
-          echo "Semver bump type: ${BUMP_TYPE}"
-
           npm run changeset:${BUMP_TYPE}
 
           PACKAGE_VERSION=$(jq -r '.version' package.json)
