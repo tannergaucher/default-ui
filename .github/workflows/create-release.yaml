@@ -39,7 +39,7 @@ jobs:
 
           echo "Bump type line ${BUMP_TYPE_LINE}"
 
-          BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | sed -e 's/[^a-zA-Z0-9]//g' -e 's/semantic-styles//g' -e 's/^[ \t]*//g' -e 's/[ \t]*$//g')
+          BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | sed -e 's/[^a-zA-Z0-9]//g' -e 's/semanticstyles//g' -e 's/^[ \t]*//g' -e 's/[ \t]*$//g')
 
           echo "Bump type: ${BUMP_TYPE}"
 
