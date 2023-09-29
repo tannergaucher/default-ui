@@ -28,12 +28,21 @@ jobs:
 
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
 
-          FRONTMATTER=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
+          LIB_NAME=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
 
-          VERSION=$(echo "$CHANGESET_LINES[$FRONTMATTER]" | cut -d" " -f3)
+          BUMP_TYPE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | cut -d" " -f2)
+
+
+          if [[ "$BUMP_TYPE" == "major" ]]; then
+            BUMP_TYPE="major"
+          fi
+
+
+          if [[ "$BUMP_TYPE" == "patch" ]]; then
+            BUMP_TYPE="patch"
+          fi
 
           echo "Semver bump type: ${BUMP_TYPE}"
-          echo "Version: $VERSION"
 
       - name: Bump version
         run: |
