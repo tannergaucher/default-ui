@@ -33,7 +33,9 @@ jobs:
 
           echo "Lib name: ${LIB_NAME}"
 
-          BUMP_TYPE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | sed 's/[^a-zA-Z0-9]//g')
+          BUMP_TYPE_LINE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | cut -d" " -f2)
+
+          BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | sed 's/[^a-zA-Z0-9]//g')
 
           echo "Bump type ${BUMP_TYPE}"
 
