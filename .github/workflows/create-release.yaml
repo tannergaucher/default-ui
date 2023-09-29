@@ -15,6 +15,7 @@ jobs:
       - name: Check for changeset
         run: |
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
+          echo "Changeset file name: $CHANGESET_FILE"
 
           if [ ! -f "$CHANGESET_FILE" ]; then
             echo "No changeset found. Please create a changeset file for this PR."
