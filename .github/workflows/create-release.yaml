@@ -27,7 +27,7 @@ jobs:
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
 
-          echo "Changeset lines: $CHANGESET_LINES"
+          echo "Changeset lines: $CHANGESET_LINES[0]"
 
           BUMP_TYPE=$(echo "$CHANGESET_LINES" | grep '##' | head -n 1 | sed -E 's/## //g')
 
