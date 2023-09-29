@@ -35,6 +35,8 @@ jobs:
 
           BUMP_TYPE_LINE=$(echo "$CHANGESET_LINES[$LIB_NAME]" | cut -d" " -f2)
 
+          echo "Bump type line ${BUMP_TYPE_LINE}"
+
           BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | sed 's/[^a-zA-Z0-9]//g' | tr -d '[:space:]')
 
           echo "Bump type ${BUMP_TYPE}"
