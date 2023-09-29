@@ -22,7 +22,7 @@ jobs:
             exit 1
           fi
 
-      - name: Get semver change type and bump version
+      - name: Create release branch
         run: |
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
@@ -51,10 +51,11 @@ jobs:
 
           npm run changeset:${BUMP_TYPE}
 
-      # todo get version from package json
-      - name: Create release branch
-        run: |
-          git checkout -b release/${VERSION}
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+
+          echo "Package version: $PACKAGE_VERSION"  
+
+          git checkout -b release/${PACKAGE_VERSION}
 
       - name: Push release branch
         run: |
