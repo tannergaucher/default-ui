@@ -29,7 +29,7 @@ jobs:
 
           echo "Changeset lines: $CHANGESET_LINES[0]"
 
-          CHANGESET_LINE = $CHANGESET_LINES[0]
+          CHANGESET_LINE=$CHANGESET_LINES[0]
 
           if [[ $CHANGESET_LINE == *major* ]]; then
             echo "Major changeset found. Creating major release branch."
