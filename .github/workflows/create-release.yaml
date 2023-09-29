@@ -27,7 +27,7 @@ jobs:
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
 
-          echo "Changeset lines: ${CHANGESET_LINES}"
+          echo "Changeset lines: ${CHANGESET_LINES} endd"
 
           LIB_NAME=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
 
@@ -36,6 +36,8 @@ jobs:
           SEMANTIC_STYLES_LINE=$(grep -n "semantic-styles" "$CHANGESET_FILE" | cut -d: -f1)
 
           BUMP_TYPE_LINE=$(echo "$CHANGESET_LINES[$SEMANTIC_STYLES_LINE + 1]")
+
+          echo "Bump type line ${BUMP_TYPE_LINE}"
 
           BUMP_TYPE=$(echo "$BUMP_TYPE_LINE" | cut -d" " -f1)
 
