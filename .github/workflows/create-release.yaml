@@ -51,7 +51,7 @@ jobs:
 
       - name: Bump version
         run: |
-          npx changeset version --bump=${BUMP_TYPE}
+          npm run changeset:${BUMP_TYPE}
 
       - name: Create release branch
         run: |
@@ -60,8 +60,3 @@ jobs:
       - name: Push release branch
         run: |
           git push origin release/${VERSION}
-
-      - name: Delete changeset files
-        run: |
-          git rm -rf .changeset/*.md
-          git reset HEAD .changeset/README.md

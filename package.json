@@ -1,13 +1,15 @@
 {
   "name": "semantic-styles",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "description": "\"Responsive, Themed, UI Design System.\"",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build site",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "changeset": "changeset"
+    "changeset:minor": "changeset version --bump=minor",
+    "changeset:major": "changeset version --bump=major",
+    "changeset:bump": "changeset version --bump=bump"
   },
   "author": " <tannermichaelgaucher@gmail.com>",
   "license": "MIT",
