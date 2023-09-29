@@ -2,4 +2,4 @@
 'semantic-styles': minor
 ---
 
-Added changeset package
+Added changesettt package
