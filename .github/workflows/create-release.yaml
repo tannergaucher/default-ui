@@ -28,10 +28,10 @@ jobs:
           echo "changeest file ${CHANGESET_FILE}"
 
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
-
-          echo "changeset lines ${CHANGESET_LINES}"
            
           PACKAGE_VERSION=$(jq -r '.version' package.json)
+
+          echo "version ${PACKAGE_VERSION}"
 
           echo "Package version $PACKAGE_VERSION"  
 
