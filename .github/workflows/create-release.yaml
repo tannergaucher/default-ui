@@ -12,21 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check for chang
+      - name: Get change semver type from changeset and create release branch
+        run: |
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
 
           echo "changeest file ${CHANGESET_FILE}"
 
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
-
+           
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
-          echo "version ${PACKAGE_VERSION}"
+          echo "version $P"
 
-          echo "Package version $PACKAGE_VERSION"
+          echo "Package version $PACKAGE_VERSION"  
 
           git checkout -b release/${PACKAGE_VERSION}
 
       - name: Push release branch
         run: |
-          git push origin release/${PACKAGE_VERSION}
+          git push origin release/${VERSION}
