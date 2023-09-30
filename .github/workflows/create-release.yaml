@@ -36,7 +36,7 @@ jobs:
            
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
-          echo "Package version: $PACKAGE_VERSION"  
+          echo "Package version $PACKAGE_VERSION"  
 
           git checkout -b release/${PACKAGE_VERSION}
 
