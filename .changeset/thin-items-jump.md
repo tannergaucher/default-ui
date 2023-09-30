@@ -2,4 +2,4 @@
 'semantic-styles': minor
 ---
 
-test changset
+test changset foo.
