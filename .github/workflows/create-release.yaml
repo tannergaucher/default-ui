@@ -36,18 +36,15 @@ jobs:
           MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
           PATCH=$(grep -o '"semantic-styles": patch' <<< "$CHANGESET_LINES")
 
-          if [ -n "$MAJOR"]; then
+          if [[ -n "$MAJOR"]]; then
             npm run changeset:major
 
-          if [ -n "$MINOR" ]; then
+          if [[ -n "$MINOR" ]]; then
             npm run changeset:minor
 
-          if [ -n "$PATCH"]; then 
+          if [[ -n "$PATCH"]]; then 
             npm run changeset:patch
           fi
-
-          if [[ "$CHANGESET_LINES" == *'semantic-styles': patch* ]]; then
-            echo "Patch changeset found. Creating patch release branch."
               
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
