@@ -21,22 +21,18 @@ jobs:
           PATCH=$(grep -E ': patch' "$CHANGESET_FILE")
 
           if [ "$MAJOR"]; then
-            echo "Major bump here"
+            npm run changeset:major
           fi
 
           if [ "$MINOR" ]; then
-            echo "Minor bump here"
+            npm run changeset:minor
           fi
 
           if [ "$PATCH"]; then
-            echo "patch bump here"
+            npm run changeset:patch
           fi
 
           PACKAGE_VERSION=$(jq -r '.version' package.json)
-
-          echo "version $P"
-
-          echo "Package version $PACKAGE_VERSION"  
 
           git checkout -b release/${PACKAGE_VERSION}
 
