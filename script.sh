@@ -1,20 +1,18 @@
 #!/bin/bash
 CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
-CHANGESET_LINES=$(cat "$CHANGESET_FILE")
 
+MAJOR=$(grep -E ': major' "$CHANGESET_FILE")
+MINOR=$(grep -E ': minor' "$CHANGESET_FILE")
+PATCH=$(grep -E ': patch' "$CHANGESET_FILE")
 
-MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
-MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
-PATCH=$(grep -o '"semantic-styles": patch' <<< "$CHANGESET_LINES")
+if [ "$MAJOR"]; then
+  echo "Major bump here"
+fi
 
-echo "minor ${MINOR}"
+if [ "$MINOR" ]; then
+  echo "Minor bump here"
+fi
 
-if [ -n "$MAJOR"]; then
-  echo "Major bump"
-
-if [ -n "$MINOR" ]; then
-  echo "Minor bump"
-
-if [ -n "$PATCH"]; then 
-  echo "patch bump"
+if [ "$PATCH"]; then 
+  echo "patch bump here"
 fi
