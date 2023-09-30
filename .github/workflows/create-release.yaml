@@ -32,13 +32,7 @@ jobs:
 
           echo "changeset lines ${CHANGESET_LINES}"
 
-          MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
-
-          env.MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
-
-          echo "minor ${MINOR}"
-
-          PATCH=$(grep -o '"semantic-styles": patch' <<< "$CHANGESET_LINES")
+        #  MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
            
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
@@ -49,3 +43,6 @@ jobs:
       - name: Push release branch
         run: |
           git push origin release/${VERSION}
+
+
+
