@@ -41,6 +41,9 @@ jobs:
             npm run changeset:patch
           fi
 
+          if [[ "$CHANGESET_LINES" == *'semantic-styles': patch* ]]; then
+            echo "Patch changeset found. Creating patch release branch."
+              
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
           echo "Package version: $PACKAGE_VERSION"  
