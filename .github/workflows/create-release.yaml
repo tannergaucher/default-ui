@@ -34,7 +34,7 @@ jobs:
 
           MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
 
-          MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
+          env.MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
 
           echo "minor ${MINOR}"
 
