@@ -25,7 +25,12 @@ jobs:
       - name: Get change semver type from changeset and create release branch
         run: |
           CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
+
+          echo "changeest file ${CHANGESET_FILE}"
+
           CHANGESET_LINES=$(cat "$CHANGESET_FILE")
+
+          echo "changeset lines ${CHANGESET_LINES}"
 
           MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
           MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
