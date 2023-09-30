@@ -33,19 +33,13 @@ jobs:
           echo "changeset lines ${CHANGESET_LINES}"
 
           MAJOR=$(grep -o '"semantic-styles": major' <<< "$CHANGESET_LINES")
+
           MINOR=$(grep -o '"semantic-styles": minor' <<< "$CHANGESET_LINES")
+
+          echo "minor ${MINOR}"
+
           PATCH=$(grep -o '"semantic-styles": patch' <<< "$CHANGESET_LINES")
-
-          if [[ -n "$MAJOR"]]; then
-            npm run changeset:major
-
-          if [[ -n "$MINOR" ]]; then
-            npm run changeset:minor
-
-          if [[ -n "$PATCH"]]; then 
-            npm run changeset:patch
-          fi
-              
+           
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
           echo "Package version: $PACKAGE_VERSION"  
