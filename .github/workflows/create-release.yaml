@@ -15,12 +15,10 @@ jobs:
       - name: Run the get bump type script
         run: bash get-bump-type.sh
 
-      - name: Get package version and create the release branch
+      - name: Create and push the release branch with the new package version
         run: |
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
           git checkout -b release/${PACKAGE_VERSION}
 
-      - name: Push release branch
-        run: |
           git push origin release/${PACKAGE_VERSION}
