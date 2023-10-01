@@ -12,26 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get change semver type from changeset and create release branch
+      - name: Run the get bump type script
+        run: bash get-bump-type.sh
+
+      - name: Get package version and create the release branch
         run: |
-          CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
-
-          MAJOR=$(grep -E ': major' "$CHANGESET_FILE")
-          MINOR=$(grep -E ': minor' "$CHANGESET_FILE")
-          PATCH=$(grep -E ': patch' "$CHANGESET_FILE")
-
-          if [ "$MAJOR"]; then
-            npm run changeset:major
-          fi
-
-          if [ "$MINOR" ]; then
-            npm run changeset:minor
-          fi
-
-          if [ "$PATCH"]; then
-            npm run changeset:patch
-          fi
-
           PACKAGE_VERSION=$(jq -r '.version' package.json)
 
           git checkout -b release/${PACKAGE_VERSION}

@@ -6,13 +6,13 @@ MINOR=$(grep -E ': minor' "$CHANGESET_FILE")
 PATCH=$(grep -E ': patch' "$CHANGESET_FILE")
 
 if [ "$MAJOR"]; then
-  echo "Major bump here"
+  npm run changeset:major
 fi
 
 if [ "$MINOR" ]; then
-  echo "Minor bump here"
+  npm run changeset:minor
 fi
 
 if [ "$PATCH"]; then 
-  echo "patch bump here"
+  npm run changset:patch
 fi
