@@ -23,4 +23,4 @@ jobs:
 
       - name: Push release branch
         run: |
-          git push origin release/${VERSION}
+          git push origin release/${PACKAGE_VERSION}
