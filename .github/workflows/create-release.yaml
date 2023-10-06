@@ -26,4 +26,4 @@ jobs:
 
           git push origin release/${PACKAGE_VERSION}
 
-          gh pr create --base release/${PACKAGE_VERSION} --t release/${PACKAGE_VERSION}
+          gh pr create --base release/${PACKAGE_VERSION} --title release/${PACKAGE_VERSION}
