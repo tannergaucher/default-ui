@@ -21,7 +21,9 @@ jobs:
 
           git checkout -b release/${PACKAGE_VERSION}
 
-          git rebase release/${PACKAGE_VERSION} 
+          git rebase release/${PACKAGE_VERSION}
+
+          git pull origin release/${PACKAGE_VERSION}
 
           git push origin release/${PACKAGE_VERSION}
 
