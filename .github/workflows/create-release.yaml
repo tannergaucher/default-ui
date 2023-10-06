@@ -26,4 +26,4 @@ jobs:
 
           git push origin release/${PACKAGE_VERSION}
 
-          gh pr create --base release/${PACKAGE_VERSION} --title release/${PACKAGE_VERSION} --body "Release ${PACKAGE_VERSION}" --repo ${{ github.repository }}
+          gh pr create --base master --title release/${PACKAGE_VERSION} --body "Release ${PACKAGE_VERSION}" --repo ${{ github.repository }}
