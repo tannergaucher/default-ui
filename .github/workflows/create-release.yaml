@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  GH_TOKEN: ${{ github.token }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
