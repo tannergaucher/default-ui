@@ -21,12 +21,6 @@ jobs:
 
           git checkout -b release/${PACKAGE_VERSION}
 
-          git rebase release/${PACKAGE_VERSION}
-
-          git config pull.rebase true
-
-          git pull origin release/${PACKAGE_VERSION}
-
           git push origin release/${PACKAGE_VERSION}
 
           gh pr create --branch release/${PACKAGE_VERSION}
