@@ -1,9 +1,12 @@
 name: Release
 
 on:
-  push:
+  pull_request:
     branches:
       - master
+
+env:
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   release:
@@ -12,26 +15,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check for changeset
+      - name: Run the get bump type script
+        run: bash get-bump-type.sh
+
+      - name: Create a a release PR
         run: |
-          CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
 
-          if [ ! -f "$CHANGESET_FILE" ]; then
-            echo "No changeset found. Please create a changeset file for this PR."
-            exit 1
-          fi
+          git checkout -b release/${PACKAGE_VERSION}
 
-      - name: Get semver bump type
-        run: |
-          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
-          echo "Semver bump type: ${BUMP_TYPE}"
+          git push origin release/${PACKAGE_VERSION}
 
-          npx changeset version --bump=${BUMP_TYPE}
-
-      - name: Create release branch
-        run: |
-          git checkout -b release/${VERSION}
-
-      - name: Push release branch
-        run: |
-          git push origin release/${VERSION}
+          gh pr create --base master --title release/${PACKAGE_VERSION} --body "Release ${PACKAGE_VERSION}" --repo ${{ github.repository }}
