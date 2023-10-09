@@ -1,5 +1,8 @@
 name: Publish to npm
 
+env:
+  NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} # Make sure you have an npm token set in your repository secrets
+
 on:
   push:
     branches:
@@ -21,10 +24,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Login to npm
+        run: echo "//registry.npmjs.org/:_authToken=${$NPM_AUTH_TOKEN}" > ~/.npmrc
+
       - name: Publish to npm
         run: |
           # Run npm publish with appropriate options
           npm publish --access public  # You can adjust this command based on your npm package configuration
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} # Make sure you have an npm token set in your repository secrets
-
