@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.3.3
+
+### Patch Changes
+
+- 0a24933: Fix publish action syntax
+
 ## 0.3.2
 
 ### Patch Changes
