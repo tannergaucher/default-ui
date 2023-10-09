@@ -1,0 +1,30 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Publish to npm
+        run: |
+          # Run npm publish with appropriate options
+          npm publish --access public  # You can adjust this command based on your npm package configuration
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} # Make sure you have an npm token set in your repository secrets
+
