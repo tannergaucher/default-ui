@@ -38,7 +38,7 @@ jobs:
           fi
 
       - name: Update Package Version
-        if: steps.determine_bump_type.outputs.BUMP_TYPE
+        # if: steps.determine_bump_type.outputs.BUMP_TYPE
         run: |
           BUMP_TYPE="${{ steps.determine_bump_type.outputs.BUMP_TYPE }}"
           case $BUMP_TYPE in
@@ -64,7 +64,7 @@ jobs:
           echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
 
       - name: Create Release PR
-        if: steps.get_version.outputs.PACKAGE_VERSION
+        # if: steps.get_version.outputs.PACKAGE_VERSION
         run: |
           PACKAGE_VERSION="${{ steps.get_version.outputs.PACKAGE_VERSION }}"
           RELEASE_BRANCH="release/$PACKAGE_VERSION"
