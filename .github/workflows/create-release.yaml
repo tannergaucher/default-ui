@@ -27,6 +27,8 @@ jobs:
           # Search for changeset files in the list of changed files
           CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.md$" | head -n 1)
 
+          echo "Changeset File: $CHG_FILE"
+
           if [ -n "$CHG_FILE" ]; then
             BUMP_TYPE=$(grep -oP "'semantic-styles': (major|minor|patch)" "$CHG_FILE" | cut -d "'" -f 4)
           else
