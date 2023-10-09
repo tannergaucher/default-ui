@@ -13,14 +13,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Determine BUMP_TYPE
-        id: determine_bump_type
+      - name: List Changed Files
+        id: list_changed_files
         run: |
           # Get the pull request number from the event payload
           PR_NUMBER="${{ github.event.pull_request.number }}"
 
           # List changed files in the pull request using GitHub API
           CHANGED_FILES=$(curl -s "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/files" | jq -r '.[].filename')
+
+          echo "Changed Files: $CHANGED_FILES"
 
           # Search for changeset files in the list of changed files
           CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.md$" | head -n 1)
@@ -34,7 +36,7 @@ jobs:
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
       - name: Update Package Version
-        if: steps.determine_bump_type.outputs.BUMP_TYPE
+        if: steps.list_changed_files.outputs.CHANGED_FILES
         run: |
           BUMP_TYPE="${{ steps.determine_bump_type.outputs.BUMP_TYPE }}"
           case $BUMP_TYPE in
