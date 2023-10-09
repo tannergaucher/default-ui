@@ -1,8 +1,5 @@
 name: Create Release Workflow
 
-env:
-  GH_TOKEN: ${{ github.token }}
-
 on:
   pull_request:
     branches:
@@ -19,8 +16,11 @@ jobs:
       - name: Determine BUMP_TYPE
         id: determine_bump_type
         run: |
-          # List changed files in the pull request
-          CHANGED_FILES=$(gh pr list --json --base=master -q ".[] | select(.number == $GITHUB_PR_NUMBER) | .files[].filename")
+          # Get the pull request number from the event payload
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+
+          # List changed files in the pull request using GitHub API
+          CHANGED_FILES=$(curl -s "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/files" | jq -r '.[].filename')
 
           # Search for changeset files in the list of changed files
           CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.md$" | head -n 1)
