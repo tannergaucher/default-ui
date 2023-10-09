@@ -35,7 +35,7 @@ jobs:
           echo "Changed Files: $CHANGED_FILES"
 
           # Search for changeset files in the list of changed files
-          CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "^\.\/.changeset\/.*\.md$" | head -n 1)
+          CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.changeset/.*\.md$" | head -n 1)
 
           echo "Changeset File: $CHG_FILE"
 
@@ -82,6 +82,7 @@ jobs:
           git checkout -b "$RELEASE_BRANCH"
           git config user.name "Tanner Gaucher"
           git config --global user.email "tannermichaelgaucher@gmail.com"
+          git add CHANGELOG.md package.json
           git commit -am "Release $PACKAGE_VERSION"
           git push origin "$RELEASE_BRANCH"
           echo "::set-output name=release_branch::$RELEASE_BRANCH"
