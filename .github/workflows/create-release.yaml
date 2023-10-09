@@ -1,29 +1,77 @@
-name: Release
+name: Create Release Workflow
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+      - master
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
+    outputs:
+      bump_type: ${{ steps.determine_bump_type.outputs.bump_type }}
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - name: Determine Bump Type
+        id: determine_bump_type
+        run: |
+          # Get the pull request number from the event payload
+          PR_NUMBER="${{ github.event.pull_request.number }}"
 
-      - name: Install Dependencies
-        run: yarn
+          # List changed files in the pull request using GitHub API
+          CHANGED_FILES=$(curl -s "https://api.github.com/repos/${{ github.repository }}/pulls/$PR_NUMBER/files" | jq -r '.[].filename')
 
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "Changed Files: $CHANGED_FILES"
+
+          # Search for changeset files in the list of changed files
+          CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.md$" | head -n 1)
+
+          echo "Changeset File: $CHG_FILE"
+
+          if [ -n "$CHG_FILE" ]; then
+            BUMP_TYPE=$(grep -oP "semantic-styles': (major|minor|patch)" "$CHG_FILE" | sed 's/.*: //')
+            echo "::set-output name=bump_type::$BUMP_TYPE"
+          else
+            echo "::error::No changeset file found."
+            exit 1
+          fi
+
+      - name: Update Package Version
+        if: steps.determine_bump_type.outputs.bump_type
+        run: |
+
+          BUMP_TYPE="${{ steps.determine_bump_type.outputs.bump_type }}"
+          case $BUMP_TYPE in
+            major)
+              npm run changeset:major
+              ;;
+            minor)
+              npm run changeset:minor
+              ;;
+            patch)
+              npm run changeset:patch
+              ;;
+            *)
+              echo "::error::Invalid BUMP_TYPE: $BUMP_TYPE"
+              exit 1
+              ;;
+          esac
+
+      - name: Get Package Version
+        id: get_version
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
+
+      - name: Create Release PR
+        # if: steps.get_version.outputs.PACKAGE_VERSION
+        run: |
+          PACKAGE_VERSION="${{ steps.get_version.outputs.PACKAGE_VERSION }}"
+          RELEASE_BRANCH="release/$PACKAGE_VERSION"
+          git checkout -b "$RELEASE_BRANCH"
+          git commit -am "Release $PACKAGE_VERSION"
+          git push origin "$RELEASE_BRANCH"
+          echo "::set-output name=release_branch::$RELEASE_BRANCH"
