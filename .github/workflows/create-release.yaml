@@ -13,8 +13,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: List Changed Files
-        id: list_changed_files
+      - name: Determine Bump Type
+        id: determine_bump_type
         run: |
           # Get the pull request number from the event payload
           PR_NUMBER="${{ github.event.pull_request.number }}"
@@ -39,7 +39,7 @@ jobs:
           echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
       - name: Update Package Version
-        if: steps.list_changed_files.outputs.CHANGED_FILES
+        if: steps.determine_bump_type.outputs.CHANGED_FILES
         run: |
           BUMP_TYPE="${{ steps.determine_bump_type.outputs.BUMP_TYPE }}"
           case $BUMP_TYPE in
