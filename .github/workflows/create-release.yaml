@@ -20,7 +20,7 @@ jobs:
         id: determine_bump_type
         run: |
           # List changed files in the pull request
-          CHANGED_FILES=$(gh pr list --json --base:master -q ".[].number==$GITHUB_PR_NUMBER | .[].files[].filename")
+          CHANGED_FILES=$(gh pr list --json --base master -q ".[] | select(.number == $GITHUB_PR_NUMBER) | .files[].filename")
 
           # Search for changeset files in the list of changed files
           CHG_FILE=$(echo "$CHANGED_FILES" | grep -E "\.md$" | head -n 1)
