@@ -1,7 +1,7 @@
-name: Release
+name: Create Release Workflow
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -10,28 +10,53 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      - name: Check for changeset
+      - name: Determine BUMP_TYPE
+        id: determine_bump_type
         run: |
-          CHANGESET_FILE=$(find .changeset -name '*.md' ! -name README.md | head -n 1)
-
-          if [ ! -f "$CHANGESET_FILE" ]; then
-            echo "No changeset found. Please create a changeset file for this PR."
+          CHG_FILE=$(find . -type f -name "changeset*.md" | head -n 1)
+          if [ -n "$CHG_FILE" ]; then
+            BUMP_TYPE=$(grep -oP "'semantic-styles': (major|minor|patch)" "$CHG_FILE" | cut -d "'" -f 4)
+          else
+            echo "::error::No changeset file found."
             exit 1
           fi
+          echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
 
-      - name: Get semver bump type
+      - name: Update Package Version
+        if: steps.determine_bump_type.outputs.BUMP_TYPE
         run: |
-          BUMP_TYPE=$(cat "$CHANGESET_FILE" | yq e '.semantic-styles')
-          echo "Semver bump type: ${BUMP_TYPE}"
+          BUMP_TYPE="${{ steps.determine_bump_type.outputs.BUMP_TYPE }}"
+          case $BUMP_TYPE in
+            major)
+              npm run changeset:major
+              ;;
+            minor)
+              npm run changeset:minor
+              ;;
+            patch)
+              npm run changeset:patch
+              ;;
+            *)
+              echo "::error::Invalid BUMP_TYPE: $BUMP_TYPE"
+              exit 1
+              ;;
+          esac
 
-          npx changeset version --bump=${BUMP_TYPE}
-
-      - name: Create release branch
+      - name: Get Package Version
+        id: get_version
         run: |
-          git checkout -b release/${VERSION}
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
 
-      - name: Push release branch
+      - name: Create Release PR
+        if: steps.get_version.outputs.PACKAGE_VERSION
         run: |
-          git push origin release/${VERSION}
+          PACKAGE_VERSION="${{ steps.get_version.outputs.PACKAGE_VERSION }}"
+          RELEASE_BRANCH="release/$PACKAGE_VERSION"
+          git checkout -b "$RELEASE_BRANCH"
+          git commit -am "Release $PACKAGE_VERSION"
+          git push origin "$RELEASE_BRANCH"
+          echo "::set-output name=release_branch::$RELEASE_BRANCH"
