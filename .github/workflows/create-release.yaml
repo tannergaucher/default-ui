@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      bump_type: ${{ steps.determine_bump_type.outputs.bump_type }}
 
     steps:
       - name: Checkout Code
@@ -31,16 +33,17 @@ jobs:
 
           if [ -n "$CHG_FILE" ]; then
             BUMP_TYPE=$(grep -oP "semantic-styles': (major|minor|patch)" "$CHG_FILE" | sed 's/.*: //')
-            echo "BUMP_TYPE=$BUMP_TYPE" >> $GITHUB_ENV
+            echo "::set-output name=bump_type::$BUMP_TYPE"
           else
             echo "::error::No changeset file found."
             exit 1
           fi
 
       - name: Update Package Version
-        # if: steps.determine_bump_type.outputs.BUMP_TYPE
+        if: steps.determine_bump_type.outputs.bump_type
         run: |
-          BUMP_TYPE="${{ steps.determine_bump_type.outputs.BUMP_TYPE }}"
+
+          BUMP_TYPE="${{ steps.determine_bump_type.outputs.bump_type }}"
           case $BUMP_TYPE in
             major)
               npm run changeset:major
