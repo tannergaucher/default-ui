@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.3.0
+
+### Minor Changes
+
+- 3dab49c: Support auto publishing new release package version to npm
+
 ## 0.2.0
 
 ### Minor Changes
