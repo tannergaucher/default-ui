@@ -1,5 +1,8 @@
 name: Create Release Workflow
 
+env:
+  GH_TOKEN: ${{ github.token }}
+
 on:
   pull_request:
     branches:
