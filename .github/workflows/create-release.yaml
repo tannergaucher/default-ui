@@ -96,7 +96,7 @@ jobs:
           gh pr create --base master --head "$RELEASE_BRANCH" --title "$RELEASE_BRANCH" --body "$RELEASE_BRANCH"
 
       - name: Delete Initial Pull Request
-        if: steps.pr_number
+        if: steps.determine_bump_type.outputs.pr_number
         run: |
           PR_NUMBER="${{ steps.determine_bump_type.outputs.pr_number }}"
           gh pr close "$PR_NUMBER"
