@@ -7,9 +7,9 @@
     "build": "vite build site",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "changeset:major": "npx changeset version --major",
-    "changeset:minor": "npx changeset version --minor",
-    "changeset:patch": "npx changeset version --patch"
+    "changeset:major": "changeset version --major",
+    "changeset:minor": "changeset version --minor",
+    "changeset:patch": "changeset version --patch"
   },
   "author": " <tannermichaelgaucher@gmail.com>",
   "license": "MIT",

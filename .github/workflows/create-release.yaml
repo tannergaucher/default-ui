@@ -15,6 +15,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
+      - name: Install Changeset CLI
+        run: npm install @changesets/cli
+
       - name: Determine Bump Type
         id: determine_bump_type
         run: |
