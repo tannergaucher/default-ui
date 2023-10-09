@@ -7,7 +7,9 @@
     "build": "vite build site",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "changeset": "changeset"
+    "changeset:major": "changeset version --major",
+    "changeset:minor": "changeset version --minor",
+    "changeset:patch": "changeset version --patch"
   },
   "author": " <tannermichaelgaucher@gmail.com>",
   "license": "MIT",
