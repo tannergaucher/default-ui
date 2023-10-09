@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.3.1
+
+### Patch Changes
+
+- 8319202: Fix auth with npm
+
 ## 0.3.0
 
 ### Minor Changes
