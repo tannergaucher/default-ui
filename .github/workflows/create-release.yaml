@@ -11,6 +11,7 @@ jobs:
     outputs:
       bump_type: ${{ steps.determine_bump_type.outputs.bump_type }}
       package_version: ${{ steps.get_version.outputs.package_version }}
+      release_branch: ${{ steps.create_release_branch.outputs.release_branch }}
 
     steps:
       - name: Checkout Code
@@ -70,7 +71,8 @@ jobs:
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
           echo "::set-output name=package_version::$PACKAGE_VERSION"
 
-      - name: Create Release PR
+      - name: Create and Push to Release PR
+        id: create_release_branch
         if: steps.get_version.outputs.package_version
         run: |
           PACKAGE_VERSION="${{ steps.get_version.outputs.package_version }}"
@@ -81,3 +83,8 @@ jobs:
           git commit -am "Release $PACKAGE_VERSION"
           git push origin "$RELEASE_BRANCH"
           echo "::set-output name=release_branch::$RELEASE_BRANCH"
+
+      - name: Create a Pull Request for the Release Branch
+        if: steps.create_release_branch.outputs.release_branch
+        run: |
+          gh pr create --base main --head "$RELEASE_BRANCH" --title "Release $PACKAGE_VERSION" --body "Release $PACKAGE_VERSION"
