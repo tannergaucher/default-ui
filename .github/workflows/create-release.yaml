@@ -4,7 +4,7 @@ env:
   GH_TOKEN: ${{ github.token }}
 
 on:
-  merge:
+  pull_request:
     branches:
       - master
 
