@@ -87,4 +87,4 @@ jobs:
       - name: Create a Pull Request for the Release Branch
         if: steps.create_release_branch.outputs.release_branch
         run: |
-          gh pr create --base main --head "$RELEASE_BRANCH" --title "Release $PACKAGE_VERSION" --body "Release $PACKAGE_VERSION"
+          gh pr create --base master --head "$RELEASE_BRANCH" --title "Release $PACKAGE_VERSION" --body "Release $PACKAGE_VERSION"
