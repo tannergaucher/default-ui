@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.3.2
+
+### Patch Changes
+
+- 1b15ffd: Fix npm auth var
+
 ## 0.3.1
 
 ### Patch Changes
