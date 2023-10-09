@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.3.4
+
+### Patch Changes
+
+- 7271e93: Fix publish action syntax
+
 ## 0.3.3
 
 ### Patch Changes
