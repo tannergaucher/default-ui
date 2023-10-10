@@ -30,6 +30,8 @@ jobs:
       - name: Create Tagged Release and Push to GitHub
         run: |
           PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          git config --local user.email "tannermichaelgaucher@gmail.com"
+          git config --local user.name "Tanner Gaucher"
           git tag -a "v$PACKAGE_VERSION" -m "v$PACKAGE_VERSION"
           git push --follow-tags
 
