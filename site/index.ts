@@ -1,8 +1,6 @@
 import '../index.css'
 import './site-theme.css'
 
-import '../package/ts/progressive-enhancements'
-
 import { useProgressiveEnhancements } from '../package/ts/progressive-enhancements'
 import { Mode, AccentProperty } from '../package/ts/theme'
 import {
