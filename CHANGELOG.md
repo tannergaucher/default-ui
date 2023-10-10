@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.4.1
+
+### Patch Changes
+
+- 18c8bb9: Fix git config
+
 ## 0.4.0
 
 ### Minor Changes
