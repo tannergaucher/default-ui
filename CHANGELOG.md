@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.6.0
+
+### Minor Changes
+
+- 9bf2ccf: Update card padding
+
 ## 0.5.0
 
 ### Minor Changes
