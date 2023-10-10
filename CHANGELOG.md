@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.5.0
+
+### Minor Changes
+
+- 26b8d7b: Added missing code-bg, shadow variables
+
 ## 0.4.1
 
 ### Patch Changes
