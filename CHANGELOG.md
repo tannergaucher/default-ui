@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.7.0
+
+### Minor Changes
+
+- 92f26b3: Updated card spacing values
+
 ## 0.6.0
 
 ### Minor Changes
