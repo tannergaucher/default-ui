@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.4.0
+
+### Minor Changes
+
+- 4779cbf: Handle tagging release before publishing to npm
+
 ## 0.3.4
 
 ### Patch Changes

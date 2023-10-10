@@ -27,6 +27,12 @@ jobs:
       - name: Login to npm
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
+      - name: Create Tagged Release and Push to GitHub
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          git tag -a "v$PACKAGE_VERSION" -m "v$PACKAGE_VERSION"
+          git push --follow-tags
+
       - name: Publish to npm
         run: |
           # Run npm publish with appropriate options
