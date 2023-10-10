@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.8.0
+
+### Minor Changes
+
+- 47acc85: Update element styles
+
 ## 0.7.0
 
 ### Minor Changes
