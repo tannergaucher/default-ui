@@ -28,5 +28,6 @@ td:hover {
 
 td,
 th {
-  border: calc(var(--thickness) * 2) solid var(--bg-2);
+  border: var(--thickness) solid var(--bg-2);
+  border-radius: var(--radius);
 }
