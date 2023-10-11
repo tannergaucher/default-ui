@@ -6,27 +6,24 @@ button {
   font-weight: 700;
   font-size: var(--text-md);
   font-family: var(--font-family);
-  font-style: italic;
   text-transform: uppercase;
   letter-spacing: var(--caps-letter-spacing);
   border: var(--thickness) solid var(--accent-1);
   border-radius: var(--radius);
   box-shadow: var(--elevation-1);
   transition: var(--transition);
+  width: 100%;
 }
 
 button:hover,
-button:focus,
-.btn--hover,
-.btn--focus {
+button:focus {
   transition: var(--transition);
   color: var(--accent-2);
   border-color: var(--accent-2);
   box-shadow: inset var(--elevation-1);
 }
 
-button:disabled,
-.btn--disabled {
+button:disabled {
   background: var(--bg-2);
   border-color: var(--grey);
   color: var(--grey);
@@ -35,7 +32,6 @@ button:disabled,
   cursor: not-allowed;
 }
 
-button.primary,
 button[type='submit'] {
   background: var(--accent-1);
   color: var(--bg-1);
@@ -43,19 +39,15 @@ button[type='submit'] {
   box-shadow: var(--elevation-2);
 }
 
-button.primary:hover,
 button[type='submit']:hover,
-.btn-primary--hover,
-.btn-primary:focus,
-.btn-primary--focus {
+button[type='submit']:focus {
   color: var(--bg-1);
   box-shadow: var(--elevation-1);
   background: var(--accent-2);
   border-color: var(--accent-2);
 }
 
-button.primary:disabled,
-.btn-primary--disabled {
+button[type='submit']:disabled {
   background: var(--grey);
   border-color: var(--grey);
   color: var(--bg-1);
