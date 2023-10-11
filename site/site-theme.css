@@ -3,9 +3,9 @@
 :root {
   --sans: 'Fira Sans', sans-serif;
   --font-family: var(--sans);
-  --accent-2-dark: #ff6347;
-  --accent-2-light: #db7093;
   --caps-letter-spacing: 0.5rem;
+  --accent-1-dark: fuchsia;
+  --accent-2-dark: lime;
 }
 
 #accent-1-light-input,
