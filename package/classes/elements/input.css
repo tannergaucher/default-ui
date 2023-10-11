@@ -1,6 +1,6 @@
 input {
   font-family: var(--font-family);
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   border-radius: var(--radius);
   border: var(--thickness) solid var(--accent-1);
   padding: var(--space-sm);

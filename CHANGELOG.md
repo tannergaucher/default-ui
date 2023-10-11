@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.10.0
+
+### Minor Changes
+
+- 0b35796: Updated input font sizes
+
 ## 0.9.0
 
 ### Minor Changes
