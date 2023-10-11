@@ -1,7 +1,8 @@
 name: Publish to npm
 
 env:
-  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # Make sure you have an npm token set in your repository secrets
+  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  GH_TOKEN: ${{ github.token }}
 
 on:
   push:
@@ -34,6 +35,7 @@ jobs:
           git config --local user.name "Tanner Gaucher"
           git tag -a "v$PACKAGE_VERSION" -m "v$PACKAGE_VERSION"
           git push --follow-tags
+          gh release create "v$PACKAGE_VERSION"
 
       - name: Publish to npm
         run: |

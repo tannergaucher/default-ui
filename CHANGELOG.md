@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.9.0
+
+### Minor Changes
+
+- e6ccc14: Handle creating release from tag on github with gh cli
+
 ## 0.8.0
 
 ### Minor Changes
