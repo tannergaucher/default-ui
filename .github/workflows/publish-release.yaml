@@ -35,6 +35,7 @@ jobs:
           git config --local user.name "Tanner Gaucher"
           git tag -a "v$PACKAGE_VERSION" -m "v$PACKAGE_VERSION"
           git push --follow-tags
+          gh release create "v$PACKAGE_VERSION"
 
       - name: Publish to npm
         run: |
