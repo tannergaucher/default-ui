@@ -1,7 +1,8 @@
 name: Publish to npm
 
 env:
-  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # Make sure you have an npm token set in your repository secrets
+  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  GH_TOKEN: ${{ github.token }}
 
 on:
   push:
