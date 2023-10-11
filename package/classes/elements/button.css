@@ -4,7 +4,7 @@ button {
   color: var(--accent-1);
   padding: var(--space-sm) var(--space-md);
   font-weight: 700;
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   font-family: var(--font-family);
   font-style: italic;
   text-transform: uppercase;
