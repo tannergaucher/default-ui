@@ -9,58 +9,46 @@
       content="Responsive, themed, framework agnostic UI design system"
     />
   </head>
-  <body class="fade-in">
-    <header style="opacity: 0.93">
+  <body>
+    <header>
       <details id="details-menu">
         <summary>THEME</summary>
         <section>
-          <div
-            style="margin-block-start: 0; margin-block-end: 0"
-            id="accent-dark-picker"
-            data-grid
-          >
-            <div>
-              <label for="accent-1-dark-input">
-                <p>Accent 1</p>
-              </label>
-              <input
-                type="color"
-                id="accent-1-dark-input"
-                style="background-color: var(--accent-1-dark)"
-              />
-            </div>
-            <div>
-              <label for="accent-2-dark-input">
-                <p>Accent 2</p>
-              </label>
-              <input
-                type="color"
-                id="accent-2-dark-input"
-                style="background-color: var(--accent-2-dark)"
-              />
-            </div>
+          <div id="accent-dark-picker">
+            <label for="accent-1-dark-input">
+              <p>Accent 1</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-dark-input"
+              style="background-color: var(--accent-1-dark)"
+            />
+            <label for="accent-2-dark-input">
+              <p>Accent 2</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-dark-input"
+              style="background-color: var(--accent-2-dark)"
+            />
           </div>
-          <div data-grid id="accent-light-picker">
-            <div>
-              <label for="accent-1-light-input">
-                <p>Accent 1</p>
-              </label>
-              <input
-                type="color"
-                id="accent-1-light-input"
-                style="background-color: var(--accent-1-light)"
-              />
-            </div>
-            <div>
-              <label for="accent-2-light-input">
-                <p>Accent 2</p>
-              </label>
-              <input
-                type="color"
-                id="accent-2-light-input"
-                style="background-color: var(--accent-2-light)"
-              />
-            </div>
+          <div id="accent-light-picker">
+            <label for="accent-1-light-input">
+              <p>Accent 1</p>
+            </label>
+            <input
+              type="color"
+              id="accent-1-light-input"
+              style="background-color: var(--accent-1-light)"
+            />
+            <label for="accent-2-light-input">
+              <p>Accent 2</p>
+            </label>
+            <input
+              type="color"
+              id="accent-2-light-input"
+              style="background-color: var(--accent-2-light)"
+            />
           </div>
           <label>
             <p>Mode</p>
@@ -173,35 +161,25 @@
           <h3>Article Heading</h3>
           <p>Card paragraph element and a random unsplash image</p>
         </article>
-
         <article>
           <img src="https://source.unsplash.com/random" alt="random" />
           <h3>Article Heading</h3>
           <p>Card paragraph element and a random unsplash image</p>
         </article>
       </section>
-
       <h3>Blockquote</h3>
       <blockquote href="http://foo.com">
         <q>A Blockquote built for rapid prototyping!</q>
       </blockquote>
       <h3>Button</h3>
-      <button style="width: 100%">Button</button>
+      <button>Button</button>
       <h3>Dialog</h3>
-      <button
-        id="show-dialog-example-btn"
-        style="margin-bottom: 0; width: 100%"
-        type="submit"
-      >
-        Show Dialog
-      </button>
-      <dialog class="dialog" id="dialog-example">
+      <button id="show-dialog-example-btn" type="submit">Show Dialog</button>
+      <dialog id="dialog-example">
         <h1>Greetings 👋</h1>
         <h2>Native HTML Dialog element here 🤓</h2>
         <form method="dialog">
-          <button class="btn btn-primary" style="width: 100%">
-            Close Dialog
-          </button>
+          <button>Close Dialog</button>
         </form>
       </dialog>
       <h3>Summary / Details</h3>
@@ -224,7 +202,7 @@
           sollicitudin laoreet quam.
         </p>
       </details>
-      <details class="fade-in">
+      <details>
         <summary>Summary Two</summary>
         <p>
           Details Vestibulum porttitor enim sit amet pretium dignissim. Fusce
@@ -292,7 +270,6 @@
                 href="https://github.com/tannergaucher/semantic-styles"
                 target="_blank"
                 rel="noreferrer"
-                class="nav-link"
               >
                 Github Repository
               </a>
@@ -302,7 +279,6 @@
                 href="https://semanticstylesmdx.netlify.app"
                 target="_blank"
                 rel="noreferrer"
-                class="nav-link"
               >
                 Documentation Site with Live Code Examples
               </a>
@@ -312,7 +288,6 @@
                 href="https://semanticstylesreachui.netlify.app/"
                 target="_blank"
                 rel="noreferrer"
-                class="nav-link"
               >
                 Semantic Styles X Reach UI (WIP)
               </a>
