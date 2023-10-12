@@ -123,10 +123,12 @@ function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
   }
 }
 
+type ColorVariable = { [key in ColorPropertyString]: string }
+
 function setTheme(theme: { mode: Mode }) {
   const { mode } = theme
 
-  const colorVariableMap = {
+  const colorVariable: ColorVariable = {
     [BackgroundProperty.BACKGROUND_1]: getColorPropertyString(
       BackgroundProperty.BACKGROUND_1,
       mode
@@ -158,7 +160,7 @@ function setTheme(theme: { mode: Mode }) {
     ),
   }
 
-  for (const [key, value] of Object.entries(colorVariableMap)) {
+  for (const [key, value] of Object.entries(colorVariable)) {
     document.documentElement.style.setProperty(key, value)
   }
 
