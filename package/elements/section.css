@@ -1,5 +1,4 @@
-section[data-grid],
-div[data-grid] {
+section:not(:empty):not(:only-child):has(article) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: var(--space-sm);
@@ -8,15 +7,13 @@ div[data-grid] {
 }
 
 @media (max-width: 1300px) {
-  section[data-grid],
-  div[data-content-grid] {
+  section:not(:empty):not(:only-child):has(article) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 900px) {
-  section[data-grid],
-  div[data-grid] {
+  section:not(:empty):not(:only-child):has(article) {
     grid-template-columns: 1fr;
   }
 }

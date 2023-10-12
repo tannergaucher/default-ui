@@ -4,15 +4,13 @@
   --sans: 'Fira Sans', sans-serif;
   --font-family: var(--sans);
   --caps-letter-spacing: 0.5rem;
-  --accent-1-dark: fuchsia;
-  --accent-2-dark: lime;
 }
 
 #accent-1-light-input,
 #accent-2-light-input,
 #accent-1-dark-input,
 #accent-2-dark-input {
-  height: 99px;
+  height: 72px;
 }
 
 #accent-1-light-input {
@@ -36,6 +34,6 @@
   #accent-2-light-input,
   #accent-1-dark-input,
   #accent-2-dark-input {
-    height: 73px;
+    height: 63px;
   }
 }
