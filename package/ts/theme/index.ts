@@ -41,7 +41,12 @@ export enum Mode {
 }
 
 export function useTheme() {
-  // 1. handle setting up the theme based on the user's explicit preference
+  handleUserPersistedPreference()
+  handleUserSystemPrefersSchemeEventChange()
+  handleToggleModeClick()
+}
+
+function handleUserPersistedPreference() {
   const storageMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode | null
 
   if (storageMode) {
@@ -49,7 +54,9 @@ export function useTheme() {
       mode: storageMode,
     })
   }
+}
 
+function handleUserSystemPrefersSchemeEventChange() {
   // 2. Handle setting the theme based on the user's OS preference
   window
     .matchMedia('(prefers-color-scheme:  dark)')
@@ -70,7 +77,9 @@ export function useTheme() {
         })
       }
     })
+}
 
+function handleToggleModeClick() {
   // 3. Handle setting up the toggle mode button listener
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
@@ -82,45 +91,6 @@ export function useTheme() {
       mode: nextMode,
     })
   })
-}
-
-function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
-  const variableSuffix = mode === Mode.DARK ? 'dark' : 'light'
-
-  switch (property) {
-    case BackgroundProperty.BACKGROUND_1:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_1}-${variableSuffix}`
-      )
-    case BackgroundProperty.BACKGROUND_2:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_2}-${variableSuffix}`
-      )
-    case TextProperty.TEXT_COLOR:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${TextProperty.TEXT_COLOR}-${variableSuffix}`
-      )
-    case AccentProperty.ACCENT_1:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_1}-${variableSuffix}`
-      )
-    case AccentProperty.ACCENT_2:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_2}-${variableSuffix}`
-      )
-    case GreyProperty.GREY:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${GreyProperty.GREY}-${variableSuffix}`
-      )
-    case ShadowProperty.SHADOW_COLOR:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${ShadowProperty.SHADOW_COLOR}-${variableSuffix}`
-      )
-    case CodeProperty.BACKGROUND:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${CodeProperty.BACKGROUND}-${variableSuffix}`
-      )
-  }
 }
 
 type ColorVariable = { [key in ColorPropertyString]: string }
@@ -171,4 +141,43 @@ function setTheme(theme: { mode: Mode }) {
   }
 
   localStorage.setItem(THEME_STORAGE_KEY, mode)
+}
+
+function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
+  const variableSuffix = mode === Mode.DARK ? 'dark' : 'light'
+
+  switch (property) {
+    case BackgroundProperty.BACKGROUND_1:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${BackgroundProperty.BACKGROUND_1}-${variableSuffix}`
+      )
+    case BackgroundProperty.BACKGROUND_2:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${BackgroundProperty.BACKGROUND_2}-${variableSuffix}`
+      )
+    case TextProperty.TEXT_COLOR:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${TextProperty.TEXT_COLOR}-${variableSuffix}`
+      )
+    case AccentProperty.ACCENT_1:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${AccentProperty.ACCENT_1}-${variableSuffix}`
+      )
+    case AccentProperty.ACCENT_2:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${AccentProperty.ACCENT_2}-${variableSuffix}`
+      )
+    case GreyProperty.GREY:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${GreyProperty.GREY}-${variableSuffix}`
+      )
+    case ShadowProperty.SHADOW_COLOR:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${ShadowProperty.SHADOW_COLOR}-${variableSuffix}`
+      )
+    case CodeProperty.BACKGROUND:
+      return getComputedStyle(document.documentElement).getPropertyValue(
+        `${CodeProperty.BACKGROUND}-${variableSuffix}`
+      )
+  }
 }
