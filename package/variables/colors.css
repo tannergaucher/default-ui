@@ -4,7 +4,7 @@
   --text-color-light: #000000;
   --grey-light: #666666;
   --accent-1-light: #000000;
-  --accent-2-light: #666666;
+  --accent-2-light: fuchsia;
   --shadow-color-light: rgba(0, 0, 0, 0.07);
   --code-bg-light: #1a1a1b;
 
@@ -13,7 +13,7 @@
   --text-color-dark: #ffffff;
   --grey-dark: #fafafa9f;
   --accent-1-dark: #ffffff;
-  --accent-2-dark: #666666;
+  --accent-2-dark: fuchsia;
   --shadow-color-dark: rgba(225, 225, 225, 0.1);
   --code-bg-dark: #1a1a1b;
 

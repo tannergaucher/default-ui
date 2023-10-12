@@ -1,9 +1,0 @@
-section[data-container] {
-  margin-inline: var(--space-lg);
-}
-
-@media (max-width: 900px) {
-  section[data-container] {
-    margin-inline: var(--space-md);
-  }
-}

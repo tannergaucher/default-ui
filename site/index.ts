@@ -1,7 +1,7 @@
+// package classes
 import '../index.css'
-import './site-theme.css'
-
-import '../package/ts/progressive-enhancements'
+// local site styles
+import './local.css'
 
 import { useProgressiveEnhancements } from '../package/ts/progressive-enhancements'
 import { Mode, AccentProperty } from '../package/ts/theme'

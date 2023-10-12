@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.11.0
+
+### Minor Changes
+
+- 9535798: Default article element to card styles. Default sections with multiple articles to grid layout.
+
 ## 0.10.0
 
 ### Minor Changes

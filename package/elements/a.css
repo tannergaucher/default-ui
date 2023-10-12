@@ -13,6 +13,12 @@ a:disabled {
   cursor: not-allowed;
 }
 
-a[data-none] {
-  text-decoration: none;
+a > h1,
+a > h2,
+a > h3,
+a > h4,
+a > h5,
+a > h6 {
+  margin-block: var(--space-sm);
+  margin-inline: var(--space-xs);
 }
