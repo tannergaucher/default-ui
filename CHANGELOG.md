@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.12.0
+
+### Minor Changes
+
+- 73436e4: Added color variable object type, extracted theme to seperate functions
+
 ## 0.11.0
 
 ### Minor Changes
