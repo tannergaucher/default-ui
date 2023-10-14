@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.16.0
+
+### Minor Changes
+
+- b99bc36: Fixed package entry point
+
 ## 0.15.0
 
 ### Minor Changes
