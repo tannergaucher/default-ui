@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.19.0
+
+### Minor Changes
+
+- 3c5117f: Update site, theme ts
+
 ## 0.18.0
 
 ### Minor Changes
