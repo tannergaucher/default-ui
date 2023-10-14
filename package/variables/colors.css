@@ -36,7 +36,7 @@
   --accent-1-dark-sepia: violet;
   --accent-2-dark-sepia: palevioletred;
   --shadow-color-dark-sepia: rgba(137, 105, 59, 0.2);
-  --code-bg-dark-sepia: rgb(0, 0, 0);
+  --code-bg-dark-sepia:rgb(0, 0, 0)
 
   /* initialize with light theme */
   --text-color: var(--text-color-light);
