@@ -1,3 +1,3 @@
-# Semantic Styles
+# Default UI
 
-## Responsive, Themed, UI Design System.
+## Responsive, Themed HTML Elements
