@@ -37,7 +37,9 @@ export type ColorPropertyString =
 
 export enum Mode {
   DARK = 'DARK',
+  DARK_SEPIA = 'DARK SEPIA',
   LIGHT = 'LIGHT',
+  LIGHT_SEPIA = 'LIGHT SEPIA',
 }
 
 export function useTheme() {
@@ -80,12 +82,19 @@ function handleUserSystemPrefersSchemeEventChange() {
 }
 
 function handleToggleModeClick() {
-  // 3. Handle setting up the toggle mode button listener
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
+  const modesArray = Object.values(Mode)
+
   toggleModeBtn?.addEventListener('click', () => {
-    const nextMode =
-      toggleModeBtn.innerHTML === Mode.DARK ? Mode.LIGHT : Mode.DARK
+    const currentMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode
+
+    const currentModeIndex = modesArray.indexOf(currentMode)
+
+    const nextModeIndex =
+      currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
+
+    const nextMode = modesArray[nextModeIndex]
 
     return setTheme({
       mode: nextMode,
@@ -93,12 +102,12 @@ function handleToggleModeClick() {
   })
 }
 
-type ColorVariable = { [key in ColorPropertyString]: string }
+type ColorVariableMap = { [key in ColorPropertyString]: string }
 
 function setTheme(theme: { mode: Mode }) {
   const { mode } = theme
 
-  const colorVariable: ColorVariable = {
+  const colorVariableMap: ColorVariableMap = {
     [BackgroundProperty.BACKGROUND_1]: getColorPropertyString(
       BackgroundProperty.BACKGROUND_1,
       mode
@@ -130,7 +139,7 @@ function setTheme(theme: { mode: Mode }) {
     ),
   }
 
-  for (const [key, value] of Object.entries(colorVariable)) {
+  for (const [key, value] of Object.entries(colorVariableMap)) {
     document.documentElement.style.setProperty(key, value)
   }
 
@@ -144,40 +153,51 @@ function setTheme(theme: { mode: Mode }) {
 }
 
 function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
-  const variableSuffix = mode === Mode.DARK ? 'dark' : 'light'
+  const getModeSuffix = (mode: Mode) => {
+    switch (mode) {
+      case Mode.DARK:
+        return 'dark'
+      case Mode.LIGHT:
+        return 'light'
+      case Mode.LIGHT_SEPIA:
+        return 'light-sepia'
+      case Mode.DARK_SEPIA:
+        return 'dark-sepia'
+    }
+  }
 
   switch (property) {
     case BackgroundProperty.BACKGROUND_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_1}-${variableSuffix}`
+        `${BackgroundProperty.BACKGROUND_1}-${getModeSuffix(mode)}`
       )
     case BackgroundProperty.BACKGROUND_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_2}-${variableSuffix}`
+        `${BackgroundProperty.BACKGROUND_2}-${getModeSuffix(mode)}`
       )
     case TextProperty.TEXT_COLOR:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${TextProperty.TEXT_COLOR}-${variableSuffix}`
+        `${TextProperty.TEXT_COLOR}-${getModeSuffix(mode)}`
       )
     case AccentProperty.ACCENT_1:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_1}-${variableSuffix}`
+        `${AccentProperty.ACCENT_1}-${getModeSuffix(mode)}`
       )
     case AccentProperty.ACCENT_2:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_2}-${variableSuffix}`
+        `${AccentProperty.ACCENT_2}-${getModeSuffix(mode)}`
       )
     case GreyProperty.GREY:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${GreyProperty.GREY}-${variableSuffix}`
+        `${GreyProperty.GREY}-${getModeSuffix(mode)}`
       )
     case ShadowProperty.SHADOW_COLOR:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${ShadowProperty.SHADOW_COLOR}-${variableSuffix}`
+        `${ShadowProperty.SHADOW_COLOR}-${getModeSuffix(mode)}`
       )
     case CodeProperty.BACKGROUND:
       return getComputedStyle(document.documentElement).getPropertyValue(
-        `${CodeProperty.BACKGROUND}-${variableSuffix}`
+        `${CodeProperty.BACKGROUND}-${getModeSuffix(mode)}`
       )
   }
 }

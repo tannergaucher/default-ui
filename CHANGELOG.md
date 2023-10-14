@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.13.0
+
+### Minor Changes
+
+- c2f3f79: Support Sepia Light and Sepia Dark Modes
+
 ## 0.12.0
 
 ### Minor Changes

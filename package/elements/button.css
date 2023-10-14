@@ -41,7 +41,6 @@ button[type='submit'] {
 
 button[type='submit']:hover,
 button[type='submit']:focus {
-  color: var(--bg-1);
   box-shadow: var(--elevation-1);
   background: var(--accent-2);
   border-color: var(--accent-2);
