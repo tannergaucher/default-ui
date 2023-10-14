@@ -10,48 +10,66 @@
     <header>
       <details id="details-menu">
         <summary>THEME</summary>
+
+        <section
+          id="accent-picker"
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+          "
+        >
+          <label for="accent-1-input">
+            <p>Accent 1</p>
+            <input
+              type="color"
+              id="accent-1-input"
+              style="
+                background-color: var(--accent-1);
+                border-color: var(--accent-1);
+              "
+            />
+          </label>
+          <label for="accent-2-input">
+            <p>Accent 2</p>
+            <input
+              type="color"
+              id="accent-2-input"
+              style="
+                background-color: var(--accent-2);
+                border-color: var(--accent-2);
+              "
+            />
+          </label>
+        </section>
+
         <section>
-          <div id="accent-dark-picker">
-            <label for="accent-1-dark-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-dark-input"
-              style="background-color: var(--accent-1-dark)"
-            />
-            <label for="accent-2-dark-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-dark-input"
-              style="background-color: var(--accent-2-dark)"
-            />
-          </div>
-          <div id="accent-light-picker">
-            <label for="accent-1-light-input">
-              <p>Accent 1</p>
-            </label>
-            <input
-              type="color"
-              id="accent-1-light-input"
-              style="background-color: var(--accent-1-light)"
-            />
-            <label for="accent-2-light-input">
-              <p>Accent 2</p>
-            </label>
-            <input
-              type="color"
-              id="accent-2-light-input"
-              style="background-color: var(--accent-2-light)"
-            />
-          </div>
           <label>
             <p>Mode</p>
           </label>
           <button id="toggle-mode-btn" type="submit" />
         </section>
+        <br />
+        <!-- 
+        <section>
+          <form action="">
+            <label for="">
+              <p>Google Font</p>
+            </label>
+            <input
+              type="text"
+              placeholder="Search"
+              id="google-font-search-input"
+            />
+            <select name="" id="google-font-select">
+              <option
+                value="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;900&display=swap"
+              >
+                Fira Sans
+              </option>
+            </select>
+          </form>
+        </section> -->
       </details>
     </header>
     <main>
