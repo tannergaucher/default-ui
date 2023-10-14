@@ -62,8 +62,3 @@
   }
 }
 
-@media (prefers-accent-color: red) {
-  :root {
-    --accent-1: red;
-  }
-}
