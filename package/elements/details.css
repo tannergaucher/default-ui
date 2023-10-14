@@ -1,5 +1,4 @@
 details {
-  color: var(--text-color);
   background-color: var(--bg-2);
   width: 100%;
   border-top-left-radius: var(--radius);
@@ -28,9 +27,8 @@ details > * {
   padding-top: 0;
   padding-left: var(--space-md);
   padding-right: var(--space-md);
-  padding-bottom: var(--space-md);
 }
 
-details > p {
-  margin-block: 0;
+details > p:first-of-type {
+  margin-block-start: 0;
 }
