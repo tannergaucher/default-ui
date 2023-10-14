@@ -5,11 +5,9 @@
     monospace;
   --heading-line-height: 1.33;
   --paragraph-line-height: 2;
-  --heading-letter-spacing: 0rem;
-  --paragraph-letter-spacing: 0.5px;
-  --caps-letter-spacing: 0.17rem;
-  --text-scale-ratio: 1.333;
-  --responsive-unit: 0.4vw;
+  --heading-letter-spacing: 0;
+  --paragraph-letter-spacing: 0;
+  --caps-letter-spacing: 0;
   --text-xs: var(--0);
   --text-sm: var(--1);
   --text-md: var(--2);
