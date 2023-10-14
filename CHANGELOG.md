@@ -1,5 +1,16 @@
 # semantic-styles
 
+## 0.14.0
+
+### Minor Changes
+
+- 0e44f67: Updated mode accent color variables
+
+### Patch Changes
+
+- 93c3ce6: Fix dark sepia code bg
+- e468290: Fix dark sepia code bg
+
 ## 0.13.0
 
 ### Minor Changes
