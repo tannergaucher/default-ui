@@ -56,6 +56,10 @@ function handleUserPersistedPreference() {
       mode: storageMode,
     })
   }
+
+  setTheme({
+    mode: Mode.LIGHT,
+  })
 }
 
 function handleUserSystemPrefersSchemeEventChange() {

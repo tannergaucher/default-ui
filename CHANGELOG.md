@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.18.0
+
+### Minor Changes
+
+- f8b17f3: Fix defaulting to light mode on no persisted preference, before checking prefers color scheme step
+
 ## 0.17.0
 
 ### Minor Changes
