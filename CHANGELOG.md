@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.15.0
+
+### Minor Changes
+
+- c43de75: Update to default-ui package
+
 ## 0.14.0
 
 ### Minor Changes
