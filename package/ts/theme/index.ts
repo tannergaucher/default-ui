@@ -1,5 +1,5 @@
 export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
-export const THEME_STORAGE_KEY = '@ss-theme-key'
+export const MODE_STORAGE_KEY = '@t_g/default-ui/mode-key'
 
 enum BackgroundProperty {
   BACKGROUND_1 = '--bg-1',
@@ -49,17 +49,23 @@ export function useTheme() {
 }
 
 function handleUserPersistedPreference() {
-  const storageMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode | null
+  const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
 
-  if (storageMode) {
+  if (storageMode === null) {
     setTheme({
-      mode: storageMode,
+      mode: Mode.LIGHT,
     })
+    return
   }
+
+  setTheme({
+    mode: storageMode,
+  })
+
+  return
 }
 
 function handleUserSystemPrefersSchemeEventChange() {
-  // 2. Handle setting the theme based on the user's OS preference
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
@@ -84,16 +90,18 @@ function handleUserSystemPrefersSchemeEventChange() {
 function handleToggleModeClick() {
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-  const modesArray = Object.values(Mode)
-
   toggleModeBtn?.addEventListener('click', () => {
-    const currentMode = localStorage.getItem(THEME_STORAGE_KEY) as Mode
+    const modesArray = Object.values(Mode)
+
+    let currentMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
+
+    if (currentMode === null) {
+      currentMode = Mode.LIGHT
+    }
 
     const currentModeIndex = modesArray.indexOf(currentMode)
-
     const nextModeIndex =
       currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
-
     const nextMode = modesArray[nextModeIndex]
 
     return setTheme({
@@ -149,7 +157,7 @@ function setTheme(theme: { mode: Mode }) {
     toggleModeBtn.innerHTML = mode
   }
 
-  localStorage.setItem(THEME_STORAGE_KEY, mode)
+  localStorage.setItem(MODE_STORAGE_KEY, mode)
 }
 
 function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
