@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.21.0
+
+### Minor Changes
+
+- 655aeed: Fix storage mode, package imports
+
 ## 0.20.0
 
 ### Minor Changes
