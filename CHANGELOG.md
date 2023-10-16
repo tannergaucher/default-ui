@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.20.0
+
+### Minor Changes
+
+- 4dc0a71: Update to export `package/index.js` rather than `index.css`
+
 ## 0.19.0
 
 ### Minor Changes

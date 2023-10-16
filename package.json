@@ -1,8 +1,8 @@
 {
   "name": "@t_g/default-ui",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "\"Responsive, Themed HTML Elements.\"",
-  "exports": "./index.css",
+  "exports": "./package/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build site",

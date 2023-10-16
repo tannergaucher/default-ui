@@ -1,6 +1,8 @@
 export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
 export const MODE_STORAGE_KEY = '@t_g/default-ui/mode-key'
 
+import { useProgressiveEnhancements } from '../progressive-enhancements'
+
 enum BackgroundProperty {
   BACKGROUND_1 = '--bg-1',
   BACKGROUND_2 = '--bg-2',
@@ -42,7 +44,15 @@ export enum Mode {
   LIGHT_SEPIA = 'LIGHT SEPIA',
 }
 
-export function useTheme() {
+export function useTheme({
+  withProgressiveEnhancements,
+}: {
+  withProgressiveEnhancements: boolean
+}) {
+  if (withProgressiveEnhancements) {
+    useProgressiveEnhancements()
+  }
+
   handleUserPersistedPreference()
   handleUserSystemPrefersSchemeEventChange()
   handleToggleModeClick()
