@@ -1,45 +1,45 @@
-import '../index.css'
+import { Button } from './Button'
 
+import '../package/index.css'
+
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Button',
+  // title: Button,
+  component: Button,
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
+    layout: 'centered',
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
+  tags: ['autodocs'],
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 }
 
-export const Primary = {
-  render() {
-    const button = document.createElement('button')
-    button.innerText = 'Primary'
-    button.type = 'submit'
-
-    return button
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Submit = {
+  args: {
+    type: 'submit',
+    disabled: false,
   },
 }
 
-export const PrimaryDisabled = {
-  render() {
-    const button = document.createElement('button')
-    button.innerText = 'Primary Disabled'
-    button.type = 'submit'
-    button.disabled = true
-
-    return button
+export const SubmitDisabled = {
+  args: {
+    type: 'submit',
+    disabled: true,
   },
 }
 
 export const Secondary = {
-  render() {
-    const button = document.createElement('button')
-    button.innerText = 'Secondary'
-
-    return button
+  args: {
+    type: 'button',
+    disabled: false,
   },
 }
 
 export const SecondaryDisabled = {
-  render() {
-    const button = document.createElement('button')
-    button.innerText = 'Secondary Disabled'
-    button.disabled = true
-
-    return button
+  args: {
+    type: 'button',
+    disabled: true,
   },
 }
