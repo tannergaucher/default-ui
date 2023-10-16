@@ -65,11 +65,12 @@ function handleUserPersistedPreference() {
     setTheme({
       mode: Mode.LIGHT,
     })
+
     return
   }
 
   setTheme({
-    mode: Mode.LIGHT,
+    mode: storageMode,
   })
 }
 
