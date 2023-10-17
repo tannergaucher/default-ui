@@ -1,4 +1,4 @@
-import '../index.css'
+import '../package/index.css'
 
 export default {
   title: 'Summary Details',
