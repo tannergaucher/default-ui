@@ -2,8 +2,6 @@ section:not(:empty):not(:only-child):has(article) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: var(--space-sm);
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-lg);
 }
 
 @media (max-width: 1300px) {
