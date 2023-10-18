@@ -1,6 +1,6 @@
 main {
   min-height: 100vh;
-  padding-inline: var(--space-lg);
+  padding-inline: var(--space-xl);
 }
 
 @media (max-width: 900px) {
