@@ -53,12 +53,12 @@ export function useTheme({
     useProgressiveEnhancements()
   }
 
-  handleUserPersistedPreference()
+  handleUserLocalStoragePreference()
   handlePrefersColorSchemeEventChange()
-  handleToggleModeClick()
+  handleToggleButtonModeClick()
 }
 
-function handleUserPersistedPreference() {
+function handleUserLocalStoragePreference() {
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
@@ -98,7 +98,7 @@ function handlePrefersColorSchemeEventChange() {
     })
 }
 
-function handleToggleModeClick() {
+function handleToggleButtonModeClick() {
   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
   toggleModeBtn?.addEventListener('click', () => {
