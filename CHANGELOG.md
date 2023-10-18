@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.22.0
+
+### Minor Changes
+
+- 3e1b9a8: Update theming to html element data-theme attribute
+
 ## 0.21.0
 
 ### Minor Changes
