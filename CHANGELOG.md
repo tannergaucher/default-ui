@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.25.1
+
+### Patch Changes
+
+- 69b0476: Updated .npmignore
+
 ## 0.25.0
 
 ### Minor Changes
