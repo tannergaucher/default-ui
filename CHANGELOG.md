@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.26.1
+
+### Patch Changes
+
+- a4f1318: Update padding inline on main, footer elements
+
 ## 0.26.0
 
 ### Minor Changes
