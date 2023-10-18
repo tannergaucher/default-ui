@@ -1,6 +1,8 @@
 index.html
 
 .cache 
+.changeset
+.github
 .prettierrc
 .netlify
 .storybook
