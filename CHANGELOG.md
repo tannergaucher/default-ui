@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.26.2
+
+### Patch Changes
+
+- c7fa65f: Remove article grid margin block
+
 ## 0.26.1
 
 ### Patch Changes
