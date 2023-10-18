@@ -1,9 +1,7 @@
 import '../package/index.css'
-
 import './local.css'
 
-import { useTheme } from '../package/index.js'
+import { useTheme, useProgressiveEnhancements } from '../package/index.js'
 
-useTheme({
-  withProgressiveEnhancements: true,
-})
+useTheme()
+useProgressiveEnhancements()
