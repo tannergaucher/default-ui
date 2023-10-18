@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.23.0
+
+### Minor Changes
+
+- 68ed039: Remove theme types. Update package export paths
+
 ## 0.22.0
 
 ### Minor Changes
