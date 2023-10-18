@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.25.0
+
+### Minor Changes
+
+- 766fe2e: Update HR border, margin
+
 ## 0.24.0
 
 ### Minor Changes
