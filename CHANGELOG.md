@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.24.0
+
+### Minor Changes
+
+- ce7bf50: Update theme accent vars
+
 ## 0.23.0
 
 ### Minor Changes
