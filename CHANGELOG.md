@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.26.0
+
+### Minor Changes
+
+- 85a998e: Invoke theme fns in package rather than export
+
 ## 0.25.1
 
 ### Patch Changes
