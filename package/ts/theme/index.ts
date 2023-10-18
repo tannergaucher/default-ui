@@ -1,42 +1,6 @@
 export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
 export const MODE_STORAGE_KEY = '@t_g/default-ui/mode-key'
 
-import { useProgressiveEnhancements } from '../progressive-enhancements'
-
-enum BackgroundProperty {
-  BACKGROUND_1 = '--bg-1',
-  BACKGROUND_2 = '--bg-2',
-}
-
-export enum AccentProperty {
-  ACCENT_1 = '--accent-1',
-  ACCENT_2 = '--accent-2',
-}
-
-export enum GreyProperty {
-  GREY = '--grey',
-}
-
-export enum TextProperty {
-  TEXT_COLOR = '--text-color',
-}
-
-export enum ShadowProperty {
-  SHADOW_COLOR = '--shadow-color',
-}
-
-export enum CodeProperty {
-  BACKGROUND = '--code-bg',
-}
-
-export type ColorPropertyString =
-  | BackgroundProperty
-  | AccentProperty
-  | GreyProperty
-  | TextProperty
-  | ShadowProperty
-  | CodeProperty
-
 export enum Mode {
   DARK = 'Dark',
   DARK_SEPIA = 'Dark Sepia',
@@ -44,15 +8,7 @@ export enum Mode {
   LIGHT_SEPIA = 'Light Sepia',
 }
 
-export function useTheme({
-  withProgressiveEnhancements,
-}: {
-  withProgressiveEnhancements: boolean
-}) {
-  if (withProgressiveEnhancements) {
-    useProgressiveEnhancements()
-  }
-
+export function useTheme() {
   handleUserLocalStoragePreference()
   handlePrefersColorSchemeEventChange()
   handleToggleButtonModeClick()
