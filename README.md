@@ -1,3 +1,3 @@
 # Default UI
 
-## Responsive, Themed HTML Elements
+## Responsive, Themed Styles for HTML Elements
