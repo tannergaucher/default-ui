@@ -38,10 +38,10 @@ export type ColorPropertyString =
   | CodeProperty
 
 export enum Mode {
-  DARK = 'DARK',
-  DARK_SEPIA = 'DARK SEPIA',
-  LIGHT = 'LIGHT',
-  LIGHT_SEPIA = 'LIGHT SEPIA',
+  DARK = 'Dark',
+  DARK_SEPIA = 'Dark Sepia',
+  LIGHT = 'Light',
+  LIGHT_SEPIA = 'Light Sepia',
 }
 
 export function useTheme({
@@ -54,34 +54,38 @@ export function useTheme({
   }
 
   handleUserPersistedPreference()
-  handleUserSystemPrefersSchemeEventChange()
+  handlePrefersColorSchemeEventChange()
   handleToggleModeClick()
 }
 
 function handleUserPersistedPreference() {
+  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+
   const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
 
   if (storageMode === null) {
-    setTheme({
-      mode: Mode.LIGHT,
-    })
+    document.querySelector('html')?.setAttribute('data-theme', 'light')
+
+    if (toggleModeBtn) {
+      toggleModeBtn.innerHTML = 'light'
+    }
 
     return
   }
 
-  setTheme({
-    mode: storageMode,
-  })
+  document.querySelector('html')?.setAttribute('data-theme', storageMode)
+
+  if (toggleModeBtn) {
+    toggleModeBtn.innerHTML = storageMode
+  }
 }
 
-function handleUserSystemPrefersSchemeEventChange() {
+function handlePrefersColorSchemeEventChange() {
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        setTheme({
-          mode: Mode.DARK,
-        })
+        document.querySelector('html')?.setAttribute('data-theme', 'dark')
       }
     })
 
@@ -89,9 +93,7 @@ function handleUserSystemPrefersSchemeEventChange() {
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        setTheme({
-          mode: Mode.LIGHT,
-        })
+        document.querySelector('html')?.setAttribute('data-theme', 'light')
       }
     })
 }
@@ -113,108 +115,108 @@ function handleToggleModeClick() {
       currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
     const nextMode = modesArray[nextModeIndex]
 
-    return setTheme({
-      mode: nextMode,
-    })
+    document.querySelector('html')?.setAttribute('data-theme', nextMode)
+    toggleModeBtn.innerHTML = nextMode
+    localStorage.setItem(MODE_STORAGE_KEY, nextMode)
   })
 }
 
-type ColorVariableMap = { [key in ColorPropertyString]: string }
+// type ColorVariableMap = { [key in ColorPropertyString]: string }
 
-function setTheme(theme: { mode: Mode }) {
-  const { mode } = theme
+// function setTheme(theme: { mode: Mode }) {
+//   const { mode } = theme
 
-  const colorVariableMap: ColorVariableMap = {
-    [BackgroundProperty.BACKGROUND_1]: getColorPropertyString(
-      BackgroundProperty.BACKGROUND_1,
-      mode
-    ),
-    [BackgroundProperty.BACKGROUND_2]: getColorPropertyString(
-      BackgroundProperty.BACKGROUND_2,
-      mode
-    ),
-    [TextProperty.TEXT_COLOR]: getColorPropertyString(
-      TextProperty.TEXT_COLOR,
-      mode
-    ),
-    [AccentProperty.ACCENT_1]: getColorPropertyString(
-      AccentProperty.ACCENT_1,
-      mode
-    ),
-    [AccentProperty.ACCENT_2]: getColorPropertyString(
-      AccentProperty.ACCENT_2,
-      mode
-    ),
-    [GreyProperty.GREY]: getColorPropertyString(GreyProperty.GREY, mode),
-    [ShadowProperty.SHADOW_COLOR]: getColorPropertyString(
-      ShadowProperty.SHADOW_COLOR,
-      mode
-    ),
-    [CodeProperty.BACKGROUND]: getColorPropertyString(
-      CodeProperty.BACKGROUND,
-      mode
-    ),
-  }
+//   const colorVariableMap: ColorVariableMap = {
+//     [BackgroundProperty.BACKGROUND_1]: getColorPropertyString(
+//       BackgroundProperty.BACKGROUND_1,
+//       mode
+//     ),
+//     [BackgroundProperty.BACKGROUND_2]: getColorPropertyString(
+//       BackgroundProperty.BACKGROUND_2,
+//       mode
+//     ),
+//     [TextProperty.TEXT_COLOR]: getColorPropertyString(
+//       TextProperty.TEXT_COLOR,
+//       mode
+//     ),
+//     [AccentProperty.ACCENT_1]: getColorPropertyString(
+//       AccentProperty.ACCENT_1,
+//       mode
+//     ),
+//     [AccentProperty.ACCENT_2]: getColorPropertyString(
+//       AccentProperty.ACCENT_2,
+//       mode
+//     ),
+//     [GreyProperty.GREY]: getColorPropertyString(GreyProperty.GREY, mode),
+//     [ShadowProperty.SHADOW_COLOR]: getColorPropertyString(
+//       ShadowProperty.SHADOW_COLOR,
+//       mode
+//     ),
+//     [CodeProperty.BACKGROUND]: getColorPropertyString(
+//       CodeProperty.BACKGROUND,
+//       mode
+//     ),
+//   }
 
-  for (const [key, value] of Object.entries(colorVariableMap)) {
-    document.documentElement.style.setProperty(key, value)
-  }
+//   for (const [key, value] of Object.entries(colorVariableMap)) {
+//     document.documentElement.style.setProperty(key, value)
+//   }
 
-  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+//   const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-  if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = mode
-  }
+//   if (toggleModeBtn) {
+//     toggleModeBtn.innerHTML = mode
+//   }
 
-  localStorage.setItem(MODE_STORAGE_KEY, mode)
-}
+//   localStorage.setItem(MODE_STORAGE_KEY, mode)
+// }
 
-function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
-  const getModeSuffix = (mode: Mode) => {
-    switch (mode) {
-      case Mode.DARK:
-        return 'dark'
-      case Mode.LIGHT:
-        return 'light'
-      case Mode.LIGHT_SEPIA:
-        return 'light-sepia'
-      case Mode.DARK_SEPIA:
-        return 'dark-sepia'
-    }
-  }
+// function getColorPropertyString(property: ColorPropertyString, mode: Mode) {
+//   const getModeSuffix = (mode: Mode) => {
+//     switch (mode) {
+//       case Mode.DARK:
+//         return 'dark'
+//       case Mode.LIGHT:
+//         return 'light'
+//       case Mode.LIGHT_SEPIA:
+//         return 'light-sepia'
+//       case Mode.DARK_SEPIA:
+//         return 'dark-sepia'
+//     }
+//   }
 
-  switch (property) {
-    case BackgroundProperty.BACKGROUND_1:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_1}-${getModeSuffix(mode)}`
-      )
-    case BackgroundProperty.BACKGROUND_2:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${BackgroundProperty.BACKGROUND_2}-${getModeSuffix(mode)}`
-      )
-    case TextProperty.TEXT_COLOR:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${TextProperty.TEXT_COLOR}-${getModeSuffix(mode)}`
-      )
-    case AccentProperty.ACCENT_1:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_1}-${getModeSuffix(mode)}`
-      )
-    case AccentProperty.ACCENT_2:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${AccentProperty.ACCENT_2}-${getModeSuffix(mode)}`
-      )
-    case GreyProperty.GREY:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${GreyProperty.GREY}-${getModeSuffix(mode)}`
-      )
-    case ShadowProperty.SHADOW_COLOR:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${ShadowProperty.SHADOW_COLOR}-${getModeSuffix(mode)}`
-      )
-    case CodeProperty.BACKGROUND:
-      return getComputedStyle(document.documentElement).getPropertyValue(
-        `${CodeProperty.BACKGROUND}-${getModeSuffix(mode)}`
-      )
-  }
-}
+//   switch (property) {
+//     case BackgroundProperty.BACKGROUND_1:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${BackgroundProperty.BACKGROUND_1}-${getModeSuffix(mode)}`
+//       )
+//     case BackgroundProperty.BACKGROUND_2:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${BackgroundProperty.BACKGROUND_2}-${getModeSuffix(mode)}`
+//       )
+//     case TextProperty.TEXT_COLOR:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${TextProperty.TEXT_COLOR}-${getModeSuffix(mode)}`
+//       )
+//     case AccentProperty.ACCENT_1:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${AccentProperty.ACCENT_1}-${getModeSuffix(mode)}`
+//       )
+//     case AccentProperty.ACCENT_2:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${AccentProperty.ACCENT_2}-${getModeSuffix(mode)}`
+//       )
+//     case GreyProperty.GREY:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${GreyProperty.GREY}-${getModeSuffix(mode)}`
+//       )
+//     case ShadowProperty.SHADOW_COLOR:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${ShadowProperty.SHADOW_COLOR}-${getModeSuffix(mode)}`
+//       )
+//     case CodeProperty.BACKGROUND:
+//       return getComputedStyle(document.documentElement).getPropertyValue(
+//         `${CodeProperty.BACKGROUND}-${getModeSuffix(mode)}`
+//       )
+//   }
+// }
