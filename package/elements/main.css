@@ -5,6 +5,6 @@ main {
 
 @media (max-width: 900px) {
   main {
-    padding-inline: var(--space-md);
+    padding-inline: var(--space-sm);
   }
 }
