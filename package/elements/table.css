@@ -3,6 +3,7 @@ table {
   border-collapse: collapse;
   box-shadow: var(--elevation-1);
   transition: var(--transition);
+  word-break: break-word;
 }
 
 table:hover {
