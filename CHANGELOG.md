@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.26.4
+
+### Patch Changes
+
+- 2a183ec: Update responsive padding
+
 ## 0.26.3
 
 ### Patch Changes

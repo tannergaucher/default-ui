@@ -1,6 +1,6 @@
 {
   "name": "@t_g/default-ui",
-  "version": "0.26.3",
+  "version": "0.26.4",
   "description": "\"Responsive, Themed HTML Elements.\"",
   "exports": "./package/index.js",
   "scripts": {
