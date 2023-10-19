@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.26.3
+
+### Patch Changes
+
+- d3aa27c: Handle table mobile overflow - break word
+
 ## 0.26.2
 
 ### Patch Changes
