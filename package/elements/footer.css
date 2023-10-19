@@ -7,6 +7,6 @@ footer {
 
 @media (max-width: 900px) {
   footer {
-    padding-inline: var(--space-md);
+    padding-inline: var(--space-sm);
   }
 }
