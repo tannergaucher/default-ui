@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.27.0
+
+### Minor Changes
+
+- e37f12b: Export index.ts
+
 ## 0.26.4
 
 ### Patch Changes
