@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.0
+
+### Minor Changes
+
+- 7147906: Update article heading margin
+
 ## 0.27.0
 
 ### Minor Changes
