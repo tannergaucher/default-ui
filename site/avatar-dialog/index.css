@@ -22,7 +22,7 @@
   left: 0;
   width: fit-content;
   transition: opacity 0.2s ease-in-out;
-  border-radius: var(--space-xl);
+  border-radius: var(--space-md);
   opacity: 0;
   padding: var(--space-sm);
   box-shadow: var(--elevation-3);
