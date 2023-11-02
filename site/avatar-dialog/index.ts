@@ -18,7 +18,7 @@ const initialQuote = document.createElement('blockquote')
 
 initialQuote.classList.add('avatar-quote')
 initialQuote.setAttribute('avatar-quote-number', '1')
-// initialQuote.setAttribute('current-quote', 'true')
+initialQuote.setAttribute('current-quote', 'true')
 initialQuote.innerText = quotes[0]
 
 avatarQuoteContainer.appendChild(initialQuote)
@@ -46,7 +46,7 @@ setInterval(() => {
   const allQuotes = document.querySelectorAll('.avatar-quote')
   allQuotes.forEach((quote) => quote.removeAttribute('current-quote'))
 
-  // nextQuote.setAttribute('current-quote', 'true')
+  nextQuote.setAttribute('current-quote', 'true')
   nextQuote.innerText = quotes[nextQuoteIndex]
   avatarQuoteContainer?.appendChild(nextQuote)
 }, 1900)

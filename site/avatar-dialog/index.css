@@ -1,3 +1,21 @@
+.avatar-image {
+  width: 160px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: var(--space-xs);
+  left: var(--space-xs);
+  box-shadow: var(--elevation-3);
+}
+
+.avatar-quote-container {
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  z-index: 1;
+  width: 600px;
+  box-shadow: var(--elevation-3);
+}
+
 .avatar-quote {
   position: absolute;
   top: 0;
@@ -7,45 +25,17 @@
   border-radius: var(--space-xl);
   opacity: 0;
   padding: var(--space-sm);
+  box-shadow: var(--elevation-3);
 }
 
 .avatar-quote[current-quote='true'] {
   opacity: 1;
   animation: pulse 2s ease-in-out infinite;
-  z-index: 3;
 }
 
-.avatar-quote[avatar-quote-number='1'] {
-  color: red;
-  content: "Hey, I'm Tanner";
-}
-
-.avatar-quote[avatar-quote-number='2'] {
-  color: blue;
-  content: 'Nice to meet you';
-}
-
-.avatar-quote[avatar-quote-number='3'] {
-  color: green;
-  content: 'I like building things for the web';
-}
-
-.avatar-quote[avatar-quote-number='4'] {
-  color: green;
-  content: 'undefined';
-}
-
-.avatar-quote[avatar-quote-number='5'] {
-  color: green;
-  content: 'I bet you thought that was a bug!';
-}
-
-.avatar-quote[avatar-quote-number='6'] {
-  color: green;
-  content: 'I just wrote undefined there as a joke';
-}
-
-.avatar-quote[avatar-quote-number='7'] {
-  color: green;
-  content: 'Haha';
+@media (max-width: 768px) {
+  .avatar-image,
+  .avatar-quote-container {
+    display: none;
+  }
 }
