@@ -2,7 +2,7 @@ footer {
   background-color: var(--bg-2);
   margin-block-start: var(--space-xl);
   padding-inline: var(--space-xl);
-  padding-block-start: var(--space-xs);
+  padding-block: var(--space-xl);
 }
 
 @media (max-width: 900px) {
