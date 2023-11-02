@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.1
+
+### Patch Changes
+
+- 19378b7: Update footer padding
+
 ## 0.28.0
 
 ### Minor Changes
