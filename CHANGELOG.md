@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.3
+
+### Patch Changes
+
+- ddccfa5: Update a fontweight
+
 ## 0.28.2
 
 ### Patch Changes
