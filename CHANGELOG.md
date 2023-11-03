@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.4
+
+### Patch Changes
+
+- b095dfe: Update site copy
+
 ## 0.28.3
 
 ### Patch Changes
