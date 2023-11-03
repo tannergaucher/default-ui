@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.2
+
+### Patch Changes
+
+- 7d98e5d: Update theme attribute name.
+
 ## 0.28.1
 
 ### Patch Changes
