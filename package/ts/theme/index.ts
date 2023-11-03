@@ -20,7 +20,7 @@ function handleUserLocalStoragePreference() {
   const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
 
   if (storageMode === null) {
-    document.querySelector('html')?.setAttribute('data-theme', 'light')
+    document.querySelector('html')?.setAttribute('theme', 'light')
 
     if (toggleModeBtn) {
       toggleModeBtn.innerHTML = 'light'
@@ -29,7 +29,7 @@ function handleUserLocalStoragePreference() {
     return
   }
 
-  document.querySelector('html')?.setAttribute('data-theme', storageMode)
+  document.querySelector('html')?.setAttribute('theme', storageMode)
 
   if (toggleModeBtn) {
     toggleModeBtn.innerHTML = storageMode
@@ -41,7 +41,7 @@ function handlePrefersColorSchemeEventChange() {
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('data-theme', 'dark')
+        document.querySelector('html')?.setAttribute('theme', 'dark')
       }
     })
 
@@ -49,7 +49,7 @@ function handlePrefersColorSchemeEventChange() {
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('data-theme', 'light')
+        document.querySelector('html')?.setAttribute('theme', 'light')
       }
     })
 }
@@ -71,7 +71,7 @@ function handleToggleButtonModeClick() {
       currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
     const nextMode = modesArray[nextModeIndex]
 
-    document.querySelector('html')?.setAttribute('data-theme', nextMode)
+    document.querySelector('html')?.setAttribute('theme', nextMode)
     toggleModeBtn.innerHTML = nextMode
     localStorage.setItem(MODE_STORAGE_KEY, nextMode)
   })
