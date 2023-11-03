@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.5
+
+### Patch Changes
+
+- e45e258: Fix site table
+
 ## 0.28.4
 
 ### Patch Changes
