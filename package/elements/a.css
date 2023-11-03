@@ -1,6 +1,7 @@
 a {
   color: var(--accent-1);
   transition: var(--transition);
+  font-weight: bold;
 }
 
 a:hover,
