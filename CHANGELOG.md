@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.6
+
+### Patch Changes
+
+- b00f41e: Add elevation transitions
+
 ## 0.28.5
 
 ### Patch Changes
