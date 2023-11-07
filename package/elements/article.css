@@ -6,6 +6,7 @@ article {
   display: flex;
   flex-direction: column;
   padding: var(--space-xs);
+  transition: ease-in-out 0.2s;
 }
 
 article:hover {
