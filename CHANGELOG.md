@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.7
+
+### Patch Changes
+
+- ace9347: Update site header, elements
+
 ## 0.28.6
 
 ### Patch Changes
