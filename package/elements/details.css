@@ -12,7 +12,7 @@ details:last-of-type {
   border-top-right-radius: 0;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
-  border-bottom-color: var(--bg-2);
+  /* border-bottom-color: var(--bg-2); */
   box-shadow: var(--elevation-1);
 }
 

@@ -1,6 +1,6 @@
 :root {
   --radius: var(--0);
-  --thickness: var(--0);
+  --thickness: calc(var(--0));
   --elevation-1: 0 4px 12px var(--shadow-color);
   --elevation-2: 0 8px 16px var(--shadow-color);
   --elevation-3: 0 16px 32px var(--shadow-color);

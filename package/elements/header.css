@@ -1,9 +1,10 @@
 header {
   position: sticky;
   top: 0;
+  z-index: 2;
+  opacity: 0.93;
   display: flex;
   justify-content: space-between;
   background-color: var(--bg-2);
-  z-index: 2;
-  opacity: 0.93;
+  box-shadow: var(--elevation-3);
 }
