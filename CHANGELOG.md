@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.29.1
+
+### Patch Changes
+
+- 2491397: Add element transitions
+
 ## 0.29.0
 
 ### Minor Changes
