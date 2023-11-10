@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.29.2
+
+### Patch Changes
+
+- f7ca719: Accessibility fix: Handle declaratively setting button name
+
 ## 0.29.1
 
 ### Patch Changes
