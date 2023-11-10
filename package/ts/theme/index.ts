@@ -9,34 +9,33 @@ export enum Theme {
 }
 
 export function useTheme() {
-  handleUserLocalStoragePreference()
-  handlePrefersColorSchemeEventChange()
+  initializeTheme()
+  handleUserSystemPreference()
   handleThemeButtonClick()
 }
 
-function handleUserLocalStoragePreference() {
-  const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-  const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
+let storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
+function initializeTheme() {
+  if (!themeButton) return
+
+  // If there is no theme in local storage, initialize the theme to light
   if (storageTheme === null) {
     document.querySelector('html')?.setAttribute('theme', 'light')
-
-    if (themeButton) {
-      themeButton.innerHTML = 'light'
-    }
+    themeButton.innerHTML = 'light'
 
     return
   }
 
+  // If there is a theme in local storage, initialize the theme to the value in local storage
   document.querySelector('html')?.setAttribute('theme', storageTheme)
-
-  if (themeButton) {
-    themeButton.innerHTML = storageTheme
-  }
+  themeButton.innerHTML = storageTheme
 }
 
-function handlePrefersColorSchemeEventChange() {
+function handleUserSystemPreference() {
+  // If the user's system preference is dark, set the theme to dark
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
@@ -45,6 +44,7 @@ function handlePrefersColorSchemeEventChange() {
       }
     })
 
+  // If the user's system preference is light, set the theme to light
   window
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
@@ -55,24 +55,22 @@ function handlePrefersColorSchemeEventChange() {
 }
 
 function handleThemeButtonClick() {
-  const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+  if (!themeButton) return
 
-  themeButton?.addEventListener('click', () => {
+  themeButton.addEventListener('click', () => {
     const themes = Object.values(Theme)
 
-    let currentTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
+    const currentThemeIndex = storageTheme ? themes.indexOf(storageTheme) : 0
 
-    if (currentTheme === null) {
-      currentTheme = Theme.LIGHT
-    }
-
-    const currentThemeIndex = themes.indexOf(currentTheme)
     const nextThemeIndex =
       currentThemeIndex + 1 === themes.length ? 0 : currentThemeIndex + 1
+
     const nextTheme = themes[nextThemeIndex]
 
     document.querySelector('html')?.setAttribute('theme', nextTheme)
+
     themeButton.innerHTML = nextTheme
+
     localStorage.setItem(THEME_STORAGE_KEY, nextTheme)
   })
 }
