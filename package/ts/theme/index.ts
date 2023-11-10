@@ -5,6 +5,8 @@ export enum Theme {
   DARK_SEPIA = 'Dark Sepia Theme',
   LIGHT = 'Light Theme',
   LIGHT_SEPIA = 'Light Sepia Theme',
+  SOLARIZED_LIGHT = 'Solarized Light Theme',
+  SOLARIZED_DARK = 'Solarized Dark Theme',
 }
 
 export function useTheme() {

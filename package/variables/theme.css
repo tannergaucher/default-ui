@@ -1,4 +1,5 @@
 :root {
+  /* Light Theme */
   --bg-1-light: #fafafaee;
   --bg-2-light: #ffffff;
   --text-color-light: #333333;
@@ -7,7 +8,7 @@
   --accent-2-light: purple;
   --shadow-color-light: rgba(0, 0, 0, 0.07);
   --code-bg-light: #1a1a1b;
-
+  /* Light Sepia Theme */
   --bg-1-light-sepia: papayaWhip;
   --bg-2-light-sepia: peachpuff;
   --text-color-light-sepia: #8b4513;
@@ -16,7 +17,7 @@
   --accent-2-light-sepia: purple;
   --shadow-color-light-sepia: rgba(13, 13, 13, 0.07);
   --code-bg-light-sepia: #1a1a1b;
-
+  /* Dark Theme */
   --bg-1-dark: rgb(0, 0, 0);
   --bg-2-dark: #1a1a1b;
   --text-color-dark: #ffffff;
@@ -25,7 +26,7 @@
   --accent-2-dark: purple;
   --shadow-color-dark: rgba(225, 225, 225, 0.1);
   --code-bg-dark: #1a1a1b;
-
+  /* Dark Sepia Theme */
   --bg-1-dark-sepia: #1a1a1b;
   --bg-2-dark-sepia: rgb(0, 0, 0);
   --text-color-dark-sepia: goldenrod;
@@ -35,6 +36,26 @@
   --shadow-color-dark-sepia: rgba(137, 105, 59, 0.2);
   --code-bg-dark-sepia: rgb(0, 0, 0);
 
+  /* Solarized Light Theme */
+  --bg-1-solarized-light: #fdf6e3;
+  --bg-2-solarized-light: #ffffff;
+  --text-color-solarized-light: #650b57;
+  --grey-solarized-light: #8d8687;
+  --accent-1-solarized-light: #b58900;
+  --accent-2-solarized-light: #cb4b16;
+  --shadow-color-solarized-light: rgba(0, 0, 0, 0.07);
+  --code-bg-solarized-light: #1a1a1b;
+  /* Solarized Dark Theme */
+  --bg-1-solarized-dark: #002b36;
+  --bg-2-solarized-dark: #073642;
+  --text-color-solarized-dark: #ffffff;
+  --grey-solarized-dark: #586e75;
+  --accent-1-solarized-dark: #b58900;
+  --accent-2-solarized-dark: #cb4b16;
+  --shadow-color-solarized-dark: rgba(225, 225, 225, 0.1);
+  --code-bg-solarized-dark: #1a1a1b;
+
+  /* Initialize to Light Theme */
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
   --bg-1: var(--bg-1-light);
@@ -100,4 +121,26 @@ html[theme='Dark Sepia Theme'] {
   --accent-2: var(--accent-2-dark-sepia);
   --shadow-color: var(--shadow-color-dark-sepia);
   --code-bg: var(--code-bg-dark-sepia);
+}
+
+html[theme='Solarized Light Theme'] {
+  --text-color: var(--text-color-solarized-light);
+  --grey: var(--grey-solarized-light);
+  --bg-1: var(--bg-1-solarized-light);
+  --bg-2: var(--bg-2-solarized-light);
+  --accent-1: var(--accent-1-solarized-light);
+  --accent-2: var(--accent-2-solarized-light);
+  --shadow-color: var(--shadow-color-solarized-light);
+  --code-bg: var(--code-bg-solarized-light);
+}
+
+html[theme='Solarized Dark Theme'] {
+  --text-color: var(--text-color-solarized-dark);
+  --grey: var(--grey-solarized-dark);
+  --bg-1: var(--bg-1-solarized-dark);
+  --bg-2: var(--bg-2-solarized-dark);
+  --accent-1: var(--accent-1-solarized-dark);
+  --accent-2: var(--accent-2-solarized-dark);
+  --shadow-color: var(--shadow-color-solarized-dark);
+  --code-bg: var(--code-bg-solarized-dark);
 }
