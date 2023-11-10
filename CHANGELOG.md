@@ -1,5 +1,12 @@
 # semantic-styles
 
+## 0.29.0
+
+### Minor Changes
+
+- 7d8d6f3: Make theme `aria-label` based, support declarative theme toggle
+- 483bb8b: Handle max-width
+
 ## 0.28.8
 
 ### Patch Changes
