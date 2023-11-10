@@ -6,5 +6,5 @@
   --elevation-3: 0 16px 32px var(--shadow-color);
   --opacity: opacity(0.35);
   --max-width: 63vw;
-  --transition: all 0.2s ease 0s;
+  --transition: all 0.2s ease-in-out;
 }

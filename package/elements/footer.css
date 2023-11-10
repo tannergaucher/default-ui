@@ -4,6 +4,7 @@ footer {
   padding-block-start: var(--space-xl);
   padding-block-end: var(--space-xl);
   padding-inline: var(--space-sm);
+  transition: var(--transition);
 }
 
 footer > * {
