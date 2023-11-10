@@ -11,13 +11,11 @@ select {
   line-height: inherit;
   color: var(--text-color);
   margin-bottom: var(--space-md);
+  transition: var(--transition);
 }
 
 select:hover,
 select:focus {
   border-color: var(--accent-2);
-}
-
-select::-ms-expand {
-  display: none;
+  transition: var(--transition);
 }

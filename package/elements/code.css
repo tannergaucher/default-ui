@@ -1,6 +1,7 @@
 code {
   font-family: var(--mono);
   color: white;
+  transition: var(--transition);
 }
 
 code[class*='language-'],
