@@ -32,7 +32,7 @@
 npm i @t_g/default-ui
 ```
 
-### 2. Add a button label to the document with an aria label of "Toggle theme" to toggle between all themes
+### 2. Add a button to the document with an aria label of "Toggle theme" to toggle between all themes
 
 ```html
 <button arial-label="Toggle Theme" />
