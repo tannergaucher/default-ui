@@ -1,7 +1,14 @@
 footer {
   background-color: var(--bg-2);
   margin-block-start: var(--space-xl);
-  padding: var(--space-xl);
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-xl);
+  padding-inline: var(--space-sm);
+}
+
+footer > * {
+  max-width: var(--max-width);
+  margin-inline: auto;
 }
 
 @media (max-width: 900px) {
