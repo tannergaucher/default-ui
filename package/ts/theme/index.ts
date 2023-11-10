@@ -16,7 +16,7 @@ export function useTheme() {
 
 const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-let storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
+const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
 function initializeTheme() {
   if (!themeButton) return
