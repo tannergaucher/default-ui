@@ -1,4 +1,4 @@
-export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
+export const TOGGLE_THEME_BTN_SELECTOR = '#theme-btn'
 export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
 export enum Theme {
@@ -14,7 +14,7 @@ export function useTheme() {
   handleThemeButtonClick()
 }
 
-const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+const themeButton = document.querySelector(TOGGLE_THEME_BTN_SELECTOR)
 
 const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
@@ -23,8 +23,8 @@ function initializeTheme() {
 
   // If there is no theme in local storage, initialize the theme to light
   if (storageTheme === null) {
-    document.querySelector('html')?.setAttribute('theme', 'light')
-    themeButton.innerHTML = 'light'
+    document.querySelector('html')?.setAttribute('theme', Theme.LIGHT)
+    themeButton.innerHTML = Theme.LIGHT
 
     return
   }
@@ -40,7 +40,7 @@ function handleUserSystemPreference() {
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', 'dark')
+        document.querySelector('html')?.setAttribute('theme', Theme.DARK)
       }
     })
 
@@ -49,7 +49,7 @@ function handleUserSystemPreference() {
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', 'light')
+        document.querySelector('html')?.setAttribute('theme', Theme.LIGHT)
       }
     })
 }
@@ -58,14 +58,14 @@ function handleThemeButtonClick() {
   if (!themeButton) return
 
   themeButton.addEventListener('click', () => {
-    const themes = Object.values(Theme)
+    const allThemes = Object.values(Theme)
 
-    const currentThemeIndex = storageTheme ? themes.indexOf(storageTheme) : 0
+    const currentThemeIndex = storageTheme ? allThemes.indexOf(storageTheme) : 0
 
     const nextThemeIndex =
-      currentThemeIndex + 1 === themes.length ? 0 : currentThemeIndex + 1
+      currentThemeIndex + 1 === allThemes.length ? 0 : currentThemeIndex + 1
 
-    const nextTheme = themes[nextThemeIndex]
+    const nextTheme = allThemes[nextThemeIndex]
 
     document.querySelector('html')?.setAttribute('theme', nextTheme)
 
