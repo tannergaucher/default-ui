@@ -4,15 +4,15 @@
 
 ## Themed Design System for HTML Elements
 
-- 1. (Have AI) write HTML
+- Step 1. (Have AI) write HTML
 
-- 2. Import package
+- Step 2. Import package
 
-- 3. Get themed, responsive styles
+- Step 3. Get responsive, themed HTML elements by default
 
 ---
 
-## Themes
+## Supported Themes
 
 ### Light
 
@@ -26,24 +26,20 @@
 
 ## How To Use Themes
 
-### 1. Import package
+### 1. Install and import package into project
 
-```
-
+```shell
 npm i @t_g/default-ui
-
 ```
 
-### 2. Add a button label to the document with an aria label of "Toggle theme"
+### 2. Add a button label to the document with an aria label of "Toggle theme" to toggle between all themes
 
 ```html
-<button arial-label="Toggle theme">Theme</button>
+<button arial-label="Toggle Theme" />
 ```
 
-### 3. Optionally: select a subset of themes using data-themes attribute
+### 3. Optionally toggle a subset of themes using data-themes attribute
 
 ```html
-<button aria-label="Toggle theme" data-toggle="Light Theme,Dark Sepia Theme">
-  Theme
-</button>
+<button aria-label="Toggle Theme" data-toggle="Light Theme,Dark Sepia Theme" />
 ```
