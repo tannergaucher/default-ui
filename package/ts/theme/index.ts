@@ -1,78 +1,89 @@
-export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
-export const MODE_STORAGE_KEY = '@t_g/default-ui/mode-key'
+export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
-export enum Mode {
-  DARK = 'Dark',
-  DARK_SEPIA = 'Dark Sepia',
-  LIGHT = 'Light',
-  LIGHT_SEPIA = 'Light Sepia',
+export enum Theme {
+  DARK = 'Dark Theme',
+  DARK_SEPIA = 'Dark Sepia Theme',
+  LIGHT = 'Light Theme',
+  LIGHT_SEPIA = 'Light Sepia Theme',
 }
 
 export function useTheme() {
-  handleUserLocalStoragePreference()
-  handlePrefersColorSchemeEventChange()
-  handleToggleButtonModeClick()
+  initializeTheme()
+  handleUserSystemPreference()
+  handleThemeButtonClick()
 }
 
-function handleUserLocalStoragePreference() {
-  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+const themeButton =
+  document.querySelector('button[aria-label="Toggle theme"]') ||
+  document.querySelector('button[aria-label="Toggle Theme"]')
 
-  const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
+if (!themeButton) {
+  throw new Error(
+    'No theme button found. Please add a button element with aria-label="Toggle theme" to the the document."'
+  )
+}
 
-  if (storageMode === null) {
-    document.querySelector('html')?.setAttribute('theme', 'light')
+const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
-    if (toggleModeBtn) {
-      toggleModeBtn.innerHTML = 'light'
-    }
-
+function initializeTheme() {
+  if (storageTheme === null) {
+    setTheme(Theme.LIGHT)
     return
   }
 
-  document.querySelector('html')?.setAttribute('theme', storageMode)
-
-  if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = storageMode
-  }
+  setTheme(storageTheme)
 }
 
-function handlePrefersColorSchemeEventChange() {
+function handleUserSystemPreference() {
+  // If the user's system preference is dark, set the theme to dark
   window
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', 'dark')
+        setTheme(Theme.DARK)
       }
     })
 
+  // If the user's system preference is light, set the theme to light
   window
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', 'light')
+        setTheme(Theme.LIGHT)
       }
     })
 }
 
-function handleToggleButtonModeClick() {
-  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+function handleThemeButtonClick() {
+  if (!themeButton) return
 
-  toggleModeBtn?.addEventListener('click', () => {
-    const modesArray = Object.values(Mode)
+  themeButton.addEventListener('click', () => {
+    // If the theme button has a data-toggle attributes specified, toggle between those themes, otherwise toggle between all themes
+    const declaredThemes = themeButton
+      .getAttribute('data-toggle')
+      ?.split(',') as Theme[] | undefined
 
-    let currentMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
+    const validThemes = declaredThemes?.length
+      ? declaredThemes
+      : Object.values(Theme)
 
-    if (currentMode === null) {
-      currentMode = Mode.LIGHT
-    }
+    const currentThemeIndex = validThemes.indexOf(
+      document.querySelector('html')?.getAttribute('theme') as Theme
+    )
 
-    const currentModeIndex = modesArray.indexOf(currentMode)
-    const nextModeIndex =
-      currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
-    const nextMode = modesArray[nextModeIndex]
+    const nextThemeIndex =
+      currentThemeIndex + 1 === validThemes.length ? 0 : currentThemeIndex + 1
 
-    document.querySelector('html')?.setAttribute('theme', nextMode)
-    toggleModeBtn.innerHTML = nextMode
-    localStorage.setItem(MODE_STORAGE_KEY, nextMode)
+    const nextTheme = validThemes[nextThemeIndex]
+
+    setTheme(nextTheme)
   })
+}
+
+function setTheme(theme: Theme) {
+  if (!themeButton) return
+
+  document.querySelector('html')?.setAttribute('theme', theme)
+  themeButton.innerHTML = theme
+  localStorage.setItem(THEME_STORAGE_KEY, theme)
 }
