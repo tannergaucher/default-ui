@@ -1,10 +1,10 @@
 :root {
   --bg-1-light: #fafafaee;
   --bg-2-light: #ffffff;
-  --text-color-light: #000000;
+  --text-color-light: #333333;
   --grey-light: #666666;
   --accent-1-light: fuchsia;
-  --accent-2-light: violet;
+  --accent-2-light: purple;
   --shadow-color-light: rgba(0, 0, 0, 0.07);
   --code-bg-light: #1a1a1b;
 
@@ -13,7 +13,7 @@
   --text-color-light-sepia: #8b4513;
   --grey-light-sepia: #666666;
   --accent-1-light-sepia: fuchsia;
-  --accent-2-light-sepia: violet;
+  --accent-2-light-sepia: purple;
   --shadow-color-light-sepia: rgba(13, 13, 13, 0.07);
   --code-bg-light-sepia: #1a1a1b;
 
@@ -22,7 +22,7 @@
   --text-color-dark: #ffffff;
   --grey-dark: #fafafa9f;
   --accent-1-dark: fuchsia;
-  --accent-2-dark: violet;
+  --accent-2-dark: purple;
   --shadow-color-dark: rgba(225, 225, 225, 0.1);
   --code-bg-dark: #1a1a1b;
 
@@ -31,7 +31,7 @@
   --text-color-dark-sepia: goldenrod;
   --grey-dark-sepia: #fafafa9f;
   --accent-1-dark-sepia: fuchsia;
-  --accent-2-dark-sepia: violet;
+  --accent-2-dark-sepia: purple;
   --shadow-color-dark-sepia: rgba(137, 105, 59, 0.2);
   --code-bg-dark-sepia: rgb(0, 0, 0);
 
