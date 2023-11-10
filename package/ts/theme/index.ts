@@ -58,9 +58,10 @@ function handleThemeButtonClick() {
   if (!themeButton) return
 
   themeButton.addEventListener('click', () => {
-    // Get the current theme from storage and increment it by 1
     const allThemes = Object.values(Theme)
-    const currentThemeIndex = storageTheme ? allThemes.indexOf(storageTheme) : 0
+    const currentThemeIndex = allThemes.indexOf(
+      document.querySelector('html')?.getAttribute('theme') as Theme
+    )
     const nextThemeIndex =
       currentThemeIndex + 1 === allThemes.length ? 0 : currentThemeIndex + 1
     const nextTheme = allThemes[nextThemeIndex]
