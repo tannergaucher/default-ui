@@ -58,19 +58,15 @@ function handleThemeButtonClick() {
   if (!themeButton) return
 
   themeButton.addEventListener('click', () => {
+    // Get the current theme from storage and increment it by 1
     const allThemes = Object.values(Theme)
-
     const currentThemeIndex = storageTheme ? allThemes.indexOf(storageTheme) : 0
-
     const nextThemeIndex =
       currentThemeIndex + 1 === allThemes.length ? 0 : currentThemeIndex + 1
-
     const nextTheme = allThemes[nextThemeIndex]
 
     document.querySelector('html')?.setAttribute('theme', nextTheme)
-
     themeButton.innerHTML = nextTheme
-
     localStorage.setItem(THEME_STORAGE_KEY, nextTheme)
   })
 }
