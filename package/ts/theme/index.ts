@@ -1,4 +1,3 @@
-export const TOGGLE_THEME_BTN_SELECTOR = '#theme-btn'
 export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
 export enum Theme {
@@ -14,7 +13,9 @@ export function useTheme() {
   handleThemeButtonClick()
 }
 
-const themeButton = document.querySelector('button[aria-label="Toggle theme"]')
+const themeButton =
+  document.querySelector('button[aria-label="Toggle theme"]') ||
+  document.querySelector('button[aria-label="Toggle Theme"]')
 
 if (!themeButton) {
   throw new Error(
@@ -57,13 +58,23 @@ function handleThemeButtonClick() {
   if (!themeButton) return
 
   themeButton.addEventListener('click', () => {
-    const allThemes = Object.values(Theme)
-    const currentThemeIndex = allThemes.indexOf(
+    // If the theme button has a data-toggle attributes specified, toggle between those themes, otherwise toggle between all themes
+    const declaredThemes = themeButton
+      .getAttribute('data-toggle')
+      ?.split(',') as Theme[] | undefined
+
+    const validThemes = declaredThemes?.length
+      ? declaredThemes
+      : Object.values(Theme)
+
+    const currentThemeIndex = validThemes.indexOf(
       document.querySelector('html')?.getAttribute('theme') as Theme
     )
+
     const nextThemeIndex =
-      currentThemeIndex + 1 === allThemes.length ? 0 : currentThemeIndex + 1
-    const nextTheme = allThemes[nextThemeIndex]
+      currentThemeIndex + 1 === validThemes.length ? 0 : currentThemeIndex + 1
+
+    const nextTheme = validThemes[nextThemeIndex]
 
     setTheme(nextTheme)
   })

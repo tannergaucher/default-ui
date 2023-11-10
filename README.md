@@ -43,7 +43,7 @@ npm i @t_g/default-ui
 ### 3. Optionally: select a subset of themes using data-themes attribute
 
 ```html
-<button aria-label="Toggle theme" data-themes="Light Theme,dark-sepia">
+<button aria-label="Toggle theme" data-toggle="Light Theme,Dark Sepia Theme">
   Theme
 </button>
 ```
