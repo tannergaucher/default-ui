@@ -13,9 +13,9 @@ export function useTheme() {
   handleThemeButtonClick()
 }
 
-const themeButton =
-  document.querySelector('button[aria-label="Toggle theme"]') ||
-  document.querySelector('button[aria-label="Toggle Theme"]')
+const themeButton = document.querySelector(
+  'button[aria-label="Toggle Theme"]'
+) as HTMLButtonElement | null
 
 if (!themeButton) {
   throw new Error(
@@ -85,5 +85,6 @@ function setTheme(theme: Theme) {
 
   document.querySelector('html')?.setAttribute('theme', theme)
   themeButton.innerHTML = theme
+  themeButton.name = theme
   localStorage.setItem(THEME_STORAGE_KEY, theme)
 }
