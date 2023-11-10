@@ -1,10 +1,13 @@
 main {
   min-height: 100vh;
-  padding-inline: var(--space-xl);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  margin-block-start: var(--space-xl);
 }
 
 @media (max-width: 900px) {
   main {
+    max-width: 100%;
     padding-inline: var(--space-sm);
   }
 }
