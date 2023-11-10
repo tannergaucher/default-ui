@@ -38,7 +38,7 @@ npm i @t_g/default-ui
 <button arial-label="Toggle Theme" />
 ```
 
-### 3. Optionally toggle a subset of themes using data-themes attribute
+### 3. Optionally toggle a subset of themes using data-themes attribute, comma separated
 
 ```html
 <button aria-label="Toggle Theme" data-toggle="Light Theme,Dark Sepia Theme" />
