@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.28.8
+
+### Patch Changes
+
+- 65b1308: Accessibility fix: theme color contrast
+
 ## 0.28.7
 
 ### Patch Changes
