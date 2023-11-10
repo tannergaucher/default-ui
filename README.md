@@ -16,27 +16,11 @@
 
 ### Light
 
-```
-data-light
-```
-
 ### Light Sepia
-
-```
-data-light-sepia
-```
 
 ### Dark
 
-```
-data-dark
-```
-
 ### Dark Sepia
-
-```
-data-dark-sepia
-```
 
 ---
 
@@ -45,17 +29,21 @@ data-dark-sepia
 ### 1. Import package
 
 ```
+
 npm i @t_g/default-ui
+
 ```
 
-### 2. Use a button with text theme
+### 2. Add a button label to the document with an aria label of "Toggle theme"
 
 ```html
-<button>Theme</button>
+<button arial-label="Toggle theme">Theme</button>
 ```
 
-### 3. Optionally declare themes with data attributes
+### 3. Optionally: select a subset of themes using data-themes attribute
 
 ```html
-<button data-light data-dark-sepia>Theme</button>
+<button aria-label="Toggle theme" data-themes="Light Theme,dark-sepia">
+  Theme
+</button>
 ```

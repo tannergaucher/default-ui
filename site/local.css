@@ -5,3 +5,9 @@
   --font-family: var(--sans);
   --caps-letter-spacing: 0.5rem;
 }
+
+@media (max-width: 900px) {
+  #site-title {
+    display: none;
+  }
+}

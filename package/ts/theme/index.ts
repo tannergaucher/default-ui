@@ -2,10 +2,10 @@ export const TOGGLE_THEME_BTN_SELECTOR = '#theme-btn'
 export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
 export enum Theme {
-  DARK = 'Dark',
-  DARK_SEPIA = 'Dark Sepia',
-  LIGHT = 'Light',
-  LIGHT_SEPIA = 'Light Sepia',
+  DARK = 'Dark Theme',
+  DARK_SEPIA = 'Dark Sepia Theme',
+  LIGHT = 'Light Theme',
+  LIGHT_SEPIA = 'Light Sepia Theme',
 }
 
 export function useTheme() {
@@ -14,24 +14,23 @@ export function useTheme() {
   handleThemeButtonClick()
 }
 
-const themeButton = document.querySelector(TOGGLE_THEME_BTN_SELECTOR)
+const themeButton = document.querySelector('button[aria-label="Toggle theme"]')
+
+if (!themeButton) {
+  throw new Error(
+    'No theme button found. Please add a button element with aria-label="Toggle theme" to the the document."'
+  )
+}
 
 const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
 function initializeTheme() {
-  if (!themeButton) return
-
-  // If there is no theme in local storage, initialize the theme to light
   if (storageTheme === null) {
-    document.querySelector('html')?.setAttribute('theme', Theme.LIGHT)
-    themeButton.innerHTML = Theme.LIGHT
-
+    setTheme(Theme.LIGHT)
     return
   }
 
-  // If there is a theme in local storage, initialize the theme to the value in local storage
-  document.querySelector('html')?.setAttribute('theme', storageTheme)
-  themeButton.innerHTML = storageTheme
+  setTheme(storageTheme)
 }
 
 function handleUserSystemPreference() {
@@ -40,7 +39,7 @@ function handleUserSystemPreference() {
     .matchMedia('(prefers-color-scheme:  dark)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', Theme.DARK)
+        setTheme(Theme.DARK)
       }
     })
 
@@ -49,7 +48,7 @@ function handleUserSystemPreference() {
     .matchMedia('(prefers-color-scheme:  light)')
     .addEventListener('change', (e) => {
       if (e.matches) {
-        document.querySelector('html')?.setAttribute('theme', Theme.LIGHT)
+        setTheme(Theme.LIGHT)
       }
     })
 }
@@ -66,8 +65,14 @@ function handleThemeButtonClick() {
       currentThemeIndex + 1 === allThemes.length ? 0 : currentThemeIndex + 1
     const nextTheme = allThemes[nextThemeIndex]
 
-    document.querySelector('html')?.setAttribute('theme', nextTheme)
-    themeButton.innerHTML = nextTheme
-    localStorage.setItem(THEME_STORAGE_KEY, nextTheme)
+    setTheme(nextTheme)
   })
+}
+
+function setTheme(theme: Theme) {
+  if (!themeButton) return
+
+  document.querySelector('html')?.setAttribute('theme', theme)
+  themeButton.innerHTML = theme
+  localStorage.setItem(THEME_STORAGE_KEY, theme)
 }

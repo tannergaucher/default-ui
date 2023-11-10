@@ -5,7 +5,6 @@ select {
   border: var(--thickness) solid var(--accent-1);
   border-radius: var(--radius);
   padding: var(--space-sm) var(--space-sm);
-  width: 100%;
   font-family: var(--font-family);
   font-size: var(--text-md);
   cursor: pointer;

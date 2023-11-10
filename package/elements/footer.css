@@ -12,7 +12,9 @@ footer > * {
 }
 
 @media (max-width: 900px) {
-  footer {
+  footer,
+  footer > * {
+    max-width: 100%;
     padding-inline: var(--space-sm);
   }
 }
