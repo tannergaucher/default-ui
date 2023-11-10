@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.31.0
+
+### Minor Changes
+
+- d863a6a: Add monokai, dracula themes
+
 ## 0.30.0
 
 ### Minor Changes
