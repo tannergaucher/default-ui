@@ -58,7 +58,7 @@
   }
 }
 
-html[theme='Light'] {
+html[theme='Light Theme'] {
   --text-color: var(--text-color-light);
   --grey: var(--grey-light);
   --bg-1: var(--bg-1-light);
@@ -69,7 +69,7 @@ html[theme='Light'] {
   --code-bg: var(--code-bg-light);
 }
 
-html[theme='Dark'] {
+html[theme='Dark Theme'] {
   --text-color: var(--text-color-dark);
   --grey: var(--grey-dark);
   --bg-1: var(--bg-1-dark);
@@ -80,7 +80,7 @@ html[theme='Dark'] {
   --code-bg: var(--code-bg-dark);
 }
 
-html[theme='Light Sepia'] {
+html[theme='Light Sepia Theme'] {
   --text-color: var(--text-color-light-sepia);
   --grey: var(--grey-light-sepia);
   --bg-1: var(--bg-1-light-sepia);
@@ -91,7 +91,7 @@ html[theme='Light Sepia'] {
   --code-bg: var(--code-bg-light-sepia);
 }
 
-html[theme='Dark Sepia'] {
+html[theme='Dark Sepia Theme'] {
   --text-color: var(--text-color-dark-sepia);
   --grey: var(--grey-dark-sepia);
   --bg-1: var(--bg-1-dark-sepia);
