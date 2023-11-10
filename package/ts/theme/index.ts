@@ -1,12 +1,16 @@
 export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
 export enum Theme {
-  DARK = 'Dark Theme',
-  DARK_SEPIA = 'Dark Sepia Theme',
   LIGHT = 'Light Theme',
+  DARK = 'Dark Theme',
   LIGHT_SEPIA = 'Light Sepia Theme',
+  DARK_SEPIA = 'Dark Sepia Theme',
   SOLARIZED_LIGHT = 'Solarized Light Theme',
   SOLARIZED_DARK = 'Solarized Dark Theme',
+  MONOKAI_LIGHT = 'Monokai Pro Light Theme',
+  MONOKAI_DARK = 'Monokai Pro Dark Theme',
+  DRACULA_LIGHT = 'Dracula Light Theme',
+  DRACULA_DARK = 'Dracula Dark Theme',
 }
 
 export function useTheme() {
