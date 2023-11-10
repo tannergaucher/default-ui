@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.30.0
+
+### Minor Changes
+
+- 06f5503: Add solarized light and dark themes
+
 ## 0.29.2
 
 ### Patch Changes
