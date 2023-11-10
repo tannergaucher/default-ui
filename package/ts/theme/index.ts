@@ -1,7 +1,7 @@
 export const TOGGLE_MODE_BTN_SELECTOR = '#toggle-mode-btn'
-export const MODE_STORAGE_KEY = '@t_g/default-ui/mode-key'
+export const THEME_STORAGE_KEY = '@t_g/default-ui/theme-key'
 
-export enum Mode {
+export enum Theme {
   DARK = 'Dark',
   DARK_SEPIA = 'Dark Sepia',
   LIGHT = 'Light',
@@ -11,28 +11,28 @@ export enum Mode {
 export function useTheme() {
   handleUserLocalStoragePreference()
   handlePrefersColorSchemeEventChange()
-  handleToggleButtonModeClick()
+  handleThemeButtonClick()
 }
 
 function handleUserLocalStoragePreference() {
-  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+  const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-  const storageMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
+  const storageTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
-  if (storageMode === null) {
+  if (storageTheme === null) {
     document.querySelector('html')?.setAttribute('theme', 'light')
 
-    if (toggleModeBtn) {
-      toggleModeBtn.innerHTML = 'light'
+    if (themeButton) {
+      themeButton.innerHTML = 'light'
     }
 
     return
   }
 
-  document.querySelector('html')?.setAttribute('theme', storageMode)
+  document.querySelector('html')?.setAttribute('theme', storageTheme)
 
-  if (toggleModeBtn) {
-    toggleModeBtn.innerHTML = storageMode
+  if (themeButton) {
+    themeButton.innerHTML = storageTheme
   }
 }
 
@@ -54,25 +54,25 @@ function handlePrefersColorSchemeEventChange() {
     })
 }
 
-function handleToggleButtonModeClick() {
-  const toggleModeBtn = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
+function handleThemeButtonClick() {
+  const themeButton = document.querySelector(TOGGLE_MODE_BTN_SELECTOR)
 
-  toggleModeBtn?.addEventListener('click', () => {
-    const modesArray = Object.values(Mode)
+  themeButton?.addEventListener('click', () => {
+    const themes = Object.values(Theme)
 
-    let currentMode = localStorage.getItem(MODE_STORAGE_KEY) as Mode | null
+    let currentTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null
 
-    if (currentMode === null) {
-      currentMode = Mode.LIGHT
+    if (currentTheme === null) {
+      currentTheme = Theme.LIGHT
     }
 
-    const currentModeIndex = modesArray.indexOf(currentMode)
-    const nextModeIndex =
-      currentModeIndex + 1 === modesArray.length ? 0 : currentModeIndex + 1
-    const nextMode = modesArray[nextModeIndex]
+    const currentThemeIndex = themes.indexOf(currentTheme)
+    const nextThemeIndex =
+      currentThemeIndex + 1 === themes.length ? 0 : currentThemeIndex + 1
+    const nextTheme = themes[nextThemeIndex]
 
-    document.querySelector('html')?.setAttribute('theme', nextMode)
-    toggleModeBtn.innerHTML = nextMode
-    localStorage.setItem(MODE_STORAGE_KEY, nextMode)
+    document.querySelector('html')?.setAttribute('theme', nextTheme)
+    themeButton.innerHTML = nextTheme
+    localStorage.setItem(THEME_STORAGE_KEY, nextTheme)
   })
 }
