@@ -4,38 +4,44 @@
   --bg-2-light: #ffffff;
   --text-color-light: #333333;
   --grey-light: #666666;
-  --accent-1-light: fuchsia;
-  --accent-2-light: purple;
+  --accent-1-light: #ffc107;
+  --accent-2-light: #3498db;
   --shadow-color-light: rgba(0, 0, 0, 0.07);
   --code-bg-light: #1a1a1b;
+  --error-light: #c00;
+
   /* Dark Theme */
   --bg-1-dark: rgb(0, 0, 0);
   --bg-2-dark: #1a1a1b;
   --text-color-dark: #ffffff;
   --grey-dark: #fafafa9f;
-  --accent-1-dark: fuchsia;
-  --accent-2-dark: purple;
+  --accent-1-dark: #d3aa68;
+  --accent-2-dark: #7dcea0;
   --shadow-color-dark: rgba(225, 225, 225, 0.1);
   --code-bg-dark: #1a1a1b;
+  --error-dark: #f00;
 
   /* Light Sepia Theme */
   --bg-1-light-sepia: papayaWhip;
   --bg-2-light-sepia: peachpuff;
   --text-color-light-sepia: #8b4513;
   --grey-light-sepia: #666666;
-  --accent-1-light-sepia: fuchsia;
-  --accent-2-light-sepia: purple;
+  --accent-1-light-sepia: #c02942;
+  --accent-2-light-sepia: #d95b43;
   --shadow-color-light-sepia: rgba(13, 13, 13, 0.07);
   --code-bg-light-sepia: #1a1a1b;
+  --error-light-sepia: #990000;
+
   /* Dark Sepia Theme */
   --bg-1-dark-sepia: #1a1a1b;
   --bg-2-dark-sepia: rgb(0, 0, 0);
   --text-color-dark-sepia: goldenrod;
   --grey-dark-sepia: #fafafa9f;
-  --accent-1-dark-sepia: fuchsia;
-  --accent-2-dark-sepia: purple;
+  --accent-1-dark-sepia: #d3aa68;
+  --accent-2-dark-sepia: #9d7c5b;
   --shadow-color-dark-sepia: rgba(137, 105, 59, 0.2);
   --code-bg-dark-sepia: rgb(0, 0, 0);
+  --error-dark-sepia: #c00;
 
   /* Solarized Light Theme */
   --bg-1-solarized-light: #fdf6e3;
@@ -46,6 +52,8 @@
   --accent-2-solarized-light: #cb4b16;
   --shadow-color-solarized-light: rgba(0, 0, 0, 0.07);
   --code-bg-solarized-light: #1a1a1b;
+  --error-solarized-light: #c0392b;
+
   /* Solarized Dark Theme */
   --bg-1-solarized-dark: #002b36;
   --bg-2-solarized-dark: #073642;
@@ -55,6 +63,7 @@
   --accent-2-solarized-dark: #cb4b16;
   --shadow-color-solarized-dark: rgba(225, 225, 225, 0.1);
   --code-bg-solarized-dark: #1a1a1b;
+  --error-solarized-dark: #f00;
 
   /* Monokai Pro Light Theme */
   --bg-1-monokai-pro-light: #f8f8f2;
@@ -65,6 +74,8 @@
   --accent-2-monokai-pro-light: #a6e22e;
   --shadow-color-monokai-pro-light: rgba(0, 0, 0, 0.07);
   --code-bg-monokai-pro-light: #272822;
+  --error-monokai-pro-light: #ff0000;
+
   /* Monokai Pro Dark Theme */
   --bg-1-monokai-pro-dark: #002451;
   --bg-2-monokai-pro-dark: #00193d;
@@ -74,6 +85,7 @@
   --accent-2-monokai-pro-dark: #a6e22e;
   --shadow-color-monokai-pro-dark: rgba(255, 255, 255, 0.1);
   --code-bg-monokai-pro-dark: #272822;
+  --error-monokai-pro-dark: #c0392b;
 
   /* Dracula Light Theme*/
   --bg-1-dracula-light: #fafafaee;
@@ -84,6 +96,8 @@
   --accent-2-dracula-light: #bd93f9;
   --shadow-color-dracula-light: rgba(0, 0, 0, 0.07);
   --code-bg-dracula-light: #1a1a1b;
+  --error-dracula-light: #c02e1b;
+
   /* Dracula Dark Theme */
   --bg-1-dracula-dark: #282a36;
   --bg-2-dracula-dark: #073642;
@@ -93,6 +107,7 @@
   --accent-2-dracula-dark: #50fa7b;
   --shadow-color-dracula-dark: rgba(225, 225, 225, 0.1);
   --code-bg-dracula-dark: #1a1a1b;
+  --error-dracula-dark: #f00;
 
   /* Initialize to Light Theme */
   --text-color: var(--text-color-light);
@@ -103,6 +118,7 @@
   --accent-2: var(--accent-2-light);
   --shadow-color: var(--shadow-color-light);
   --code-bg: var(--code-bg-light);
+  --error: var(--error-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,6 +131,7 @@
     --accent-2: var(--accent-2-dark);
     --shadow-color: var(--shadow-color-dark);
     --code-bg: var(--code-bg-dark);
+    --error: var(--error-dark);
   }
 }
 
@@ -127,6 +144,7 @@ html[theme='Light Theme'] {
   --accent-2: var(--accent-2-light);
   --shadow-color: var(--shadow-color-light);
   --code-bg: var(--code-bg-light);
+  --error: var(--error-light);
 }
 
 html[theme='Dark Theme'] {
@@ -138,6 +156,7 @@ html[theme='Dark Theme'] {
   --accent-2: var(--accent-2-dark);
   --shadow-color: var(--shadow-color-dark);
   --code-bg: var(--code-bg-dark);
+  --error: var(--error-dark);
 }
 
 html[theme='Light Sepia Theme'] {
@@ -149,6 +168,7 @@ html[theme='Light Sepia Theme'] {
   --accent-2: var(--accent-2-light-sepia);
   --shadow-color: var(--shadow-color-light-sepia);
   --code-bg: var(--code-bg-light-sepia);
+  --error: var(--error-light-sepia);
 }
 
 html[theme='Dark Sepia Theme'] {
@@ -160,6 +180,7 @@ html[theme='Dark Sepia Theme'] {
   --accent-2: var(--accent-2-dark-sepia);
   --shadow-color: var(--shadow-color-dark-sepia);
   --code-bg: var(--code-bg-dark-sepia);
+  --error: var(--error-dark-sepia);
 }
 
 html[theme='Solarized Light Theme'] {
@@ -171,6 +192,7 @@ html[theme='Solarized Light Theme'] {
   --accent-2: var(--accent-2-solarized-light);
   --shadow-color: var(--shadow-color-solarized-light);
   --code-bg: var(--code-bg-solarized-light);
+  --error: var(--error-solarized-light);
 }
 
 html[theme='Solarized Dark Theme'] {
@@ -182,6 +204,7 @@ html[theme='Solarized Dark Theme'] {
   --accent-2: var(--accent-2-solarized-dark);
   --shadow-color: var(--shadow-color-solarized-dark);
   --code-bg: var(--code-bg-solarized-dark);
+  --error: var(--error-solarized-dark);
 }
 
 html[theme='Monokai Pro Light Theme'] {
@@ -193,6 +216,7 @@ html[theme='Monokai Pro Light Theme'] {
   --accent-2: var(--accent-2-monokai-pro-light);
   --shadow-color: var(--shadow-color-monokai-pro-light);
   --code-bg: var(--code-bg-monokai-pro-light);
+  --error: var(--error-monokai-pro-light);
 }
 
 html[theme='Monokai Pro Dark Theme'] {
@@ -204,6 +228,7 @@ html[theme='Monokai Pro Dark Theme'] {
   --accent-2: var(--accent-2-monokai-pro-dark);
   --shadow-color: var(--shadow-color-monokai-pro-dark);
   --code-bg: var(--code-bg-monokai-pro-dark);
+  --error: var(--error-monokai-pro-dark);
 }
 
 html[theme='Dracula Light Theme'] {
@@ -215,6 +240,7 @@ html[theme='Dracula Light Theme'] {
   --accent-2: var(--accent-2-dracula-light);
   --shadow-color: var(--shadow-color-dracula-light);
   --code-bg: var(--code-bg-dracula-light);
+  --error: var(--error-dracula-light);
 }
 
 html[theme='Dracula Dark Theme'] {
@@ -226,4 +252,5 @@ html[theme='Dracula Dark Theme'] {
   --accent-2: var(--accent-2-dracula-dark);
   --shadow-color: var(--shadow-color-dracula-dark);
   --code-bg: var(--code-bg-dracula-dark);
+  --error: var(--error-dracula-dark);
 }
