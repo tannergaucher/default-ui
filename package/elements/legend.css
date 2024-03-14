@@ -1,0 +1,3 @@
+legend[data-error] {
+  color: var(--error);
+}
