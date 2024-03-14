@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.32.0
+
+### Minor Changes
+
+- b084cf7: Update form styles
+
 ## 0.31.1
 
 ### Patch Changes
