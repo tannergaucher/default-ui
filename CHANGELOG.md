@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.34.0
+
+### Minor Changes
+
+- b1da374: Added legend element.
+
 ## 0.33.0
 
 ### Minor Changes
