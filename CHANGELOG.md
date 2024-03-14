@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.31.1
+
+### Patch Changes
+
+- 73a5e06: Fix inverted fieldset / form
+
 ## 0.31.0
 
 ### Minor Changes
