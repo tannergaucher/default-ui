@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.33.0
+
+### Minor Changes
+
+- 2385e51: Added error color, updated theme colors
+
 ## 0.32.0
 
 ### Minor Changes
