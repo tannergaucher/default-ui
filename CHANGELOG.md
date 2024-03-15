@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.35.1
+
+### Patch Changes
+
+- 883609a: Add legend styles
+
 ## 0.35.0
 
 ### Minor Changes
