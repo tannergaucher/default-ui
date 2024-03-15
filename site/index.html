@@ -15,15 +15,10 @@
     </header>
     <main>
       <h1>Default UI</h1>
-      <h2>Themed styles for HTML elements</h2>
-      <div
-        style="
-          margin-block-start: var(--space-xl);
-          margin-block-end: var(--space-xl);
-        "
-      >
-        <code> npm i @t_g/default-ui </code>
-      </div>
+      <h2>
+        Responsive, themed design system for rapid prototyping with HTML
+        elements
+      </h2>
       <hr />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula
@@ -52,44 +47,21 @@
         <li>Two</li>
         <li>Three</li>
       </ol>
-      <p>
-        Paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam vehicula auctor iaculis. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Duis pellentesque magna accumsan, tincidunt
-        nunc ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
-        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet pretium
-        dignissim. Fusce facilisis risus vitae sodales pretium. Suspendisse sem
-        elit, vestibulum non ornare eget, placerat ut turpis. Interdum et
-        malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
-        facilisis varius interdum. In lacus tellus, blandit ac nulla sit amet,
-        sollicitudin laoreet quam.
-      </p>
-      <p>
-        Paragraph Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam vehicula auctor iaculis. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Duis pellentesque magna accumsan, tincidunt
-        nunc ac, convallis urna. Suspendisse et tincidunt erat, vitae malesuada
-        nisl. Donec eu dictum lacus. Vestibulum porttitor enim sit amet pretium
-        dignissim. Fusce facilisis risus vitae sodales pretium. Suspendisse sem
-        elit, vestibulum non ornare eget, placerat ut turpis. Interdum et
-        malesuada fames ac ante ipsum primis in faucibus. Sed semper sem
-        facilisis varius interdum. In lacus tellus, blandit ac nulla sit amet,
-        sollicitudin laoreet quam.
-      </p>
+      <hr />
       <h3>Article</h3>
       <article>
         <img
           src="https://media.giphy.com/media/cYmGBt2TBiOCA/giphy-downsized-large.gif"
           alt="random"
         />
-        <h3>Time spent with cats is never wasted</h3>
+        <h2>Time spent with cats is never wasted</h2>
         <p>
           "A cat has absolute emotional honesty: human beings, for one reason or
           another, may hide their feelings, but a cat does not." - Ernest
           Hemingway
         </p>
       </article>
-      <h3>Article Grid Section</h3>
+      <h3>Article Grid</h3>
       <section>
         <article>
           <img
@@ -208,23 +180,28 @@
       <button type="button">Button</button>
       <h3>Submit Button</h3>
       <button type="submit">Button</button>
-      <!-- <h3>Dialog</h3>
-      <button id="show-dialog-example-btn" type="submit">Open Dialog</button>
-      <dialog id="dialog-example">
+      <h3>Dialog</h3>
+      <button onclick="document.getElementById(`demo-dialog`).showModal()">
+        Open Dialog
+      </button>
+      <dialog id="demo-dialog">
         <h1>Greetings 👋</h1>
         <h2>Native HTML Dialog element here 🤓</h2>
         <form method="dialog">
           <button>Close Dialog</button>
         </form>
-      </dialog> -->
+      </dialog>
       <h3>Select</h3>
-      <select>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+      <form action="">
+        <label for="favorite-cat">My Favorite Cat</label>
+        <select id="favorite-cat" name="favorite-cat">
+          <option value="siamese">Siamese</option>
+          <option value="persian">Persian</option>
+          <option value="maine-coon">Maine Coon</option>
+        </select>
+      </form>
       <h3>Summary / Details</h3>
-      <details open>
+      <details>
         <summary>
           Excerpt from Mark Twain's essay "The Cat," where he discusses the
           behavior and character of cats
@@ -236,31 +213,6 @@
           fond of cats. The aloofness and otherworldly nature of cats has made
           them the object of both affection and curiosity for countless writers,
           and Mark Twain's writings on the subject are just one example.
-        </p>
-      </details>
-      <details>
-        <summary>
-          Excerpt from T.S. Eliot's poem "The Naming of Cats" from "Old Possum's
-          Book of Practical Cats"
-        </summary>
-        <p>
-          The Naming of Cats is a difficult matter, It isn't just one of your
-          holiday games; You may think at first I'm as mad as a hatter When I
-          tell you a cat must have THREE DIFFERENT NAMES.
-        </p>
-      </details>
-      <details>
-        <summary>
-          Ernest Hemingway had a well-documented interest in cats
-        </summary>
-        <p>
-          In the tropical haven of Key West, Florida, Hemingway surrounded
-          himself with the company of polydactyl (six-toed) cats. To him, these
-          cats were not merely pets but beloved companions that brought him
-          comfort and solace amidst his adventurous and often tumultuous life.
-          Hemingway's interest in cats, like his writing, reflected a complex
-          duality: the man of action and the man who found serenity in the
-          company of these independent, enigmatic creatures."
         </p>
       </details>
       <h3>Table</h3>
@@ -291,13 +243,28 @@
       <h3>Fieldset, Form, Input, Button</h3>
       <form>
         <fieldset>
-          <legend>Contact Form</legend>
-          <label for="">Subject</label>
-          <input type="text" placeholder="Your subject" required />
-          <label for="">Email</label>
-          <input type="email" placeholder="Email" required />
-          <label for="">Message</label>
-          <textarea placeholder="Message" rows="5" required></textarea>
+          <legend>Contact Form Legend</legend>
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            placeholder="This is pawsome!"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="katcaterson@gmeow.com"
+            required
+          />
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            placeholder="It has come to my attention that..."
+            rows="5"
+            required
+          ></textarea>
           <button type="submit">Send</button>
         </fieldset>
       </form>
@@ -305,7 +272,10 @@
     <footer>
       <section>
         <h2>Default UI</h2>
-        <h3>Themed styles for HTML elements</h3>
+        <h3>
+          Responsive, themed design system for rapid prototyping with HTML
+          elements
+        </h3>
         <nav>
           <ul>
             <li>
