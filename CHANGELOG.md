@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.36.0
+
+### Minor Changes
+
+- c7c6e88: Update element spacing and max width
+
 ## 0.35.1
 
 ### Patch Changes
