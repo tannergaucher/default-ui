@@ -1,5 +1,11 @@
 # semantic-styles
 
+## 0.35.0
+
+### Minor Changes
+
+- fe41108: Update label margin block
+
 ## 0.34.0
 
 ### Minor Changes
