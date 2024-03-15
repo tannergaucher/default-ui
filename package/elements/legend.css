@@ -1,8 +1,7 @@
 legend {
   margin-block: var(--space-md);
-  text-align: center;
-  font-size: var(--font-size-sm);
   font-style: italic;
+  text-align: center;
 }
 
 legend[data-error] {
